@@ -1,5 +1,9 @@
-export function StayIndex(){
+import { NavLink } from "react-router-dom";
+
+export function StayIndex() {
     return (
-        <h1>StayIndex</h1>
+        <nav>
+            <NavLink to="/stay/:id">Go to StayDetails page</NavLink>
+        </nav>
     )
 }
