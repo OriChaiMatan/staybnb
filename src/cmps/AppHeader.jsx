@@ -39,13 +39,13 @@ export function AppHeader() {
 
     return (
         <header className="app-header full">
-            <div className="app-header-logo-nav">
+            <div className="app-header-logo-nav full">
                 <NavLink to="/">
                     <img className='app-logo' src={logo} alt="logo" />
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
-            <div className="main-filter-header">
+            <div className="main-filter-header full">
                 <button className="main-filter-btn anywhere">Anywhere</button>
                 <div className="border-line"></div>
                 <button className="main-filter-btn any_week">Any week</button>
@@ -53,7 +53,7 @@ export function AppHeader() {
                 <button className="main-filter-btn">Add guests</button>
                 <img className='search-glass' src={searchIcon} alt="search-icon" />
             </div>
-            <div className="user-actions-header">
+            <div className="user-actions-header full">
                 <a>Staybnb Your Home</a>
                 <div className="world-icon" >
                     <img src={worldIcon} alt="world-icon" />

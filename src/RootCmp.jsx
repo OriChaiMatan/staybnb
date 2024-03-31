@@ -10,19 +10,17 @@ import { StayIndex } from './pages/StayIndex'
 export function RootCmp() {
 
     return (
-        <Router >
-            <div className='main-container'>
+        <div className='main-container'>
 
-                <AppHeader />
-                <main>
-                    <Routes>
-                        <Route path="/" element={<StayIndex />} />
-                        <Route path="/stay/:id" element={<StayDetails />} />
-                    </Routes>
-                </main>
-                <AppFooter />
-            </div>
-        </Router>
+            <AppHeader />
+            <main>
+                <Routes>
+                    <Route path="/" element={<StayIndex />} />
+                    <Route path="/stay/:id" element={<StayDetails />} />
+                </Routes>
+            </main>
+            <AppFooter />
+        </div>
     )
 }
 
