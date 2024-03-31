@@ -38,18 +38,17 @@ export function AppHeader() {
     // }
 
     return (
-
-        <header className="app-header2">
-            <div className="app-logo-nav">
+        <header className="app-header">
+            <div className="app-header-logo-nav">
                 <NavLink to="/">
                     <img className='app-logo' src={logo} alt="logo" />
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
             <div className="main-filter-header">
-                <button className="main-filter-btn">Search destinations</button>
+                <button className="main-filter-btn anywhere">Anywhere</button>
                 <div className="border-line"></div>
-                <button className="main-filter-btn">Add dates</button>
+                <button className="main-filter-btn any_week">Any week</button>
                 <div className="border-line"></div>
                 <button className="main-filter-btn">Add guests</button>
                 <img className='search-glass' src={searchIcon} alt="search-icon" />

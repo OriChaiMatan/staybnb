@@ -11,7 +11,7 @@ export function RootCmp() {
 
     return (
         <Router >
-            <div>
+            <div className='main-container'>
 
                 <AppHeader />
                 <main>
