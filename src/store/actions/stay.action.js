@@ -1,4 +1,4 @@
-import { stayService } from "../../services/stay.service.local";
+import { stayService } from "../../services/stay.service";
 import { ADD_STAY, REMOVE_STAY, SET_FILTER_BY, SET_IS_LOADING, SET_STAYS, UNDO_CHANGES, UPDATE_STAY } from "../reducers/order.reducer";
 import { SPEND_BALANCE } from "../reducers/user.reducer";
 import { store } from "../store";
