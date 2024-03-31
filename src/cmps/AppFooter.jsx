@@ -22,7 +22,7 @@ export function AppFooter() {
     // }
 
     return (
-        <footer className="app-footer">
+        <footer className="app-footer full">
             {/* <p>
                 coffeerights - count: {count}
             </p>

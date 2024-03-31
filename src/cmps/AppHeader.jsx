@@ -38,7 +38,7 @@ export function AppHeader() {
     // }
 
     return (
-        <header className="app-header">
+        <header className="app-header full">
             <div className="app-header-logo-nav">
                 <NavLink to="/">
                     <img className='app-logo' src={logo} alt="logo" />

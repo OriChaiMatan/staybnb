@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: minmax(50px, 1fr) minmax(auto, 1800px) minmax(50px, 1fr);
 
-
     >* {
         grid-column: 2;
 
