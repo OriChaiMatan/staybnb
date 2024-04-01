@@ -8,7 +8,7 @@
 }
 
 html {
-  // font-family: montserrat;
+  font-family: montserrat;
   line-height: 1.6;
   color: $clr2;
 }
@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  // font-family: caveat;
+  font-family: caveat;
   // margin: 0 0 0.6em; - tal
   line-height: 1;
 }
@@ -50,4 +50,8 @@ a {
 }
 a:hover {
   text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }

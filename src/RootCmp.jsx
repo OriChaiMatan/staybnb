@@ -10,8 +10,7 @@ import { StayIndex } from './pages/StayIndex'
 export function RootCmp() {
 
     return (
-        <div className='main-container'>
-
+        <div>
             <AppHeader />
             <main>
                 <Routes>

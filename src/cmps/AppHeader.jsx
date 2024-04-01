@@ -6,6 +6,7 @@ import searchIcon from '../assets/img/search_glass.png'
 import worldIcon from '../assets/img/world_icon.png'
 import hamburgerIcon from '../assets/img/hamburger_menu.png'
 import userIcon from '../assets/img/user_icon.png'
+import { useState } from 'react'
 // import { login, logout, signup } from '../store/user.actions.js'
 // import { LoginSignup } from './LoginSignup.jsx'
 
@@ -37,30 +38,49 @@ export function AppHeader() {
     //     }
     // }
 
+    const [showModal, setShowModal] = useState(false);
+
+    function toggleModal(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        setShowModal(!showModal);
+    }
+
+
     return (
-        <header className="app-header full">
-            <div className="app-header-logo-nav full">
+        <header className="app-header">
+            <div className="app-logo-nav">
                 <NavLink to="/">
                     <img className='app-logo' src={logo} alt="logo" />
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
-            <div className="main-filter-header full">
-                <button className="main-filter-btn anywhere">Anywhere</button>
+            <div className="main-filter-header">
+                <button className="main-filter-btn">Search destinations</button>
                 <div className="border-line"></div>
-                <button className="main-filter-btn any_week">Any week</button>
+                <button className="main-filter-btn">Add dates</button>
                 <div className="border-line"></div>
                 <button className="main-filter-btn">Add guests</button>
                 <img className='search-glass' src={searchIcon} alt="search-icon" />
             </div>
-            <div className="user-actions-header full">
+            <div className="user-actions-header">
                 <a>Staybnb Your Home</a>
                 <div className="world-icon" >
                     <img src={worldIcon} alt="world-icon" />
                 </div>
-                <div className="user-actions-container">
+                <div className="user-actions-container" onClick={(e) => toggleModal(e)}>
                     <img className='hamburger-menu-icon' src={hamburgerIcon} alt="hamburger-menu-icon" />
                     <img className='user-icon' src={userIcon} alt="user-icon" />
+                    <div className={`user-actions-modal ${showModal ? '' : 'hidden'}`}>
+                        <div>
+                            <a href="#" className='user-action'>Sign up</a>
+                            <a href="#" className='user-action'>Log in</a>
+                            <div className='hr'></div>
+                            <a href="#" className='user-action'>Gift cards</a>
+                            <a href="#" className='user-action'>Airbnb your home</a>
+                            <a href="#" className='user-action'>Help Center</a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

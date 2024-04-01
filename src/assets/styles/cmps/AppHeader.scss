@@ -2,31 +2,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 40px;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  height: 80px;
 
-  .app-header-logo-nav a {
+  .app-logo-nav a {
     display: flex;
     align-items: center;
 
     .app-logo {
-      height: 32px;
+      width: 40px;
     }
 
     h1 {
-      margin: 0 5px;
+      margin: 0 10px;
       color: $clr1;
-      font-size: 25px;
     }
   }
 
   .main-filter-header {
-
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     align-items: center;
+    flex: 1;
+    max-width: fit-content;
     height: 50px;
+    padding-right: 10px;
     border: 1px solid lightgray;
     border-radius: 50px;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
@@ -42,22 +44,11 @@
     .search-glass {
       width: 30px;
       cursor: pointer;
-      margin-right: 10px;
     }
 
     .main-filter-btn {
-
-      width: 100px;
+      width: 150px;
       height: 50px;
-      font-size: .75em;
-
-      &.anywhere {
-        color: #000;
-      }
-
-      &.any_week {
-        color: #000;
-      }
     }
 
     .main-filter-btn:hover {
@@ -67,7 +58,7 @@
       cursor: pointer;
     }
 
-    .main-filter-btn:hover+.border-line {
+    .main-filter-btn:hover + .border-line {
       display: none;
     }
   }
@@ -75,29 +66,30 @@
   .user-actions-header {
     display: flex;
     justify-content: space-between;
+    width: auto;
     align-items: center;
 
-    a {
-      color: #000;
-      font-size: 0.85em;
-      font-family: 'CircularAir-Light';
-    }
-
     img {
-      width: 20px;
+      width: 25px;
       cursor: pointer;
       padding: 0;
     }
 
+    .user-actions-header {
+      display: flex;
+      justify-content: space-between;
+      width: 20%;
+      align-items: center;
+    }
+
     .user-icon {
-      width: 30px;
+      width: 30px; /* Set size for user icon */
       cursor: pointer;
       margin-left: 10px;
     }
 
     .hamburger-menu-icon {
-      width: 20px;
-      /* Set size for hamburger menu icon */
+      width: 20px; /* Set size for hamburger menu icon */
       height: 20px;
       cursor: pointer;
       margin-left: 3px;
@@ -112,6 +104,42 @@
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
+
+      .user-actions-modal {
+        margin-top: 34px;
+        overflow-y: auto;
+        border-radius: 10px;
+        background: white;
+        right: 40px;
+        padding: 8px 0;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+        position: absolute;
+        z-index: 2;
+        color: black;
+        top: 50%;
+        max-height: calc(100vh - 100px);
+        min-width: 240px;
+
+        .user-action {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 12px 16px;
+          width: 100%;
+          outline: none;
+          text-decoration: none;
+          color: black;
+        }
+        .user-action:hover {
+          border-radius: 0;
+        }
+
+        .hr {
+          background-color: #ccc;
+          margin: 8px 0;
+          height: 1px;
+        }
+      }
     }
 
     .user-actions-container:hover {
