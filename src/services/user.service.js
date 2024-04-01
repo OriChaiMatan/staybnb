@@ -1,4 +1,5 @@
 import { storageService } from './async-storage.service'
+import { utilService } from './util.service'
 // import { httpService } from './http.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -14,7 +15,8 @@ export const userService = {
     remove,
     update,
     changeScore,
-    updateLocalUserFields
+    updateLocalUserFields,
+    getEmptyUser
 }
 
 window.userService = userService
@@ -67,7 +69,8 @@ async function signup(userCred) {
 
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    return await httpService.post('auth/logout')
+    return await storageService.post('auth/logout')
+    // return await httpService.post('auth/logout')
 }
 
 async function changeScore(by) {
@@ -94,6 +97,16 @@ function updateLocalUserFields(user) {
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+}
+
+function getEmptyUser(fullname, imgUrl, username, password) {
+    return {
+        _id: utilService.makeId(),
+        fullname,
+        imgUrl,
+        username,
+        password
+    }
 }
 
 

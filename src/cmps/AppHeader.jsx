@@ -38,11 +38,15 @@ export function AppHeader() {
     //     }
     // }
 
-    const [showModal, setShowModal] = useState(false);
+    const [showUserActionModal, setShowUserActionModal] = useState(false)
+    const [largeMainFilter, setLargeMainFilter] = useState(false)
 
-    function toggleModal(e) {
-        e.stopPropagation(); // Prevent event bubbling
-        setShowModal(!showModal);
+    function toggleUserActionModal() {
+        setShowUserActionModal(!showUserActionModal)
+    }
+
+    function toggleMainFilterSize() {
+        setLargeMainFilter(!largeMainFilter)
     }
 
 
@@ -54,10 +58,10 @@ export function AppHeader() {
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
-            <div className="main-filter-header">
-                <button className="main-filter-btn">Search destinations</button>
+            <div className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize}>
+                <button className="main-filter-btn">Anywhere</button>
                 <div className="border-line"></div>
-                <button className="main-filter-btn">Add dates</button>
+                <button className="main-filter-btn">Any week</button>
                 <div className="border-line"></div>
                 <button className="main-filter-btn">Add guests</button>
                 <img className='search-glass' src={searchIcon} alt="search-icon" />
@@ -67,10 +71,10 @@ export function AppHeader() {
                 <div className="world-icon" >
                     <img src={worldIcon} alt="world-icon" />
                 </div>
-                <div className="user-actions-container" onClick={(e) => toggleModal(e)}>
+                <div className="user-actions-container" onClick={toggleUserActionModal}>
                     <img className='hamburger-menu-icon' src={hamburgerIcon} alt="hamburger-menu-icon" />
                     <img className='user-icon' src={userIcon} alt="user-icon" />
-                    <div className={`user-actions-modal ${showModal ? '' : 'hidden'}`}>
+                    <div className={`user-actions-modal ${showUserActionModal ? '' : 'hidden'}`}>
                         <div>
                             <a href="#" className='user-action'>Sign up</a>
                             <a href="#" className='user-action'>Log in</a>

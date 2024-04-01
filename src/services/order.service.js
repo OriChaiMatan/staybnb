@@ -65,10 +65,18 @@ async function addOrderMsg(orderId, txt) {
     return msg
 }
 
-function getEmptyOrder() {
+function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", endDate = "", guests = {}, stay = {}, msgs = [], status = "") {
     return {
-        // vendor: 'Susita-' + (Date.now() % 1000),
-        // price: utilService.getRandomIntInclusive(1000, 9000),
+        _id: utilService.makeId(),
+        hostId,
+        buyer,
+        totalPrice,
+        startDate,
+        endDate,
+        guests,
+        stay,
+        msgs,
+        status
     }
 }
 

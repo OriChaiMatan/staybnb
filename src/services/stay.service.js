@@ -65,16 +65,28 @@ async function addStayMsg(stayId, txt) {
     return msg
 }
 
-function getEmptyStay() {
+function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summary = "", capacity = 0, amenities = [], labels = [], loc = {}, reviews = [], likedByUsers = []) {
     return {
-        // vendor: 'Susita-' + (Date.now() % 1000),
-        // price: utilService.getRandomIntInclusive(1000, 9000),
+        _id: utilService.makeId(),
+        name,
+        type,
+        imgUrls,
+        price,
+        summary,
+        capacity,
+        amenities,
+        labels,
+        host: userService.getLoggedinUser(),
+        loc,
+        reviews,
+        likedByUsers
     }
 }
 
 
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
+
 
 
 

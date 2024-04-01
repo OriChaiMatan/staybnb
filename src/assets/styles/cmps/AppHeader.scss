@@ -25,8 +25,8 @@
   .main-filter-header {
     display: flex;
     align-items: center;
-    flex: 1;
-    max-width: fit-content;
+    flex: 0 1 auto;
+    min-width: 348px;
     height: 50px;
     padding-right: 10px;
     border: 1px solid lightgray;
@@ -47,8 +47,14 @@
     }
 
     .main-filter-btn {
-      width: 150px;
+      width: 120px;
       height: 50px;
+    }
+
+    .main-filter-btn:nth-child(1),
+    .main-filter-btn:nth-child(3) {
+      font-weight: 600;
+      color: rgb(64, 64, 64);
     }
 
     .main-filter-btn:hover {
@@ -61,6 +67,22 @@
     .main-filter-btn:hover + .border-line {
       display: none;
     }
+  }
+
+  .main-filter-header.large-main-filter {
+    box-shadow: none;
+    border-radius: 32px;
+    width: 100%;
+    display: flex;
+    flex: 0 1 auto;
+    position: relative;
+    outline: none;
+    height: 66px;
+    text-align: left;
+    --explore_padding-inline: 24px;
+    --explore-nav_box-shadow-spread: 4px;
+    --gp-sidebar-top-padding: 0;
+    --page-shell-max-content-width: 2520px;
   }
 
   .user-actions-header {
