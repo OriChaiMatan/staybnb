@@ -6,7 +6,7 @@ import searchIcon from '../assets/img/search_glass.png'
 import worldIcon from '../assets/img/world_icon.png'
 import hamburgerIcon from '../assets/img/hamburger_menu.png'
 import userIcon from '../assets/img/user_icon.png'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 // import { login, logout, signup } from '../store/user.actions.js'
 // import { LoginSignup } from './LoginSignup.jsx'
 
@@ -38,17 +38,42 @@ export function AppHeader() {
     //     }
     // }
 
-    const [showUserActionModal, setShowUserActionModal] = useState(false)
-    const [largeMainFilter, setLargeMainFilter] = useState(false)
+    const [showUserActionModal, setShowUserActionModal] = useState(false);
+    const [largeMainFilter, setLargeMainFilter] = useState(false);
+    const [activeMainFilter, setActiveMainFilter] = useState(-1)
+    const mainFilterRef = useRef(null);
+
+    useEffect(() => {
+        const handleEscapeKeyPress = (event) => {
+            if (event.key === 'Escape') {
+                setLargeMainFilter(false);
+            }
+        };
+
+        const handleClickOutside = (event) => {
+            if (mainFilterRef.current && !mainFilterRef.current.contains(event.target)) {
+                setLargeMainFilter(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleEscapeKeyPress);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKeyPress);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     function toggleUserActionModal() {
-        setShowUserActionModal(!showUserActionModal)
+        setShowUserActionModal(!showUserActionModal);
     }
 
     function toggleMainFilterSize() {
-        setLargeMainFilter(!largeMainFilter)
+        if (!largeMainFilter) {
+            setLargeMainFilter(true);
+        }
     }
-
 
     return (
         <header className="app-header">
@@ -58,13 +83,33 @@ export function AppHeader() {
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
-            <div className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize}>
-                <button className="main-filter-btn">Anywhere</button>
+            <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize}>
+                {largeMainFilter ? <button className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}>Where <br></br> Search destinations</button> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
                 <div className="border-line"></div>
-                <button className="main-filter-btn">Any week</button>
+                {largeMainFilter ? <button className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>Check in <br></br> Add dates</button> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(1) }}>Any week</button>}
                 <div className="border-line"></div>
-                <button className="main-filter-btn">Add guests</button>
-                <img className='search-glass' src={searchIcon} alt="search-icon" />
+                {largeMainFilter && <>
+                    <button className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>Check out <br></br> Add dates</button>
+                    <div className="border-line"></div>
+                </>
+
+                }
+                {largeMainFilter ? (
+                    <div className="main-filter-btn large">
+                        <button className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
+                            <div className='text'>
+                                Who
+                                <br></br>
+                                Add guests
+                            </div>
+                        </button>
+                        <img className='search-glass' src={searchIcon} alt="search-icon" />  
+
+                    </div>
+                ) : (
+                    <><button className="main-filter-btn" onClick={() => { setActiveMainFilter(3) }}>Add guests</button><img className='search-glass' src={searchIcon} alt="search-icon" /></>
+                )}
+
             </div>
             <div className="user-actions-header">
                 <a>Staybnb Your Home</a>
@@ -82,11 +127,10 @@ export function AppHeader() {
                             <a href="#" className='user-action'>Gift cards</a>
                             <a href="#" className='user-action'>Airbnb your home</a>
                             <a href="#" className='user-action'>Help Center</a>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-    )
+        </header >
+    );
 }
