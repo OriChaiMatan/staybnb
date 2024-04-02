@@ -93,7 +93,7 @@ function _createStays() {
                 _id: "10006546",
                 name: "Ribeira Charming Duplex",
                 "type": "House", // hotels, guesthouse
-                imgUrls: "../assets/img/stay_demo_img/1.jpg",
+                imgUrls: "../assets/img/stay_demo_img/1.png",
                 price: 80.00, //pe night
                 "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
                 "capacity": 8,
@@ -137,7 +137,66 @@ function _createStays() {
                   }
                 ],
                 "likedByUsers": ['mini-user'] // for user-wishlist : use $in  save to wishlist
-              }
+              },
+              {
+                _id: "10006547",
+                name: "Ocean View Villa",
+                type: "House",
+                imgUrls: "../assets/img/stay_demo_img/2.png",
+                price: 120.00,
+                summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
+                capacity: 6,
+                amenities: [
+                    "TV",
+                    "Wifi",
+                    "Kitchen",
+                    "Swimming Pool",
+                    "Air Conditioning",
+                    "Free Parking"
+                ],
+                labels: [
+                    "Luxury",
+                    "Beachfront",
+                    "Relaxing"
+                ],
+                host: {
+                    _id: "u103",
+                    fullname: "Sara Smith",
+                    imgUrl: "https://example.com/sara.jpg"
+                },
+                loc: {
+                    country: "Portugal",
+                    countryCode: "PT",
+                    city: "Albufeira",
+                    address: "123 Ocean View Street",
+                    lat: 37.088,
+                    lng: -8.250
+                },
+                reviews: [
+                    {
+                        id: "review1",
+                        txt: "Amazing place with breathtaking views!",
+                        rate: 5,
+                        by: {
+                            _id: "u104",
+                            fullname: "John Doe",
+                            imgUrl: "https://example.com/john.jpg"
+                        }
+                    },
+                    {
+                        id: "review2",
+                        txt: "Great host, very responsive and accommodating.",
+                        rate: 4,
+                        by: {
+                            _id: "u105",
+                            fullname: "Alice Johnson",
+                            imgUrl: "https://example.com/alice.jpg"
+                        }
+                    }
+                ],
+                likedByUsers: ["user1", "user2"]
+            }
+            
         ]
         utilService.saveToStorage(STORAGE_KEY, stays)
     }

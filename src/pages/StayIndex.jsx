@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { StayPreview } from "../cmps/StayPreview";
 import { useState, useEffect } from "react";
 import { stayService } from "../services/stay.service";
+import { StayList } from "../cmps/StayList";
 
 export function StayIndex() {
     const [stays, setStays] = useState(null);
@@ -20,10 +19,8 @@ export function StayIndex() {
     }
 
     return (
-        <div>
-            {stays && stays.map(stay => (
-                <StayPreview key={stay._id} stay={stay} />
-            ))}
+        <div className="stay-index">
+            <StayList stays={stays} />
         </div>
     );
 }
