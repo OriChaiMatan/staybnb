@@ -2,36 +2,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 0px 40px;
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 75px;
 
-  .app-logo-nav a {
+  .app-header-logo-nav a {
     display: flex;
     align-items: center;
 
     .app-logo {
-      width: 40px;
+      height: 32px;
     }
 
     h1 {
-      margin: 0 10px;
+      margin: 0 5px;
       color: $clr1;
+      font-size: 25px;
     }
   }
 
   .main-filter-header {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
-    flex: 0 1 auto;
-    min-width: 348px;
     height: 50px;
     border: 1px solid lightgray;
     border-radius: 50px;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-
+    margin-left: 132px;
+    
     .border-line {
       width: 0;
       height: 24px;
@@ -69,9 +71,8 @@
 
     .search-glass {
       width: 30px;
-      height: auto;
       cursor: pointer;
-      margin-right: 10px;
+      margin-right: 3px;
     }
 
     .filter-content .search-glass {
@@ -79,8 +80,9 @@
     }
 
     .main-filter-btn {
-      width: 120px;
+      width: 100px;
       height: 50px;
+      font-size: .75em;
     }
 
     .main-filter-btn.large {
@@ -151,20 +153,18 @@
   .user-actions-header {
     display: flex;
     justify-content: space-between;
-    width: auto;
     align-items: center;
+    margin-right: 2px;
 
-    img {
-      width: 25px;
-      cursor: pointer;
-      padding: 0;
+    a {
+      color: #000;
+      font-size: 0.85em;
     }
 
-    .user-actions-header {
-      display: flex;
-      justify-content: space-between;
-      width: 20%;
-      align-items: center;
+    img {
+      width: 20px;
+      cursor: pointer;
+      padding: 0;
     }
 
     .user-icon {
@@ -248,6 +248,7 @@
       justify-content: center;
       height: 50px;
       width: 50px;
+      margin-right: 5px;
     }
 
     .world-icon:hover {
