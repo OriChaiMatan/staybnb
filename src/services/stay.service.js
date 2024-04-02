@@ -5,6 +5,8 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'stay'
 
+_createStays()
+
 export const stayService = {
     query,
     getById,
@@ -16,15 +18,15 @@ export const stayService = {
 window.cs = stayService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query() {
     var stays = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
-    }
-    if (filterBy.price) {
-        stays = stays.filter(stay => stay.price <= filterBy.price)
-    }
+    // if (filterBy.txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
+    //     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+    // }
+    // if (filterBy.price) {
+    //     stays = stays.filter(stay => stay.price <= filterBy.price)
+    // }
     return stays
 }
 
@@ -83,7 +85,63 @@ function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summar
     }
 }
 
-
+function _createStays() {
+    let stays = utilService.loadFromStorage(STORAGE_KEY)
+    if (!stays || !stays.length) {
+        stays = [
+            {
+                _id: "10006546",
+                name: "Ribeira Charming Duplex",
+                "type": "House", // hotels, guesthouse
+                imgUrls: "../assets/img/stay_demo_img/1.jpg",
+                price: 80.00, //pe night
+                "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+                "capacity": 8,
+                "amenities": [
+                  "TV",
+                  "Wifi",
+                  "Kitchen",
+                  "Smoking allowed",
+                  "Pets allowed",
+                  "Cooking basics"
+                ],
+                "labels": [ // ?
+                  "Top of the world",
+                  "Trending",
+                  "Play",
+                  "Tropical"
+                ],
+                "host": {
+                  "_id": "u101",
+                  "fullname": "Davit Pok",
+                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+                },
+                "loc": {
+                  "country": "Portugal",
+                  "countryCode": "PT",
+                  "city": "Porto",
+                  "address": "17 Kombo st",
+                  "lat": -8.61308,
+                  "lng": 41.1413
+                },
+                "reviews": [
+                  {
+                    "id": "madeId",
+                    "txt": "Very helpful hosts. Cooked traditional...",
+                    "rate": 4,
+                    "by": {
+                      "_id": "u102",
+                      "fullname": "user2",
+                      "imgUrl": "/img/img2.jpg"
+                    }
+                  }
+                ],
+                "likedByUsers": ['mini-user'] // for user-wishlist : use $in  save to wishlist
+              }
+        ]
+        utilService.saveToStorage(STORAGE_KEY, stays)
+    }
+}
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
 
