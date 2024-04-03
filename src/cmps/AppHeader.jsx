@@ -7,6 +7,7 @@ import worldIcon from '../assets/img/world_icon.png'
 import hamburgerIcon from '../assets/img/hamburger_menu.png'
 import userIcon from '../assets/img/user_icon.png'
 import { useEffect, useRef, useState } from 'react'
+
 // import { login, logout, signup } from '../store/user.actions.js'
 // import { LoginSignup } from './LoginSignup.jsx'
 

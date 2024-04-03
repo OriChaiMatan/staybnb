@@ -6,21 +6,25 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { StayDetails } from './pages/StayDetails'
 import { StayIndex } from './pages/StayIndex'
+import { LabelsFilter } from './cmps/LabelsFilter';
 
 export function RootCmp() {
-
     return (
-        <div className='main-container'>
-            <AppHeader />
-            <main>
-                <Routes>
-                    <Route path="/" element={<StayIndex />} />
-                    <Route path="/stay/:id" element={<StayDetails />} />
-                </Routes>
-            </main>
-            <AppFooter />
-        </div>
-    )
+            <div className='main-container'>
+                <div className="fixed-container">
+                    <AppHeader />
+                    <LabelsFilter />
+                </div>
+
+                <main className="content">
+                    <Routes>
+                        <Route path="/" element={<StayIndex />} />
+                        <Route path="/stay/:id" element={<StayDetails />} />
+                    </Routes>
+                </main>
+                <AppFooter />
+            </div>
+    );
 }
 
 

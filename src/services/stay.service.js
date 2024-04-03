@@ -107,8 +107,8 @@ function _createStays() {
                 ],
                 "labels": [ // ?
                   "Top of the world",
-                  "Trending",
-                  "Play",
+                  "Islands",
+                  "Luxe",
                   "Tropical"
                 ],
                 "host": {
@@ -155,9 +155,9 @@ function _createStays() {
                     "Free Parking"
                 ],
                 labels: [
-                    "Luxury",
+                    "Luxe",
                     "Beachfront",
-                    "Relaxing"
+                    "Mansions"
                 ],
                 host: {
                     _id: "u103",
