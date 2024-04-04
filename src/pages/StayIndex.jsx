@@ -4,6 +4,7 @@ import { StayList } from "../cmps/StayList"
 import { LabelsFilter } from "../cmps/LabelsFilter"
 import { Outlet, useParams } from "react-router-dom"
 
+
 export function StayIndex() {
     const [stays, setStays] = useState(null)
     const params = useParams()
@@ -27,8 +28,12 @@ export function StayIndex() {
 
     return (
         <div className="stay-index">
+            <div className="label-container">
                 {isStayIndexPage && <LabelsFilter />}
+            </div>
+            <div className="stay-container">
                 {params.stayId ? <Outlet /> : <StayList stays={stays} />}
+            </div>
         </div>
     )
 }
