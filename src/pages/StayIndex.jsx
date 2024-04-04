@@ -27,8 +27,8 @@ export function StayIndex() {
 
     return (
         <div className="stay-index">
-            {isStayIndexPage && <LabelsFilter />}
-            {params.stayId ? <Outlet /> : <StayList stays={stays} />}
+                {isStayIndexPage && <LabelsFilter />}
+                {params.stayId ? <Outlet /> : <StayList stays={stays} />}
         </div>
     )
 }

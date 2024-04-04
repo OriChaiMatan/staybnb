@@ -19,9 +19,11 @@ import bed_breakfasts from "../assets/img/label_icons_img/bed_breakfasts.png"
 import luxe from "../assets/img/label_icons_img/luxe.png"
 import top_of_the_world from "../assets/img/label_icons_img/top_of_the_world.png"
 import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
-
+import { ArrowNext } from "../svg/ArrowNext"
+import ArrowBack from "../svg/ArrowBack"
 
 export function LabelsFilter() {
+
   const labels = [
     { imgSrc: beach, altText: "beach-img", nameLabel: "Beach" },
     { imgSrc: beachfront, altText: "beachfront-img", nameLabel: "Beachfront" },
@@ -38,7 +40,7 @@ export function LabelsFilter() {
     { imgSrc: lakefront, altText: "lakefront-img", nameLabel: "Lakefront" },
     { imgSrc: islands, altText: "islands-img", nameLabel: "Islands" },
     { imgSrc: tropical, altText: "tropical-img", nameLabel: "Tropical" },
-    { imgSrc: camping, altText: "camping-img", nnameLabelame: "Camping" },
+    { imgSrc: camping, altText: "camping-img", nameLabel: "Camping" },
     { imgSrc: surfing, altText: "surfing-img", nameLabel: "Surfing" },
     { imgSrc: bed_breakfasts, altText: "bed-breakfasts-img", nameLabel: "Bed & breakfasts" },
     { imgSrc: luxe, altText: "luxe-img", nameLabel: "Luxe" },
@@ -47,21 +49,27 @@ export function LabelsFilter() {
   ]
 
   return (
-    <section className="labels-filter full">
-        {labels.map((item, index) => (
-          <LabelsFilterItem key={index}
+    <section className="labels-filter">
+      <button className="back-categories-page">
+        <ArrowBack />
+      </button>
+      {labels.map((item, index) => (
+        <LabelsFilterItem key={index}
           {...item}
-          />
-        ))}
+        />
+      ))}
+      <button className="next-categories-page">
+        <ArrowNext />
+      </button>
     </section>
   )
 }
 
-export function LabelsFilterItem({imgSrc, altText, nameLabel}){
+export function LabelsFilterItem({ imgSrc, altText, nameLabel }) {
 
   return (
     <div className="item-label">
-      <img src={imgSrc} alt={altText}/>
+      <img src={imgSrc} alt={altText} />
       <div className="name-label">{nameLabel}</div>
     </div>
   )
