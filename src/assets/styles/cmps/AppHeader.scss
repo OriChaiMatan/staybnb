@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 40px;
+  padding: 0px 80px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -33,7 +33,7 @@
     border: 1px solid lightgray;
     border-radius: 50px;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    margin-left: 132px;
+    margin-left: 190px;
     
     .border-line {
       width: 0;
@@ -234,6 +234,7 @@
 
     a {
       padding: 10px;
+      font-weight: 550;
     }
 
     a:hover {
