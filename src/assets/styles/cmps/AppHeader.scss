@@ -46,11 +46,8 @@
     .main-filter-btn.large:hover {
       background: #dfdfdf;
       border-radius: -10px;
+      cursor: pointer;
     }
-
-    // .main-filter-btn.large:hover img.search-glass {
-    //   background: #dfdfdf;
-    // }
 
     .filter-content {
       display: flex;
@@ -65,20 +62,21 @@
     }
 
     .text {
-      margin-left: 30px;
-      flex-grow: 1;
-      text-align: start; /* Center the text horizontally */
+      text-align: start; 
     }
 
     .search-glass {
       width: 30px;
       cursor: pointer;
-      margin-right: 3px;
+      margin-right: 10px;
     }
 
     .filter-content .search-glass {
       margin-left: auto;
+      margin-right: 0;
     }
+
+    
 
     .main-filter-btn {
       width: 100px;
@@ -101,9 +99,13 @@
       justify-content: end;
     }
 
-    .main-filter-btn.large:nth-child(1),
-    .main-filter-btn.large:nth-child(7) {
+    .main-filter-btn.large:first-child{
       width: 25%;
+    }
+
+    .main-filter-btn.large:last-child{
+      width:30%;
+      padding: 0 10px;
     }
 
     .main-filter-btn:not(.large):nth-child(1),
@@ -120,6 +122,13 @@
       background-color: white;
     }
 
+    .main-filter-btn.large div input{
+      background-color: inherit;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+
     .main-filter-btn.large.active-filter:last-child {
       border-radius: 0 100px 100px 0;
     }
@@ -127,9 +136,34 @@
       border-radius: 100px;
     }
 
-    .main-filter-btn.large:not(.active-filter):hover {
-      // border-radius: 0;
+    .large-search-btn{
+      background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+      background-size: 200% 200%;
+      color: white;
+      max-width: 200px;
+      width: 200px;
+      border-radius: 24px;
+      height: 48px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      background-position: calc((100% - 20.125px)) calc((100% - 77.08333333333334px));
+      
+
+      & span{
+        margin-right: 10px;
+        font-weight: 600;
+      }
     }
+
+
+
+    // .large-search-btn .search-glass{
+    //   background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
+    //   border-radius: 100%;
+    // }
   }
 
   .main-filter-header:hover {

@@ -6,6 +6,9 @@ import searchIcon from '../assets/img/search_glass.png'
 import worldIcon from '../assets/img/world_icon.png'
 import hamburgerIcon from '../assets/img/hamburger_menu.png'
 import userIcon from '../assets/img/user_icon.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
 import { useEffect, useRef, useState } from 'react'
 
 // import { login, logout, signup } from '../store/user.actions.js'
@@ -85,7 +88,7 @@ export function AppHeader() {
                 </NavLink>
             </div>
             <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize}>
-                {largeMainFilter ? <button className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}>Where <br></br> Search destinations</button> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
+                {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder="Search destinations"/></div></label> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
                 <div className="border-line"></div>
                 {largeMainFilter ? <button className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>Check in <br></br> Add dates</button> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(1) }}>Any week</button>}
                 <div className="border-line"></div>
@@ -104,7 +107,10 @@ export function AppHeader() {
                                 Add guests
                             </div>
                         </button>
-                        <img className='search-glass' src={searchIcon} alt="search-icon" />  
+                        <button className="large-search-btn">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <span >Search</span>
+                        </button>
 
                     </div>
                 ) : (
