@@ -1,12 +1,18 @@
-.label-filter{
+.labels-filter{
   height: 80px;
   padding: 0 80px;
   border: 1px solid;
   display: flex;
   align-items: center;
 
+  position: fixed;
+  top: 80px;;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
   img{
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
   }
 }
