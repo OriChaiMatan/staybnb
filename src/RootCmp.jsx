@@ -11,17 +11,25 @@ import { LabelsFilter } from './cmps/LabelsFilter';
 
 export function RootCmp() {
     return (
-            <div className='main-container'>
-                    <AppHeader />
-               
-                <main >
-                    <Routes>
+        
+        <div className='main-container'>
+            <AppHeader />
+
+            <main >
+                {/* <Routes>
                         <Route path="/" element={<StayIndex />} />
                         <Route path="/stay/:id" element={<StayDetails />} />
-                    </Routes>
-                </main>
-                <AppFooter />
-            </div>
+                    </Routes> */}
+                <Routes>
+                    <Route path="/" element={<StayIndex />} >
+                        <Route path="/stay/:stayId" element={<StayDetails />} />
+                    </Route>
+
+
+                </Routes>
+            </main>
+            <AppFooter />
+        </div>
     );
 }
 
