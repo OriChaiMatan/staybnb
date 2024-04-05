@@ -4,7 +4,6 @@ import {useState} from 'react'
 
 export const DateRangePicker = () => {
     const [value, setValue] = useState([null,null])
-    console.log(value);
     return (
         <Box width='500px'>
             <DateRangePicker

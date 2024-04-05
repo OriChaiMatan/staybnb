@@ -1,5 +1,7 @@
 .main-container {
     height: 100%;
+    // overflow: auto;
+
     display: grid;
     grid-template-columns: minmax(80px, 1fr) minmax(auto, 1800px) minmax(80px, 1fr);
     grid-template-rows: 160px auto 70px;

@@ -12,16 +12,21 @@ export default function DatePicker({ onDatesChange }) {
     onDatesChange(value);
   }, [value, onDatesChange]);
 
+  // useEffect(() => {
+  //   const divElement = document.querySelector('.MuiDateRangeCalendar-root > div:first-child');
+  //   if (divElement) {
+  //     divElement.remove();
+  //   }
+  // }, []);
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DateRangeCalendar', 'DateRangeCalendar']}>
         <DemoItem label="Controlled calendar">
-          <div style={{ overflow: 'hidden' }}>
-            <DateRangeCalendar
-              value={value}
-              onChange={(newValue) => setValue(newValue)}
-            />
-          </div>
+          <DateRangeCalendar
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+          />
         </DemoItem>
       </DemoContainer>
     </LocalizationProvider>
