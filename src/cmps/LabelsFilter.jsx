@@ -21,6 +21,7 @@ import top_of_the_world from "../assets/img/label_icons_img/top_of_the_world.png
 import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
+import FilterIcon from "../svg/FilterIcon"
 import { Link } from "react-router-dom"
 
 export function LabelsFilter() {
@@ -62,6 +63,11 @@ export function LabelsFilter() {
       ))}
       <button className="next-categories-page">
         <ArrowNext />
+      </button>
+
+      <button className="filter-btn">
+      <FilterIcon/>
+        Filter
       </button>
     </section>
   )
