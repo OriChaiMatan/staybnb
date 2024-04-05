@@ -16,7 +16,7 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
     const [infantsAmount, setInfantsAmount] = useState(0)
     const [petsAmount, setPetsAmount] = useState(0)
     const mainFilterRef = useRef(null);
-    console.log(selectedDates)
+    // console.log(selectedDates)
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {
