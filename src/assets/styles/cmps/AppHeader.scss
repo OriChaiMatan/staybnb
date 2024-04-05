@@ -13,7 +13,6 @@
   white-space: nowrap;
   transition: height .7s ease;
   box-shadow: rgb(0 0 0/8%) 0 1px 0;
-  grid-row: 1;
 
   &.large-header {
     height: 168px; 
@@ -40,6 +39,8 @@
       margin: 0 5px;
       color: $clr1;
       font-size: 25px;
+      letter-spacing: -2px;
+      font-weight: 00;
     }
   }
 
@@ -102,6 +103,8 @@
       width: 100px;
       height: 50px;
       font-size: .75em;
+      font-family: inherit;
+      letter-spacing: -0.5px;
     }
 
     .main-filter-btn.large {
@@ -469,5 +472,18 @@
     background-color: #fff;
     font-size: 12px;
     cursor: auto;
+    overflow: hidden;
+
+    .MuiStack-root{
+      overflow: hidden;
+    }
+
+    p.MuiTypography-root{
+      opacity: 0;
+    }
+
+    .MuiDateRangeCalendar-root > div:first-child{
+      display: none;
+    }
   }
 }

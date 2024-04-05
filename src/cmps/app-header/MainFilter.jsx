@@ -15,8 +15,10 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
     const [childrenAmount, setChildrenAmount] = useState(0)
     const [infantsAmount, setInfantsAmount] = useState(0)
     const [petsAmount, setPetsAmount] = useState(0)
+    const [selectedDestination, setSelectedDestination] = useState('Search destinations')
+    const [selectedGuests, setSelectedGuests] = useState(0)
     const mainFilterRef = useRef(null);
-    console.log(selectedDates)
+    
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {
@@ -65,6 +67,17 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
         setSelectedDates(dates);
     }
 
+    function handleSelectDestination(dest){
+        setSelectedDestination(dest)
+        setActiveMainFilter(1);
+    }
+
+    useEffect(() => {
+        console.log(activeMainFilter);
+        console.log(selectedDestination);
+    },[activeMainFilter,selectedDestination])
+
+
     function extractDateDisplay() {
         if (selectedDates.length === 2 && selectedDates.every(date => date?.$d instanceof Date)) {
             const firstDate = dayjs(selectedDates[0].$d);
@@ -98,15 +111,21 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
             default:
                 break;
         }
-    }
+        setSelectedGuests(prev => {
+            if (operation === 'increment') {
+                return prev + 1;
+            } else {
+                return prev > 0 ? prev - 1 : 0;
+            }
+        });    }
 
     return (
         <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize} style={{ backgroundColor: activeMainFilter >= 0 ? '#ebebeb' : '#fff' }}>
-                {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder="Search destinations"/></div>
+                {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder={selectedDestination}/></div>
                 {activeMainFilter === 0 && <section className='add-dest-modal'>
                     <div>
                         <h2 className='search-by-region'>Search by region</h2>
-                        <MapImages/>
+                        <MapImages handleSelectDestination={handleSelectDestination} setActiveMainFilter={setActiveMainFilter}/>
                     </div>
                     </section>}
                 </label> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
@@ -135,7 +154,8 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
                             <div className='text'>
                                 Who
                                 <br></br>
-                                Add guests
+                                {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
+
                             </div>
                         </button>
                         <button className="large-search-btn">
