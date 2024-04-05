@@ -2,7 +2,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: minmax(80px, 1fr) minmax(auto, 1800px) minmax(80px, 1fr);
-    grid-template-rows: 168px auto 70px;
+    grid-template-rows: 160px auto 70px;
     // grid-template-columns: minmax(20px, 40px) minmax(auto, 1300px) minmax(20px, 40px);
   
     >* {

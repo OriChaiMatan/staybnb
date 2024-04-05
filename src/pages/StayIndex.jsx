@@ -19,8 +19,6 @@ export function StayIndex() {
         }
     }
 
-    const isStayIndexPage = location.pathname === '/'
-
     if (!stays) return <div>Loading..</div>
 
     return (

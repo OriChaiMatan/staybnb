@@ -21,6 +21,7 @@ import top_of_the_world from "../assets/img/label_icons_img/top_of_the_world.png
 import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
+import { Link } from "react-router-dom"
 
 export function LabelsFilter() {
 
@@ -48,6 +49,7 @@ export function LabelsFilter() {
     { imgSrc: ski_in_out, altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
 
+
   return (
     <section className="labels-filter">
       <button className="back-categories-page">
@@ -66,11 +68,13 @@ export function LabelsFilter() {
 }
 
 export function LabelsFilterItem({ imgSrc, altText, nameLabel }) {
-
+  const linkUrl = `/${nameLabel.toLowerCase()}`
   return (
-    <div className="item-label">
-      <img src={imgSrc} alt={altText} />
-      <div className="name-label">{nameLabel}</div>
-    </div>
+    <Link to={linkUrl}>
+      <div className="item-label">
+        <img src={imgSrc} alt={altText} />
+        <div className="name-label">{nameLabel}</div>
+      </div>
+    </Link>
   )
 }

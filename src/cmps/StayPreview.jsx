@@ -67,7 +67,7 @@ export function StayPreview({ stay }) {
                 <div className="stay-preview-information">
                     <span className="name-info">{stay.name}</span>
                     <span className="loc-info">{stay.loc.country}-{stay.loc.city}-{stay.loc.address}</span>
-                    <span className="price-info">${stay.price} <a>night</a></span>
+                    <span className="price-info">${stay.price} <span>night</span></span>
                 </div>
             </Link>
         </div>

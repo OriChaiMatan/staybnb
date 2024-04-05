@@ -1,7 +1,6 @@
 .labels-filter {
   height: 80px;
   padding: 0 80px;
-  // border: 1px solid;
   // opacity: 0.6;
   background-color: #fff;
   position: fixed;
@@ -52,6 +51,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    opacity: 0.6;
+  }
+
+  .item-label:hover {
+    opacity: 1;
   }
 
   .name-label {
