@@ -6,11 +6,26 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   height: 80px;
   white-space: nowrap;
+  transition: height .7s ease;
+
+  &.large-header {
+    height: 168px; 
+  }
+
+  .app-header-logo-nav{
+    position: fixed;
+    top: 24px;
+    left: 80px
+  }
 
   .app-header-logo-nav a {
+    transition: height 0.3s ease;
+    position: relative;
+    top: 0;
     display: flex;
     align-items: center;
 
@@ -26,14 +41,16 @@
   }
 
   .main-filter-header {
+    position: absolute; 
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center it horizontally */
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     height: 50px;
     border: 1px solid lightgray;
     border-radius: 50px;
-    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    margin-left: 190px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);  
     
     .border-line {
       width: 0;
@@ -94,6 +111,133 @@
       text-align: start;
       border-radius: 100px;
       padding: 14px 24px;
+
+      .add-dest-modal {
+        position: absolute;
+        box-shadow: 0 0 0 1px #0000000a, 0 8px 16px #00000026;
+        top: 81px;
+        width: 450px;
+        left: calc(50% - 425px);
+        height: 410px;
+        padding: 10px 32px;
+        border-radius: 32px;
+        z-index: 8;
+        background-color: #fff;
+        font-size: 12px;
+        cursor: auto;
+    
+        .search-by-region {
+            margin-block-end: -14px;
+            font-size: 16px;
+        }
+    
+        .region-choice {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 24px;
+            column-gap: 5px;
+            margin-block-start: 33px;
+    
+            & > div {
+                height: 160px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: start;
+            }
+    
+            & > div:hover {
+                background-color: #ebebeb;
+                border-radius: 10px;
+            }
+    
+            & > div img {
+                height: 120px;
+                width: 90%;
+                border: 1px solid rgba(128, 128, 128, .3);
+                cursor: pointer;
+                margin: 6px 0;
+                border-radius: 10px;
+                box-sizing: inherit;
+            }
+    
+            & > div .region-p {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+    
+      
+
+      .add-guests-modal{
+        position: absolute;
+        box-shadow: 0 0 0 1px #0000000a, 0 8px 16px #00000026;
+        top: 81px;
+        width: 403px;
+        right: calc(50% - 425px);
+        height: 410px;
+        padding: 10px 32px;
+        border-radius: 32px;
+        z-index: 8;
+        background-color: #fff;
+        display: grid;
+        gap: 1px;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        font-size: 12px;
+        cursor: auto;
+
+        & .add-guests-modal-p{
+          font-size: 14px;
+        }
+
+        & .add-guests-modal-p.pet{
+          text-decoration: underline;
+          font-weight: 500;
+        }
+
+        & .add-guests-modal-btns{
+          display: flex;
+          justify-content: space-between;
+          padding: 24px 0;
+
+          .add-guest-btn{
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            color: #717171;
+            border: 1px solid;
+            border-color: #b0b0b0;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin: 5px;
+            cursor: pointer;
+          }
+
+          & .add-guest-num{
+              align-self: center;
+              height: 30px;
+              font-size: 15px;
+            }
+
+          .add-guest-btn.disabled{
+            cursor: auto;
+            border-color: #ebebeb;
+          }
+          
+          .add-guest-btn:first-child{
+            padding-left: 12.5px;
+          }
+
+          .add-guest-btn:last-child{
+            padding: 3.5px 0 0 10.5px;
+          }
+        }
+      }
     }
     .main-filter-btn.large:last-child {
       justify-content: end;
@@ -157,13 +301,6 @@
         font-weight: 600;
       }
     }
-
-
-
-    // .large-search-btn .search-glass{
-    //   background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
-    //   border-radius: 100%;
-    // }
   }
 
   .main-filter-header:hover {
@@ -171,18 +308,35 @@
       0 2px 4px rgba(0, 0, 0, 0.18);
   }
 
-  .main-filter-header.large-main-filter {
-    border-radius: 32px;
-    width: 850px;
-    display: flex;
-    justify-content: space-between;
-    height: 66px;
-    text-align: start;
-    background-color: #ebebeb;
-  }
 
   .main-filter-header.large-main-filter {
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+    height: 66px;
+    text-align: start;
+    background-color: #fff;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+  }
+
+  .main-filter-header.large-main-filter .main-filter-btn {
+    width: auto;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    border-radius: 100px;
+    padding: 14px 24px;
+  }
+  
+  .main-filter-header.large-main-filter .main-filter-btn:last-child {
+    justify-content: end;
   }
 
   .user-actions-header {
@@ -190,6 +344,9 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 2px;
+    position: fixed;
+    top: 18px;
+    right: 80px;
 
     a {
       color: #000;
