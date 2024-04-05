@@ -12,6 +12,7 @@
 @import "basics/forms";
 
 // Pages
+@import "pages/StayDetails.scss";
 
 // Components
 @import "cmps/AppHeader";
@@ -19,6 +20,7 @@
 @import "cmps/LabelsFilter";
 @import "cmps/StayList";
 @import "cmps/StayPreview";
+@import "cmps/StayDetails/AboutThisPlace.scss";
 // @import "cmps/UserMsg";
 
 

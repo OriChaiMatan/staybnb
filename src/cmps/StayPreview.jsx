@@ -38,17 +38,32 @@ export function StayPreview({ stay }) {
     //     thumbnail: url 
     // }));
 
+    const handleSvgClick = (event) => { //set the btn inside a stay-imgs to work
+        event.preventDefault();
+        console.log("SVG element clicked")
+    }
+
+    const isSvgElement = (element) => {     // check if the element is button, then allow to press.      
+        return element instanceof SVGElement || element.tagName.toLowerCase() === "svg"
+    }
+
     return (
         <div className="stay-preview">
-            <div className="stay-photo-gallery">
-                <ImageGallery
-                    items={images}
-                    showFullscreenButton={false}
-                    showPlayButton={false}
-                    showThumbnails={false}
-                    showBullets={true} />
-            </div>
             <Link to={`/stay/${stay._id}`}>
+                <div className="stay-photo-gallery" onClick={(event) => {
+                    // Check if the clicked element or its parent is an SVG element
+                    if (isSvgElement(event.target) || isSvgElement(event.target.parentElement)) {
+                        handleSvgClick(event);
+                    }
+                }}>
+                    <ImageGallery
+                        items={images}
+                        showFullscreenButton={false}
+                        showPlayButton={false}
+                        showThumbnails={false}
+                        showBullets={true} />
+                </div>
+
                 <div className="stay-preview-information">
                     <span className="name-info">{stay.name}</span>
                     <span className="loc-info">{stay.loc.country}-{stay.loc.city}-{stay.loc.address}</span>

@@ -99,6 +99,9 @@ function _createStays() {
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
                 capacity: 8,
+                beds: 4,
+                bedroom: 4,
+                bath: 2,
                 amenities: [
                     "TV",
                     "Wifi",
@@ -153,6 +156,9 @@ function _createStays() {
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
                 capacity: 6,
+                beds: 3,
+                bedroom: 2,
+                bath: 3,
                 amenities: [
                     "TV",
                     "Wifi",
@@ -216,6 +222,9 @@ function _createStays() {
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
                 capacity: 4,
+                beds: 2,
+                bedroom: 2,
+                bath: 1,
                 amenities: [
                     "TV",
                     "Wifi",
@@ -277,6 +286,9 @@ function _createStays() {
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
                 capacity: 2,
+                beds: 1,
+                bedroom: 1,
+                bath: 1,
                 amenities: [
                     "TV",
                     "Wifi",

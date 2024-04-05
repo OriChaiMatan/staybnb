@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom"
 import { stayService } from "../services/stay.service";
 import { StayList } from "../cmps/StayList";
 import {LabelsFilter} from "../cmps/LabelsFilter"
@@ -27,13 +28,7 @@ export function StayIndex() {
         <div className="stay-index">
             <LabelsFilter />
             <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
+            <Outlet context={{ title: 'hi' }} />
         </div>
     );
 }
