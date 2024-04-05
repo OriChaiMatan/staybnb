@@ -18,11 +18,7 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
     const [selectedDestination, setSelectedDestination] = useState('Search destinations')
     const [selectedGuests, setSelectedGuests] = useState(0)
     const mainFilterRef = useRef(null);
-<<<<<<< HEAD
     
-=======
-    // console.log(selectedDates)
->>>>>>> 36d192cca5e9ba487b20fc5e061a3aef985da190
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {

@@ -1,7 +1,6 @@
-import { Link, NavLink } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 
-import dayjs from 'dayjs';
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import logo from '../assets/img/airbnb-1.svg'
@@ -41,13 +40,7 @@ export function AppHeader() {
     //     }
     // }
     const [largeMainFilter, setLargeMainFilter] = useState(false);    
-    const [selectedDates, setSelectedDates] = useState([
-        dayjs('2022-04-17'), 
-        dayjs('2022-04-21')  
-      ]);
-
-   
-    
+ 
     return (
         <header className={`app-header full ${largeMainFilter ? 'large-header' : ''}`}>
             <div className="app-header-logo-nav">
