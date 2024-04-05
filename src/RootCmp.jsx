@@ -11,7 +11,7 @@ export function RootCmp() {
         <div className='main-container'>
             <AppHeader />
 
-            <main >
+            <main className='main-content'>
                 {/* <Routes>
                         <Route path="/" element={<StayIndex />} />
                         <Route path="/stay/:id" element={<StayDetails />} />

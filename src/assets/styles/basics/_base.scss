@@ -11,6 +11,7 @@ html {
   font-family: montserrat;
   line-height: 1.6;
   color: $clr2;
+  height: 100%;
 }
 
 body {
@@ -18,6 +19,11 @@ body {
   margin: 0;
   //max-width: 1024px; - tal
   margin: auto;
+  height: 100%;
+}
+
+#root{
+  height: 100%;
 }
 
 h1,

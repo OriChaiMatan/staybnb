@@ -1,12 +1,14 @@
 .labels-filter {
   height: 80px;
   padding: 0 80px;
-  border: 1px solid;
-  opacity: 0.6;
+  // border: 1px solid;
+  // opacity: 0.6;
+  background-color: #fff;
   position: fixed;
   top: 80px;
   left: 0;
   right: 0;
+  z-index: 50;
   display: grid;
   grid-auto-flow: column;
   gap: 0 32px;

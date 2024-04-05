@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react"
-import { stayService } from "../services/stay.service"
-import { StayList } from "../cmps/StayList"
-import { LabelsFilter } from "../cmps/LabelsFilter"
-import { Outlet, useParams } from "react-router-dom"
-
+import { useState, useEffect } from "react";
+import { stayService } from "../services/stay.service";
+import { StayList } from "../cmps/StayList";
+import {LabelsFilter} from "../cmps/LabelsFilter"
 
 export function StayIndex() {
     const [stays, setStays] = useState(null)
-    const params = useParams()
 
     useEffect(() => {
-        loadStays()
+        loadStays();
     }, []);
 
     async function loadStays() {
         try {
-            const stays = await stayService.query()
-            setStays(stays)
+            const stays = await stayService.query();
+            setStays(stays);
         } catch (err) {
-            console.log('Error in loadStays', err)
+            console.log('Error in loadStays', err);
         }
     }
 
@@ -28,7 +25,8 @@ export function StayIndex() {
 
     return (
         <div className="stay-index">
+            <LabelsFilter />
             <StayList stays={stays} />
         </div>
-    )
+    );
 }
