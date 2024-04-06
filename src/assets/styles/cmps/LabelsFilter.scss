@@ -1,7 +1,6 @@
 .labels-filter {
   height: 80px;
   padding: 0 80px;
-  // opacity: 0.6;
   background-color: #fff;
   position: fixed;
   top: 80px;
@@ -42,7 +41,12 @@
     // display: none;
   }
 
-  .filter-btn{
+  .back-categories-page:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .filter-btn {
     position: absolute;
     right: 80px;
     border-radius: 12px;
@@ -59,14 +63,9 @@
     font-weight: 600;
   }
 
-  .filter-btn:hover{
+  .filter-btn:hover {
     border-color: black;
     background-color: #f7f7f7;
-  }
-
-  .back-categories-page:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   }
 
   .item-label {
@@ -82,6 +81,11 @@
   .item-label:hover {
     opacity: 1;
     box-shadow: inset 0 -2px #00000026;
+  }
+
+  .item-label.bold {
+    opacity: 1;
+    box-shadow: inset 0 -2px black;
   }
 
   .name-label {

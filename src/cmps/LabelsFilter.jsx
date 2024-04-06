@@ -22,10 +22,10 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
+import React, { useState } from "react";
 
 export function LabelsFilter() {
-
   const labels = [
     { imgSrc: beach, altText: "beach-img", nameLabel: "Beach" },
     { imgSrc: beachfront, altText: "beachfront-img", nameLabel: "Beachfront" },
@@ -50,6 +50,11 @@ export function LabelsFilter() {
     { imgSrc: ski_in_out, altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
 
+  const [focusedItem, setFocusedItem] = useState(null)
+
+  function handleItemClick(index){
+    setFocusedItem(index)
+  }
 
   return (
     <section className="labels-filter">
@@ -57,8 +62,11 @@ export function LabelsFilter() {
         <ArrowBack />
       </button>
       {labels.map((item, index) => (
-        <LabelsFilterItem key={index}
+        <LabelsFilterItem
+          key={index}
           {...item}
+          selected={index === focusedItem}
+          onItemClick={() => handleItemClick(index)}
         />
       ))}
       <button className="next-categories-page">
@@ -66,18 +74,19 @@ export function LabelsFilter() {
       </button>
 
       <button className="filter-btn">
-      <FilterIcon/>
+        <FilterIcon />
         Filter
       </button>
     </section>
   )
 }
 
-export function LabelsFilterItem({ imgSrc, altText, nameLabel }) {
-  const linkUrl = `/${nameLabel.toLowerCase()}`
+export function LabelsFilterItem({ imgSrc, altText, nameLabel, selected, onItemClick }) {
+  // const linkUrl = `/${nameLabel.toLowerCase()}`
+  const linkUrl = `/${nameLabel.toLowerCase().replace(/\s+/g, '-')}`;
   return (
     <Link to={linkUrl}>
-      <div className="item-label">
+      <div className={`item-label ${selected ? "bold" : ""}`} onClick={onItemClick}>
         <img src={imgSrc} alt={altText} />
         <div className="name-label">{nameLabel}</div>
       </div>
