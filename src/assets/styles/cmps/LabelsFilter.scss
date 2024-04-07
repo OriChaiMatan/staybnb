@@ -1,7 +1,5 @@
 .labels-filter {
-  height: 80px;
-  padding: 0 80px;
-  background-color: #fff;
+  padding: 0px 83px;
   position: fixed;
   top: 80px;
   left: 0;
@@ -9,10 +7,20 @@
   z-index: 50;
   display: grid;
   grid-auto-flow: column;
-  gap: 0 32px;
-  overflow-x: hidden;
   white-space: nowrap;
   place-items: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+  .container-ref {
+    height: 80px;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    gap: 0 32px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 8px 45px 10px 0px;
+  }
 
   .next-categories-page {
     border: 0.5px solid rgba(0, 0, 0, 0.3);
@@ -20,7 +28,7 @@
     background-color: #ffffff;
     height: 27px;
     position: absolute;
-    margin: 0 10px;
+    margin-right: 3px;
     right: 170px;
   }
 
@@ -37,8 +45,6 @@
     position: absolute;
     margin: 0 10px;
     left: 60px;
-
-    // display: none;
   }
 
   .back-categories-page:hover {
@@ -46,9 +52,15 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   }
 
+  .back-categories-page.visible {
+    visibility: visible;
+  }
+  
+  .back-categories-page.hidden {
+    visibility: hidden;
+  }
+
   .filter-btn {
-    position: absolute;
-    right: 80px;
     border-radius: 12px;
     height: 48px;
     padding: 2px 16px 0;

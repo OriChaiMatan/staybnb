@@ -22,10 +22,14 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import { Link} from "react-router-dom"
-import React, { useState } from "react";
+import { Link } from "react-router-dom"
+import React, { useRef, useState } from "react";
+
+
 
 export function LabelsFilter() {
+
+
   const labels = [
     { imgSrc: beach, altText: "beach-img", nameLabel: "Beach" },
     { imgSrc: beachfront, altText: "beachfront-img", nameLabel: "Beachfront" },
@@ -49,27 +53,48 @@ export function LabelsFilter() {
     { imgSrc: top_of_the_world, altText: "top-of-the-world-img", nameLabel: "Top of the world" },
     { imgSrc: ski_in_out, altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
-
+  const ITEM_WIDTH = labels.length * 100 / 2;
   const [focusedItem, setFocusedItem] = useState(null)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [showBackButton, setShowBackButton] = useState(false)
+  const [reachedEnd, setReachedEnd] = useState(false)
 
-  function handleItemClick(index){
+  const containerRef = useRef()
+
+  function handleItemClick(index) {
     setFocusedItem(index)
   }
 
+  function handleScroll(scrollAmount) {
+    const newScrollPosition = scrollPosition + scrollAmount
+    setScrollPosition(newScrollPosition)
+
+    containerRef.current.scrollLeft = newScrollPosition
+
+    //for displaying the buttons
+    setShowBackButton(newScrollPosition > 0)
+    const maxScroll = containerRef.current.scrollWidth - containerRef.current.clientWidth;
+    setReachedEnd(newScrollPosition >= maxScroll)
+  }
+
+
   return (
     <section className="labels-filter">
-      <button className="back-categories-page">
+      <button className={`back-categories-page ${showBackButton ? 'visible' : 'hidden'}`} onClick={() => { handleScroll(-ITEM_WIDTH) }}>
         <ArrowBack />
       </button>
-      {labels.map((item, index) => (
-        <LabelsFilterItem
-          key={index}
-          {...item}
-          selected={index === focusedItem}
-          onItemClick={() => handleItemClick(index)}
-        />
-      ))}
-      <button className="next-categories-page">
+      <div className="container-ref" ref={containerRef}>
+        {labels.map((item, index) => (
+          <LabelsFilterItem
+            key={index}
+            {...item}
+            selected={index === focusedItem}
+            onItemClick={() => handleItemClick(index)}
+          />
+        ))}
+
+      </div>
+      <button className={`next-categories-page ${reachedEnd ? 'hidden' : 'visible'}`} onClick={() => { handleScroll(ITEM_WIDTH) }}>
         <ArrowNext />
       </button>
 
@@ -82,8 +107,9 @@ export function LabelsFilter() {
 }
 
 export function LabelsFilterItem({ imgSrc, altText, nameLabel, selected, onItemClick }) {
-  // const linkUrl = `/${nameLabel.toLowerCase()}`
-  const linkUrl = `/${nameLabel.toLowerCase().replace(/\s+/g, '-')}`;
+
+  const linkUrl = `/${nameLabel.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-')}`
+
   return (
     <Link to={linkUrl}>
       <div className={`item-label ${selected ? "bold" : ""}`} onClick={onItemClick}>
