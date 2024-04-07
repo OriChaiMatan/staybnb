@@ -22,8 +22,8 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import { Link } from "react-router-dom"
 import React, { useRef, useState } from "react";
+import { LabelsFilterItem } from "./LabelsFilterItem"
 
 
 
@@ -103,19 +103,5 @@ export function LabelsFilter() {
         Filter
       </button>
     </section>
-  )
-}
-
-export function LabelsFilterItem({ imgSrc, altText, nameLabel, selected, onItemClick }) {
-
-  const linkUrl = `/${nameLabel.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-')}`
-
-  return (
-    <Link to={linkUrl}>
-      <div className={`item-label ${selected ? "bold" : ""}`} onClick={onItemClick}>
-        <img src={imgSrc} alt={altText} />
-        <div className="name-label">{nameLabel}</div>
-      </div>
-    </Link>
   )
 }

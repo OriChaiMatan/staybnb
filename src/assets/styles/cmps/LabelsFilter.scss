@@ -79,36 +79,4 @@
     border-color: black;
     background-color: #f7f7f7;
   }
-
-  .item-label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    opacity: 0.6;
-    padding-top: 8px;
-  }
-
-  .item-label:hover {
-    opacity: 1;
-    box-shadow: inset 0 -2px #00000026;
-  }
-
-  .item-label.bold {
-    opacity: 1;
-    box-shadow: inset 0 -2px black;
-  }
-
-  .name-label {
-    color: black;
-    font-weight: bold;
-    font-size: 0.75rem;
-    padding-bottom: 8px;
-  }
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
 }
