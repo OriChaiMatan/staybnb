@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import dayjs from 'dayjs';
-import {MapImages} from './MapImages';
+import { MapImages } from './MapImages';
 import searchIcon from '../../assets/img/search_glass.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ import { GuestsModal } from './GuestsModal';
 import DatePicker from './DatePicker';
 
 
-export function MainFilter({largeMainFilter, setLargeMainFilter}) {
+export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     const [activeMainFilter, setActiveMainFilter] = useState(-1);
     const [selectedDates, setSelectedDates] = useState([]);
     const [adultsAmount, setAdultsAmount] = useState(0)
@@ -18,7 +18,7 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
     const [selectedDestination, setSelectedDestination] = useState('Search destinations')
     const [selectedGuests, setSelectedGuests] = useState(0)
     const mainFilterRef = useRef(null);
-    
+
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {
@@ -67,7 +67,7 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
         setSelectedDates(dates);
     }
 
-    function handleSelectDestination(dest){
+    function handleSelectDestination(dest) {
         setSelectedDestination(dest)
         setActiveMainFilter(1);
     }
@@ -75,7 +75,7 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
     useEffect(() => {
         console.log(activeMainFilter);
         console.log(selectedDestination);
-    },[activeMainFilter,selectedDestination])
+    }, [activeMainFilter, selectedDestination])
 
 
     function extractDateDisplay() {
@@ -83,16 +83,16 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
             const firstDate = dayjs(selectedDates[0].$d);
             const firstMonth = firstDate.format('MMM');
             const firstDay = firstDate.format('D');
-            
+
             const secondDate = dayjs(selectedDates[1].$d);
             const secondMonth = secondDate.format('MMM');
             const secondDay = secondDate.format('D');
-            
+
             return [firstMonth, firstDay, secondMonth, secondDay];
         }
         return [];
     }
-    
+
 
     function handleAmountChange(type, operation) {
         switch (type) {
@@ -117,58 +117,59 @@ export function MainFilter({largeMainFilter, setLargeMainFilter}) {
             } else {
                 return prev > 0 ? prev - 1 : 0;
             }
-        });    }
+        });
+    }
 
     return (
         <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize} style={{ backgroundColor: activeMainFilter >= 0 ? '#ebebeb' : '#fff' }}>
-                {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder={selectedDestination}/></div>
+            {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder={selectedDestination} /></div>
                 {activeMainFilter === 0 && <section className='add-dest-modal'>
                     <div>
                         <h2 className='search-by-region'>Search by region</h2>
-                        <MapImages handleSelectDestination={handleSelectDestination} setActiveMainFilter={setActiveMainFilter}/>
+                        <MapImages handleSelectDestination={handleSelectDestination} setActiveMainFilter={setActiveMainFilter} />
                     </div>
-                    </section>}
-                </label> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
+                </section>}
+            </label> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
+            <div className="border-line"></div>
+            {largeMainFilter ? (
+                <button className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>
+                    Check in <br />
+                    {selectedDates[1] ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}` : 'Add dates'}
+                </button>
+            ) : (
+                <button className="main-filter-btn" onClick={() => { setActiveMainFilter(1) }}>Any week</button>
+            )}
+            <div className="border-line"></div>
+            {largeMainFilter && <>
+                <button className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>Check out <br></br>{extractDateDisplay()[2]} {extractDateDisplay()[3]}</button>
                 <div className="border-line"></div>
-                {largeMainFilter ? (
-                    <button className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>
-                        Check in <br />
-                        {selectedDates[1] ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}` : 'Add dates'}
+            </>}
+            {(activeMainFilter === 1 || activeMainFilter === 2) && (
+                <section className='add-dates-modal'>
+                    <DatePicker onDatesChange={handleDatesChange} />
+                </section>
+            )}
+            {largeMainFilter ? (
+                <div className="main-filter-btn large">
+                    <button className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
+                        <div className='text'>
+                            Who
+                            <br></br>
+                            {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
+
+                        </div>
                     </button>
-                ) : (
-                    <button className="main-filter-btn" onClick={() => { setActiveMainFilter(1) }}>Any week</button>
-                )}
-                <div className="border-line"></div>
-                {largeMainFilter && <>
-                    <button className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>Check out <br></br>{extractDateDisplay()[2]} {extractDateDisplay()[3]}</button>
-                    <div className="border-line"></div>
-                </>}
-                {(activeMainFilter === 1 || activeMainFilter === 2) && (
-                    <section className='add-dates-modal'>
-                        <DatePicker onDatesChange={handleDatesChange}/>
-                    </section>
-                )}
-                {largeMainFilter ? (
-                    <div className="main-filter-btn large">
-                        <button className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
-                            <div className='text'>
-                                Who
-                                <br></br>
-                                {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
+                    <button className="large-search-btn">
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        <span >Search</span>
+                    </button>
+                    {activeMainFilter === 3 && <GuestsModal adultsAmount={adultsAmount} childrenAmount={childrenAmount} infantsAmount={infantsAmount} petsAmount={petsAmount} handleAmountChange={handleAmountChange} />}
+                </div>
+            ) : (
+                <><button className="main-filter-btn" onClick={() => { setActiveMainFilter(3) }}>Add guests</button><img className='search-glass' src={searchIcon} alt="search-icon" /></>
+            )}
 
-                            </div>
-                        </button>
-                        <button className="large-search-btn">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                            <span >Search</span>
-                        </button>
-                        {activeMainFilter === 3 && <GuestsModal adultsAmount={adultsAmount} childrenAmount={childrenAmount} infantsAmount={infantsAmount} petsAmount={petsAmount} handleAmountChange={handleAmountChange}/>}
-                    </div>
-                ) : (
-                    <><button className="main-filter-btn" onClick={() => { setActiveMainFilter(3) }}>Add guests</button><img className='search-glass' src={searchIcon} alt="search-icon" /></>
-                )}
-
-            </div>
+        </div>
     );
 }
 

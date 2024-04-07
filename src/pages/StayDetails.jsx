@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import { stayService } from "../services/stay.service"
 
 import { AboutThisPlaceModel } from "../cmps/stay-details/AboutThisPlaceModel"
+import { ReservationModal } from "../cmps/ReservationModal"
 
 import { FaStar } from "react-icons/fa"
 import { MdOutlineNavigateNext } from "react-icons/md"
@@ -34,11 +35,11 @@ export function StayDetails() {
         return totalRating / reviews.length;
     }
 
-    function toggleModal() { 
+    function toggleModal() {
         setShowModal(!showModal)
     }
 
-    function closeModal() { 
+    function closeModal() {
         setShowModal(false)
     }
 
@@ -52,14 +53,21 @@ export function StayDetails() {
 
     return (
         <section className="stay-details">
-            <div className="stay-info"> 
+            <div className="stay-info">
                 <h1>{stay.name}</h1>
                 <span>{stay.type} in {stay.loc.city}, {stay.loc.country}</span>
                 <span className="stay-capacity">{stay.capacity} guests • {stay.bedroom} bedroom • {stay.beds} bed • {stay.bath} bath</span>
                 <span><FaStar /> {stay.avgRating}   <a>{stay.reviews.length} reviews</a></span>
+                <div className="black-br"></div>
+                <div className="hosted-by">
+                    <img src={stay.host.imgUrl} />
+                    <span>Hosted by {stay.host.fullname}</span>
+                </div>
+                <div className="black-br"></div>
                 <p>{stay.summary}</p>
-                <a onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a>
+                <span><a onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a></span>
             </div>
+            <div><ReservationModal stay={stay}/></div>
             {showModal && (<AboutThisPlaceModel summary={stay.summary} onClose={closeModal} />)}
         </section>
     )

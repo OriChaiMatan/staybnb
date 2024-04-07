@@ -26,13 +26,6 @@ export function StayIndex() {
         <div className="stay-index">
             <LabelsFilter />
             <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
-            <StayList stays={stays} />
             <Outlet context={{ title: 'hi' }} />
         </div>
     );
