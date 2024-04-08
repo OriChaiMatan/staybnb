@@ -342,7 +342,7 @@ function _createStays() {
             },
             // Stay 1: Ribeira Charming Duplex
             {
-                _id: "10006546",
+                _id: "10006550",
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
@@ -397,7 +397,7 @@ function _createStays() {
             },
             // Stay 2: Ocean View Villa
             {
-                _id: "10006547",
+                _id: "10006551",
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
@@ -464,7 +464,7 @@ function _createStays() {
             },
             // Stay 3: Cozy Mountain Cabin
             {
-                _id: "10006548",
+                _id: "10006552",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
@@ -529,7 +529,7 @@ function _createStays() {
             },
             // Stay 4: City Center Loft
             {
-                _id: "10006549",
+                _id: "10006553",
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
@@ -592,7 +592,7 @@ function _createStays() {
                 likedByUsers: ["user5", "user6"]
             },
             {
-                _id: "10006546",
+                _id: "10006554",
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
@@ -647,7 +647,7 @@ function _createStays() {
             },
             // Stay 2: Ocean View Villa
             {
-                _id: "10006547",
+                _id: "10006555",
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
@@ -714,7 +714,7 @@ function _createStays() {
             },
             // Stay 3: Cozy Mountain Cabin
             {
-                _id: "10006548",
+                _id: "10006556",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
@@ -779,7 +779,7 @@ function _createStays() {
             },
             // Stay 4: City Center Loft
             {
-                _id: "10006549",
+                _id: "10006557",
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
@@ -843,7 +843,7 @@ function _createStays() {
             },
             // Stay 1: Ribeira Charming Duplex
             {
-                _id: "10006546",
+                _id: "10006558",
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
@@ -898,7 +898,7 @@ function _createStays() {
             },
             // Stay 2: Ocean View Villa
             {
-                _id: "10006547",
+                _id: "10006559",
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
@@ -965,7 +965,7 @@ function _createStays() {
             },
             // Stay 3: Cozy Mountain Cabin
             {
-                _id: "10006548",
+                _id: "10006560",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
@@ -1030,7 +1030,7 @@ function _createStays() {
             },
             // Stay 4: City Center Loft
             {
-                _id: "10006549",
+                _id: "10006561",
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [

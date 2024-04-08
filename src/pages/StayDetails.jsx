@@ -8,6 +8,8 @@ import { ReservationModal } from "../cmps/ReservationModal"
 import { FaStar } from "react-icons/fa"
 import { MdOutlineNavigateNext } from "react-icons/md"
 
+import stayImg from "../assets/img/stay_demo_img/2_1.png"
+
 
 export function StayDetails() {
     const [stay, setStay] = useState(null)
@@ -56,6 +58,7 @@ export function StayDetails() {
         <section className="stay-details">
             <div className="stay-info">
                 <h1>{stay.name}</h1>
+                <img src={stayImg} alt="" style={{height: '500px', width: '900px'}}/>
                 <span>{stay.type} in {stay.loc.city}, {stay.loc.country}</span>
                 <span className="stay-capacity">{stay.capacity} guests • {stay.bedroom} bedroom • {stay.beds} bed • {stay.bath} bath</span>
                 <span><FaStar /> {stay.avgRating}   <a>{stay.reviews.length} reviews</a></span>
@@ -68,7 +71,7 @@ export function StayDetails() {
                 <p>{stay.summary}</p>
                 <span><a onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a></span>
             </div>
-            <div><ReservationModal stay={stay}/></div>
+            {/* <div><ReservationModal stay={stay}/></div> */}
             {showModal && (<AboutThisPlaceModel summary={stay.summary} onClose={closeModal} />)}
         </section>
     )

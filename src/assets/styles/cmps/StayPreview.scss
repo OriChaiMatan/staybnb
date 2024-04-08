@@ -1,6 +1,5 @@
 .stay-preview {
-    height: 270px;
-    width: 270px;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-areas:
@@ -48,6 +47,7 @@
     border-radius: 50%;
     background-color: white;
     color: black;
+    font-size: 10px;
 }
 
 
@@ -56,3 +56,8 @@
 .image-gallery-bullets .image-gallery-bullet {
     padding: 2px;
 }
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    height: 280px;
+    object-fit: cover;
+  }
