@@ -9,8 +9,7 @@ import { UserActions } from './app-header/UserActions';
 
 export function AppHeader() {
 
-    const [largeMainFilter, setLargeMainFilter] = useState(false);    
- 
+    const [largeMainFilter, setLargeMainFilter] = useState(false)
     return (
         <header className={`app-header full ${largeMainFilter ? 'large-header' : ''}`}>
             <div className="app-header-logo-nav">
@@ -19,8 +18,8 @@ export function AppHeader() {
                     <h1>staybnb</h1>
                 </NavLink>
             </div>
-            <MainFilter largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter}/>
-            <UserActions/>
+            <MainFilter largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter} />
+            <UserActions />
         </header >
     );
 }

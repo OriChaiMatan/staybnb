@@ -1,45 +1,51 @@
 .main-container {
-    height: 100%;
-    // overflow: auto;
+  height: 100%;
+  overflow: auto;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 80px auto 70px;
-    // grid-template-columns: minmax(20px, 40px) minmax(auto, 1300px) minmax(20px, 40px);
-  
-    >* {
-        grid-column: 2;
-  
-        // &.full {
-        //     grid-column: 1 /-1;
-        // }
-    }
+  display: grid;
+  grid-template-columns: 1fr;
+  //   grid-template-rows: 80px 80px auto 70px;
+  // grid-template-columns: minmax(20px, 40px) minmax(auto, 1300px) minmax(20px, 40px);
 
-    // .main-content {
-    //     overflow-y: auto; /* Always show scrollbar */
-    // }
-  
-  
-    // @include for-narrow-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
-    // }
-  
-    // @include for-normal-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
-    // }
-  
-    // @include for-wide-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+  > * {
+    grid-column: 2;
+
+    // &.full {
+    //     grid-column: 1 /-1;
     // }
   }
 
-.main-content{
-    grid-row: 2;
+  // .main-content {
+  //     overflow-y: auto; /* Always show scrollbar */
+  // }
+
+  // @include for-narrow-layout {
+  //     grid-template-columns:
+  //         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
+  // }
+
+  // @include for-normal-layout {
+  //     grid-template-columns:
+  //         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
+  // }
+
+  // @include for-wide-layout {
+  //     grid-template-columns:
+  //         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+  // }
 }
 
-.stay-index{
-    padding: 0 80px
+.main-container.large-header {
+  grid-template-rows: 80px 80px 80px auto 70px;
+}
+
+.main-content {
+  grid-row: 2/4;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+
+.stay-index {
+  padding: 0 80px;
+  grid-row: 3;
 }

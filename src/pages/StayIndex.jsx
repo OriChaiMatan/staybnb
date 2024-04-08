@@ -24,14 +24,14 @@ export function StayIndex() {
 
     return (
         <>
-             <LabelsFilter />
-        
-       
-        <div className="stay-index">
-            
-            <StayList stays={stays} />
-            <Outlet context={{ title: 'hi' }} />
-        </div>
+            <LabelsFilter />
+
+
+            <div className="stay-index">
+
+                <StayList stays={stays} />
+                <Outlet context={{ title: 'hi' }} />
+            </div>
         </>
     );
 }

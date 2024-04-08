@@ -1,7 +1,7 @@
 .labels-filter {
   padding: 0px 80px;
   position: sticky;
-  top: 0;
+  top: 80px;
   left: 0;
   right: 0;
   z-index: 50;
@@ -11,6 +11,8 @@
   place-items: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   width: 100%;
+  background-color: white;
+  // grid-row: 2;
 
   .container-ref {
     height: 80px;
@@ -67,7 +69,7 @@
     padding: 2px 16px 0;
     color: black;
     background-color: white;
-    border: 1px solid #DDDDDD;
+    border: 1px solid #dddddd;
     display: flex;
     align-items: center;
     justify-content: center;
