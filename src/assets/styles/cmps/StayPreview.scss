@@ -54,3 +54,8 @@
 .image-gallery-bullets .image-gallery-bullet {
     padding: 2px;
 }
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    height: 280px;
+    object-fit: cover;
+  }
