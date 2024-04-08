@@ -1,7 +1,7 @@
 .labels-filter {
-  padding: 0px 83px;
-  position: fixed;
-  top: 80px;
+  padding: 0px 80px;
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 50;
@@ -10,6 +10,7 @@
   white-space: nowrap;
   place-items: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
 
   .container-ref {
     height: 80px;
@@ -55,7 +56,7 @@
   .back-categories-page.visible {
     visibility: visible;
   }
-  
+
   .back-categories-page.hidden {
     visibility: hidden;
   }

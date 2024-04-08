@@ -22,7 +22,7 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from "react"
 import { LabelsFilterItem } from "./LabelsFilterItem"
 
 
@@ -53,7 +53,7 @@ export function LabelsFilter() {
     { imgSrc: top_of_the_world, altText: "top-of-the-world-img", nameLabel: "Top of the world" },
     { imgSrc: ski_in_out, altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
-  const ITEM_WIDTH = labels.length * 100 / 2;
+  const ITEM_WIDTH = labels.length * 100 / 2
   const [focusedItem, setFocusedItem] = useState(null)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showBackButton, setShowBackButton] = useState(false)
@@ -73,7 +73,7 @@ export function LabelsFilter() {
 
     //for displaying the buttons
     setShowBackButton(newScrollPosition > 0)
-    const maxScroll = containerRef.current.scrollWidth - containerRef.current.clientWidth;
+    const maxScroll = containerRef.current.scrollWidth - containerRef.current.clientWidth
     setReachedEnd(newScrollPosition >= maxScroll)
   }
 

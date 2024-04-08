@@ -3,21 +3,21 @@
     // overflow: auto;
 
     display: grid;
-    grid-template-columns: minmax(80px, 1fr) minmax(auto, 1800px) minmax(80px, 1fr);
-    grid-template-rows: 160px auto 70px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px auto 70px;
     // grid-template-columns: minmax(20px, 40px) minmax(auto, 1300px) minmax(20px, 40px);
   
     >* {
         grid-column: 2;
   
-        &.full {
-            grid-column: 1 /-1;
-        }
+        // &.full {
+        //     grid-column: 1 /-1;
+        // }
     }
 
-    .main-content {
-        overflow-y: auto; /* Always show scrollbar */
-    }
+    // .main-content {
+    //     overflow-y: auto; /* Always show scrollbar */
+    // }
   
   
     // @include for-narrow-layout {
@@ -38,4 +38,8 @@
 
 .main-content{
     grid-row: 2;
+}
+
+.stay-index{
+    padding: 0 80px
 }

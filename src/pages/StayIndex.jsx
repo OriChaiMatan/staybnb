@@ -9,7 +9,7 @@ export function StayIndex() {
 
     useEffect(() => {
         loadStays()
-    }, []);
+    }, [])
 
     async function loadStays() {
         try {
@@ -23,10 +23,15 @@ export function StayIndex() {
     if (!stays) return <div>Loading..</div>
 
     return (
+        <>
+             <LabelsFilter />
+        
+       
         <div className="stay-index">
-            <LabelsFilter />
+            
             <StayList stays={stays} />
             <Outlet context={{ title: 'hi' }} />
         </div>
+        </>
     );
 }

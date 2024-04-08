@@ -13,7 +13,7 @@ export function RootCmp() {
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
                     <Route path="/:filter" element={<StayIndex />} />
-                    <Route path="/stay/:id" element={<StayDetails />} />
+                    <Route path="/stay/:stayId" element={<StayDetails />} />
                 </Routes>
             </main>
             <AppFooter />

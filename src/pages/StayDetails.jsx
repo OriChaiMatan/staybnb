@@ -16,11 +16,12 @@ export function StayDetails() {
 
     useEffect(() => {
         loadStay()
-    }, [params.id])
+        console.log("params: ", params)
+    }, [params.stayId])
 
     async function loadStay() {
         try {
-            const stayData = await stayService.getById(params.id);
+            const stayData = await stayService.getById(params.stayId);
             const avgRating = calculateAvgRating(stayData.reviews);
             stayData.avgRating = avgRating.toFixed(2);
             setStay(stayData);
