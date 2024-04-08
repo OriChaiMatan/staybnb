@@ -10,29 +10,29 @@
   // > * {
   //   // grid-column: 2;
 
-    // &.full {
-    //     grid-column: 1 /-1;
-    // }
-  }
-
-  // .main-content {
-  //     overflow-y: auto; /* Always show scrollbar */
+  // &.full {
+  //     grid-column: 1 /-1;
   // }
+}
 
-  // @include for-narrow-layout {
-  //     grid-template-columns:
-  //         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
-  // }
+// .main-content {
+//     overflow-y: auto; /* Always show scrollbar */
+// }
 
-  // @include for-normal-layout {
-  //     grid-template-columns:
-  //         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
-  // }
+// @include for-narrow-layout {
+//     grid-template-columns:
+//         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
+// }
 
-  // @include for-wide-layout {
-  //     grid-template-columns:
-  //         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
-  // }
+// @include for-normal-layout {
+//     grid-template-columns:
+//         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
+// }
+
+// @include for-wide-layout {
+//     grid-template-columns:
+//         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+// }
 // }
 
 .main-container.large-header {
@@ -46,6 +46,6 @@
 }
 
 .stay-index {
-  padding: 0 80px;
+  padding: 0 40px;
   grid-row: 3;
 }

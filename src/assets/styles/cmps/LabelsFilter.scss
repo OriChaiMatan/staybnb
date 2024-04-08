@@ -1,5 +1,5 @@
 .labels-filter {
-  padding: 0px 80px;
+  padding: 0px 40px;
   position: sticky;
   top: 80px;
   left: 0;
@@ -9,7 +9,7 @@
   grid-auto-flow: column;
   white-space: nowrap;
   place-items: center;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   width: 100%;
   background-color: white;
   // grid-row: 2;
