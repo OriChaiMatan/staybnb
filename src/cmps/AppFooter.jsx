@@ -11,21 +11,28 @@ export function AppFooter() {
     return (
         <footer className="app-footer full">
             <div className="app-footer-left">
-                <div className="copyright">© 2024 Staybnb, Inc.</div>
-                <div className="dot">·</div>
-                <a href="#" className="footer-link">Terms</a>
-                <div className="dot">·</div>
-                <a href="#" className="footer-link">Sitemap</a>
-                <div className="dot">·</div>
-                <a href="#" className="footer-link">Privacy</a>
-                <div className="dot">·</div>
-                <a href="#" className="footer-link-with-svg">
-                    <div className="footer-link">Your Privacy Choices</div>
-                    <div className='svg-yes-no'>
-                        <YesNoToggle/>
-                    </div>
-                </a>
+                <div className="app-footer-copyright">
+                    <div>© 2024 Staybnb, Inc.</div>
+                </div>
+                <div className="app-footer-links">
+
+                    <div className="dot-left">·</div>
+                    <a href="#" className="footer-link">Terms</a>
+                    <div className="dot">·</div>
+                    <a href="#" className="footer-link">Sitemap</a>
+                    <div className="dot">·</div>
+                    <a href="#" className="footer-link">Privacy</a>
+                    <div className="dot">·</div>
+                    <a href="#" className="footer-link-with-svg">
+                        <div className="footer-link">Your Privacy Choices</div>
+                        <div className='svg-yes-no'>
+                            <YesNoToggle />
+                        </div>
+                    </a>
+                </div>
+
             </div>
+
             <div className="app-footer-right">
                 <div className='language-selector'>
                     <img src={worldIcon} alt="world-icon" />
