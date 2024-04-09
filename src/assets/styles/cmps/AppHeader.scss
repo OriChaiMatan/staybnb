@@ -2,12 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 40px;
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: #fff;
-  height: 80px;
+  height: 85px;
   white-space: nowrap;
   transition: height 0.7s ease;
   box-shadow: rgb(0 0 0/8%) 0 1px 0;
@@ -20,7 +19,7 @@
   .app-header-logo-nav {
     position: fixed;
     top: 24px;
-    left: 40px;
+    left: 80px;
   }
 
   .app-header-logo-nav a {
@@ -100,7 +99,7 @@
       width: 100px;
       height: 50px;
       font-size: 0.75em;
-      font-family: inherit;
+      // font-family: inherit;
       letter-spacing: -0.5px;
     }
 
@@ -354,7 +353,7 @@
     margin-right: 2px;
     position: fixed;
     top: 14px;
-    right: 50px;
+    right: 95px;
 
     a {
       color: #000;

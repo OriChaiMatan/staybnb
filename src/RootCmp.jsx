@@ -9,7 +9,7 @@ export function RootCmp() {
     return (
         <div className="main-container">
             <AppHeader />
-            <main className='main-content'>
+            <main>
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
                     <Route path="/:filter" element={<StayIndex />} />

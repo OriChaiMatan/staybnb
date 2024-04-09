@@ -5,10 +5,13 @@ import { stayService } from "../services/stay.service"
 import { AboutThisPlaceModel } from "../cmps/stay-details/AboutThisPlaceModel"
 import { ReservationModal } from "../cmps/ReservationModal"
 
-import { FaStar } from "react-icons/fa"
 import { MdOutlineNavigateNext } from "react-icons/md"
 
 import stayImg from "../assets/img/stay_demo_img/2_1.png"
+
+import Heart from "../svg/HeartSvg"
+import Share from "../svg/ShareSvg"
+import Star from "../svg/StarSvg"
 
 
 export function StayDetails() {
@@ -47,9 +50,6 @@ export function StayDetails() {
     }
 
 
-
-
-
     if (!stay) {
         return <div>Loading...</div>;
     }
@@ -57,11 +57,41 @@ export function StayDetails() {
     return (
         <section className="stay-details">
             <div className="stay-info">
-                <h1>{stay.name}</h1>
-                <img src={stayImg} alt="" style={{height: '500px', width: '900px'}}/>
-                <span>{stay.type} in {stay.loc.city}, {stay.loc.country}</span>
-                <span className="stay-capacity">{stay.capacity} guests • {stay.bedroom} bedroom • {stay.beds} bed • {stay.bath} bath</span>
-                <span><FaStar /> {stay.avgRating}   <a>{stay.reviews.length} reviews</a></span>
+                <div className="stay-info-header">
+                    <h1 className="title">{stay.name}</h1>
+                    <div className="action-button">
+                        <div className="share">
+                            <Share />
+                            <div>Share</div >
+                        </div>
+                        <div className="heart">
+                            <Heart />
+                            <div>Save</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <img className="stay-img" src={stayImg} alt="stay-img" />
+
+                <div className="stay-info-content">
+
+                    <h1 className="location">{stay.type} in {stay.loc.city}, {stay.loc.country}</h1>
+                    <div className="stay-capacity">
+                        {stay.capacity} guests • {stay.bedroom} bedrooms • {stay.beds} beds • {stay.bath} baths
+                    </div>
+
+
+                    <div className="rating-container">
+                        <div className="star-icon"><Star /></div>
+                        <div className="average-rating">{stay.avgRating}</div>
+                        <div>·</div>
+                        <div className="reviews-count"><a>{stay.reviews.length} reviews</a></div>
+                    </div>
+
+                </div>
+
+
                 <div className="black-br"></div>
                 <div className="hosted-by">
                     <img src={stay.host.imgUrl} />
