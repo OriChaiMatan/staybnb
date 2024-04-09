@@ -81,6 +81,7 @@
       align-items: center;
       height: 100%;
       width: 100%;
+      padding: 14px 24px;
     }
 
     .main-filter-btn.large:has(> .filter-content.active-filter) {
@@ -274,7 +275,7 @@
       background-color: white;
     }
 
-    .main-filter-btn.large div input {
+    .main-filter-btn.large .dest-input {
       background-color: inherit;
       border: none;
       outline: none;

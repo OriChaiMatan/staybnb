@@ -123,7 +123,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
 
     return (
         <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize} style={{ backgroundColor: activeMainFilter >= 0 ? '#ebebeb' : '#fff' }}>
-            {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span>Where</span> <br></br> <input type="text" placeholder={selectedDestination} /></div>
+            {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span className='bold'>Where</span> <br></br> <input className='dest-input' type="text" placeholder={selectedDestination} /></div>
                 {activeMainFilter === 0 && <section className='add-dest-modal'>
                     <div>
                         <h2 className='search-by-region'>Search by region</h2>
@@ -133,18 +133,24 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             </label> : <button className="main-filter-btn" onClick={() => { setActiveMainFilter(0) }}>Anywhere</button>}
             <div className="border-line"></div>
             {largeMainFilter ? (
-                <button className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>
-                    Check in <br />
-                    {selectedDates[1] ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}` : 'Add dates'}
-                </button>
+                <label className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>
+                    <div>
+                        <span className='bold'>Check in</span> <br></br>
+                        {selectedDates[1] ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}` : 'Add dates'}
+                    </div>
+                </label>
             ) : (
                 <button className="main-filter-btn" onClick={() => { setActiveMainFilter(1) }}>Any week</button>
             )}
             <div className="border-line"></div>
-            {largeMainFilter && <>
-                <button className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>Check out <br></br>{extractDateDisplay()[2]} {extractDateDisplay()[3]}</button>
-                <div className="border-line"></div>
-            </>}
+            {largeMainFilter && <label className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>
+                <div>
+                    <span className='bold'>Check out</span> <br></br>
+                    {selectedDates[2] ? `${extractDateDisplay()[2]} ${extractDateDisplay()[3]}` : 'Add dates'}
+                </div>
+            </label>}
+            {largeMainFilter && <div className="border-line"></div>}
+
             {(activeMainFilter === 1 || activeMainFilter === 2) && (
                 <section className='add-dates-modal'>
                     <DatePicker onDatesChange={handleDatesChange} />
@@ -152,14 +158,12 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             )}
             {largeMainFilter ? (
                 <div className="main-filter-btn large">
-                    <button className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
-                        <div className='text'>
-                            Who
-                            <br></br>
+                    <label className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
+                        <div>
+                            <span className='bold'>Who</span> <br></br>
                             {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
-
                         </div>
-                    </button>
+                    </label>
                     <button className="large-search-btn">
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                         <span >Search</span>
