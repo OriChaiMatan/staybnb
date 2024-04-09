@@ -1,29 +1,98 @@
-.stay-info{
+.stay-details {
     display: grid;
-    color: #3d3c3c;
-    font-weight: bold;
-    font-size: 16px;
-}
+    grid-template-columns: minmax(20px, 145px) 1fr minmax(20px, 145px);
+    margin-top: 24px;
 
-.stay-info h1{
-    font-size: 26px;
-}
+    .stay-info {
+        font-family: "Montserrat", sans-serif;
+        color: #222222;
+        font-size: 16px;
+        grid-column: 2;
 
-.stay-capacity{
-    font-weight: normal;
-}
+        .stay-info-header {
+            display: flex;
+            padding-bottom: 24px;
+            justify-content: space-between;
 
-.stay-info a{
-    border-bottom: 1px solid #000;
-    cursor: pointer;
-}
+            .title {
+                font-size: 30px;
+                margin: 0;
+                font-weight: 600;
+            }
 
-.stay-info p{
-    font-weight: normal;
-}
+            
 
-.black-br {
-    border-top: 1px solid #717171;
-    width: 100%;
-    margin: 10px 0;
+            .action-button {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                text-decoration: underline;
+                gap: 2em;
+                font-size: 0.875rem;
+
+                .share {
+                    display: flex;
+                    align-items: center;
+                    gap: .4em;
+                    cursor: pointer;
+                }
+
+                .heart {
+                    display: flex;
+                    align-items: center;
+                    gap: .4em;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .stay-img {
+            height: 300px;
+            width: 560px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .stay-info-content {
+            padding: 32px 0;
+
+            h1 {
+                margin: 0;
+                font-size: 23px;
+                font-weight: 600;
+                line-height: 1.625rem;
+                margin-bottom: 5px;
+            }
+
+            
+
+            .rating-container {
+
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                margin-top: 8px;
+                font-weight: 600;
+                font-size: 17px;
+            }
+        }
+
+        .black-br {
+            border-top: 1px solid #717171;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .hosted-by{
+            padding: 24px 0px;
+        }
+
+
+        // a {
+        //     border-bottom: 1px solid #000;
+        //     cursor: pointer;
+        // }
+    }
+
+
+
 }
