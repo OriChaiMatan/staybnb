@@ -125,7 +125,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         <div ref={mainFilterRef} className={`main-filter-header ${largeMainFilter ? 'large-main-filter' : ''}`} onClick={toggleMainFilterSize} style={{ backgroundColor: activeMainFilter >= 0 ? '#ebebeb' : '#fff' }}>
             {largeMainFilter ? <label className={`main-filter-btn large ${activeMainFilter === 0 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(0) }}><div><span className='bold'>Where</span> <br></br> <input className='dest-input' type="text" placeholder={selectedDestination} /></div>
                 {activeMainFilter === 0 && <section className='add-dest-modal'>
-                    <div>
+                    <div className='name'>
                         <h2 className='search-by-region'>Search by region</h2>
                         <MapImages handleSelectDestination={handleSelectDestination} setActiveMainFilter={setActiveMainFilter} />
                     </div>
@@ -134,7 +134,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             <div className="border-line"></div>
             {largeMainFilter ? (
                 <label className={`main-filter-btn large ${activeMainFilter === 1 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(1) }}>
-                    <div>
+                    <div className='name'>
                         <span className='bold'>Check in</span> <br></br>
                         {selectedDates[1] ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}` : 'Add dates'}
                     </div>
@@ -144,7 +144,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             )}
             <div className="border-line"></div>
             {largeMainFilter && <label className={`main-filter-btn large ${activeMainFilter === 2 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(2) }}>
-                <div>
+                <div className='name'>
                     <span className='bold'>Check out</span> <br></br>
                     {selectedDates[2] ? `${extractDateDisplay()[2]} ${extractDateDisplay()[3]}` : 'Add dates'}
                 </div>
@@ -159,8 +159,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             {largeMainFilter ? (
                 <div className="main-filter-btn large">
                     <label className={`filter-content ${activeMainFilter === 3 ? 'active-filter' : ''}`} onClick={() => { setActiveMainFilter(3) }}>
-                        <div>
-                            <span className='bold'>Who</span> <br></br>
+                        <div className='name'>
+                            <span className='bold'>Who</span> <br className='bold'></br>
                             {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
                         </div>
                     </label>
