@@ -86,17 +86,19 @@ export function StayDetails() {
                         <div className="star-icon"><Star /></div>
                         <div className="average-rating">{stay.avgRating}</div>
                         <div>·</div>
-                        <div className="reviews-count"><a>{stay.reviews.length} reviews</a></div>
+                        <a className="reviews-count" href="#">{stay.reviews.length} reviews</a>
                     </div>
 
                 </div>
 
-
                 <div className="black-br"></div>
+
                 <div className="hosted-by">
                     <img src={stay.host.imgUrl} />
                     <span>Hosted by {stay.host.fullname}</span>
                 </div>
+
+                
                 <div className="black-br"></div>
                 <p>{stay.summary}</p>
                 <span><a onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a></span>
