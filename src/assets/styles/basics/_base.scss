@@ -22,7 +22,7 @@ body {
   height: 100%;
 }
 
-#root{
+#root {
   height: 100%;
 }
 
@@ -55,4 +55,10 @@ a:hover {
 
 .hidden {
   display: none;
+}
+
+.bold {
+  font-weight: 600;
+  color: #222222;
+  font-size: 12px;
 }
