@@ -2,36 +2,40 @@
   padding: 0px 80px;
   position: sticky;
   top: 80px;
-  left: 0;
-  right: 0;
   z-index: 50;
   display: grid;
   grid-auto-flow: column;
   white-space: nowrap;
   place-items: center;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   width: 100%;
   background-color: white;
+  gap: 5px;
 
   .container-ref {
-    height: 80px;
+    height: 90px;
     width: 100%;
     overflow-x: scroll;
-    display: flex;
-    gap: 0 32px;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    padding: 8px 45px 10px 0px;
+     scrollbar-width: none;
+    display: flex;
+    gap: 0px 16px;
+    padding: 15px 45px 15px 0px;
+
+    & > * {
+      margin-right: 32px; 
+      &:last-child {
+        margin-right: 0; 
+      }
+    }
   }
+  
 
   .next-categories-page {
     border: 0.5px solid rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     background-color: #ffffff;
     height: 27px;
-    position: absolute;
-    margin-right: 3px;
-    right: 170px;
+    margin-right: 20px;
   }
 
   .next-categories-page:hover {
@@ -44,9 +48,7 @@
     border-radius: 50%;
     background-color: #ffffff;
     height: 27px;
-    position: absolute;
     margin: 0 10px;
-    left: 60px;
   }
 
   .back-categories-page:hover {
