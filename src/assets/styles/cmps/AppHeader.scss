@@ -98,6 +98,10 @@
       margin-right: 10px;
     }
 
+    .large-circle-search-glass {
+      width: 50px;
+    }
+
     .filter-content .search-glass {
       margin-left: auto;
       margin-right: 0;
@@ -130,7 +134,7 @@
         width: 450px;
         left: calc(50% - 425px);
         height: 410px;
-        padding: 10px 32px;
+        padding: 32px 24px 24px;
         border-radius: 32px;
         z-index: 8;
         background-color: #fff;
@@ -139,7 +143,10 @@
 
         .search-by-region {
           margin-block-end: -14px;
-          font-size: 16px;
+          margin-left: 8px;
+          font-size: 14px;
+          color: #222222;
+          letter-spacing: normal;
         }
 
         .region-choice {
@@ -188,7 +195,7 @@
         width: 403px;
         right: calc(50% - 425px);
         height: 410px;
-        padding: 10px 32px;
+        padding: 20px 38px;
         border-radius: 32px;
         z-index: 8;
         background-color: #fff;
@@ -198,6 +205,12 @@
         grid-template-rows: 1fr 1fr 1fr 1fr;
         font-size: 12px;
         cursor: auto;
+
+        & > *:not(:nth-last-child(2)):not(:last-child) {
+          content: "";
+          border-bottom: 1px solid #ebebeb;
+          grid-row: span 1;
+        }
 
         & .add-guests-modal-p {
           font-size: 14px;

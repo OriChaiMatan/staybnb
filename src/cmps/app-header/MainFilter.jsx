@@ -164,10 +164,14 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
                             {selectedGuests ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : 'Add guests'}
                         </div>
                     </label>
-                    <button className="large-search-btn">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        <span >Search</span>
-                    </button>
+                    {activeMainFilter < 0 ?
+                        <img className='large-circle-search-glass' src={searchIcon} alt="search-icon" /> :
+                        <button className="large-search-btn">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <span >Search</span>
+                        </button>
+                    }
+
                     {activeMainFilter === 3 && <GuestsModal adultsAmount={adultsAmount} childrenAmount={childrenAmount} infantsAmount={infantsAmount} petsAmount={petsAmount} handleAmountChange={handleAmountChange} />}
                 </div>
             ) : (
