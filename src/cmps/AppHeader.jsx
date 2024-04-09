@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
 import logo from '../assets/img/airbnb-1.svg'
 
 
@@ -7,11 +6,10 @@ import { MainFilter } from './app-header/MainFilter';
 import { UserActions } from './app-header/UserActions';
 
 
-export function AppHeader() {
+export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
 
-    const [largeMainFilter, setLargeMainFilter] = useState(false)
     return (
-        <header className={`app-header full ${largeMainFilter ? 'large-header' : ''}`}>
+        <header className={`app-header ${largeMainFilter ? 'large-header' : ''}`}>
             <div className="app-header-logo-nav">
                 <NavLink to="/">
                     <img className='app-logo' src={logo} alt="logo" />

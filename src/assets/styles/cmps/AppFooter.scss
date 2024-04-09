@@ -8,7 +8,7 @@
   font-size: 15px;
   white-space: nowrap;
   font-family: "Montserrat", sans-serif;
-  grid-row: 4;
+  grid-row: 5;
   background-color: whitesmoke;
 
   .app-footer-left {
@@ -31,7 +31,7 @@
       display: flex;
     }
 
-    .dot-left{
+    .dot-left {
       width: 19px;
       display: flex;
       justify-content: center;
@@ -92,7 +92,7 @@
       gap: 16px;
 
       // Apply styles to all icons
-      >* {
+      > * {
         width: 18px;
         height: 18px;
         cursor: pointer;
@@ -100,7 +100,6 @@
     }
   }
 }
-
 
 @media (max-width: 1050px) {
   .app-footer {
@@ -128,6 +127,4 @@
       order: 1;
     }
   }
-
-
 }

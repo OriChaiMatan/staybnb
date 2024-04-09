@@ -5,14 +5,19 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
-}
-
-.main-container.large-header {
-  grid-template-rows: 80px 80px 80px 1fr auto;
+  transition: grid-template-rows 0.7s ease;
 }
 
 .main-content {
   grid-row: 2/4;
   display: grid;
   grid-template-rows: subgrid;
+}
+
+.main-container.large-header {
+  grid-template-rows: 80px 80px 80px 1fr auto;
+
+  .main-content {
+    grid-row: 3/5;
+  }
 }

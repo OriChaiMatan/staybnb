@@ -22,7 +22,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {
-                setLargeMainFilter(false);
+                // setLargeMainFilter(false);
                 setActiveMainFilter(-1)
             }
         };
@@ -35,15 +35,16 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             }
         };
 
-        const handleScroll = () => {
-            if (document.documentElement.scrollTop > 30) {
+        function handleScroll() {
+            const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+            if (scrollTop > 30) {
                 setLargeMainFilter(false);
-                setActiveMainFilter(-1)
-
+                setActiveMainFilter(-1);
             } else {
                 setLargeMainFilter(true);
             }
-        };
+        }
+
         document.addEventListener('keydown', handleEscapeKeyPress);
         document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('scroll', handleScroll);
