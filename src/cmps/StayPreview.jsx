@@ -47,7 +47,7 @@ export function StayPreview({ stay }) {
 
     return (
         <div className="stay-preview">
-            <Link to={`/stay/${stay._id}`}>
+            <Link to={`/stay/${stay._id}`} target="_blank">
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
