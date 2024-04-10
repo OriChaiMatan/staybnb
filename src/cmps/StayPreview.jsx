@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/scss/image-gallery.scss";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import ImageGallery from "react-image-gallery"
+import "react-image-gallery/styles/scss/image-gallery.scss"
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import StarSmall from "../svg/StarSmallSvg"
 
 
 import img_example1 from "../assets/img/stay_demo_img/2_3.png"
@@ -12,6 +13,7 @@ import img_example2 from "../assets/img/stay_demo_img/2_2.png"
 import img_example3 from "../assets/img/stay_demo_img/3_2.png"
 import img_example4 from "../assets/img/stay_demo_img/2_1.png"
 import img_example5 from "../assets/img/stay_demo_img/1_1.png"
+import { utilService } from "../services/util.service"
 
 const images = [
     {
@@ -30,9 +32,6 @@ const images = [
         original: img_example5,
     },
 ]
-
-
-
 
 export function StayPreview({ stay }) {
 
@@ -64,7 +63,7 @@ export function StayPreview({ stay }) {
                     onMouseLeave={handleMouseLeave}>
                     <Slider arrows={isHovered} {...settings} >
                         {images.map((image, index) => (
-                            <div key={index}>
+                            <div className="imgs" key={index}>
                                 <img src={image.original} alt={`Stay Image ${index + 1}`} />
                             </div>
                         ))}
@@ -72,11 +71,17 @@ export function StayPreview({ stay }) {
                 </div>
 
                 <div className="stay-preview-information">
-                    <span className="name-info">{stay.name}</span>
-                    <span className="loc-info">{stay.loc.country}-{stay.loc.city}-{stay.loc.address}</span>
+                    <div className="common-info">
+                        <span className="name-info">{stay.loc.city}, {stay.loc.country}</span>
+                        {utilService.calculateAvgRating(stay.reviews) !== '0.00' && utilService.calculateAvgRating(stay.reviews) !== '0.0' && (
+                            <span className="avg-rating-info"><StarSmall /> {utilService.calculateAvgRating(stay.reviews)}</span>
+                        )}
+                    </div>
+                    <span className="loc-info"> {Math.ceil(utilService.calculateDistance(stay.loc.lat, stay.loc.lng)).toLocaleString()} kilometers away</span>
+                    <span className="date-info">{utilService.formatDateRange(stay.startDate, stay.endDate)}</span>
                     <span className="price-info">${stay.price} <span>night</span></span>
                 </div>
             </Link>
         </div>
-    );
+    )
 }

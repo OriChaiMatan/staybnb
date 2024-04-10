@@ -74,8 +74,6 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     }
 
     useEffect(() => {
-        console.log(activeMainFilter);
-        console.log(selectedDestination);
     }, [activeMainFilter, selectedDestination])
 
 

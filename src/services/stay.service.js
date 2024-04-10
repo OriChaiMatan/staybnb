@@ -5,6 +5,7 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'stay'
 
+
 _createStays()
 
 export const stayService = {
@@ -68,6 +69,9 @@ async function addStayMsg(stayId, txt) {
 }
 
 function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summary = "", capacity = 0, amenities = [], labels = [], loc = {}, reviews = [], likedByUsers = []) {
+    
+    const { startDate, endDate } = utilService.getRandomDateRange()
+
     return {
         _id: utilService.makeId(),
         name,
@@ -81,9 +85,12 @@ function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summar
         host: userService.getLoggedinUser(),
         loc,
         reviews,
-        likedByUsers
+        likedByUsers,
+        startDate,
+        endDate,
     }
 }
+
 
 function _createStays() {
     let stays = utilService.loadFromStorage(STORAGE_KEY)
@@ -130,19 +137,10 @@ function _createStays() {
                     lat: -8.61308,
                     lng: 41.1413
                 },
-                reviews: [
-                    {
-                        id: "madeId",
-                        txt: "Very helpful hosts. Cooked traditional...",
-                        rate: 4,
-                        by: {
-                            _id: "u102",
-                            fullname: "user2",
-                            imgUrl: "/img/img2.jpg"
-                        }
-                    }
-                ],
-                likedByUsers: ['mini-user']
+                reviews: [],
+                likedByUsers: ['mini-user'],
+                startDate: "2028-09-27", 
+                endDate: "2028-10-07", 
             },
             // Stay 2: Ocean View Villa
             {
@@ -209,7 +207,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user1", "user2"]
+                likedByUsers: ["user1", "user2"],
+                startDate: "2024-07-09", 
+                endDate: "2024-07-15", 
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -256,25 +256,17 @@ function _createStays() {
                     {
                         id: "review3",
                         txt: "Absolutely charming cabin with stunning views!",
-                        rate: 5,
+                        rate: 0,
                         by: {
                             _id: "u107",
                             fullname: "Emily White",
                             imgUrl: "https://example.com/emily.jpg"
                         }
-                    },
-                    {
-                        id: "review4",
-                        txt: "Perfect getaway spot! Cozy and peaceful.",
-                        rate: 4,
-                        by: {
-                            _id: "u108",
-                            fullname: "Jason Miller",
-                            imgUrl: "https://example.com/jason.jpg"
-                        }
                     }
                 ],
-                likedByUsers: ["user3", "user4"]
+                likedByUsers: ["user3", "user4"],
+                startDate: "2024-08-22", 
+                endDate: "2024-08-24", 
             },
             // Stay 4: City Center Loft
             {
@@ -330,7 +322,7 @@ function _createStays() {
                     {
                         id: "review6",
                         txt: "Perfect location for exploring the city. Modern and clean.",
-                        rate: 4,
+                        rate: 3,
                         by: {
                             _id: "u111",
                             fullname: "Jessica Davis",
@@ -338,7 +330,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user5", "user6"]
+                likedByUsers: ["user5", "user6"],
+                startDate: "2024-08-23", 
+                endDate: "2024-08-28", 
             },
             // Stay 1: Ribeira Charming Duplex
             {
@@ -385,7 +379,7 @@ function _createStays() {
                     {
                         id: "madeId",
                         txt: "Very helpful hosts. Cooked traditional...",
-                        rate: 4,
+                        rate: 2,
                         by: {
                             _id: "u102",
                             fullname: "user2",
@@ -393,7 +387,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ['mini-user']
+                likedByUsers: ['mini-user'],
+                startDate: "2024-10-17", 
+                endDate: "2024-10-22", 
             },
             // Stay 2: Ocean View Villa
             {
@@ -442,7 +438,7 @@ function _createStays() {
                     {
                         id: "review1",
                         txt: "Amazing place with breathtaking views!",
-                        rate: 5,
+                        rate: 3,
                         by: {
                             _id: "u104",
                             fullname: "John Doe",
@@ -460,7 +456,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user1", "user2"]
+                likedByUsers: ["user1", "user2"],
+                startDate: "2024-11-28", 
+                endDate: "2024-11-30", 
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -525,7 +523,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user3", "user4"]
+                likedByUsers: ["user3", "user4"],
+                startDate: "2024-12-19", 
+                endDate: "2024-12-21", 
             },
             // Stay 4: City Center Loft
             {
@@ -589,7 +589,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user5", "user6"]
+                likedByUsers: ["user5", "user6"],
+                startDate: "2025-02-06", 
+                endDate: "2025-02-10", 
             },
             {
                 _id: "10006554",
@@ -631,19 +633,10 @@ function _createStays() {
                     lat: -8.61308,
                     lng: 41.1413
                 },
-                reviews: [
-                    {
-                        id: "madeId",
-                        txt: "Very helpful hosts. Cooked traditional...",
-                        rate: 4,
-                        by: {
-                            _id: "u102",
-                            fullname: "user2",
-                            imgUrl: "/img/img2.jpg"
-                        }
-                    }
-                ],
-                likedByUsers: ['mini-user']
+                reviews: [],
+                likedByUsers: ['mini-user'],
+                startDate: "2025-02-06", 
+                endDate: "2025-02-10", 
             },
             // Stay 2: Ocean View Villa
             {
@@ -692,7 +685,7 @@ function _createStays() {
                     {
                         id: "review1",
                         txt: "Amazing place with breathtaking views!",
-                        rate: 5,
+                        rate: 0,
                         by: {
                             _id: "u104",
                             fullname: "John Doe",
@@ -702,7 +695,7 @@ function _createStays() {
                     {
                         id: "review2",
                         txt: "Great host, very responsive and accommodating.",
-                        rate: 4,
+                        rate: 0,
                         by: {
                             _id: "u105",
                             fullname: "Alice Johnson",
@@ -710,7 +703,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user1", "user2"]
+                likedByUsers: ["user1", "user2"],
+                startDate: "2025-04-11", 
+                endDate: "2025-04-18", 
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -775,7 +770,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user3", "user4"]
+                likedByUsers: ["user3", "user4"],
+                startDate: "2025-03-06", 
+                endDate: "2025-03-10", 
             },
             // Stay 4: City Center Loft
             {
@@ -839,7 +836,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user5", "user6"]
+                likedByUsers: ["user5", "user6"],
+                startDate: "2025-07-15", 
+                endDate: "2025-07-22", 
             },
             // Stay 1: Ribeira Charming Duplex
             {
@@ -894,7 +893,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ['mini-user']
+                likedByUsers: ['mini-user'],
+                startDate: "2025-08-17", 
+                endDate: "2025-08-23", 
             },
             // Stay 2: Ocean View Villa
             {
@@ -961,7 +962,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user1", "user2"]
+                likedByUsers: ["user1", "user2"],
+                startDate: "2025-09-18", 
+                endDate: "2025-09-22", 
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -1026,7 +1029,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user3", "user4"]
+                likedByUsers: ["user3", "user4"],
+                startDate: "2025-10-18", 
+                endDate: "2025-10-22", 
             },
             // Stay 4: City Center Loft
             {
@@ -1090,7 +1095,9 @@ function _createStays() {
                         }
                     }
                 ],
-                likedByUsers: ["user5", "user6"]
+                likedByUsers: ["user5", "user6"],
+                startDate: "2025-11-22", 
+                endDate: "2025-11-24", 
             },
         ];
 

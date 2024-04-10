@@ -6,33 +6,67 @@
     "photo"
     "info";
   border-radius: 5%;
+
+  .stay-photo-gallery {
+    grid-area: photo;
+
+    .imgs{
+      margin-bottom: 5px;
+    }
+  }
+
+
+  .stay-preview-information {
+    display: grid;
+    grid-area: info;
+    color: #3d3c3c;
+    font-weight: bold;
+    font-size: 0.9375rem;
+
+    .common-info{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .name-info {
+      color: #222222;
+      text-overflow: ellipsis;
+      margin-top: -5px;
+    }
+
+    .avg-rating-info{
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+      font-weight: normal;
+      padding-right: 12px;
+    }
+
+    .loc-info {
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-weight: normal;
+      color: #717171;
+      margin-top: -3px;
+    }
+
+    .date-info{
+      font-weight: normal;
+      color: #717171;
+    }
+
+    .price-info span {
+      color: black;
+      font-weight: normal;
+    }
+
+  }
 }
 
-.stay-preview-information {
-  display: grid;
-  grid-area: info;
-  font-size: 16px;
-  color: #3d3c3c;
-  font-weight: bold;
-  font-size: 14px;
-}
 
-.loc-info {
-  text-align: left;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-weight: normal;
-}
-
-.price-info span {
-  color: black;
-  font-weight: normal;
-}
-
-.stay-photo-gallery {
-  grid-area: photo;
-}
 
 .slick-list {
   width: 280px;
@@ -54,7 +88,7 @@
   z-index: 1000;
 }
 
-.slick-dots{
+.slick-dots {
   bottom: 15px;
 }
 
@@ -63,7 +97,7 @@
   color: white;
 }
 
-.slick-dots li button:before{
+.slick-dots li button:before {
   opacity: .75;
   color: white;
 }
@@ -72,10 +106,12 @@
   margin: 0;
 }
 
-.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
   opacity: 0;
 }
 
-.slick-next.slick-disabled:before, .slick-next.slick-disabled:before {
+.slick-next.slick-disabled:before,
+.slick-next.slick-disabled:before {
   opacity: 0;
 }
