@@ -69,7 +69,7 @@ async function addStayMsg(stayId, txt) {
 }
 
 function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summary = "", capacity = 0, amenities = [], labels = [], loc = {}, reviews = [], likedByUsers = []) {
-    
+
     const { startDate, endDate } = utilService.getRandomDateRange()
 
     return {
@@ -139,19 +139,19 @@ function _createStays() {
                 },
                 reviews: [],
                 likedByUsers: ['mini-user'],
-                startDate: "2028-09-27", 
-                endDate: "2028-10-07", 
+                startDate: "2028-09-27",
+                endDate: "2028-10-07",
             },
             // Stay 2: Ocean View Villa
             {
                 _id: "10006547",
                 name: "Ocean View Villa",
-                type: "House",
+                type: "House", //2_2_xepifd
                 imgUrls: [
-                    "../assets/img/stay_demo_img/2_1.png",
-                    "../assets/img/stay_demo_img/2_2.png",
-                    "../assets/img/stay_demo_img/2_3.png",
-                    "../assets/img/stay_demo_img/2_4.png",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -208,8 +208,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user1", "user2"],
-                startDate: "2024-07-09", 
-                endDate: "2024-07-15", 
+                startDate: "2024-07-09",
+                endDate: "2024-07-15",
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -265,8 +265,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user3", "user4"],
-                startDate: "2024-08-22", 
-                endDate: "2024-08-24", 
+                startDate: "2024-08-22",
+                endDate: "2024-08-24",
             },
             // Stay 4: City Center Loft
             {
@@ -331,8 +331,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user5", "user6"],
-                startDate: "2024-08-23", 
-                endDate: "2024-08-28", 
+                startDate: "2024-08-23",
+                endDate: "2024-08-28",
             },
             // Stay 1: Ribeira Charming Duplex
             {
@@ -388,8 +388,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ['mini-user'],
-                startDate: "2024-10-17", 
-                endDate: "2024-10-22", 
+                startDate: "2024-10-17",
+                endDate: "2024-10-22",
             },
             // Stay 2: Ocean View Villa
             {
@@ -457,8 +457,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user1", "user2"],
-                startDate: "2024-11-28", 
-                endDate: "2024-11-30", 
+                startDate: "2024-11-28",
+                endDate: "2024-11-30",
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -524,8 +524,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user3", "user4"],
-                startDate: "2024-12-19", 
-                endDate: "2024-12-21", 
+                startDate: "2024-12-19",
+                endDate: "2024-12-21",
             },
             // Stay 4: City Center Loft
             {
@@ -590,8 +590,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user5", "user6"],
-                startDate: "2025-02-06", 
-                endDate: "2025-02-10", 
+                startDate: "2025-02-06",
+                endDate: "2025-02-10",
             },
             {
                 _id: "10006554",
@@ -635,8 +635,8 @@ function _createStays() {
                 },
                 reviews: [],
                 likedByUsers: ['mini-user'],
-                startDate: "2025-02-06", 
-                endDate: "2025-02-10", 
+                startDate: "2025-02-06",
+                endDate: "2025-02-10",
             },
             // Stay 2: Ocean View Villa
             {
@@ -704,8 +704,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user1", "user2"],
-                startDate: "2025-04-11", 
-                endDate: "2025-04-18", 
+                startDate: "2025-04-11",
+                endDate: "2025-04-18",
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -771,8 +771,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user3", "user4"],
-                startDate: "2025-03-06", 
-                endDate: "2025-03-10", 
+                startDate: "2025-03-06",
+                endDate: "2025-03-10",
             },
             // Stay 4: City Center Loft
             {
@@ -837,8 +837,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user5", "user6"],
-                startDate: "2025-07-15", 
-                endDate: "2025-07-22", 
+                startDate: "2025-07-15",
+                endDate: "2025-07-22",
             },
             // Stay 1: Ribeira Charming Duplex
             {
@@ -894,8 +894,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ['mini-user'],
-                startDate: "2025-08-17", 
-                endDate: "2025-08-23", 
+                startDate: "2025-08-17",
+                endDate: "2025-08-23",
             },
             // Stay 2: Ocean View Villa
             {
@@ -963,8 +963,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user1", "user2"],
-                startDate: "2025-09-18", 
-                endDate: "2025-09-22", 
+                startDate: "2025-09-18",
+                endDate: "2025-09-22",
             },
             // Stay 3: Cozy Mountain Cabin
             {
@@ -1030,8 +1030,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user3", "user4"],
-                startDate: "2025-10-18", 
-                endDate: "2025-10-22", 
+                startDate: "2025-10-18",
+                endDate: "2025-10-22",
             },
             // Stay 4: City Center Loft
             {
@@ -1096,8 +1096,8 @@ function _createStays() {
                     }
                 ],
                 likedByUsers: ["user5", "user6"],
-                startDate: "2025-11-22", 
-                endDate: "2025-11-24", 
+                startDate: "2025-11-22",
+                endDate: "2025-11-24",
             },
         ];
 
