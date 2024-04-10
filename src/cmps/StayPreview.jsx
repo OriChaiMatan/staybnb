@@ -15,12 +15,12 @@ import img_example4 from "../assets/img/stay_demo_img/2_1.png"
 import img_example5 from "../assets/img/stay_demo_img/1_1.png"
 import { utilService } from "../services/util.service"
 
-const imgUrls = [
-        "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
-        "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
-        "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
-        "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
-    ]
+// const imgUrlsss = [
+//         "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
+//         "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+//         "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+//         "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+//     ]
 
 
 export function StayPreview({ stay }) {
@@ -52,7 +52,7 @@ export function StayPreview({ stay }) {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
                     <Slider arrows={isHovered} {...settings} >
-                        {imgUrls.map((imgUrl, index) => (
+                        {stay.imgUrls.map((imgUrl, index) => (
                             <div className="imgs" key={index}>
                                 <img src={imgUrl} alt={`Stay Image ${index + 1}`} />
                             </div>

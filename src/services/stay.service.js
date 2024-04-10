@@ -102,7 +102,7 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/1.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -217,9 +217,9 @@ function _createStays() {
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/3_1.png",
-                    "../assets/img/stay_demo_img/3_2.png",
-                    "../assets/img/stay_demo_img/3_3.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -274,8 +274,8 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/4_1.png",
-                    "../assets/img/stay_demo_img/4_2.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -340,7 +340,7 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/1.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -397,10 +397,10 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/2_1.png",
-                    "../assets/img/stay_demo_img/2_2.png",
-                    "../assets/img/stay_demo_img/2_3.png",
-                    "../assets/img/stay_demo_img/2_4.png",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -465,10 +465,10 @@ function _createStays() {
                 _id: "10006552",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls: [
-                    "../assets/img/stay_demo_img/3_1.png",
-                    "../assets/img/stay_demo_img/3_2.png",
-                    "../assets/img/stay_demo_img/3_3.png"
+                imgUrls:  [
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -533,8 +533,8 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/4_1.png",
-                    "../assets/img/stay_demo_img/4_2.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -598,7 +598,7 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/1.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -644,10 +644,10 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/2_1.png",
-                    "../assets/img/stay_demo_img/2_2.png",
-                    "../assets/img/stay_demo_img/2_3.png",
-                    "../assets/img/stay_demo_img/2_4.png",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -712,10 +712,10 @@ function _createStays() {
                 _id: "10006556",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls: [
-                    "../assets/img/stay_demo_img/3_1.png",
-                    "../assets/img/stay_demo_img/3_2.png",
-                    "../assets/img/stay_demo_img/3_3.png"
+                imgUrls:  [
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -780,8 +780,8 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/4_1.png",
-                    "../assets/img/stay_demo_img/4_2.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -846,7 +846,7 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/1.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -903,10 +903,10 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/2_1.png",
-                    "../assets/img/stay_demo_img/2_2.png",
-                    "../assets/img/stay_demo_img/2_3.png",
-                    "../assets/img/stay_demo_img/2_4.png",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -971,10 +971,10 @@ function _createStays() {
                 _id: "10006560",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls: [
-                    "../assets/img/stay_demo_img/3_1.png",
-                    "../assets/img/stay_demo_img/3_2.png",
-                    "../assets/img/stay_demo_img/3_3.png"
+                imgUrls:  [
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -1039,8 +1039,8 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    "../assets/img/stay_demo_img/4_1.png",
-                    "../assets/img/stay_demo_img/4_2.png"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
