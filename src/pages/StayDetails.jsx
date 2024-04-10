@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 import { stayService } from "../services/stay.service"
+import PhotoAlbum from "react-photo-album"
 
 import { AboutThisPlaceModel } from "../cmps/stay-details/AboutThisPlaceModel"
 import { ReservationModal } from "../cmps/ReservationModal"
@@ -22,14 +23,13 @@ export function StayDetails() {
 
     useEffect(() => {
         loadStay()
-        console.log("params: ", params)
     }, [params.stayId])
 
     async function loadStay() {
         try {
-            const stayData = await stayService.getById(params.stayId);
-            const avgRating = utilService.calculateAvgRating(stayData.reviews);
-            setStay(stayData);
+            const stayData = await stayService.getById(params.stayId)
+            const avgRating = utilService.calculateAvgRating(stayData.reviews)
+            setStay(stayData)
         } catch (err) {
             console.log('Error in loadStay', err)
         }
@@ -66,7 +66,11 @@ export function StayDetails() {
                     </div>
                 </div>
 
-                <img className="stay-img" src={stayImg} alt="stay-img" />
+                {/* <img className="stay-img" src={stayImg} alt="stay-img" /> */}
+                {stay.imgUrls && (
+                    <PhotoAlbum layout="rows" photos={stay.imgUrls.map(url => ({ src: url, width: 800, height: 800 }))} />
+                )}
+
 
                 <div className="stay-info-content">
 
