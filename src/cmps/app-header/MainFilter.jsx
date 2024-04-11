@@ -35,21 +35,21 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             }
         };
 
-        function handleScroll() {
-            const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
-            if (scrollTop > 30) {
-                setLargeMainFilter(false);
-                setActiveMainFilter(-1);
-            } else {
-                setLargeMainFilter(true);
-            }
-        }
+        // function handleScroll() {
+        //     const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+        //     if (scrollTop > 30) {
+        //         setLargeMainFilter(false);
+        //         setActiveMainFilter(-1);
+        //     } else {
+        //         setLargeMainFilter(true);
+        //     }
+        // }
 
         document.addEventListener('keydown', handleEscapeKeyPress);
         document.addEventListener('mousedown', handleClickOutside);
-        document.addEventListener('scroll', handleScroll);
+        // document.addEventListener('scroll', handleScroll);
 
-        handleScroll();
+        // handleScroll();
 
         return () => {
             document.removeEventListener('keydown', handleEscapeKeyPress);

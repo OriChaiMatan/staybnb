@@ -24,16 +24,16 @@ export function StayDetails({ largeMainFilter, setLargeMainFilter }) {
     useEffect(() => {
         loadStay()
 
-        function handleScroll() {
-            const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
-            if (scrollTop > 30) {
-                setLargeMainFilter(true);
-            } else {
-                setLargeMainFilter(false);
-            }
-        }
+        // function handleScroll() {
+        //     const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+        //     if (scrollTop > 30) {
+        //         setLargeMainFilter(true);
+        //     } else {
+        //         setLargeMainFilter(false);
+        //     }
+        // }
 
-        handleScroll();
+        // handleScroll();
 
     }, [params.stayId])
 
