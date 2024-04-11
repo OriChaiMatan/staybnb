@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { AppHeader } from './cmps/AppHeader';
 import { AppFooter } from './cmps/AppFooter';
 import { StayDetails } from './pages/StayDetails';
@@ -8,14 +8,17 @@ import { useState } from 'react';
 export function RootCmp() {
     const [largeMainFilter, setLargeMainFilter] = useState(false)
 
+    const location = useLocation()
+    const pathname = location.pathname.split("/")[1]
+
     return (
-        <div className={`main-container ${largeMainFilter ? 'large-header' : ''}`}>
+        <div className={` ${largeMainFilter ? 'large-header' : ''} ${pathname === 'stay' ? 'details-layout-container' : 'main-container'}`}>
             <AppHeader largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter} />
             <main className='main-content'>
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
                     <Route path="/:filter" element={<StayIndex />} />
-                    <Route path="/stay/:stayId" element={<StayDetails />} />
+                    <Route path="/stay/:stayId" element={<StayDetails largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter} />} />
                 </Routes>
             </main>
             <AppFooter />

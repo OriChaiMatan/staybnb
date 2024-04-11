@@ -12,14 +12,14 @@ import StarSmall from "../svg/StarSmallSvg"
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
 
-    const handleStayClick = () => {
-        const newTab = window.open(`/stay/${stay._id}`, '_blank');
-        if (newTab) {
-            newTab.addEventListener('load', () => {
-                newTab.document.title = stay.name; // Set the title of the new tab
-            });
-        }
-    }
+    // const handleStayClick = () => {
+    //     const newTab = window.open(`/stay/${stay._id}`, '_blank');
+    //     if (newTab) {
+    //         newTab.addEventListener('load', () => {
+    //             newTab.document.title = stay.name; // Set the title of the new tab
+    //         });
+    //     }
+    // }
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -40,8 +40,8 @@ export function StayPreview({ stay }) {
     }
 
     return (
-        <div className="stay-preview" onClick={handleStayClick}>
-            {/* <Link to={`/stay/${stay._id}`} target="_blank" > */}
+        <div className="stay-preview">
+            <Link to={`/stay/${stay._id}`} target="_blank" >
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
@@ -65,7 +65,7 @@ export function StayPreview({ stay }) {
                     <span className="date-info">{utilService.formatDateRange(stay.startDate, stay.endDate)}</span>
                     <span className="price-info">${stay.price} <span>night</span></span>
                 </div>
-            {/* </Link> */}
+            </Link>
         </div>
     )
 }

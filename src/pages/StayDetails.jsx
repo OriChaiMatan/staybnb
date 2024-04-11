@@ -16,13 +16,25 @@ import Star from "../svg/StarSvg"
 import { utilService } from "../services/util.service"
 
 
-export function StayDetails() {
+export function StayDetails({ largeMainFilter, setLargeMainFilter }) {
     const [stay, setStay] = useState(null)
     const params = useParams()
     const [showModal, setShowModal] = useState(false)
 
     useEffect(() => {
         loadStay()
+
+        function handleScroll() {
+            const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+            if (scrollTop > 30) {
+                setLargeMainFilter(true);
+            } else {
+                setLargeMainFilter(false);
+            }
+        }
+
+        handleScroll();
+
     }, [params.stayId])
 
     async function loadStay() {

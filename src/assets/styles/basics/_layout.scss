@@ -21,3 +21,19 @@
     grid-row: 3/5;
   }
 }
+
+.details-layout-container {
+  display: grid;
+  grid-template-columns: minmax(20px, 284px) 1fr minmax(20px, 284px);
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+
+  &.app-footer {
+    grid-row: 3;
+  }
+}
+
+.details-layout-container > * {
+  grid-column: 2;
+  padding: 0 !important;
+}
