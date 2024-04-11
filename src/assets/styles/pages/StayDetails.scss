@@ -1,6 +1,6 @@
 .stay-details {
     display: grid;
-    grid-template-columns: minmax(20px, 145px) 1fr minmax(20px, 145px);
+    grid-template-columns: minmax(20px, 284px) 1fr minmax(20px, 284px);
     margin-top: 24px;
 
     .stay-info {
@@ -20,7 +20,7 @@
                 font-weight: 600;
             }
 
-            
+
 
             .action-button {
                 display: flex;
@@ -63,7 +63,7 @@
                 margin-bottom: 5px;
             }
 
-            
+
 
             .rating-container {
 
@@ -72,7 +72,17 @@
                 align-items: center;
                 margin-top: 8px;
                 font-weight: 600;
-                font-size: 17px;
+                font-size: 17px
+            }
+
+            .reviews-count {
+                text-decoration: underline;
+            }
+
+            .no-reviews {
+                font-size: 1.0625rem;
+                font-weight: 400;
+                line-height: 1.25rem;
             }
         }
 
@@ -82,17 +92,9 @@
             margin: 10px 0;
         }
 
-        .hosted-by{
+        .hosted-by {
             padding: 24px 0px;
         }
 
-
-        // a {
-        //     border-bottom: 1px solid #000;
-        //     cursor: pointer;
-        // }
     }
-
-
-
 }
