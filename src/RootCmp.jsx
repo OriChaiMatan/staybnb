@@ -1,9 +1,10 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { AppHeader } from './cmps/AppHeader';
-import { AppFooter } from './cmps/AppFooter';
-import { StayDetails } from './pages/StayDetails';
-import { StayIndex } from './pages/StayIndex';
-import { useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { AppHeader } from './cmps/AppHeader'
+import { AppFooter } from './cmps/AppFooter'
+import { StayDetails } from './pages/StayDetails'
+import { StayIndex } from './pages/StayIndex'
+import { StayEdit } from './pages/StayEdit'
+import { useState } from 'react'
 
 export function RootCmp() {
     const [largeMainFilter, setLargeMainFilter] = useState(false)
@@ -19,6 +20,7 @@ export function RootCmp() {
                     <Route path="/" element={<StayIndex />} />
                     <Route path="/:filter" element={<StayIndex />} />
                     <Route path="/stay/:stayId" element={<StayDetails largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter} />} />
+                    <Route path="/stay-edit/newStay" element={<StayEdit />}/>
                 </Routes>
             </main>
             <AppFooter />

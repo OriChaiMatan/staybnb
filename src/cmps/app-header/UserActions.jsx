@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import worldIcon from '../../assets/img/world_icon.png'
 import hamburgerIcon from '../../assets/img/hamburger_menu.png'
 import userIcon from '../../assets/img/user_icon.png'
@@ -22,7 +23,9 @@ export function UserActions() {
 
     return (
         <div className="user-actions-header">
-            <a>Staybnb Your Home</a>
+            <Link to={'/stay-edit/newStay'}>
+                <a>Staybnb Your Home</a>
+            </Link>
             <div className="world-icon" >
                 <img src={worldIcon} alt="world-icon" />
             </div>
@@ -35,7 +38,9 @@ export function UserActions() {
                         <a href="#" className='user-action' onClick={handleLoginClick}>Log in</a>
                         <div className='hr'></div>
                         <a href="#" className='user-action'>Gift cards</a>
-                        <a href="#" className='user-action'>Airbnb your home</a>
+                        <Link to={'/stay-edit/newStay'}>
+                            <a href="#" className='user-action'>Airbnb your home</a>
+                        </Link>
                         <a href="#" className='user-action'>Help Center</a>
                     </div>
                 </div>
