@@ -42,13 +42,13 @@ async function remove(stayId) {
 
 async function save(stay) {
     var savedStay
-    if (stay._id) {
-        savedStay = await storageService.put(STORAGE_KEY, stay)
-    } else {
-        // Later, owner is set by the backend
-        stay.owner = userService.getLoggedinUser()
-        savedStay = await storageService.post(STORAGE_KEY, stay)
-    }
+    // if (stay._id) {
+    savedStay = await storageService.put(STORAGE_KEY, stay)
+    // } else {
+    //     // Later, owner is set by the backend
+    //     stay.owner = userService.getLoggedinUser()
+    //     savedStay = await storageService.post(STORAGE_KEY, stay)
+    // }
     return savedStay
 }
 
@@ -68,7 +68,7 @@ async function addStayMsg(stayId, txt) {
     return msg
 }
 
-function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summary = "", capacity = 0, amenities = [], labels = [], loc = {}, reviews = [], likedByUsers = []) {
+function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = '', capacity = '', amenities = [], labels = [], country, countryCode, city, address = '', lat, lng, reviews = [], likedByUsers = []) {
 
     const { startDate, endDate } = utilService.getRandomDateRange()
 
@@ -83,7 +83,14 @@ function getEmptyStay(name = "", type = "House", imgUrls = [], price = 0, summar
         amenities,
         labels,
         host: userService.getLoggedinUser(),
-        loc,
+        loc: [
+            country,
+            countryCode,
+            city,
+            address,
+            lat,
+            lng
+        ],
         reviews,
         likedByUsers,
         startDate,
@@ -465,7 +472,7 @@ function _createStays() {
                 _id: "10006552",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls:  [
+                imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
@@ -712,7 +719,7 @@ function _createStays() {
                 _id: "10006556",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls:  [
+                imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
@@ -971,7 +978,7 @@ function _createStays() {
                 _id: "10006560",
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
-                imgUrls:  [
+                imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
