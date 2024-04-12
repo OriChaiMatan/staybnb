@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   background-color: white; /* Set background color */
   width: 568px; /* Set width as needed */
-  height: 483px; /* Set height as needed */
+  height: 500px; /* Set height as needed */
   border-radius: 10px; /* Add border radius for rounded corners */
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28); /* Add box shadow for depth */
   //padding: 20px; /* Add padding inside the modal */
@@ -112,22 +112,14 @@
   }
 
   .login-continue-btn {
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
     margin-top: 60px;
     text-align: center;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1),
-      transform 0.1s cubic-bezier(0.2, 0, 0, 1);
     padding: 14px 24px;
     border-radius: 8px;
-    background: linear-gradient(
-      to right,
-      #e61e4d 0%,
-      #e31c5f 50%,
-      #d70466 100%
-    );
     width: 100%;
     color: white;
     background-position: calc((100 - var(--mouse-x, 0)) * 1%)
@@ -145,6 +137,19 @@
       #bd1e59 100%
     );
     font-size: 16px;
+    transition: background-position 0.8s;
+
+    &:hover {
+      background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+        calc((100 - var(--mouse-y, 0)) * 1%);
+      --mouse-x: 54.71153846153845;
+      --mouse-y: 2.083333333333333;
+    }
+
+    &.signup-btn {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
   }
 }
 
