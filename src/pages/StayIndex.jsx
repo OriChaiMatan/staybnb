@@ -20,6 +20,15 @@ export function StayIndex() {
         }
     }
 
+    async function onAddStay(stay) {
+        try {
+            const savedStay = await stayService.save(stay)
+            loadStays()
+        } catch (err) {
+            console.log('Had issues adding stay', err)
+        }
+    }
+
     if (!stays) return <div>Loading..</div>
 
     return (
@@ -27,7 +36,7 @@ export function StayIndex() {
             <LabelsFilter />
             <div className="stay-index">
                 <StayList stays={stays} />
-                <Outlet context={{ title: 'hi' }} />
+                <Outlet context={{ title: 'hi', onAddStay }} />
             </div>
         </>
     );

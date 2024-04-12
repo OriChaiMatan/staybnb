@@ -1,0 +1,161 @@
+.login-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white; /* Set background color */
+  width: 568px; /* Set width as needed */
+  height: 500px; /* Set height as needed */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28); /* Add box shadow for depth */
+  //padding: 20px; /* Add padding inside the modal */
+  z-index: 999; /* Ensure the modal appears on top of other content */
+
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1),
+    cubic-bezier(0, 0, 1, 1);
+  animation-duration: 400ms, 75ms;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  transform-origin: bottom center;
+  border-radius: 12px;
+
+  & .close-login-container {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+
+    & button {
+      margin: 0;
+      cursor: pointer;
+      border-radius: none;
+      padding: 0;
+      border-radius: 50%;
+    }
+  }
+}
+
+.login-modal h2 {
+  margin-bottom: 20px; /* Add margin below the heading */
+}
+
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-form input {
+  border: 1px solid #bbbbbb;
+}
+
+.login-modal input:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.login-modal input:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.login-modal button {
+  margin-top: 100px; /* Add margin above the button */
+}
+
+.login-form-header {
+  border-bottom: 1px solid #ebebeb;
+  min-height: 64px;
+  line-height: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+
+  & div h1 {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  & form {
+    padding: 0 24px;
+    height: 100%;
+    & span {
+      font-size: 12px;
+    }
+    & .privacy-policy {
+      padding: 0;
+      text-decoration: underline;
+      font-size: 11px;
+      color: #222222;
+    }
+  }
+
+  & .inputs-container {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > * {
+      padding: 18px 36px 18px 12px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .login-continue-btn {
+    // margin-bottom: 50px;
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    width: 100%;
+    color: white;
+    background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+      calc((100 - var(--mouse-y, 0)) * 1%);
+    --mouse-x: 94.71153846153845;
+    --mouse-y: 2.083333333333333;
+    background-size: 200% 200%;
+    background-image: radial-gradient(
+      circle at center,
+      #ff385c 0%,
+      #e61e4d 27.5%,
+      #e31c5f 40%,
+      #d70466 57.5%,
+      #bd1e59 75%,
+      #bd1e59 100%
+    );
+    font-size: 16px;
+    transition: background-position 0.8s;
+
+    &:hover {
+      background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+        calc((100 - var(--mouse-y, 0)) * 1%);
+      --mouse-x: 54.71153846153845;
+      --mouse-y: 2.083333333333333;
+    }
+
+    &.signup-btn {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #00000080;
+  z-index: 10;
+}

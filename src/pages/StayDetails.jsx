@@ -80,7 +80,7 @@ export function StayDetails({ setLargeMainFilter }) {
                         key={index}
                         src={url}
                         alt={`Image ${index + 1}`}
-                        className={`grid-item-${index}`} // Apply custom class for positioning
+                        className={`grid-item-${index}`} 
                     />
                 ))}
             </div>
