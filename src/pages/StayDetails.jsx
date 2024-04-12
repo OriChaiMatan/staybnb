@@ -10,7 +10,12 @@ import { MdOutlineNavigateNext } from "react-icons/md"
 import Heart from "../svg/HeartSvg"
 import Share from "../svg/ShareSvg"
 import Star from "../svg/StarSvg"
+import SelfCheackIn from "../svg/SelfCheckIn"
+import Cancel from "../svg/CancelSvg"
+import Workspace from "../svg/WorkspaceSvg"
 import { utilService } from "../services/util.service"
+
+import user from "../assets/img/users_imgs/user1.png";
 
 
 export function StayDetails({ setLargeMainFilter }) {
@@ -80,7 +85,7 @@ export function StayDetails({ setLargeMainFilter }) {
                         key={index}
                         src={url}
                         alt={`Image ${index + 1}`}
-                        className={`grid-item-${index}`} 
+                        className={`grid-item-${index}`}
                     />
                 ))}
             </div>
@@ -116,20 +121,44 @@ export function StayDetails({ setLargeMainFilter }) {
 
             </div>
 
-            <div className="black-br"></div>
-
             <div className="hosted-by">
-                <img src={stay.host.imgUrl} />
+                <img className="hosted-img" src={user} alt={`Hosted by ${stay.host.fullname}`} />
                 <span>Hosted by {stay.host.fullname}</span>
             </div>
 
+            <div className="ferrites-main">
+                <div className="line">
+                    <SelfCheackIn />
+                    <div className="text">
+                        <h4>Self check-in</h4>
+                        <p>Check yourself in with the lockbox.</p>
+                    </div>
+                </div>
+                <div className="line">
+                    <Workspace />
+                    <div className="text">
+                        <h4>Dedicated workspace</h4>
+                        <p>Dedicated workspace
+                            A room with wifi that’s well-suited for working.</p>
+                    </div>
+                </div>
+                <div className="line">
+                    <Cancel />
+                    <div className="text">
+                        <h4>Free cancellation for 48 hours</h4>
+                    </div>
+                </div>
+            </div>
 
-            <div className="black-br"></div>
-            <p>{stay.summary}</p>
-            <span><a onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a></span>
 
-            {/* <div><ReservationModal stay={stay}/></div> */}
-            {showModal && (<AboutThisPlaceModel summary={stay.summary} onClose={closeModal} />)}
+            <div className="summery">
+                <div className="text-summery">{stay.summary}</div>
+                <a className="show-more" onClick={toggleModal}>Show more <MdOutlineNavigateNext /></a>
+
+                {/* <div><ReservationModal stay={stay}/></div> */}
+                {showModal && (<AboutThisPlaceModel summary={stay.summary} onClose={closeModal} />)}
+            </div>
+
 
         </section>
     )
