@@ -9,7 +9,7 @@ export function AppFooter() {
 
 
     return (
-        <footer className="app-footer full">
+        <footer className="app-footer">
             <div className="app-footer-left">
                 <div className="app-footer-copyright">
                     <div>© 2024 Staybnb, Inc.</div>

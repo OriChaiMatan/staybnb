@@ -6,6 +6,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   transition: grid-template-rows 0.7s ease;
+  
 }
 
 .main-content {
@@ -35,5 +36,8 @@
 
 .details-layout-container > * {
   grid-column: 2;
-  padding: 0 !important;
+  // padding: 0 !important;
+}
+.details-layout-container .app-header{
+   padding: 0 !important;
 }

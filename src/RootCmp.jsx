@@ -18,7 +18,7 @@ export function RootCmp() {
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
                     <Route path="/:filter" element={<StayIndex />} />
-                    <Route path="/stay/:stayId" element={<StayDetails largeMainFilter={largeMainFilter} setLargeMainFilter={setLargeMainFilter} />} />
+                    <Route path="/stay/:stayId" element={<StayDetails setLargeMainFilter={setLargeMainFilter} />} />
                 </Routes>
             </main>
             <AppFooter />
