@@ -1,0 +1,360 @@
+.modal-container {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-out;
+  color: #222222;
+  font-family: "AirbnbCereal_W_Bk", sans-serif;
+
+  & .modal-container-inner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 780px;
+    max-height: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px;
+    overflow: hidden;
+
+    & .filter-form-header {
+      border-bottom: 1px solid #ebebeb;
+      min-height: 64px;
+      line-height: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & div h1 {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+
+    & footer {
+      border-top: 1px solid rgb(235, 235, 235);
+
+      & .advanced-filter-footer-content {
+        padding: 16px 24px 16px 24px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        & .advanced-filter-clear-button {
+          font-size: 0.9375rem;
+          color: #222222;
+        }
+
+        & .advanced-filter-submit-button {
+          padding: 14px 24px;
+          background-color: #222222;
+          color: #ffffff;
+          min-width: 7em;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.close-login-container {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+}
+
+.filter-modal-content {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.advanced-filter-form section {
+  padding: 0;
+  width: auto;
+  margin-top: 0;
+  border-bottom: 2px solid #ebebeb;
+
+  & .advanced-filter-content {
+    padding: 32px 24px;
+
+    & .checkbox-show-more {
+      text-decoration: underline;
+      font-size: 0.9375rem;
+      color: black;
+    }
+
+    & .checkbox-list-title {
+      font-size: 1rem;
+      padding-block-end: 12px;
+      padding-block-start: 8px;
+      margin: 0;
+      line-height: 1;
+    }
+
+    & .checkbox-list-items {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      direction: ltr;
+
+      & .checkbox {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        min-width: 320px;
+        gap: 16px;
+        padding-block-start: 12px;
+        padding-block-end: 12px;
+
+        & .checkbox-label {
+          font-size: 1rem;
+        }
+
+        & .checkbox-container {
+          display: inline-block;
+          position: relative;
+          font-size: 1rem;
+
+          & .checkbox-input {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+          }
+
+          & .checkbox-custom {
+            height: 24px;
+            width: 24px;
+            display: inline-block;
+            text-align: center;
+            overflow: hidden;
+            border: 1px solid #222222;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+
+    & .advanced-filter__property-type {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    & .advanced-filter-head {
+      padding-block-end: 2rem;
+
+      & .advanced-filter-title {
+        line-height: 1.625rem;
+        padding-block-end: 8px;
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: #000000;
+        margin: 0;
+        font-family: "AirbnbCereal_W_Bk", sans-serif;
+
+        & .advance-filter__no-subtitle {
+          padding-block-end: 32px;
+        }
+      }
+
+      & .advanced-filter-subtitle {
+        font-family: "AirbnbCereal-Light", sans-serif;
+        font-size: 14px;
+        line-height: 1.125rem;
+        margin: 0;
+        margin-block-start: 0.25rem;
+        color: #222222;
+      }
+    }
+
+    & .advanced-filter-type {
+      display: flex;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 50px;
+
+      & .option {
+        padding: 16px 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        line-height: 1.125rem;
+        background-color: #ffffff;
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        flex-grow: 1;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          border: 1px solid #222222;
+        }
+
+        &.active {
+          background-color: #222222;
+          background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0)
+          );
+          color: #ffffff;
+        }
+
+        &:first-child {
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 12px;
+          border-bottom-right-radius: 12px;
+        }
+      }
+    }
+
+    & .advanced-filter__chip-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 8px;
+
+      & .chip-list-title {
+        padding-top: 4px;
+        font-size: 1rem;
+        padding-inline: 2px;
+        color: #222222;
+        font-weight: 500;
+      }
+
+      & .chip-list {
+        display: flex;
+        overflow: auto;
+
+        & .chip-wrapper {
+          padding-bottom: 4px;
+          padding-top: 4px;
+          padding-right: 10px;
+          display: inline-block;
+          white-space: nowrap;
+
+          & .chip {
+            border: 1px solid #dddddd;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 0.75rem;
+            margin: 0;
+            min-width: 59px;
+            white-space: no-wrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: black;
+
+            &:hover {
+              border: 1px solid #222222;
+            }
+
+            &.selected {
+              background-color: #000000;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    & .advanced-filter__top-tier {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      & .card-select {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 20px;
+        margin: 1px;
+        border: 1px solid transparent;
+        background-color: #ffffff;
+        border-radius: 12px;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+        border-color: #dddddd;
+
+        &.card-select--selected {
+          border-color: #222222;
+        }
+
+        & .card-select__icon-wrapper {
+          margin-bottom: 0.75em;
+          margin-right: 1em;
+          height: 2em;
+          width: 2em;
+        }
+
+        & .card-select__title {
+          font-size: 1rem;
+        }
+
+        & .card-select__info {
+          width: 90%;
+          color: #717171;
+          margin-top: 0.25em;
+          line-height: 1.125rem;
+          font-size: 0.875rem;
+          white-space: wrap;
+        }
+      }
+    }
+
+    & .card-select {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 20px;
+      margin: 1px;
+      border: 1px solid transparent;
+      background-color: #ffffff;
+      border-radius: 12px;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      border-color: #dddddd;
+
+      &:not(.card-select--selected):hover {
+        border: 1px solid #222222;
+      }
+
+      &.card-select--selected {
+        border-color: #222222;
+      }
+
+      & .card-select__icon-wrapper {
+        margin-bottom: 0.75em;
+        margin-right: 1em;
+        height: 2em;
+        width: 2em;
+      }
+
+      & .card-select__title {
+        font-size: 1rem;
+      }
+
+      & .card-select__info {
+        width: 90%;
+        color: #717171;
+        margin-top: 0.25em;
+        line-height: 1.125rem;
+        font-size: 0.875rem;
+        white-space: wrap;
+      }
+    }
+  }
+}

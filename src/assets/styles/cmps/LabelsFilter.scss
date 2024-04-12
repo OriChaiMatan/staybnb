@@ -2,7 +2,7 @@
   padding: 0px 80px;
   position: sticky;
   top: 80px;
-  z-index: 50;
+  z-index: 10;
   display: grid;
   grid-auto-flow: column;
   white-space: nowrap;
@@ -16,19 +16,18 @@
     width: 100%;
     overflow-x: scroll;
     scroll-behavior: smooth;
-     scrollbar-width: none;
+    scrollbar-width: none;
     display: flex;
     gap: 0px 16px;
     padding: 15px 45px 15px 0px;
 
     & > * {
-      margin-right: 32px; 
+      margin-right: 32px;
       &:last-child {
-        margin-right: 0; 
+        margin-right: 0;
       }
     }
   }
-  
 
   .next-categories-page {
     border: 0.5px solid rgba(0, 0, 0, 0.3);

@@ -24,6 +24,7 @@ import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
 import React, { useRef, useState } from "react"
 import { LabelsFilterItem } from "./LabelsFilterItem"
+import { AdvancedFilter } from "./AdvancedFilter/AdvancedFilter"
 
 
 
@@ -58,6 +59,7 @@ export function LabelsFilter() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showBackButton, setShowBackButton] = useState(false)
   const [reachedEnd, setReachedEnd] = useState(false)
+  const [showFilterModal, setShowFilterModal] = useState(false);
 
   const containerRef = useRef()
 
@@ -77,6 +79,13 @@ export function LabelsFilter() {
     setReachedEnd(newScrollPosition >= maxScroll)
   }
 
+  function handleLoginClick() {
+    setShowFilterModal(true);
+  }
+
+  function handleCloseLoginModal() {
+    setShowFilterModal(false);
+  }
 
   return (
     <section className="labels-filter">
@@ -98,10 +107,18 @@ export function LabelsFilter() {
         <ArrowNext />
       </button>
 
-      <button className="filter-btn">
+      <button className="filter-btn" onClick={handleLoginClick}>
         <FilterIcon />
         Filter
       </button>
+
+      {showFilterModal && (
+        <div className="modal-overlay">
+          <div className="modal-container">
+            <AdvancedFilter handleCloseLoginModal={handleCloseLoginModal} />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
