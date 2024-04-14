@@ -122,7 +122,7 @@ export function StayDetails({ setLargeMainFilter }) {
             </div>
 
             <div className="hosted-by">
-                <img className="hosted-img" src={user} alt={`Hosted by ${stay.host.fullname}`} />
+                <img className="hosted-img" src={stay.host.imgUrl} alt={`Hosted by ${stay.host.fullname}`} />
                 <span>Hosted by {stay.host.fullname}</span>
             </div>
 
