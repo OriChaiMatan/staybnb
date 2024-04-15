@@ -54,7 +54,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         return () => {
             document.removeEventListener('keydown', handleEscapeKeyPress);
             document.removeEventListener('mousedown', handleClickOutside);
-            document.removeEventListener('scroll', handleScroll);
+            // document.removeEventListener('scroll', handleScroll);
         };
     }, []);
 

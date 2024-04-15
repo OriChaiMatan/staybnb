@@ -9,7 +9,8 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
     const [selectedBed, setSelectedBed] = useState(null);
     const [selectedBathroom, setSelectedBathroom] = useState(null);
 
-    const handleChipClick = (value, type) => {
+    const handleChipClick = (e, value, type) => {
+        e.preventDefault()
         switch (type) {
             case 'bedroom':
                 setSelectedBedroom(value);
@@ -25,9 +26,10 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
         }
     };
 
-    const handleTypeClick = (type) => {
+    const handleTypeClick = (type, e) => {
+        e.preventDefault()
         setSelectedType(type);
-    };
+    }
 
     return (
         <>
@@ -54,19 +56,19 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                 <div className="advanced-filter-type">
                                     <button
                                         className={`option ${selectedType === 'any' ? 'active' : ''}`}
-                                        onClick={() => handleTypeClick('any')}
+                                        onClick={(e) => handleTypeClick('any', e)}
                                     >
                                         Any type
                                     </button>
                                     <button
                                         className={`option ${selectedType === 'room' ? 'active' : ''}`}
-                                        onClick={() => handleTypeClick('room')}
+                                        onClick={(e) => handleTypeClick('room', e)}
                                     >
                                         Room
                                     </button>
                                     <button
                                         className={`option ${selectedType === 'home' ? 'active' : ''}`}
-                                        onClick={() => handleTypeClick('home')}
+                                        onClick={(e) => handleTypeClick('home', e)}
                                     >
                                         Entire home
                                     </button>
@@ -94,7 +96,7 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                                 <div className="chip-wrapper" key={value}>
                                                     <button
                                                         className={`chip ${selectedBedroom === value ? 'selected' : ''}`}
-                                                        onClick={() => handleChipClick(value, 'bedroom')}
+                                                        onClick={(e) => handleChipClick(e, value, 'bedroom')}
                                                     >
                                                         {value}
                                                     </button>
@@ -107,7 +109,7 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                                 <div className="chip-wrapper" key={value}>
                                                     <button
                                                         className={`chip ${selectedBed === value ? 'selected' : ''}`}
-                                                        onClick={() => handleChipClick(value, 'bed')}
+                                                        onClick={(e) => handleChipClick(e, value, 'bed')}
                                                     >
                                                         {value}
                                                     </button>
@@ -120,7 +122,7 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                                 <div className="chip-wrapper" key={value}>
                                                     <button
                                                         className={`chip ${selectedBathroom === value ? 'selected' : ''}`}
-                                                        onClick={() => handleChipClick(value, 'bathroom')}
+                                                        onClick={(e) => handleChipClick(e, value, 'bathroom')}
                                                     >
                                                         {value}
                                                     </button>
@@ -159,7 +161,7 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                     <h2 className="advanced-filter-title advance-filter__no-subtitle">Property type</h2>
                                 </div>
                                 <div className="advanced-filter__property-type">
-                                    <div className="card-select">
+                                    <div className="card-select card-select--selected">
                                         <span className="card-select__icon-wrapper">
                                             <img src={homeLogo} style={{ width: '40px', height: '40px' }} alt="" />
                                         </span>
