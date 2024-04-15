@@ -36,8 +36,8 @@ export function StayIndex() {
             <LabelsFilter />
             <div className="stay-index">
                 <StayList stays={stays} />
-                <Outlet context={{ title: 'hi', onAddStay }} />
             </div>
+            <Outlet context={{ title: 'hi', onAddStay }} />
         </>
-    );
+    )
 }

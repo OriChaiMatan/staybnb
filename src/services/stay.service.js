@@ -42,13 +42,13 @@ async function remove(stayId) {
 
 async function save(stay) {
     var savedStay
-    // if (stay._id) {
+    if (stay._id) {
     savedStay = await storageService.put(STORAGE_KEY, stay)
-    // } else {
-    //     // Later, owner is set by the backend
-    //     stay.owner = userService.getLoggedinUser()
-    //     savedStay = await storageService.post(STORAGE_KEY, stay)
-    // }
+    } else {
+        // Later, owner is set by the backend
+        // stay.owner = userService.getLoggedinUser()
+        savedStay = await storageService.post(STORAGE_KEY, stay)
+    }
     return savedStay
 }
 
@@ -68,7 +68,7 @@ async function addStayMsg(stayId, txt) {
     return msg
 }
 
-function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = '', capacity = '', amenities = [], labels = [], country, countryCode, city, address = '', lat, lng, reviews = [], likedByUsers = []) {
+function getEmptyStay(name = '', type = '', imgUrls = {}, price = '', summary = '', capacity = '', amenities = [], labels = {}, country= '', countryCode= '', city= '', address = '', lat, lng, reviews = {}, likedByUsers = {}) {
 
     const { startDate, endDate } = utilService.getRandomDateRange()
 
@@ -83,14 +83,14 @@ function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = 
         amenities,
         labels,
         host: userService.getLoggedinUser(),
-        loc: [
+        loc: {
             country,
             countryCode,
             city,
             address,
             lat,
             lng
-        ],
+        },
         reviews,
         likedByUsers,
         startDate,
@@ -109,10 +109,21 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 80.00,
-                summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+                summary: `
+                A big, comfortable and nice five-room apartment, fully equipped, completely renewed, 
+                located in the heart of Porto's historic area, at 2 minutes walking from Ribeira, 
+                7 minutes walking from São Bento Metro and train Station. Completely renewed, where 
+                can perfectly sleep and live 6 people. Surrounded by some of the main tourist 
+                points of interest in town, monuments, churches, museums, restaurants, shops, 
+                bakeries, laundries...
+                `,
                 capacity: 8,
                 beds: 4,
                 bedroom: 4,
@@ -134,7 +145,7 @@ function _createStays() {
                 host: {
                     _id: "u101",
                     fullname: "Davit Pok",
-                    imgUrl: "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw", 
                 },
                 loc: {
                     country: "Portugal",
@@ -158,10 +169,16 @@ function _createStays() {
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
                 ],
                 price: 120.00,
-                summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
+                summary: `Unit 6302 at Bethany Bay is a 2 BR, 2 Bath, ground floor unit with panoramic
+                views of the waterways and Indian River Bay. Sleeps 4. Free parking. Fully equipped kitchen, AC, fireplace, 
+                community outdoor pool, jogging/hiking path, 9 hole golf course. Enjoy dinner and drinks on the enclosed rear porch
+                and take in the view and wildlife all year round. 5 miles to Bethany Beach, 12 miles to Ocean City,
+                17 miles to Rehoboth Beach. NON-SMOKING UNIT. NO ANIMALS permitted due to severe allergies.`,
                 capacity: 6,
                 beds: 3,
                 bedroom: 2,
@@ -182,7 +199,7 @@ function _createStays() {
                 host: {
                     _id: "u103",
                     fullname: "Sara Smith",
-                    imgUrl: "https://example.com/sara.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
                 },
                 loc: {
                     country: "Portugal",
@@ -226,10 +243,52 @@ function _createStays() {
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
                 ],
                 price: 100.00,
-                summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
+                summary: `
+                Look no further, we've got you covered.
+                
+                Holiday house with two bedrooms, for up to 6 people, is located only 150m from the sea, 
+                in the cove Božanska, on the island of Pašman, without immediate neighbors. Its location 
+                on the top of the hill vouches for a breathtaking sea view. Pets are welcome against a 
+                surcharge. Please indicate in your inquiry, how many pets you are traveling with. This 
+                holiday home can be reached by car. The road leading to it is concreted. The road to the 
+                sea is steep, the beach is rocky. There are two floors in the house, but only the upper 
+                one is open to guests. The ground floor is empty and not for rent. Electricity and water 
+                should be used sparingly here. Given that the water stays in the tank during the summer 
+                at high temperatures, it is recommended to boil it before consumption or buy bottled 
+                drinking water. Water directly from the tank is suitable for cooking and washing. 
+                Solar-powered electricity is 220 V, but it is not allowed to bring and use your own 
+                electrical devices, except of the battery chargers for mobile phones/laptops. The kitchen, 
+                living room and dining room are located in one room and contain a fireplace and a sofa for 
+                two people. WLan internet and SAT-TV are available in this house at no additional cost. 
+                In the kitchen there is a refrigerator with a freezer, a gas stove with 4 burners, a 
+                toaster, a kettle and a filter coffee machine. The bedrooms are equipped with double beds. 
+                The bathroom equipment includes a shower, toilet and sink. Hot and cold water is installed 
+                in the kitchen and bathroom. Bed linen and towels (one per person) are included in the 
+                price, and fresh ones are available after each week of stay. Beach towels are not offered. 
+                In the garden there is a barbecue in a covered gazebo with outdoor furniture. For the garden 
+                shower, the water is heated by the heat of the sun. The balcony is furnished, deckchairs 
+                are also available. We recommend that guests bring their mobile phone so that they can 
+                contact us in case of need. There is a socket for a standard plug in the house, so guests 
+                can charge their mobile phones in the house, with their own standard home charger. The island 
+                of Pašman is only a 15-minute ferry ride from Biograd na Moru. This island is a great 
+                destination for all lovers of water sports. In addition, there are hiking, biking and trekking 
+                trails on the island, which are also near this house, along which you can find various types 
+                of Mediterranean medicinal and aromatic plants - perfect for all nature lovers. Ferry tickets 
+                are not included in the price. The house can be booked throughout the year, but for winter 
+                rent, an additional payment for firewood is required. We recommend arriving at our agency in 
+                Biograd na Moru during the morning to early afternoon, because getting to the accommodation 
+                at night is difficult, even impossible after the last ferry leaves. After check-in at our 
+                agency, you continue your journey to the island. If you find any ambiguities in the description 
+                or if you have any further questions, and you do not find the answers in the description, 
+                please contact us. The agency cannot be held responsible if the client does not inquire about 
+                details that are important to him and are not listed in the description, or for any reason are 
+                not completely clear to the client.
+                `,
                 capacity: 4,
                 beds: 2,
                 bedroom: 2,
@@ -250,7 +309,7 @@ function _createStays() {
                 host: {
                     _id: "u106",
                     fullname: "Michael Brown",
-                    imgUrl: "https://example.com/michael.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/user1_syveue"
                 },
                 loc: {
                     country: "USA",
@@ -282,7 +341,10 @@ function _createStays() {
                 type: "Apartment",
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -306,7 +368,7 @@ function _createStays() {
                 host: {
                     _id: "u109",
                     fullname: "Sophia Garcia",
-                    imgUrl: "https://example.com/sophia.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
                 },
                 loc: {
                     country: "USA",
@@ -347,7 +409,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -372,7 +438,7 @@ function _createStays() {
                 host: {
                     _id: "u101",
                     fullname: "Davit Pok",
-                    imgUrl: "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
                 },
                 loc: {
                     country: "Portugal",
@@ -407,7 +473,8 @@ function _createStays() {
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -431,7 +498,7 @@ function _createStays() {
                 host: {
                     _id: "u103",
                     fullname: "Sara Smith",
-                    imgUrl: "https://example.com/sara.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
                 },
                 loc: {
                     country: "Portugal",
@@ -475,7 +542,9 @@ function _createStays() {
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -499,7 +568,7 @@ function _createStays() {
                 host: {
                     _id: "u106",
                     fullname: "Michael Brown",
-                    imgUrl: "https://example.com/michael.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/user1_syveue"
                 },
                 loc: {
                     country: "USA",
@@ -541,7 +610,10 @@ function _createStays() {
                 type: "Apartment",
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -565,7 +637,7 @@ function _createStays() {
                 host: {
                     _id: "u109",
                     fullname: "Sophia Garcia",
-                    imgUrl: "https://example.com/sophia.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
                 },
                 loc: {
                     country: "USA",
@@ -605,7 +677,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -630,7 +706,7 @@ function _createStays() {
                 host: {
                     _id: "u101",
                     fullname: "Davit Pok",
-                    imgUrl: "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
                 },
                 loc: {
                     country: "Portugal",
@@ -654,7 +730,8 @@ function _createStays() {
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -678,7 +755,7 @@ function _createStays() {
                 host: {
                     _id: "u103",
                     fullname: "Sara Smith",
-                    imgUrl: "https://example.com/sara.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
                 },
                 loc: {
                     country: "Portugal",
@@ -722,7 +799,9 @@ function _createStays() {
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -773,7 +852,7 @@ function _createStays() {
                         by: {
                             _id: "u108",
                             fullname: "Jason Miller",
-                            imgUrl: "https://example.com/jason.jpg"
+                            imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/user1_syveue"
                         }
                     }
                 ],
@@ -788,7 +867,10 @@ function _createStays() {
                 type: "Apartment",
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -812,7 +894,7 @@ function _createStays() {
                 host: {
                     _id: "u109",
                     fullname: "Sophia Garcia",
-                    imgUrl: "https://example.com/sophia.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
                 },
                 loc: {
                     country: "USA",
@@ -853,7 +935,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -878,7 +964,7 @@ function _createStays() {
                 host: {
                     _id: "u101",
                     fullname: "Davit Pok",
-                    imgUrl: "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
                 },
                 loc: {
                     country: "Portugal",
@@ -913,7 +999,8 @@ function _createStays() {
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
                     "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -937,7 +1024,7 @@ function _createStays() {
                 host: {
                     _id: "u103",
                     fullname: "Sara Smith",
-                    imgUrl: "https://example.com/sara.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
                 },
                 loc: {
                     country: "Portugal",
@@ -981,7 +1068,9 @@ function _createStays() {
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb",
                     "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -1047,7 +1136,10 @@ function _createStays() {
                 type: "Apartment",
                 imgUrls: [
                     "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn",
-                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+                    "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0",
+                    "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -1071,7 +1163,7 @@ function _createStays() {
                 host: {
                     _id: "u109",
                     fullname: "Sophia Garcia",
-                    imgUrl: "https://example.com/sophia.jpg"
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
                 },
                 loc: {
                     country: "USA",

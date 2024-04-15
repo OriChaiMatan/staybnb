@@ -13,28 +13,74 @@ export function StayEdit() {
     console.log(stay)
 
     function handleChange({ target }) {
-        const { value, name } = target
+        const { value, name, type, checked } = target
+        const [fieldName, nestedField] = name.split('.')
 
-        console.log('name:', name, 'value:', value);
-        setStay(prevStay => ({ ...prevStay, [name]: value }))
+        if (type === 'checkbox') {
+            let updatedAmenities
+            if (checked) {
+                updatedAmenities = [...stay.amenities, value]
+            } else {
+                updatedAmenities = stay.amenities.filter((amenity) => amenity !== value)
+            }
+            setStay((prevStay) => ({ ...prevStay, amenities: updatedAmenities }))
+        } else if (nestedField === 'imgUrls') {
+            setStay((prevStay) => ({
+                ...prevStay,
+                [fieldName]: {
+                    ...prevStay[fieldName],
+                    ...value
+                }
+            }))
+        } else if (nestedField) {
+            setStay((prevStay) => ({
+                ...prevStay,
+                [fieldName]: {
+                    ...prevStay[fieldName],
+                    [nestedField]: value
+                }
+            }));
+        } else {
+            setStay((prevStay) => ({ ...prevStay, [fieldName]: value }))
+        }
     }
 
+
+
     async function onSaveStay(ev) {
-        ev.preventDefault();
+        ev.preventDefault()
         try {
-            await stayService.save(stay)
+            await context.onAddStay(stay)
         } catch (err) {
             console.log('Had issues sending stay', err);
         }
+    }
+
+    function handleImgUpload(imgData) {
+        setStay((prevStay) => ({
+            ...prevStay,
+            imgUrls: { ...prevStay.imgUrls, ...imgData }
+        }));
+    }
+
+    function getCountryCode(countryName) {    //function to find the country code
+        const countries = countryJson.findAll()
+        const country = countries.find(c => c.country === countryName)
+        return country ? country.code : "Country not found"
     }
 
     return (
         <form onSubmit={onSaveStay}>
             <h1>Stay Edit</h1>
             <input type="text" name="name" placeholder="stay name" value={stay.name} onChange={handleChange} />
-            <span><div className="star-icon"><Star /></div>New {stay.reviews.length} Reviews • Address: <input type="text" name="loc.address" value={stay.loc.address} onChange={handleChange} /></span>
-            <ImgUploader />
-            <div>
+            <span><div className="star-icon"><Star /></div>New {stay.reviews.length} Reviews •</span>
+            <div className="loc">
+                <span> Country: <input type="text" name="loc.country" value={stay.loc.country} onChange={handleChange} /></span>
+                <span> City: <input type="text" name="loc.city" value={stay.loc.city} onChange={handleChange} /></span>
+                <span> Address: <input type="text" name="loc.address" value={stay.loc.address} onChange={handleChange} /></span>
+            </div>
+            <ImgUploader onUploaded={handleImgUpload} />
+            <div className="type">
                 <span>Capacity: <input type="number" name="capacity" value={stay.capacity} onChange={handleChange} /></span> •
                 <span>StayType: <select name="type" value={stay.type} onChange={handleChange}>
                     <option value="Entire Home/Apartment">Entire Home/Apartment</option>
@@ -44,21 +90,21 @@ export function StayEdit() {
                     <option value="Unique Stays">Unique Stays</option>
                     <option value="Camping">Camping</option>
                     <option value="RVs and Campervans">RVs and Campervans</option>
-                </select></span>
+                </select></span> •
                 <span>price: <input type="number" name="price" value={stay.price} onChange={handleChange} /> /night</span>
             </div>
             <div>
                 <span>Description</span>
                 <textarea name="summary" id="" cols="50" rows="15" value={stay.summary} onChange={handleChange}></textarea>
             </div>
-            <div>
+            <div className="amenities">
                 <span>Amenities</span>
-                <span><input type="checkbox" /> TV</span>
-                <span><input type="checkbox" /> Wifi</span>
-                <span><input type="checkbox" /> AC</span>
-                <span><input type="checkbox" /> Smoking allowed</span>
-                <span><input type="checkbox" /> Pets allowed</span>
-                <span><input type="checkbox" /> Cooking basics</span>
+                <span><input type="checkbox" name="amenities" value="TV" onChange={handleChange} /> TV</span>
+                <span><input type="checkbox" name="amenities" value="Wifi" onChange={handleChange} /> Wifi</span>
+                <span><input type="checkbox" name="amenities" value="AC" onChange={handleChange} /> AC</span>
+                <span><input type="checkbox" name="amenities" value="Smoking allowed" onChange={handleChange} /> Smoking allowed</span>
+                <span><input type="checkbox" name="amenities" value="Pets allowed" onChange={handleChange} /> Pets allowed</span>
+                <span><input type="checkbox" name="amenities" value="Cooking basics" onChange={handleChange} /> Cooking basics</span>
             </div>
             <button>Save</button>
         </form>

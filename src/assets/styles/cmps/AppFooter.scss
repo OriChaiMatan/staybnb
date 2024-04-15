@@ -1,6 +1,5 @@
 .app-footer {
   margin: 0;
-  // padding: 0px 53px 0px 40px;
   padding: 0 80px;
   height: 68px;
   display: flex;
@@ -10,6 +9,7 @@
   white-space: nowrap;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
   grid-row: 5;
+  grid-column: 1 / -1;
   background-color: whitesmoke;
 
   .app-footer-left {
