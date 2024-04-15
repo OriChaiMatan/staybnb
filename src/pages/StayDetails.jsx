@@ -83,7 +83,7 @@ export function StayDetails({ setLargeMainFilter }) {
                 {stay.imgUrls.map((url, index) => (
                     <img
                         key={index}
-                        src={url}
+                        src={url.imgUrl}
                         alt={`Image ${index + 1}`}
                         className={`grid-item-${index}`}
                     />

@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react"
-import { Outlet } from "react-router-dom"
+import { Outlet, useParams } from "react-router-dom"
 import { stayService } from "../services/stay.service"
 import { StayList } from "../cmps/StayList"
 import { LabelsFilter } from "../cmps/LabelsFilter"
 
 export function StayIndex() {
     const [stays, setStays] = useState(null)
+    const params = useParams()
+
+
+
+
+    useEffect(() => {
+        console.log(params, 'params')
+    }, [params])
 
     useEffect(() => {
         loadStays()

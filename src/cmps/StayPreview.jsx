@@ -48,7 +48,7 @@ export function StayPreview({ stay }) {
                     <Slider arrows={isHovered} {...settings} >
                         {stay.imgUrls.map((imgUrl, index) => (
                             <div className="imgs" key={index}>
-                                <img src={imgUrl} alt={`Stay Image ${index + 1}`} />
+                                <img src={imgUrl.imgUrl} alt={`Stay Image ${index + 1}`} />
                             </div>
                         ))}
                     </Slider>

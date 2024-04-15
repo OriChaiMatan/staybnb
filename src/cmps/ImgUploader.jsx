@@ -4,11 +4,23 @@ import { uploadService } from '../services/upload.service'
 export function ImgUploader({ onUploaded = null }) {
     const [isUploading, setIsUploading] = useState(false)
 
+    // async function uploadImg(ev) {
+    //     setIsUploading(true)
+    //     const { secure_url, height, width } = await uploadService.uploadImg(ev)
+    //     setIsUploading(false)
+    //     onUploaded && onUploaded({ imgUrl: secure_url })
+    // }
+
     async function uploadImg(ev) {
-        setIsUploading(true)
-        const { secure_url, height, width } = await uploadService.uploadImg(ev)
-        setIsUploading(false)
-        onUploaded && onUploaded({ imgUrl: secure_url, width, height })
+        setIsUploading(true);
+        try {
+            const { secure_url, height, width } = await uploadService.uploadImg(ev)
+            setIsUploading(false);
+            onUploaded && onUploaded({ imgUrl: secure_url });
+        } catch (error) {
+            setIsUploading(false);
+            console.error('Failed to upload image', error);
+        }
     }
 
     function getUploadLabel() {
@@ -18,7 +30,7 @@ export function ImgUploader({ onUploaded = null }) {
     return (
         <div className="upload-preview">
             <label htmlFor="imgUpload">{getUploadLabel()}</label>
-            <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
+            <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" multiple="multiple" />
         </div>
     );
 }

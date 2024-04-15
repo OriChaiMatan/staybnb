@@ -2,15 +2,15 @@ import { useEffect, useState } from "react"
 import { useOutletContext } from "react-router-dom"
 import { stayService } from "../services/stay.service"
 
+import { uploadService } from "../services/upload.service"
 import { ImgUploader } from "../cmps/ImgUploader"
 
 import Star from "../svg/StarSvg"
 
-export function StayEdit() {
+export function StayEdit(props) {
     const context = useOutletContext()
-
     const [stay, setStay] = useState(stayService.getEmptyStay())
-    console.log(stay)
+    // console.log(stay)
 
     function handleChange({ target }) {
         const { value, name, type, checked } = target
@@ -50,18 +50,22 @@ export function StayEdit() {
     async function onSaveStay(ev) {
         ev.preventDefault()
         try {
-            await context.onAddStay(stay)
+            // await context.onAddStay(stay)
+            await stayService.save(stay)
         } catch (err) {
             console.log('Had issues sending stay', err);
         }
     }
 
     function handleImgUpload(imgData) {
-        setStay((prevStay) => ({
+        setStay(prevStay => ({
             ...prevStay,
-            imgUrls: { ...prevStay.imgUrls, ...imgData }
+            imgUrls: [...prevStay.imgUrls, imgData]
         }));
     }
+    
+    
+    
 
     function getCountryCode(countryName) {    //function to find the country code
         const countries = countryJson.findAll()
@@ -79,6 +83,10 @@ export function StayEdit() {
                 <span> City: <input type="text" name="loc.city" value={stay.loc.city} onChange={handleChange} /></span>
                 <span> Address: <input type="text" name="loc.address" value={stay.loc.address} onChange={handleChange} /></span>
             </div>
+            <ImgUploader onUploaded={handleImgUpload} />
+            <ImgUploader onUploaded={handleImgUpload} />
+            <ImgUploader onUploaded={handleImgUpload} />
+            <ImgUploader onUploaded={handleImgUpload} />
             <ImgUploader onUploaded={handleImgUpload} />
             <div className="type">
                 <span>Capacity: <input type="number" name="capacity" value={stay.capacity} onChange={handleChange} /></span> •
