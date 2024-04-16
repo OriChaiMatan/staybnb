@@ -14,7 +14,11 @@ export const stayService = {
     save,
     remove,
     getEmptyStay,
-    addStayMsg
+    addStayMsg,
+    minPricesStays,
+    maxPricesStays,
+    getAllPrices,
+    getDefaultFilter
 }
 window.cs = stayService
 
@@ -41,15 +45,15 @@ async function remove(stayId) {
 }
 
 async function save(stay) {
-    console.log('stay.service',{stay});
+    console.log('stay.service', { stay });
     var savedStay
     if (stay && stay._id) {
-    savedStay = await storageService.put(STORAGE_KEY, stay)
+        savedStay = await storageService.put(STORAGE_KEY, stay)
     } else {
         // Later, owner is set by the backend
         // stay.owner = userService.getLoggedinUser()
         // create id here.
-        stay._id= utilService.makeId()
+        stay._id = utilService.makeId()
         savedStay = await storageService.post(STORAGE_KEY, stay)
     }
     return savedStay
@@ -71,7 +75,22 @@ async function addStayMsg(stayId, txt) {
     return msg
 }
 
-function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = '', capacity = '', amenities = [], labels = [], country= '', countryCode= '', city= '', address = '', lat, lng, reviews = [], likedByUsers = []) {
+function minPricesStays() {
+    let stays = utilService.loadFromStorage(STORAGE_KEY);
+    return Math.min(...stays.map((stay) => stay.price));
+}
+
+function maxPricesStays() {
+    let stays = utilService.loadFromStorage(STORAGE_KEY);
+    return Math.max(...stays.map((stay) => stay.price));
+}
+
+function getAllPrices() {
+    let stays = utilService.loadFromStorage(STORAGE_KEY);
+    return stays.map((stay) => stay.price);
+}
+
+function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = '', capacity = '', amenities = [], labels = [], country = '', countryCode = '', city = '', address = '', lat, lng, reviews = [], likedByUsers = []) {
 
     const { startDate, endDate } = utilService.getRandomDateRange()
 
@@ -100,6 +119,26 @@ function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = 
     }
 }
 
+function getDefaultFilter(
+    category_tag,
+    room_types = "any_type",
+    amenities = [],
+    price_min = minPricesStays(),
+    price_max = maxPricesStays(),
+    property_types = [],
+    guest_favorite = false,
+) {
+    return {
+        category_tag,
+        room_types,
+        price_min,
+        price_max,
+        amenities,
+        property_types,
+        guest_favorite
+    };
+}
+
 
 function _createStays() {
     let stays = utilService.loadFromStorage(STORAGE_KEY)
@@ -111,11 +150,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
                 summary: `
@@ -146,7 +185,7 @@ function _createStays() {
                 host: {
                     _id: "u101",
                     fullname: "Davit Pok",
-                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw", 
+                    imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
                 },
                 loc: {
                     country: "Portugal",
@@ -167,12 +206,12 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House", //2_2_xepifd
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 120.00,
                 summary: `Unit 6302 at Bethany Bay is a 2 BR, 2 Bath, ground floor unit with panoramic
@@ -242,11 +281,11 @@ function _createStays() {
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
                 ],
                 price: 100.00,
                 summary: `
@@ -341,11 +380,11 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -409,11 +448,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -469,11 +508,11 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -540,11 +579,11 @@ function _createStays() {
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -609,11 +648,11 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -677,11 +716,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -727,11 +766,11 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -797,11 +836,11 @@ function _createStays() {
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                   {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -866,11 +905,11 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
@@ -934,11 +973,11 @@ function _createStays() {
                 name: "Ribeira Charming Duplex",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
                 summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
@@ -994,11 +1033,11 @@ function _createStays() {
                 name: "Ocean View Villa",
                 type: "House",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 120.00,
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
@@ -1064,11 +1103,11 @@ function _createStays() {
                 name: "Cozy Mountain Cabin",
                 type: "Cabin",
                 imgUrls: [
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 100.00,
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
@@ -1132,11 +1171,11 @@ function _createStays() {
                 name: "City Center Loft",
                 type: "Apartment",
                 imgUrls: [
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"},
-                    {imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"},
-                    {imgUrl:"https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"}
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" },
+                    { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd" }
                 ],
                 price: 150.00,
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",

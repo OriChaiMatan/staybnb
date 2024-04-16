@@ -2,8 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import homeLogo from '../../assets/img/home.png'
 import guesthouseLogo from '../../assets/img/guesthouse.jpg'
 import hotelLogo from '../../assets/img/hotel.jpg'
+import { PriceRange } from './PriceRange';
+import { Formik, Form } from 'formik';
+import { stayService } from '../../services/stay.service';
 export function AdvancedFilter({ handleCloseAdvancedFilter }) {
-
+    const [initialValues, setInitialValues] = useState({
+        ...stayService.getDefaultFilter(),
+    });
     const [selectedType, setSelectedType] = useState('Any');
     const [selectedBedroom, setSelectedBedroom] = useState('Any');
     const [selectedBed, setSelectedBed] = useState('Any');
@@ -98,6 +103,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
         })
     }
 
+
     const formatLabelText = (amenity) => {
         switch (amenity) {
             case 'airconditioning':
@@ -118,7 +124,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
     }
 
     return (
-        <>
+        <Formik initialValues={initialValues} onSubmit={(values) => console.log(values)}>
             <div ref={filterModalRef} className="modal-container-inner">
                 <header className='filter-form-header'>
                     <div className='close-login-container'>
@@ -130,7 +136,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                     <div></div>
                 </header>
                 <div className='filter-modal-content'>
-                    <form className='advanced-filter-form' action="">
+                    <form className='advanced-filter-form'>
                         <section>
                             <div className="advanced-filter-content">
                                 <div className="advanced-filter-head">
@@ -166,8 +172,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                                 <div className="advanced-filter-head">
                                     <h2 className="advanced-filter-title">Price range</h2>
                                     <p className="advanced-filter-subtitle">Nightly prices including fees and taxes</p>
-                                    <div className="price-range">
-                                    </div>
+                                    <PriceRange />
                                 </div>
                             </div>
                         </section>
@@ -300,6 +305,6 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                     </div>
                 </footer>
             </div>
-        </>
+        </Formik>
     )
 }
