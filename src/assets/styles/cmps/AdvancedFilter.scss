@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-out;
-  color: #222222;
+  color: $clr3;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
 
   & .modal-container-inner {
@@ -47,13 +47,13 @@
 
         & .advanced-filter-clear-button {
           font-size: 0.9375rem;
-          color: #222222;
+          color: $clr3;
         }
 
         & .advanced-filter-submit-button {
           padding: 14px 24px;
-          background-color: #222222;
-          color: #ffffff;
+          background-color: $clr3;
+          color: $clr5;
           min-width: 7em;
           border-radius: 8px;
           font-size: 1rem;
@@ -190,7 +190,7 @@
         line-height: 1.125rem;
         margin: 0;
         margin-block-start: 0.25rem;
-        color: #222222;
+        color: $clr3;
       }
     }
 
@@ -204,7 +204,7 @@
         padding: 16px 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         line-height: 1.125rem;
-        background-color: #ffffff;
+        background-color: $clr5;
         font-size: 16px;
         color: #333;
         text-align: center;
@@ -213,17 +213,17 @@
         transition: background-color 0.3s;
 
         &:hover {
-          border: 1px solid #222222;
+          border: 1px solid $clr3;
         }
 
         &.active {
-          background-color: #222222;
+          background-color: $clr3;
           background-image: linear-gradient(
             to bottom,
             rgba(255, 255, 255, 0.16),
             rgba(255, 255, 255, 0)
           );
-          color: #ffffff;
+          color: $clr5;
         }
 
         &:first-child {
@@ -248,7 +248,7 @@
         padding-top: 4px;
         font-size: 1rem;
         padding-inline: 2px;
-        color: #222222;
+        color: $clr3;
         font-weight: 500;
       }
 
@@ -276,7 +276,7 @@
             color: black;
 
             &:hover {
-              border: 1px solid #222222;
+              border: 1px solid $clr3;
             }
 
             &.selected {
@@ -299,7 +299,7 @@
       padding: 20px;
       margin: 1px;
       border: 2px solid transparent;
-      background-color: #ffffff;
+      background-color: $clr5;
       border-radius: 12px;
       justify-content: space-between;
       cursor: pointer;
@@ -313,7 +313,7 @@
       }
 
       &.card-select--selected {
-        border-color: #222222;
+        border-color: $clr3;
         background-color: #f7f7f7;
       }
 
@@ -334,56 +334,12 @@
 
       & .card-select__info {
         width: 90%;
-        color: #717171;
+        color: $clr4;
         margin-top: 0.25em;
         line-height: 1.125rem;
         font-size: 0.875rem;
         white-space: wrap;
       }
     }
-
-    // & .card-select {
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: start;
-    //   padding: 20px;
-    //   margin: 1px;
-    //   border: 1px solid transparent;
-    //   background-color: #ffffff;
-    //   border-radius: 12px;
-    //   justify-content: space-between;
-    //   cursor: pointer;
-    //   transition: all 0.2s ease;
-    //   box-sizing: border-box;
-    //   border-color: #dddddd;
-
-    //   &:not(.card-select--selected):hover {
-    //     border: 2px solid #222222;
-    //   }
-
-    //   &.card-select--selected {
-    //     border-color: #222222;
-    //   }
-
-    //   & .card-select__icon-wrapper {
-    //     margin-bottom: 0.75em;
-    //     margin-right: 1em;
-    //     height: 2em;
-    //     width: 2em;
-    //   }
-
-    //   & .card-select__title {
-    //     font-size: 1rem;
-    //   }
-
-    //   & .card-select__info {
-    //     width: 90%;
-    //     color: #717171;
-    //     margin-top: 0.25em;
-    //     line-height: 1.125rem;
-    //     font-size: 0.875rem;
-    //     white-space: wrap;
-    //   }
-    // }
   }
 }
