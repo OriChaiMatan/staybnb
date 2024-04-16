@@ -16,7 +16,17 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
         wifi: true,
         kitchen: false,
         washer: false,
-        dryer: false
+        dryer: false,
+        airconditioning: false,
+        heating: false,
+        tv: false,
+        iron: false,
+        pool: false,
+        pets: false,
+        parking: false,
+        gym: false,
+        smoking: false,
+        bbq: false
     });
     const filterModalRef = useRef(null);
 
@@ -274,6 +284,76 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                                                 <span className="checkbox-container">
                                                     <input type="checkbox" id='dryer' className='checkbox-input' checked={selectedAmenities.dryer} />
                                                     <span className={`checkbox-custom ${selectedAmenities.dryer ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="airconditioning" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Air conditioning</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='airconditioning' className='checkbox-input' checked={selectedAmenities.airconditioning} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.airconditioning ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="heating" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Heating</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='heating' className='checkbox-input' checked={selectedAmenities.heating} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.heating ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="tv" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>TV</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='tv' className='checkbox-input' checked={selectedAmenities.tv} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.tv ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="iron" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Iron</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='iron' className='checkbox-input' checked={selectedAmenities.iron} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.iron ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="pool" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Pool</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='pool' className='checkbox-input' checked={selectedAmenities.pool} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.pool ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="pets" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Pets allowed</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='pets' className='checkbox-input' checked={selectedAmenities.pets} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.pets ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="parking" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Free parking</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='parking' className='checkbox-input' checked={selectedAmenities.parking} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.parking ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="gym" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Gym</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='gym' className='checkbox-input' checked={selectedAmenities.gym} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.gym ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="smoking" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>Smoking allowed</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='smoking' className='checkbox-input' checked={selectedAmenities.smoking} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.smoking ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
+                                                </span>
+                                            </label>
+                                            <label htmlFor="bbq" className='checkbox' onChange={handleCheckboxChange}>
+                                                <span className='checkbox-label'>BBQ Grill</span>
+                                                <span className="checkbox-container">
+                                                    <input type="checkbox" id='bbq' className='checkbox-input' checked={selectedAmenities.bbq} />
+                                                    <span className={`checkbox-custom ${selectedAmenities.bbq ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
                                                 </span>
                                             </label>
                                         </div>
