@@ -30,7 +30,7 @@
     }
 
     .name-info {
-      color: #222222;
+      color: $clr3;
       text-overflow: ellipsis;
       margin-top: -5px;
     }
@@ -49,13 +49,13 @@
       text-overflow: ellipsis;
       overflow: hidden;
       font-weight: normal;
-      color: #717171;
+      color: $clr4;
       margin-top: -3px;
     }
 
     .date-info {
       font-weight: normal;
-      color: #717171;
+      color: $clr4;
     }
 
     .price-info span {
@@ -91,12 +91,12 @@
 
 .slick-dots li.slick-active button:before {
   opacity: 1.5;
-  color: white;
+  color: $clr5;
 }
 
 .slick-dots li button:before {
   opacity: 0.75;
-  color: white;
+  color:$clr5;
 }
 
 .slick-dots li {

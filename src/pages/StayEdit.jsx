@@ -63,9 +63,9 @@ export function StayEdit(props) {
             imgUrls: [...prevStay.imgUrls, imgData]
         }));
     }
-    
-    
-    
+
+
+
 
     function getCountryCode(countryName) {    //function to find the country code
         const countries = countryJson.findAll()
@@ -107,12 +107,21 @@ export function StayEdit(props) {
             </div>
             <div className="amenities">
                 <span>Amenities</span>
-                <span><input type="checkbox" name="amenities" value="TV" onChange={handleChange} /> TV</span>
                 <span><input type="checkbox" name="amenities" value="Wifi" onChange={handleChange} /> Wifi</span>
-                <span><input type="checkbox" name="amenities" value="AC" onChange={handleChange} /> AC</span>
-                <span><input type="checkbox" name="amenities" value="Smoking allowed" onChange={handleChange} /> Smoking allowed</span>
+                <span><input type="checkbox" name="amenities" value="Kitchen" onChange={handleChange} /> Kitchen</span>
+                <span><input type="checkbox" name="amenities" value="Washer" onChange={handleChange} /> Washer</span>
+                <span><input type="checkbox" name="amenities" value="Dryer" onChange={handleChange} /> Dryer</span>
+                <span><input type="checkbox" name="amenities" value="Air conditioning" onChange={handleChange} /> Air conditioning</span>
+                <span><input type="checkbox" name="amenities" value="Heating" onChange={handleChange} /> Heating</span>
+                <span><input type="checkbox" name="amenities" value="TV" onChange={handleChange} /> TV</span>
+                <span><input type="checkbox" name="amenities" value="Iron" onChange={handleChange} /> Iron</span>
+                <span><input type="checkbox" name="amenities" value="Pool" onChange={handleChange} /> Pool</span>
                 <span><input type="checkbox" name="amenities" value="Pets allowed" onChange={handleChange} /> Pets allowed</span>
-                <span><input type="checkbox" name="amenities" value="Cooking basics" onChange={handleChange} /> Cooking basics</span>
+                <span><input type="checkbox" name="amenities" value="Gym" onChange={handleChange} /> Gym</span>
+                <span><input type="checkbox" name="amenities" value="Smoking allowed" onChange={handleChange} /> Smoking allowed</span>
+                <span><input type="checkbox" name="amenities" value="BBQ Grill" onChange={handleChange} /> BBQ Grill</span>
+
+
             </div>
             <button>Save</button>
         </form>

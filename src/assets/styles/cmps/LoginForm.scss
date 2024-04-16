@@ -3,13 +3,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white; /* Set background color */
-  width: 568px; /* Set width as needed */
-  height: 500px; /* Set height as needed */
-  border-radius: 10px; /* Add border radius for rounded corners */
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28); /* Add box shadow for depth */
-  //padding: 20px; /* Add padding inside the modal */
-  z-index: 999; /* Ensure the modal appears on top of other content */
+  background-color:$clr5; 
+  width: 568px; 
+  height: 500px; 
+  border-radius: 10px; 
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28); 
+  z-index: 999;
 
   animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1),
     cubic-bezier(0, 0, 1, 1);
@@ -36,7 +35,7 @@
 }
 
 .login-modal h2 {
-  margin-bottom: 20px; /* Add margin below the heading */
+  margin-bottom: 20px;
 }
 
 .login-modal form {
@@ -59,7 +58,7 @@
 }
 
 .login-modal button {
-  margin-top: 100px; /* Add margin above the button */
+  margin-top: 100px; 
 }
 
 .login-form-header {
@@ -95,7 +94,7 @@
       padding: 0;
       text-decoration: underline;
       font-size: 11px;
-      color: #222222;
+      color: $clr3;
     }
   }
 
@@ -122,7 +121,7 @@
     padding: 14px 24px;
     border-radius: 8px;
     width: 100%;
-    color: white;
+    color: $clr5;
     background-position: calc((100 - var(--mouse-x, 0)) * 1%)
       calc((100 - var(--mouse-y, 0)) * 1%);
     --mouse-x: 94.71153846153845;
