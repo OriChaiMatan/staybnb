@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { userService } from '../../services/user.service';
 export function LoginForm({ onClose }) {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errorMsg, setErrorMsg] = useState(false)
+    const loginModalRef = useRef(null)
+
+    useEffect(() => {
+        const handleEscapeKeyPress = (event) => {
+            if (event.key === 'Escape') {
+                onClose()
+            }
+        };
+
+        const handleClickOutside = (event) => {
+            if (loginModalRef.current && !loginModalRef.current.contains(event.target)) {
+                onClose();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscapeKeyPress);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKeyPress);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     async function handleSignup() {
         await userService.signup({ email, password })
@@ -24,7 +47,7 @@ export function LoginForm({ onClose }) {
     }
 
     return (
-        <div className="login-form">
+        <div ref={loginModalRef} className="login-form">
             <header className='login-form-header'>
                 <div></div>
                 <div>

@@ -1,13 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import homeLogo from '../../assets/img/home.png'
 import guesthouseLogo from '../../assets/img/guesthouse.jpg'
 import hotelLogo from '../../assets/img/hotel.jpg'
-export function AdvancedFilter({ handleCloseLoginModal }) {
+export function AdvancedFilter({ handleCloseAdvancedFilter }) {
 
     const [selectedType, setSelectedType] = useState('any');
     const [selectedBedroom, setSelectedBedroom] = useState(null);
     const [selectedBed, setSelectedBed] = useState(null);
     const [selectedBathroom, setSelectedBathroom] = useState(null);
+    const filterModalRef = useRef(null);
+
+
+    useEffect(() => {
+        const handleEscapeKeyPress = (event) => {
+            if (event.key === 'Escape') {
+                handleCloseAdvancedFilter()
+            }
+        };
+
+        const handleClickOutside = (event) => {
+            if (filterModalRef.current && !filterModalRef.current.contains(event.target)) {
+                handleCloseAdvancedFilter();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscapeKeyPress);
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('keydown', handleEscapeKeyPress);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const handleChipClick = (e, value, type) => {
         e.preventDefault()
@@ -33,10 +57,10 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
 
     return (
         <>
-            <div className="modal-container-inner">
+            <div ref={filterModalRef} className="modal-container-inner">
                 <header className='filter-form-header'>
                     <div className='close-login-container'>
-                        <button onClick={handleCloseLoginModal}>X</button>
+                        <button onClick={handleCloseAdvancedFilter}>X</button>
                     </div>
                     <div>
                         <h1>Filters</h1>
@@ -161,7 +185,7 @@ export function AdvancedFilter({ handleCloseLoginModal }) {
                                     <h2 className="advanced-filter-title advance-filter__no-subtitle">Property type</h2>
                                 </div>
                                 <div className="advanced-filter__property-type">
-                                    <div className="card-select card-select--selected">
+                                    <div className="card-select ">
                                         <span className="card-select__icon-wrapper">
                                             <img src={homeLogo} style={{ width: '40px', height: '40px' }} alt="" />
                                         </span>
