@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-out;
-  color: $clr3;
+  color: #222222;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
 
   & .modal-container-inner {
@@ -47,13 +47,13 @@
 
         & .advanced-filter-clear-button {
           font-size: 0.9375rem;
-          color: $clr3;
+          color: #222222;
         }
 
         & .advanced-filter-submit-button {
           padding: 14px 24px;
-          background-color: $clr3;
-          color: $clr5;
+          background-color: #222222;
+          color: #ffffff;
           min-width: 7em;
           border-radius: 8px;
           font-size: 1rem;
@@ -190,7 +190,7 @@
         line-height: 1.125rem;
         margin: 0;
         margin-block-start: 0.25rem;
-        color: $clr3;
+        color: #222222;
       }
     }
 
@@ -204,7 +204,7 @@
         padding: 16px 8px;
         border: 1px solid rgba(0, 0, 0, 0.08);
         line-height: 1.125rem;
-        background-color: $clr5;
+        background-color: #ffffff;
         font-size: 16px;
         color: #333;
         text-align: center;
@@ -213,17 +213,17 @@
         transition: background-color 0.3s;
 
         &:hover {
-          border: 1px solid $clr3;
+          border: 1px solid #222222;
         }
 
         &.active {
-          background-color: $clr3;
+          background-color: #222222;
           background-image: linear-gradient(
             to bottom,
             rgba(255, 255, 255, 0.16),
             rgba(255, 255, 255, 0)
           );
-          color: $clr5;
+          color: #ffffff;
         }
 
         &:first-child {
@@ -248,7 +248,7 @@
         padding-top: 4px;
         font-size: 1rem;
         padding-inline: 2px;
-        color: $clr3;
+        color: #222222;
         font-weight: 500;
       }
 
@@ -276,12 +276,12 @@
             color: black;
 
             &:hover {
-              border: 1px solid$clr3;
+              border: 1px solid #222222;
             }
 
             &.selected {
               background-color: #000000;
-              color:$clr5;
+              color: white;
             }
           }
         }
@@ -334,7 +334,7 @@
 
       & .card-select__info {
         width: 90%;
-        color: $clr4;
+        color: #717171;
         margin-top: 0.25em;
         line-height: 1.125rem;
         font-size: 0.875rem;
