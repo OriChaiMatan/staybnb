@@ -22,7 +22,7 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { LabelsFilterItem } from "./LabelsFilterItem"
 import { AdvancedFilter } from "./AdvancedFilter/AdvancedFilter"
 
@@ -79,13 +79,15 @@ export function LabelsFilter() {
     setReachedEnd(newScrollPosition >= maxScroll)
   }
 
-  function handleLoginClick() {
+  function handleOpenAdvancedFilter() {
     setShowFilterModal(true);
   }
 
-  function handleCloseLoginModal() {
+  function handleCloseAdvancedFilter() {
     setShowFilterModal(false);
   }
+
+
 
   return (
     <section className="labels-filter">
@@ -107,7 +109,7 @@ export function LabelsFilter() {
         <ArrowNext />
       </button>
 
-      <button className="filter-btn" onClick={handleLoginClick}>
+      <button className="filter-btn" onClick={handleOpenAdvancedFilter}>
         <FilterIcon />
         Filter
       </button>
@@ -115,7 +117,7 @@ export function LabelsFilter() {
       {showFilterModal && (
         <div className="modal-overlay">
           <div className="modal-container">
-            <AdvancedFilter handleCloseLoginModal={handleCloseLoginModal} />
+            <AdvancedFilter handleCloseAdvancedFilter={handleCloseAdvancedFilter} />
           </div>
         </div>
       )}

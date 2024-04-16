@@ -77,6 +77,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     }, [activeMainFilter, selectedDestination])
 
 
+
     function extractDateDisplay() {
         if (selectedDates.length === 2 && selectedDates.every(date => date?.$d instanceof Date)) {
             const firstDate = dayjs(selectedDates[0].$d);
