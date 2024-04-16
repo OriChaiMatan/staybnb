@@ -136,7 +136,6 @@ function _createStays() {
                     "Kitchen",
                     "Smoking allowed",
                     "Pets allowed",
-                    "Cooking basics"
                 ],
                 labels: [
                     "Top of the world",
@@ -189,9 +188,9 @@ function _createStays() {
                     "TV",
                     "Wifi",
                     "Kitchen",
-                    "Swimming Pool",
-                    "Air Conditioning",
-                    "Free Parking"
+                    "Pool",
+                    "Air conditioning",
+                    "Free parking"
                 ],
                 labels: [
                     "Luxe",
@@ -298,10 +297,10 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Fireplace",
-                    "Mountain View",
+                    "BBQ Grill",
+                    "Washer",
                     "Heating",
-                    "Free Parking"
+                    "Free parking"
                 ],
                 labels: [
                     "Rustic",
@@ -357,10 +356,9 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Elevator",
-                    "City View",
-                    "Air Conditioning",
-                    "Gym Access"
+                    "Dryer",
+                    "Air conditioning",
+                    "Gym"
                 ],
                 labels: [
                     "Urban Living",
@@ -429,7 +427,6 @@ function _createStays() {
                     "Kitchen",
                     "Smoking allowed",
                     "Pets allowed",
-                    "Cooking basics"
                 ],
                 labels: [
                     "Top of the world",
@@ -488,9 +485,10 @@ function _createStays() {
                     "TV",
                     "Wifi",
                     "Kitchen",
-                    "Swimming Pool",
-                    "Air Conditioning",
-                    "Free Parking"
+                    "Pool",
+                    "Air conditioning",
+                    "Free parking",
+                    "BBQ Grill",
                 ],
                 labels: [
                     "Luxe",
@@ -557,10 +555,10 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Fireplace",
-                    "Mountain View",
                     "Heating",
-                    "Free Parking"
+                    "Free parking",
+                    "Pool",
+                    "BBQ Grill",
                 ],
                 labels: [
                     "Rustic",
@@ -626,10 +624,10 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Elevator",
-                    "City View",
-                    "Air Conditioning",
-                    "Gym Access"
+                    "Air conditioning",
+                    "Gym",
+                    "Smoking allowed",
+                    "BBQ Grill",
                 ],
                 labels: [
                     "Urban Living",
@@ -697,7 +695,7 @@ function _createStays() {
                     "Kitchen",
                     "Smoking allowed",
                     "Pets allowed",
-                    "Cooking basics"
+                    "BBQ Grill",
                 ],
                 labels: [
                     "Top of the world",
@@ -745,9 +743,9 @@ function _createStays() {
                     "TV",
                     "Wifi",
                     "Kitchen",
-                    "Swimming Pool",
-                    "Air Conditioning",
-                    "Free Parking"
+                    "Pool",
+                    "Air conditioning",
+                    "Free parking"
                 ],
                 labels: [
                     "Luxe",
@@ -814,10 +812,10 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Fireplace",
-                    "Mountain View",
+                    "Dryer",
+                    "Washer",
                     "Heating",
-                    "Free Parking"
+                    "Iron"
                 ],
                 labels: [
                     "Rustic",
@@ -883,10 +881,9 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Elevator",
-                    "City View",
-                    "Air Conditioning",
-                    "Gym Access"
+                    "Air conditioning",
+                    "Gym",
+                    "Iron"
                 ],
                 labels: [
                     "Urban Living",
@@ -955,7 +952,6 @@ function _createStays() {
                     "Kitchen",
                     "Smoking allowed",
                     "Pets allowed",
-                    "Cooking basics"
                 ],
                 labels: [
                     "Top of the world",
@@ -1014,9 +1010,9 @@ function _createStays() {
                     "TV",
                     "Wifi",
                     "Kitchen",
-                    "Swimming Pool",
-                    "Air Conditioning",
-                    "Free Parking"
+                    "Poll",
+                    "Air conditioning",
+                    "Free parking"
                 ],
                 labels: [
                     "Luxe",
@@ -1083,10 +1079,9 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Fireplace",
-                    "Mountain View",
+                    "Air conditioning",
                     "Heating",
-                    "Free Parking"
+                    "Free parking"
                 ],
                 labels: [
                     "Rustic",
@@ -1152,10 +1147,11 @@ function _createStays() {
                 amenities: [
                     "TV",
                     "Wifi",
-                    "Elevator",
-                    "City View",
-                    "Air Conditioning",
-                    "Gym Access"
+                    "Air conditioning",
+                    "Gym",
+                    "Iron",
+                    "Washer",
+                    "Pool"
                 ],
                 labels: [
                     "Urban Living",
@@ -1207,8 +1203,3 @@ function _createStays() {
 }
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
-
-
-
-
-

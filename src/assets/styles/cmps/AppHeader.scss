@@ -11,7 +11,7 @@
   transition: height 0.7s ease;
   box-shadow: rgb(0 0 0/8%) 0 1px 0;
   grid-row: 1;
-  color: #222222;
+  color: $clr3;
   padding: 0 80px;
 
   &.large-header {
@@ -20,10 +20,10 @@
   }
 
   .name {
-    color: #717171;
+    color: $clr4;
   }
 
-  .app-header.large-header + .main-filter-header {
+  .app-header.large-header+.main-filter-header {
     grid-row: 1;
   }
 
@@ -93,7 +93,7 @@
     }
 
     .main-filter-btn.large:has(> .filter-content.active-filter) {
-      background: white;
+      background: $clr5;
     }
 
     .text {
@@ -152,7 +152,7 @@
           margin-block-end: -14px;
           margin-left: 8px;
           font-size: 14px;
-          color: #222222;
+          color: $clr3;
           letter-spacing: normal;
         }
 
@@ -164,7 +164,7 @@
           column-gap: 5px;
           margin-block-start: 33px;
 
-          & > div {
+          &>div {
             height: 160px;
             display: flex;
             flex-direction: column;
@@ -173,12 +173,12 @@
             text-align: start;
           }
 
-          & > div:hover {
+          &>div:hover {
             background-color: #ebebeb;
             border-radius: 10px;
           }
 
-          & > div img {
+          &>div img {
             height: 120px;
             width: 90%;
             border: 1px solid rgba(128, 128, 128, 0.3);
@@ -188,10 +188,10 @@
             box-sizing: inherit;
           }
 
-          & > div .region-p {
+          &>div .region-p {
             font-size: 0.875rem;
             font-weight: 500;
-            color: #222222;
+            color: $clr3;
           }
         }
       }
@@ -214,7 +214,7 @@
         font-size: 12px;
         cursor: auto;
 
-        & > *:not(:nth-last-child(2)):not(:last-child) {
+        &>*:not(:nth-last-child(2)):not(:last-child) {
           content: "";
           border-bottom: 1px solid #ebebeb;
           grid-row: span 1;
@@ -238,7 +238,7 @@
             display: flex;
             align-items: center;
             background-color: #fff;
-            color: #717171;
+            color: $clr4;
             border: 1px solid;
             border-color: #b0b0b0;
             border-radius: 50%;
@@ -275,6 +275,7 @@
         }
       }
     }
+
     .main-filter-btn.large:last-child {
       justify-content: end;
     }
@@ -294,40 +295,39 @@
       color: rgb(64, 64, 64);
     }
 
-    .main-filter-btn.large:hover + .border-line {
+    .main-filter-btn.large:hover+.border-line {
       display: block;
     }
 
     .main-filter-btn.large.active-filter {
-      background-color: white;
+      background-color:$clr5;
     }
 
     .main-filter-btn.large .dest-input {
       background-color: inherit;
       border: none;
       outline: none;
-      font-family: inherit;
+      font-family: "AirbnbCereal_W_Bk", sans-serif;
     }
 
     .main-filter-btn.large.active-filter:last-child {
       border-radius: 0 100px 100px 0;
     }
+
     .main-filter-btn.large.active-filter:first-child {
       border-radius: 100px;
     }
 
     .large-search-btn {
-      background-image: radial-gradient(
-        circle at center,
-        #ff385c 0%,
-        #e61e4d 27.5%,
-        #e31c5f 40%,
-        #d70466 57.5%,
-        #bd1e59 75%,
-        #bd1e59 100%
-      );
+      background-image: radial-gradient(circle at center,
+          #ff385c 0%,
+          #e61e4d 27.5%,
+          #e31c5f 40%,
+          #d70466 57.5%,
+          #bd1e59 75%,
+          #bd1e59 100%);
       background-size: 200% 200%;
-      color: white;
+      color: $clr5;
       max-width: 200px;
       width: 200px;
       border-radius: 24px;
@@ -337,8 +337,7 @@
       align-items: center;
       justify-content: space-between;
       font-size: 16px;
-      background-position: calc((100% - 20.125px))
-        calc((100% - 77.08333333333334px));
+      background-position: calc((100% - 20.125px)) calc((100% - 77.08333333333334px));
 
       & span {
         margin-right: 10px;
@@ -368,8 +367,8 @@
     grid-row: 2;
   }
 
-  .main-filter-header.large-main-filter + .user-actions-header a,
-  .main-filter-header.large-main-filter + .user-actions-header .world-icon {
+  .main-filter-header.large-main-filter+.user-actions-header a,
+  .main-filter-header.large-main-filter+.user-actions-header .world-icon {
     display: none;
   }
 
@@ -408,13 +407,15 @@
     }
 
     .user-icon {
-      width: 30px; /* Set size for user icon */
+      width: 30px;
+      /* Set size for user icon */
       cursor: pointer;
       margin-left: 10px;
     }
 
     .hamburger-menu-icon {
-      width: 20px; /* Set size for hamburger menu icon */
+      width: 20px;
+      /* Set size for hamburger menu icon */
       height: 20px;
       cursor: pointer;
       margin-left: 3px;
@@ -434,7 +435,7 @@
         margin-top: 34px;
         overflow-y: auto;
         border-radius: 10px;
-        background: white;
+        background: $clr5;
         right: 40px;
         padding: 8px 0;
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
@@ -455,6 +456,7 @@
           text-decoration: none;
           color: black;
         }
+
         .user-action:hover {
           border-radius: 0;
         }
@@ -524,7 +526,7 @@
       opacity: 0;
     }
 
-    .MuiDateRangeCalendar-root > div:first-child {
+    .MuiDateRangeCalendar-root>div:first-child {
       display: none;
     }
   }
