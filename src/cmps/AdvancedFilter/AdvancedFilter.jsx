@@ -122,7 +122,6 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                 return amenity
         }
     }
-
     return (
         <Formik initialValues={initialValues} onSubmit={(values) => console.log(values)}>
             <div ref={filterModalRef} className="modal-container-inner">

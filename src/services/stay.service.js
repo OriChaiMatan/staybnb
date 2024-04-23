@@ -18,22 +18,35 @@ export const stayService = {
     minPricesStays,
     maxPricesStays,
     getAllPrices,
-    getDefaultFilter
+    getDefaultFilter,
+    getFilterFromParams
 }
 window.cs = stayService
 
+async function query(filterBy) {
+    let stays = await storageService.query(STORAGE_KEY);
+    if (filterBy) {
+        stays = stays.filter(stay => {
+            const matchesCategoryTag = filterBy.category_tag === "" ||
+                stay.labels.some(label => new RegExp(filterBy.category_tag, "i").test(label))
 
-async function query() {
-    var stays = await storageService.query(STORAGE_KEY)
-    // if (filterBy.txt) {
-    //     const regex = new RegExp(filterBy.txt, 'i')
-    //     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
-    // }
-    // if (filterBy.price) {
-    //     stays = stays.filter(stay => stay.price <= filterBy.price)
-    // }
+            const matchesAmenities = filterBy.amenities.length === 0 ||
+                filterBy.amenities.every(amenity => stay.amenities.includes(amenity))
+
+            const matchesPropertyType = !filterBy.property_types.length === 0 ||
+                new RegExp(filterBy.property_types.join("|"), "i").test(stay.type)
+
+            const withinPriceRange = (!filterBy.price_min || stay.price >= filterBy.price_min) &&
+                (!filterBy.price_max || stay.price <= filterBy.price_max)
+
+            return matchesCategoryTag && matchesAmenities && matchesPropertyType && withinPriceRange
+        })
+    }
+    console.log('query filterBy', filterBy)
+    console.log('query stays', stays)
     return stays
 }
+
 
 function getById(stayId) {
     return storageService.get(STORAGE_KEY, stayId)
@@ -119,24 +132,25 @@ function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = 
     }
 }
 
-function getDefaultFilter(
-    category_tag,
-    room_types = "any_type",
-    amenities = [],
-    price_min = minPricesStays(),
-    price_max = maxPricesStays(),
-    property_types = [],
-    guest_favorite = false,
-) {
+function getDefaultFilter() {
     return {
-        category_tag,
-        room_types,
-        price_min,
-        price_max,
-        amenities,
-        property_types,
-        guest_favorite
+        category_tag: '',
+        room_type: 'any',
+        price_min: minPricesStays(),
+        price_max: maxPricesStays(),
+        amenities: [],
+        property_types: [],
+        guest_favorite: false
     };
+}
+
+function getFilterFromParams(searchParams) {
+    const defaultFilter = getDefaultFilter()
+    const filterBy = {}
+    for (const field in defaultFilter) {
+        filterBy[field] = searchParams.get(field) || defaultFilter[field]
+    }
+    return filterBy
 }
 
 
@@ -180,7 +194,8 @@ function _createStays() {
                     "Top of the world",
                     "Islands",
                     "Luxe",
-                    "Tropical"
+                    "Tropical",
+                    "Beach"
                 ],
                 host: {
                     _id: "u101",

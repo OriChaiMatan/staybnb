@@ -1,27 +1,28 @@
 import { useState, useEffect } from "react"
-import { Outlet, useParams } from "react-router-dom"
+import { Outlet, useParams, useSearchParams } from "react-router-dom"
 import { stayService } from "../services/stay.service"
 import { StayList } from "../cmps/StayList"
 import { LabelsFilter } from "../cmps/LabelsFilter"
 
 export function StayIndex() {
     const [stays, setStays] = useState(null)
-    const params = useParams()
-
-
-
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [filterBy, setFilterBy] = useState(stayService.getFilterFromParams(searchParams))
 
     useEffect(() => {
-        console.log(params, 'params')
-    }, [params])
-
-    useEffect(() => {
+        setSearchParams(filterBy)
         loadStays()
-    }, [])
+        console.log('stays', stays)
+        console.log('filterBy', filterBy)
+    }, [filterBy])
+
+    function onSetFilter(fieldsToUpdate) {
+        setFilterBy((prevFilterBy) => ({ ...prevFilterBy, ...fieldsToUpdate }))
+    }
 
     async function loadStays() {
         try {
-            const stays = await stayService.query()
+            const stays = await stayService.query(filterBy)
             setStays(stays);
         } catch (err) {
             console.log('Error in loadStays', err)
@@ -41,7 +42,7 @@ export function StayIndex() {
 
     return (
         <>
-            <LabelsFilter />
+            <LabelsFilter filterBy={filterBy} onSetFilter={onSetFilter} />
             <div className="stay-index">
                 <StayList stays={stays} />
             </div>

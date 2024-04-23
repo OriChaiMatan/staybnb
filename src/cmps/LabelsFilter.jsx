@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import beach from "../assets/img/label_icons_img/beach.png"
 import beachfront from "../assets/img/label_icons_img/beachfront.png"
 import vineyards from "../assets/img/label_icons_img/vineyards.png"
@@ -22,13 +23,13 @@ import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { LabelsFilterItem } from "./LabelsFilterItem"
 import { AdvancedFilter } from "./AdvancedFilter/AdvancedFilter"
 
 
 
-export function LabelsFilter() {
+export function LabelsFilter({ filterBy, onSetFilter }) {
 
 
   const labels = [
@@ -60,11 +61,31 @@ export function LabelsFilter() {
   const [showBackButton, setShowBackButton] = useState(false)
   const [reachedEnd, setReachedEnd] = useState(false)
   const [showFilterModal, setShowFilterModal] = useState(false);
+  const [filterByToEdit, setFilterByToEdit] = useState(filterBy)
 
   const containerRef = useRef()
 
-  function handleItemClick(index) {
+  useEffect(() => {
+    onSetFilter(filterByToEdit)
+  }, [filterByToEdit])
+
+  function handleChange(ev) {
+    let { value, name: field, type } = ev.target
+    value = type === 'number' ? +value : value
+    setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
+    
+  }
+
+  function onSubmitFilter(ev) {
+    ev.preventDefault()
+    onSetFilter(filterByToEdit)
+  }
+
+  function handleItemClick(ev, index) {
+    const value = ev.target.closest('.item-label').getAttribute('datatype');
+    setFilterByToEdit((prevFilter) => ({ ...prevFilter, category_tag: value }))
     setFocusedItem(index)
+    onSetFilter(filterByToEdit)
   }
 
   function handleScroll(scrollAmount) {
@@ -100,7 +121,7 @@ export function LabelsFilter() {
             key={index}
             {...item}
             selected={index === focusedItem}
-            onItemClick={() => handleItemClick(index)}
+            onItemClick={(ev) => handleItemClick(ev, index)}
           />
         ))}
 

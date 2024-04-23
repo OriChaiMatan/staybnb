@@ -45,7 +45,6 @@ export function PriceRange() {
     };
     const maxCount = Math.max(...priceHistogram.map((item) => item.count));
     const maxHeight = 10;
-
     return (
         <div className="price-range">
             <div className="histogram">
