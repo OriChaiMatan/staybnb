@@ -4,17 +4,24 @@ import { stayService } from "../services/stay.service"
 import { StayList } from "../cmps/StayList"
 import { LabelsFilter } from "../cmps/LabelsFilter"
 
+
+
+
 export function StayIndex() {
     const [stays, setStays] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
     const [filterBy, setFilterBy] = useState(stayService.getFilterFromParams(searchParams))
 
     useEffect(() => {
-        setSearchParams(filterBy)
-        loadStays()
-        console.log('stays', stays)
-        console.log('filterBy', filterBy)
-    }, [filterBy])
+        const sanitizedFilterBy = Object.fromEntries(
+            Object.entries(filterBy)
+                .filter(([key, value]) => value !== undefined && value !== '')
+        );
+
+        setSearchParams(sanitizedFilterBy);
+        loadStays();
+        console.log('filterBy', filterBy);
+    }, [filterBy]);
 
     function onSetFilter(fieldsToUpdate) {
         setFilterBy((prevFilterBy) => ({ ...prevFilterBy, ...fieldsToUpdate }))

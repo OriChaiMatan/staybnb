@@ -5,17 +5,16 @@ import { MultiRangeSlider } from "./MultiRangeSlider";
 import MultiRangeInputs from "./MultiRangeInputs";
 import { stayService } from "../../services/stay.service";
 
-export function PriceRange() {
+export function PriceRange({ priceBounds, setPriceBounds }) {
     const { setFieldValue, values } = useFormikContext();
     const initialMinPrice = stayService.minPricesStays();
     const initialMaxPrice = stayService.maxPricesStays();
     const stayPrices = stayService.getAllPrices();
-
     const [priceHistogram, setPriceHistogram] = useState([]);
-    const [priceBounds] = useState({
-        min: initialMinPrice,
-        max: initialMaxPrice,
-    });
+    // const [priceBounds] = useState({
+    //     min: initialMinPrice,
+    //     max: initialMaxPrice,
+    // });
 
     useEffect(() => {
         const histogram = calculatePriceHistogram(initialMinPrice, initialMaxPrice);
@@ -42,6 +41,10 @@ export function PriceRange() {
     const handleRangeChange = (newRange) => {
         setFieldValue("price_min", newRange.min);
         setFieldValue("price_max", newRange.max);
+        setPriceBounds({
+            min: newRange.min,
+            max: newRange.max,
+        })
     };
     const maxCount = Math.max(...priceHistogram.map((item) => item.count));
     const maxHeight = 10;
@@ -71,7 +74,7 @@ export function PriceRange() {
                     );
                 })}
             </div>
-            <MultiRangeSlider min={priceBounds.min} max={priceBounds.max} />
+            <MultiRangeSlider min={priceBounds.min} max={priceBounds.max} priceBounds={priceBounds} setPriceBounds={setPriceBounds} />
             <MultiRangeInputs
                 min={values.price_min}
                 max={values.price_max}

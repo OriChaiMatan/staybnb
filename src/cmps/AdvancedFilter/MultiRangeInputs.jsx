@@ -2,8 +2,6 @@ import React from "react";
 
 export default function MultiRangeInputs({ min, max, onRangeChange }) {
 
-    console.log({ min, type: typeof min, max, typemax: typeof max });
-
     const handleMinChange = (e) => {
         const newMin = parseInt(e.target.value.replace(/,/g, ""), 10) || 0;
         onRangeChange({ min: newMin, max });

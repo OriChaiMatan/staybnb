@@ -69,18 +69,6 @@ export function LabelsFilter({ filterBy, onSetFilter }) {
     onSetFilter(filterByToEdit)
   }, [filterByToEdit])
 
-  function handleChange(ev) {
-    let { value, name: field, type } = ev.target
-    value = type === 'number' ? +value : value
-    setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
-    
-  }
-
-  function onSubmitFilter(ev) {
-    ev.preventDefault()
-    onSetFilter(filterByToEdit)
-  }
-
   function handleItemClick(ev, index) {
     const value = ev.target.closest('.item-label').getAttribute('datatype');
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, category_tag: value }))
@@ -138,7 +126,7 @@ export function LabelsFilter({ filterBy, onSetFilter }) {
       {showFilterModal && (
         <div className="modal-overlay">
           <div className="modal-container">
-            <AdvancedFilter handleCloseAdvancedFilter={handleCloseAdvancedFilter} />
+            <AdvancedFilter handleCloseAdvancedFilter={handleCloseAdvancedFilter} filterByToEdit={filterByToEdit} setFilterByToEdit={setFilterByToEdit} />
           </div>
         </div>
       )}

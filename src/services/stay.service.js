@@ -33,13 +33,20 @@ async function query(filterBy) {
             const matchesAmenities = filterBy.amenities.length === 0 ||
                 filterBy.amenities.every(amenity => stay.amenities.includes(amenity))
 
-            const matchesPropertyType = !filterBy.property_types.length === 0 ||
-                new RegExp(filterBy.property_types.join("|"), "i").test(stay.type)
+            const matchesPropertyType = filterBy.property_types.length === 0 ||
+                filterBy.property_types.includes(stay.type);
 
             const withinPriceRange = (!filterBy.price_min || stay.price >= filterBy.price_min) &&
                 (!filterBy.price_max || stay.price <= filterBy.price_max)
 
-            return matchesCategoryTag && matchesAmenities && matchesPropertyType && withinPriceRange
+            const matchesBeds = !filterBy.beds || filterBy.beds <= stay.beds
+
+            const matchesbedrooms = !filterBy.bedrooms || filterBy.bedrooms <= stay.bedrooms
+
+            const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath
+
+            return matchesCategoryTag && matchesAmenities &&
+                matchesPropertyType && withinPriceRange && matchesBeds && matchesbedrooms && matchesBathrooms
         })
     }
     console.log('query filterBy', filterBy)
@@ -135,12 +142,13 @@ function getEmptyStay(name = '', type = '', imgUrls = [], price = '', summary = 
 function getDefaultFilter() {
     return {
         category_tag: '',
-        room_type: 'any',
         price_min: minPricesStays(),
         price_max: maxPricesStays(),
         amenities: [],
         property_types: [],
-        guest_favorite: false
+        bedrooms: undefined,
+        beds: undefined,
+        bath: undefined
     };
 }
 
@@ -181,7 +189,7 @@ function _createStays() {
                 `,
                 capacity: 8,
                 beds: 4,
-                bedroom: 4,
+                bedrooms: 4,
                 bath: 2,
                 amenities: [
                     "TV",
@@ -236,7 +244,7 @@ function _createStays() {
                 17 miles to Rehoboth Beach. NON-SMOKING UNIT. NO ANIMALS permitted due to severe allergies.`,
                 capacity: 6,
                 beds: 3,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 3,
                 amenities: [
                     "TV",
@@ -306,7 +314,7 @@ function _createStays() {
                 summary: `
                 Look no further, we've got you covered.
                 
-                Holiday house with two bedrooms, for up to 6 people, is located only 150m from the sea, 
+                Holiday house with two bedroomss, for up to 6 people, is located only 150m from the sea, 
                 in the cove Božanska, on the island of Pašman, without immediate neighbors. Its location 
                 on the top of the hill vouches for a breathtaking sea view. Pets are welcome against a 
                 surcharge. Please indicate in your inquiry, how many pets you are traveling with. This 
@@ -321,7 +329,7 @@ function _createStays() {
                 living room and dining room are located in one room and contain a fireplace and a sofa for 
                 two people. WLan internet and SAT-TV are available in this house at no additional cost. 
                 In the kitchen there is a refrigerator with a freezer, a gas stove with 4 burners, a 
-                toaster, a kettle and a filter coffee machine. The bedrooms are equipped with double beds. 
+                toaster, a kettle and a filter coffee machine. The bedroomss are equipped with double beds. 
                 The bathroom equipment includes a shower, toilet and sink. Hot and cold water is installed 
                 in the kitchen and bathroom. Bed linen and towels (one per person) are included in the 
                 price, and fresh ones are available after each week of stay. Beach towels are not offered. 
@@ -346,7 +354,7 @@ function _createStays() {
                 `,
                 capacity: 4,
                 beds: 2,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -405,7 +413,7 @@ function _createStays() {
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
                 capacity: 2,
                 beds: 1,
-                bedroom: 1,
+                bedrooms: 1,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -470,10 +478,10 @@ function _createStays() {
                     { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
-                summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+                summary: "Fantastic duplex apartment with three bedroomss, located in the historic area of Porto, Ribeira (Cube)...",
                 capacity: 8,
                 beds: 4,
-                bedroom: 4,
+                bedrooms: 4,
                 bath: 2,
                 amenities: [
                     "TV",
@@ -533,7 +541,7 @@ function _createStays() {
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
                 capacity: 6,
                 beds: 3,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 3,
                 amenities: [
                     "TV",
@@ -604,7 +612,7 @@ function _createStays() {
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
                 capacity: 4,
                 beds: 2,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -673,7 +681,7 @@ function _createStays() {
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
                 capacity: 2,
                 beds: 1,
-                bedroom: 1,
+                bedrooms: 1,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -738,10 +746,10 @@ function _createStays() {
                     { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
-                summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+                summary: "Fantastic duplex apartment with three bedroomss, located in the historic area of Porto, Ribeira (Cube)...",
                 capacity: 8,
                 beds: 4,
-                bedroom: 4,
+                bedrooms: 4,
                 bath: 2,
                 amenities: [
                     "TV",
@@ -791,7 +799,7 @@ function _createStays() {
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
                 capacity: 6,
                 beds: 3,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 3,
                 amenities: [
                     "TV",
@@ -861,7 +869,7 @@ function _createStays() {
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
                 capacity: 4,
                 beds: 2,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -930,7 +938,7 @@ function _createStays() {
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
                 capacity: 2,
                 beds: 1,
-                bedroom: 1,
+                bedrooms: 1,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -995,10 +1003,10 @@ function _createStays() {
                     { imgUrl: "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0" }
                 ],
                 price: 80.00,
-                summary: "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+                summary: "Fantastic duplex apartment with three bedroomss, located in the historic area of Porto, Ribeira (Cube)...",
                 capacity: 8,
                 beds: 4,
-                bedroom: 4,
+                bedrooms: 4,
                 bath: 2,
                 amenities: [
                     "TV",
@@ -1058,7 +1066,7 @@ function _createStays() {
                 summary: "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
                 capacity: 6,
                 beds: 3,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 3,
                 amenities: [
                     "TV",
@@ -1128,7 +1136,7 @@ function _createStays() {
                 summary: "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
                 capacity: 4,
                 beds: 2,
-                bedroom: 2,
+                bedrooms: 2,
                 bath: 1,
                 amenities: [
                     "TV",
@@ -1196,7 +1204,7 @@ function _createStays() {
                 summary: "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
                 capacity: 2,
                 beds: 1,
-                bedroom: 1,
+                bedrooms: 1,
                 bath: 1,
                 amenities: [
                     "TV",

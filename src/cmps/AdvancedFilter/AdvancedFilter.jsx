@@ -5,7 +5,16 @@ import hotelLogo from '../../assets/img/hotel.jpg'
 import { PriceRange } from './PriceRange';
 import { Formik, Form } from 'formik';
 import { stayService } from '../../services/stay.service';
-export function AdvancedFilter({ handleCloseAdvancedFilter }) {
+export function AdvancedFilter({ handleCloseAdvancedFilter, filterByToEdit, setFilterByToEdit }) {
+    const [advancedFilterByToEdit, setAdvancedFilterByToEdit] = useState(filterByToEdit);
+
+    const initialMinPrice = stayService.minPricesStays();
+    const initialMaxPrice = stayService.maxPricesStays();
+    const [priceBounds, setPriceBounds] = useState({
+        min: initialMinPrice,
+        max: initialMaxPrice,
+    });
+
     const [initialValues, setInitialValues] = useState({
         ...stayService.getDefaultFilter(),
     });
@@ -35,7 +44,6 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
     });
     const filterModalRef = useRef(null);
 
-    console.log(selectedBedroom)
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
             if (event.key === 'Escape') {
@@ -83,7 +91,6 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
     const handleCheckboxChange = (e) => {
         const { id, checked } = e.target;
         setSelectedAmenities({ ...selectedAmenities, [id]: checked });
-        console.log({ id, checked, selectedAmenities })
     };
 
     function clearAllFilters() {
@@ -101,8 +108,40 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
             washer: false,
             dryer: false
         })
+        setFilterByToEdit(stayService.getDefaultFilter())
+        handleCloseAdvancedFilter()
     }
 
+    function onSubmitFilter(ev) {
+        ev.preventDefault();
+
+        const selectedAmenitiesArray = Object.entries(selectedAmenities)
+            .filter(([amenity, isChecked]) => isChecked)
+            .map(([amenity]) => formatLabelText(amenity))
+
+        const selectedPropertyTypes = [];
+        if (selectedHouseProperty) {
+            selectedPropertyTypes.push('House');
+        }
+        if (selectedGuesthouseProperty) {
+            selectedPropertyTypes.push('Guesthouse');
+        }
+        if (selectedHotelProperty) {
+            selectedPropertyTypes.push('Hotel');
+        }
+
+        setAdvancedFilterByToEdit(prevFilter => ({
+            ...prevFilter,
+            price_min: priceBounds.min,
+            price_max: priceBounds.max,
+            amenities: selectedAmenitiesArray,
+            bedrooms: selectedBedroom === 'Any' ? undefined : selectedBedroom,
+            beds: selectedBed === 'Any' ? undefined : selectedBed,
+            bathrooms: selectedBathroom === 'Any' ? undefined : selectedBathroom,
+            property_types: selectedPropertyTypes
+        }));
+        setFilterByToEdit(advancedFilterByToEdit)
+    }
 
     const formatLabelText = (amenity) => {
         switch (amenity) {
@@ -119,11 +158,11 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
             case 'smoking':
                 return 'Smoking allowed'
             default:
-                return amenity
+                return amenity.charAt(0).toUpperCase() + amenity.slice(1)
         }
     }
     return (
-        <Formik initialValues={initialValues} onSubmit={(values) => console.log(values)}>
+        <Formik initialValues={initialValues} onSubmit={onSubmitFilter}>
             <div ref={filterModalRef} className="modal-container-inner">
                 <header className='filter-form-header'>
                     <div className='close-login-container'>
@@ -171,7 +210,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                                 <div className="advanced-filter-head">
                                     <h2 className="advanced-filter-title">Price range</h2>
                                     <p className="advanced-filter-subtitle">Nightly prices including fees and taxes</p>
-                                    <PriceRange />
+                                    <PriceRange priceBounds={priceBounds} setPriceBounds={setPriceBounds} />
                                 </div>
                             </div>
                         </section>
@@ -285,7 +324,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                                                 <label htmlFor={amenity} className='checkbox' onChange={handleCheckboxChange} key={amenity}>
                                                     <span className='checkbox-label'>{formatLabelText(amenity)}</span>
                                                     <span className="checkbox-container">
-                                                        <input type="checkbox" id={amenity} className='checkbox-input' checked={isChecked} />
+                                                        <input type="checkbox" id={amenity} name={amenity} className='checkbox-input' checked={isChecked} />
                                                         <span className={`checkbox-custom ${isChecked ? 'checked' : ''}`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', fill: 'none', height: '16px', width: '16px', stroke: 'currentcolor', strokeWidth: '4', overflow: 'visible', color: 'white' }}><path fill="none" d="m4 16.5 8 8 16-16"></path></svg></span>
                                                     </span>
                                                 </label>
@@ -300,7 +339,7 @@ export function AdvancedFilter({ handleCloseAdvancedFilter }) {
                 <footer>
                     <div className='advanced-filter-footer-content'>
                         <button className="advanced-filter-clear-button" type="button" onClick={clearAllFilters}>Clear all</button>
-                        <button className="advanced-filter-submit-button" type="submit">Show 10 places</button>
+                        <button className="advanced-filter-submit-button" type="submit" onClick={onSubmitFilter}>Show 10 places</button>
                     </div>
                 </footer>
             </div>

@@ -3,7 +3,7 @@ import { useFormikContext } from "formik";
 
 const minDistance = 30;
 
-export function MultiRangeSlider({ min, max }) {
+export function MultiRangeSlider({ min, max, priceBounds, setPriceBounds }) {
     const { values, setFieldValue } = useFormikContext();
     const minVal = values.price_min;
     const maxVal = values.price_max;
@@ -15,6 +15,8 @@ export function MultiRangeSlider({ min, max }) {
         if (newValue > maxVal - minDistance) {
             setFieldValue("price_max", newValue + minDistance);
         }
+
+        setPriceBounds(prevBounds => ({ ...prevBounds, min: newValue }))
     };
 
     const handleMaxChange = (e) => {
@@ -24,6 +26,9 @@ export function MultiRangeSlider({ min, max }) {
         if (newValue < minVal + minDistance) {
             setFieldValue("price_min", newValue - minDistance);
         }
+
+        setPriceBounds(prevBounds => ({ ...prevBounds, max: newValue }))
+
     };
 
     const trackWidth = max - min;
