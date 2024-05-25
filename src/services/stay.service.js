@@ -25,7 +25,6 @@ window.cs = stayService;
 async function query(filterBy) {
   let stays = await storageService.query(STORAGE_KEY);
   if (filterBy) {
-    console.log("stay service filterBy: ", filterBy);
     stays = stays.filter((stay) => {
       const matchesCategoryTag =
         filterBy.category_tag === "" ||
@@ -57,6 +56,7 @@ async function query(filterBy) {
 
       const matchCountry =
         filterBy.country === "Search destination" ||
+        filterBy.country === "" ||
         filterBy.country === stay.loc.country;
 
       const filterStartDate = filterBy.startDate
@@ -71,18 +71,6 @@ async function query(filterBy) {
 
       const matchEndDate =
         !filterEndDate || new Date(stay.endDate) >= filterEndDate;
-
-      console.log("matchEndDate: ", matchEndDate);
-      console.log("matchStartDate: ", matchStartDate);
-      console.log("matchCountry: ", matchCountry);
-      console.log("matchCapacities: ", matchCapacities);
-      console.log("matchesBathrooms: ", matchesBathrooms);
-      console.log("matchesbedrooms: ", matchesbedrooms);
-      console.log("matchesBeds: ", matchesBeds);
-      console.log("withinPriceRange: ", withinPriceRange);
-      console.log("matchesPropertyType: ", matchesPropertyType);
-      console.log("matchesAmenities: ", matchesAmenities);
-      console.log("matchesCategoryTag: ", matchesCategoryTag);
 
       return (
         matchesCategoryTag &&

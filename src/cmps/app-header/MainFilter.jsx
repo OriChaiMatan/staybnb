@@ -151,26 +151,12 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   function onSubmitFilter() {
     const newSearchParams = new URLSearchParams();
 
-    // newSearchParams.append(
-    //   "startDate",
-    //   selectedDates[0]
-    //     ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}`
-    //     : ""
-    // );
-    // newSearchParams.append(
-    //   "endDate",
-    //   selectedDates[1]
-    //     ? `${extractDateDisplay()[2]} ${extractDateDisplay()[3]}`
-    //     : ""
-    // );
     newSearchParams.append("startDate", selectedDates[0]);
     newSearchParams.append("endDate", selectedDates[1]);
     newSearchParams.append("country", selectedDestination);
     newSearchParams.append("capacity", selectedGuests);
 
     setSearchParams(newSearchParams);
-
-    console.log("newSearchParams", newSearchParams.toString());
 
     setLargeMainFilter(false);
     setActiveMainFilter(-1);

@@ -1047,13 +1047,13 @@
     "type": "Hotel",
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
       },
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
       },
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
@@ -1062,7 +1062,7 @@
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
       }
     ],
-    "price": 267.0,
+    "price": 400,
     "summary": "Barfuss zum Strand! Noch nie warst du dem Gardasee näher als in unseren zwei liebevoll eingerichteten Apartments in Limone sul Garda.",
     "capacity": 2,
     "beds": 1,
@@ -1077,7 +1077,7 @@
     },
     "loc": {
       "country": "USA",
-      "city": "Georgia",
+      "city": "Texas",
       "address": "789 Chic Avenue",
       "lat": 48.8566,
       "lng": 2.3522
