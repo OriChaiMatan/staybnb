@@ -1,0 +1,1261 @@
+[
+  {
+    "_id": "10006558",
+    "name": "Ribeira Charming Duplex",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      }
+    ],
+    "price": 80.0,
+    "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 4,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
+    "labels": [
+      "Amazing views",
+      "Amazing pools",
+      "Skiing",
+      "Mansions",
+      "Top of the world"
+    ],
+    "host": {
+      "_id": "u109",
+      "fullname": "Sophia Garcia",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
+    },
+    "loc": {
+      "country": "USA",
+      "countryCode": "US",
+      "city": "New York",
+      "address": "789 Downtown Avenue",
+      "lat": 40.7128,
+      "lng": -74.006
+    },
+    "reviews": [
+      {
+        "id": "review5",
+        "txt": "The loft is amazing! Loved the city views.",
+        "rate": 5,
+        "by": {
+          "_id": "u110",
+          "fullname": "Daniel Smith",
+          "imgUrl": "https://example.com/daniel.jpg"
+        }
+      },
+      {
+        "id": "review6",
+        "txt": "Perfect location for exploring the city. Modern and clean.",
+        "rate": 4,
+        "by": {
+          "_id": "u111",
+          "fullname": "Jessica Davis",
+          "imgUrl": "https://example.com/jessica.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user5", "user6"],
+    "startDate": "2025-07-15",
+    "endDate": "2025-07-22"
+  },
+  {
+    "_id": "10006558A",
+    "name": "Ribeira Charming Duplex",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      }
+    ],
+    "price": 80.0,
+    "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 4,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
+    "labels": ["Top of the world", "Islands", "Luxe", "Tropical"],
+    "host": {
+      "_id": "u101",
+      "fullname": "Davit Pok",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw"
+    },
+    "loc": {
+      "country": "Portugal",
+      "countryCode": "PT",
+      "city": "Porto",
+      "address": "17 Kombo st",
+      "lat": -8.61308,
+      "lng": 41.1413
+    },
+    "reviews": [
+      {
+        "id": "madeId",
+        "txt": "Very helpful hosts. Cooked traditional...",
+        "rate": 4,
+        "by": {
+          "_id": "u102",
+          "fullname": "user2",
+          "imgUrl": "/img/img2.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["mini-user"],
+    "startDate": "2025-08-17",
+    "endDate": "2025-08-23"
+  },
+  {
+    "_id": "10006559",
+    "name": "Ocean View Villa",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 120.0,
+    "summary": "Beautiful villa with stunning ocean views, perfect for a relaxing getaway...",
+    "capacity": 6,
+    "beds": 3,
+    "bedrooms": 2,
+    "bath": 3,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Pool",
+      "Air conditioning",
+      "Free parking"
+    ],
+    "labels": ["Luxe", "Beachfront", "Mansions"],
+    "host": {
+      "_id": "u103",
+      "fullname": "Sara Smith",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
+    },
+    "loc": {
+      "country": "Portugal",
+      "countryCode": "PT",
+      "city": "Albufeira",
+      "address": "123 Ocean View Street",
+      "lat": 37.088,
+      "lng": -8.25
+    },
+    "reviews": [
+      {
+        "id": "review1",
+        "txt": "Amazing place with breathtaking views!",
+        "rate": 5,
+        "by": {
+          "_id": "u104",
+          "fullname": "John Doe",
+          "imgUrl": "https://example.com/john.jpg"
+        }
+      },
+      {
+        "id": "review2",
+        "txt": "Great host, very responsive and accommodating.",
+        "rate": 4,
+        "by": {
+          "_id": "u105",
+          "fullname": "Alice Johnson",
+          "imgUrl": "https://example.com/alice.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user1", "user2"],
+    "startDate": "2025-09-18",
+    "endDate": "2025-09-22"
+  },
+  {
+    "_id": "10006560",
+    "name": "Cozy Mountain Cabin",
+    "type": "Guesthouse",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      }
+    ],
+    "price": 100.0,
+    "summary": "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Heating", "Free parking"],
+    "labels": ["Earth homes", "Desert", "Treehouses", "Luxe", "Ski-in/out"],
+    "host": {
+      "_id": "u106",
+      "fullname": "Michael Brown",
+      "imgUrl": "https://example.com/michael.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Aspen",
+      "address": "456 Mountain Lane",
+      "lat": 39.1911,
+      "lng": -106.8175
+    },
+    "reviews": [
+      {
+        "id": "review3",
+        "txt": "Absolutely charming cabin with stunning views!",
+        "rate": 5,
+        "by": {
+          "_id": "u107",
+          "fullname": "Emily White",
+          "imgUrl": "https://example.com/emily.jpg"
+        }
+      },
+      {
+        "id": "review4",
+        "txt": "Perfect getaway spot! Cozy and peaceful.",
+        "rate": 4,
+        "by": {
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "https://example.com/jason.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user3", "user4"],
+    "startDate": "2025-10-18",
+    "endDate": "2025-10-22"
+  },
+  {
+    "_id": "10006561",
+    "name": "City Center Loft",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 150.0,
+    "summary": "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
+    "capacity": 2,
+    "beds": 1,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Gym",
+      "Iron",
+      "Washer",
+      "Pool"
+    ],
+    "labels": [
+      "Lake",
+      "Lakefront",
+      "Luxe",
+      "Treehouses",
+      "Earth homes",
+      "Desert"
+    ],
+    "host": {
+      "_id": "u109",
+      "fullname": "Sophia Garcia",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "New York",
+      "address": "789 Downtown Avenue",
+      "lat": 40.7128,
+      "lng": -74.006
+    },
+    "reviews": [
+      {
+        "id": "review5",
+        "txt": "The loft is amazing! Loved the city views.",
+        "rate": 5,
+        "by": {
+          "_id": "u110",
+          "fullname": "Daniel Smith",
+          "imgUrl": "https://example.com/daniel.jpg"
+        }
+      },
+      {
+        "id": "review6",
+        "txt": "Perfect location for exploring the city. Modern and clean.",
+        "rate": 4,
+        "by": {
+          "_id": "u111",
+          "fullname": "Jessica Davis",
+          "imgUrl": "https://example.com/jessica.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user5", "user6"],
+    "startDate": "2025-11-22",
+    "endDate": "2025-11-24"
+  },
+  {
+    "_id": "10006562",
+    "name": "Beachside Bungalow",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 130.0,
+    "summary": "Quaint bungalow steps away from the beach, perfect for a serene retreat...",
+    "capacity": 5,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Pool",
+      "Air conditioning",
+      "Free parking"
+    ],
+    "labels": ["Luxe", "Beachfront"],
+    "host": {
+      "_id": "u112",
+      "fullname": "Anna Johnson",
+      "imgUrl": "https://example.com/anna.jpg"
+    },
+    "loc": {
+      "country": "Portugal",
+      "countryCode": "PT",
+      "city": "Lagos",
+      "address": "456 Beachside Avenue",
+      "lat": 37.102,
+      "lng": -8.674
+    },
+    "reviews": [
+      {
+        "id": "review7",
+        "txt": "Lovely place right by the beach! So relaxing.",
+        "rate": 5,
+        "by": {
+          "_id": "u113",
+          "fullname": "Carlos Lopez",
+          "imgUrl": "https://example.com/carlos.jpg"
+        }
+      },
+      {
+        "id": "review8",
+        "txt": "Great spot, very clean and well maintained.",
+        "rate": 4,
+        "by": {
+          "_id": "u114",
+          "fullname": "Sophie Turner",
+          "imgUrl": "https://example.com/sophie.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user7", "user8"],
+    "startDate": "2025-08-05",
+    "endDate": "2025-08-12"
+  },
+  {
+    "_id": "10006563",
+    "name": "Modern Downtown Apartment",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 200.0,
+    "summary": "Experience the city life in this sleek downtown apartment with all modern amenities...",
+    "capacity": 2,
+    "beds": 1,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Gym",
+      "Iron",
+      "Washer",
+      "Pool"
+    ],
+    "labels": ["Islands", "Tropical", "Camping", "Surfing", "Bed & breakfasts"],
+    "host": {
+      "_id": "u115",
+      "fullname": "Liam Johnson",
+      "imgUrl": "https://example.com/liam.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Los Angeles",
+      "address": "123 Downtown Boulevard",
+      "lat": 34.0522,
+      "lng": -118.2437
+    },
+    "reviews": [
+      {
+        "id": "review9",
+        "txt": "Amazing location, close to everything!",
+        "rate": 5,
+        "by": {
+          "_id": "u116",
+          "fullname": "David Clark",
+          "imgUrl": "https://example.com/david.jpg"
+        }
+      },
+      {
+        "id": "review10",
+        "txt": "Very modern and clean. Loved my stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u117",
+          "fullname": "Laura Davis",
+          "imgUrl": "https://example.com/laura.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user9", "user10"],
+    "startDate": "2025-12-01",
+    "endDate": "2025-12-07"
+  },
+  {
+    "_id": "10006564",
+    "name": "Luxury Penthouse",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 300.0,
+    "summary": "Indulge in luxury in this exquisite penthouse offering stunning city views and top-notch amenities...",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Gym",
+      "Iron",
+      "Washer",
+      "Pool",
+      ""
+    ],
+    "labels": [
+      "Bed & breakfasts",
+      "Camping",
+      "Surfing",
+      "Earth homes",
+      "Amazing pools",
+      "Skiing",
+      "Lake",
+      "Amazing views",
+      ""
+    ],
+    "host": {
+      "_id": "u118",
+      "fullname": "Emily Clark",
+      "imgUrl": "https://example.com/emily.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "San Francisco",
+      "address": "789 Luxury Avenue",
+      "lat": 37.7749,
+      "lng": -122.4194
+    },
+    "reviews": [
+      {
+        "id": "review11",
+        "txt": "Fantastic penthouse with great amenities!",
+        "rate": 5,
+        "by": {
+          "_id": "u119",
+          "fullname": "Sophia Martinez",
+          "imgUrl": "https://example.com/sophia.jpg"
+        }
+      },
+      {
+        "id": "review12",
+        "txt": "Loved the views and the luxury feel.",
+        "rate": 4,
+        "by": {
+          "_id": "u120",
+          "fullname": "James Brown",
+          "imgUrl": "https://example.com/james.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user11", "user12"],
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-10"
+  },
+  {
+    "_id": "10006565",
+    "name": "Charming Countryside Cottage",
+    "type": "Guesthouse",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 90.0,
+    "summary": "Escape to this charming cottage in the countryside, perfect for a peaceful retreat...",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
+    "labels": [
+      "Top of the world",
+      "Luxe",
+      "Camping",
+      "Tropical",
+      "Islands",
+      "Skiing",
+      "Surfing",
+      "Lakefront",
+      "Desert"
+    ],
+    "host": {
+      "_id": "u121",
+      "fullname": "Jack Wilson",
+      "imgUrl": "https://example.com/jack.jpg"
+    },
+    "loc": {
+      "country": "Portugal",
+      "countryCode": "PT",
+      "city": "Sintra",
+      "address": "123 Countryside Road",
+      "lat": 38.8029,
+      "lng": -9.3817
+    },
+    "reviews": [
+      {
+        "id": "review13",
+        "txt": "Beautiful cottage with a rustic charm!",
+        "rate": 5,
+        "by": {
+          "_id": "u122",
+          "fullname": "Maria Hernandez",
+          "imgUrl": "https://example.com/maria.jpg"
+        }
+      },
+      {
+        "id": "review14",
+        "txt": "Perfect place for a quiet and relaxing stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u123",
+          "fullname": "Oliver Green",
+          "imgUrl": "https://example.com/oliver.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user13", "user14"],
+    "startDate": "2025-07-20",
+    "endDate": "2025-07-27"
+  },
+  {
+    "_id": "10006566",
+    "name": "Secluded Forest Lodge",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 160.0,
+    "summary": "Experience nature at its best in this secluded forest lodge, ideal for outdoor enthusiasts...",
+    "capacity": 6,
+    "beds": 3,
+    "bedrooms": 3,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
+    "labels": ["Beach", "Beachfront", "Lake", "Top of the world", "Farms"],
+    "host": {
+      "_id": "u124",
+      "fullname": "William Harris",
+      "imgUrl": "https://example.com/william.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Boulder",
+      "address": "789 Forest Lane",
+      "lat": 40.015,
+      "lng": -105.2705
+    },
+    "reviews": [
+      {
+        "id": "review15",
+        "txt": "Amazing lodge in a perfect forest setting!",
+        "rate": 5,
+        "by": {
+          "_id": "u125",
+          "fullname": "Emma Watson",
+          "imgUrl": "https://example.com/emma.jpg"
+        }
+      },
+      {
+        "id": "review16",
+        "txt": "Great place for a peaceful retreat.",
+        "rate": 4,
+        "by": {
+          "_id": "u126",
+          "fullname": "Liam Brown",
+          "imgUrl": "https://example.com/liam.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user15", "user16"],
+    "startDate": "2025-08-10",
+    "endDate": "2025-08-15"
+  },
+  {
+    "_id": "10006568",
+    "name": "Mountain View Chalet",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 250.0,
+    "summary": "Enjoy breathtaking views of the Matterhorn from this cozy mountain chalet.",
+    "capacity": 6,
+    "beds": 3,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Kitchen", "Free parking"],
+    "labels": [
+      "Bed & breakfasts",
+      "Camping",
+      "Surfing",
+      "Earth homes",
+      "Amazing pools",
+      "Ski-in/out"
+    ],
+    "host": {
+      "_id": "u127",
+      "fullname": "Maximilian Müller",
+      "imgUrl": "https://example.com/maximilian.jpg"
+    },
+    "loc": {
+      "country": "Switzerland",
+      "city": "Zermatt",
+      "address": "123 Mountain View Road",
+      "lat": 46.0207,
+      "lng": 7.7491
+    },
+    "reviews": [
+      {
+        "id": "review17",
+        "txt": "Absolutely stunning views! A perfect chalet for a mountain getaway.",
+        "rate": 5,
+        "by": {
+          "_id": "u128",
+          "fullname": "Isabella Schneider",
+          "imgUrl": "https://example.com/isabella.jpg"
+        }
+      },
+      {
+        "id": "review18",
+        "txt": "Cozy and comfortable chalet with all the amenities you need.",
+        "rate": 4,
+        "by": {
+          "_id": "u129",
+          "fullname": "Niklaus Weber",
+          "imgUrl": "https://example.com/niklaus.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user17", "user18"],
+    "startDate": "2025-12-01",
+    "endDate": "2025-12-07"
+  },
+  {
+    "_id": "10006569",
+    "name": "Urban Chic Loft",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 180.0,
+    "summary": "Experience Parisian elegance in this stylish loft located in the heart of the city.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer"],
+    "labels": ["Treehouses", "Earth homes", "Vineyards", "Beach", "Beachfront"],
+    "host": {
+      "_id": "u130",
+      "fullname": "Sophie Dubois",
+      "imgUrl": "https://example.com/sophie.jpg"
+    },
+    "loc": {
+      "country": "France",
+      "city": "Paris",
+      "address": "789 Chic Avenue",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  },
+  {
+    "_id": "10006570",
+    "name": "Laguna Shores, Mexico",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 215.0,
+    "summary": "Welcome to Casa Kaliq, just 5 minutes walking distance from the beach.  Mediterranean-style newly constructed oasis with breathtaking views. This custom home offers 5 spacious bedrooms, each with its own full bathroom, ensuring ultimate comfort and privacy for you and your guests. Fully equipped kitchen and living area. Private pool, barbecue grill, fire pit, outdoor shower, and half bathroom. It is located inside Laguna Shores Resort where you can enjoy all the amenities it has to offer.",
+    "capacity": 6,
+    "beds": 6,
+    "bedrooms": 4,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "labels": ["Beach", "Beachfront", "Amazing pools"],
+    "host": {
+      "_id": "u130",
+      "fullname": "Sophie Dubois",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+    },
+    "loc": {
+      "country": "Mexico",
+      "city": "Guadelajara",
+      "address": "789 Chic Avenue",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  },
+  {
+    "_id": "10006571",
+    "name": "Wander Lake Sinclair",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 215.0,
+    "summary": "This home is a luxurious lakeside retreat accommodating up to 10 guests in 3 bedrooms and a bunk loft. With 270 feet of pristine lakefront, guests can enjoy panoramic views through grand 10' x 32' doors. Outdoors, you'll be greeted by an al fresco kitchen, elegant dining terrace, saltwater pool, and a ping pong table.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 4,
+    "bath": 1,
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Pool",
+      "Free parking",
+      "BBQ Grill",
+      "Pets allowed"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools",
+      "Vineyards",
+      "Mansions",
+      "Lake",
+      "Treehouses",
+      "Farms",
+
+      "Skiing",
+      "Earth homes",
+      "Amazing views",
+      "Desert",
+      "Lakefront",
+      "Islands",
+      "Tropical",
+      "Camping",
+      "Surfing",
+      "Bed & breakfasts",
+      "Luxe",
+      "Top of the world"
+    ],
+    "host": {
+      "_id": "u130",
+      "fullname": "Wander Levin",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Georgia",
+      "address": "789 Chic Avenue",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  },
+  {
+    "_id": "10006572",
+    "name": "Limone Sul Garda",
+    "type": "Hotel",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 267.0,
+    "summary": "Barfuss zum Strand! Noch nie warst du dem Gardasee näher als in unseren zwei liebevoll eingerichteten Apartments in Limone sul Garda.",
+    "capacity": 2,
+    "beds": 1,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "labels": ["Beach", "Beachfront", "Amazing pools", "Luxe"],
+    "host": {
+      "_id": "u130",
+      "fullname": "Wander Levin",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Georgia",
+      "address": "789 Chic Avenue",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  },
+  {
+    "_id": "10006573",
+    "name": "Casa Estrella Oro",
+    "type": "Guesthouse",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 267.0,
+    "summary": "Casa Estrella Oro- Hacienda Donaire, Beas. Relax with the whole family at this peaceful place to stay. Detached villa with three bedrooms and a swimming pool in the countryside among the olive groves. All comforts and coziness are close by in the village of Beas. With 30 minutes drive to one of the most beautiful beaches in Spain.",
+    "capacity": 4,
+    "beds": 4,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools",
+      "Luxe",
+      "Vineyards",
+      "Bed & breakfasts"
+    ],
+    "host": {
+      "_id": "u130",
+      "fullname": "Ruben",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+    },
+    "loc": {
+      "country": "Spain",
+      "city": "Huelva",
+      "address": "789 Chic Avenue",
+      "lat": 41.8566,
+      "lng": 5.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  },
+  {
+    "_id": "10006574",
+    "name": "Derrymor - Private Castle in the Hills",
+    "type": "House",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 267.0,
+    "summary": "Privately secluded in its own botanic park Derrymor rises above mature gardens defined by irreplaceable historical character, striking architectural features and a sense of grandeur from a bygone era, offering a fairytale escape in the centre of the dreamy Adelaide Hills.",
+    "capacity": 5,
+    "beds": 3,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Dryer", "Gym"],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools",
+      "Luxe",
+      "Vineyards",
+      "Bed & breakfasts",
+      "Ski-in/out",
+      "Skiing"
+    ],
+    "host": {
+      "_id": "u130",
+      "fullname": "Marissa",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+    },
+    "loc": {
+      "country": "Australia",
+      "city": "Crafers",
+      "address": "789 Chic Avenue",
+      "lat": 11.8566,
+      "lng": 52.3522
+    },
+    "reviews": [
+      {
+        "id": "review19",
+        "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
+        "rate": 5,
+        "by": {
+          "_id": "u131",
+          "fullname": "Antoine Leroy",
+          "imgUrl": "https://example.com/antoine.jpg"
+        }
+      },
+      {
+        "id": "review20",
+        "txt": "Stylish loft with everything you need for a comfortable stay.",
+        "rate": 4,
+        "by": {
+          "_id": "u132",
+          "fullname": "Charlotte Martin",
+          "imgUrl": "https://example.com/charlotte.jpg"
+        }
+      }
+    ],
+    "likedByUsers": ["user19", "user20"],
+    "startDate": "2025-12-10",
+    "endDate": "2025-12-17"
+  }
+]
