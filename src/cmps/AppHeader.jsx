@@ -6,7 +6,6 @@ import { stayService } from "../services/stay.service";
 
 export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
   const defaultFilter = stayService.getDefaultFilter();
-  console.log("defaultFilter", defaultFilter);
 
   const defaultFilterParams = Object.entries(defaultFilter).reduce(
     (acc, [key, value]) => {

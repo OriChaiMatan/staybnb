@@ -25,6 +25,7 @@ window.cs = stayService;
 async function query(filterBy) {
   let stays = await storageService.query(STORAGE_KEY);
   if (filterBy) {
+    console.log("stay service filterBy: ", filterBy);
     stays = stays.filter((stay) => {
       const matchesCategoryTag =
         filterBy.category_tag === "" ||
@@ -51,6 +52,38 @@ async function query(filterBy) {
 
       const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath;
 
+      const matchCapacities =
+        !filterBy.capacity || filterBy.capacity <= stay.capacity;
+
+      const matchCountry =
+        filterBy.country === "Search destination" ||
+        filterBy.country === stay.loc.country;
+
+      const filterStartDate = filterBy.startDate
+        ? new Date(filterBy.startDate)
+        : null;
+      const filterEndDate = filterBy.endDate
+        ? new Date(filterBy.endDate)
+        : null;
+
+      const matchStartDate =
+        !filterStartDate || new Date(stay.startDate) <= filterStartDate;
+
+      const matchEndDate =
+        !filterEndDate || new Date(stay.endDate) >= filterEndDate;
+
+      console.log("matchEndDate: ", matchEndDate);
+      console.log("matchStartDate: ", matchStartDate);
+      console.log("matchCountry: ", matchCountry);
+      console.log("matchCapacities: ", matchCapacities);
+      console.log("matchesBathrooms: ", matchesBathrooms);
+      console.log("matchesbedrooms: ", matchesbedrooms);
+      console.log("matchesBeds: ", matchesBeds);
+      console.log("withinPriceRange: ", withinPriceRange);
+      console.log("matchesPropertyType: ", matchesPropertyType);
+      console.log("matchesAmenities: ", matchesAmenities);
+      console.log("matchesCategoryTag: ", matchesCategoryTag);
+
       return (
         matchesCategoryTag &&
         matchesAmenities &&
@@ -58,7 +91,11 @@ async function query(filterBy) {
         withinPriceRange &&
         matchesBeds &&
         matchesbedrooms &&
-        matchesBathrooms
+        matchesBathrooms &&
+        matchCapacities &&
+        matchCountry &&
+        matchEndDate &&
+        matchStartDate
       );
     });
   }
@@ -174,6 +211,10 @@ function getDefaultFilter() {
     bedrooms: "",
     beds: "",
     bathrooms: "",
+    country: "",
+    capacity: "",
+    startDate: "",
+    endDate: "",
   };
 }
 

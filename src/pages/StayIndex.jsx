@@ -12,12 +12,7 @@ export function StayIndex() {
   const filterBy = useSelector((storeState) => storeState.stayModule.filterBy);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-
-  console.log("stays", stays);
-
-  useEffect(() => {
-    setFilterBy(stayService.getFilterFromParams(searchParams));
-  }, []);
+  console.log("STAYS", stays);
 
   useEffect(() => {
     setFilterBy(stayService.getFilterFromParams(searchParams));
