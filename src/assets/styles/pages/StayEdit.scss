@@ -13,3 +13,13 @@
 .amenities{
     display: grid;
 }
+
+.stay-edit-container{
+    display: grid;
+    grid-template-columns: minmax(30px, 150px) 1fr minmax(30px, 150px);
+    
+
+    .stay-edit{
+        grid-column: 2;
+    }
+}
