@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react"
 import { useOutletContext } from "react-router-dom"
 import { stayService } from "../services/stay.service"
-
 import { uploadService } from "../services/upload.service"
 import { ImgUploader } from "../cmps/ImgUploader"
-
+import { saveStay } from "../store/actions/stay.action"
 import Star from "../svg/StarSvg"
 
 export function StayEdit(props) {
     const context = useOutletContext()
     const [stay, setStay] = useState(stayService.getEmptyStay())
-    // console.log(stay)
 
     function handleChange({ target }) {
         const { value, name, type, checked } = target
@@ -45,13 +43,10 @@ export function StayEdit(props) {
         }
     }
 
-
-
     async function onSaveStay(ev) {
         ev.preventDefault()
         try {
-            // await context.onAddStay(stay)
-            await stayService.save(stay)
+            await saveStay(stay)
         } catch (err) {
             console.log('Had issues sending stay', err);
         }
@@ -64,10 +59,7 @@ export function StayEdit(props) {
         }));
     }
 
-
-
-
-    function getCountryCode(countryName) {    //function to find the country code
+    function getCountryCode(countryName) {    
         const countries = countryJson.findAll()
         const country = countries.find(c => c.country === countryName)
         return country ? country.code : "Country not found"
@@ -85,11 +77,11 @@ export function StayEdit(props) {
                     <input type="text" name="loc.address" placeholder="Address" value={stay.loc.address} onChange={handleChange} />
                 </section>
                 <section className="stay-img-upload">
-                    <section className="add-big-img"><ImgUploader onUploaded={handleImgUpload} /></section>
-                    <section className="add-img"><ImgUploader onUploaded={handleImgUpload} /></section>
-                    <section className="add-top-right-img"><ImgUploader onUploaded={handleImgUpload} /></section>
-                    <section className="add-img"><ImgUploader onUploaded={handleImgUpload} /></section>
-                    <section className="add-buttom-right-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                    <div className="add-big-img"><ImgUploader onUploaded={handleImgUpload} /></div>
+                    <div className="add-img"><ImgUploader onUploaded={handleImgUpload} /></div>
+                    <div className="add-top-right-img"><ImgUploader onUploaded={handleImgUpload} /></div>
+                    <div className="add-img"><ImgUploader onUploaded={handleImgUpload} /></div>
+                    <div className="add-bottom-right-img"><ImgUploader onUploaded={handleImgUpload} /></div>
                 </section>
                 <div className="type">
                     <span>Capacity: <input type="number" name="capacity" value={stay.capacity} onChange={handleChange} /></span>
@@ -102,14 +94,14 @@ export function StayEdit(props) {
                         <option value="Camping">Camping</option>
                         <option value="RVs and Campervans">RVs and Campervans</option>
                     </select></span>
-                    <span>price: <input type="number" name="price" value={stay.price} onChange={handleChange} /></span>
+                    <span>Price: <input type="number" name="price" value={stay.price} onChange={handleChange} /></span>
                     <span>Beds: <input type="number" name="beds" value={stay.beds} onChange={handleChange} /></span>
                     <span>Bedrooms: <input type="number" name="bedrooms" value={stay.bedrooms} onChange={handleChange} /></span>
                     <span>Baths: <input type="number" name="bath" value={stay.bath} onChange={handleChange} /></span>
                 </div>
                 <section className="description">
                     <span>Description</span>
-                    <textarea name="summary" id="" cols="50" rows="15" value={stay.summary} onChange={handleChange}></textarea>
+                    <textarea name="summary" cols="50" rows="15" value={stay.summary} onChange={handleChange}></textarea>
                 </section>
                 <div className="amenities">
                     <h1>Amenities</h1>
@@ -128,10 +120,8 @@ export function StayEdit(props) {
                         <span><input type="checkbox" name="amenities" value="Smoking allowed" onChange={handleChange} /> Smoking allowed</span>
                         <span><input type="checkbox" name="amenities" value="BBQ Grill" onChange={handleChange} /> BBQ Grill</span>
                     </section>
-
-
                 </div>
-                <button>Save</button>
+                <button className="save-btn">Save</button>
             </form>
         </div>
     )
