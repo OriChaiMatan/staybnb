@@ -76,19 +76,21 @@ export function StayEdit(props) {
     return (
         <div className="stay-edit-container">
             <form className="stay-edit" onSubmit={onSaveStay}>
-                <h1>Stay Edit</h1>
-                <input type="text" name="name" placeholder="stay name" value={stay.name} onChange={handleChange} />
-                <span><div className="star-icon"><Star /></div>New {stay.reviews.length} Reviews •</span>
-                <div className="loc">
-                    <span> Country: <input type="text" name="loc.country" value={stay.loc.country} onChange={handleChange} /></span>
-                    <span> City: <input type="text" name="loc.city" value={stay.loc.city} onChange={handleChange} /></span>
-                    <span> Address: <input type="text" name="loc.address" value={stay.loc.address} onChange={handleChange} /></span>
-                </div>
-                <ImgUploader onUploaded={handleImgUpload} />
-                <ImgUploader onUploaded={handleImgUpload} />
-                <ImgUploader onUploaded={handleImgUpload} />
-                <ImgUploader onUploaded={handleImgUpload} />
-                <ImgUploader onUploaded={handleImgUpload} />
+                <section className="stay-title">
+                    <input className="new-stay-name" type="text" name="name" placeholder="Stay name" value={stay.name} onChange={handleChange} />
+                   </section>
+                <section className="loc">
+                    <input type="text" name="loc.country" placeholder="Country" value={stay.loc.country} onChange={handleChange} />
+                    <input type="text" name="loc.city" placeholder="City" value={stay.loc.city} onChange={handleChange} />
+                    <input type="text" name="loc.address" placeholder="Address" value={stay.loc.address} onChange={handleChange} />
+                </section>
+                <section className="stay-img-upload">
+                    <section className="add-big-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                    <section className="add-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                    <section className="add-top-right-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                    <section className="add-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                    <section className="add-buttom-right-img"><ImgUploader onUploaded={handleImgUpload} /></section>
+                </section>
                 <div className="type">
                     <span>Capacity: <input type="number" name="capacity" value={stay.capacity} onChange={handleChange} /></span> •
                     <span>StayType: <select name="type" value={stay.type} onChange={handleChange}>
