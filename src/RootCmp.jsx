@@ -5,6 +5,7 @@ import { StayDetails } from "./pages/StayDetails";
 import { StayIndex } from "./pages/StayIndex";
 import { StayEdit } from "./pages/StayEdit";
 import { useState } from "react";
+import UserDashboard from "./pages/UserDashboard";
 
 export function RootCmp() {
   const [largeMainFilter, setLargeMainFilter] = useState(false);
@@ -36,6 +37,7 @@ export function RootCmp() {
             }
           />
           <Route path="/stay-edit/newStay" element={<StayEdit />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
         </Routes>
       </main>
       <AppFooter />
