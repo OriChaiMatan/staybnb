@@ -1,0 +1,51 @@
+.order-preview {
+    display: contents;
+
+    label {
+      padding: 8px;
+      word-break: break-word;
+
+      &.client-name,
+      &.stay-name,
+      &.check-in,
+      &.check-out,
+      &.total-price,
+      &.order-status,
+      &.order-icon {
+        align-self: center;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.approve-btn {
+          background-color: #4caf50;
+          color: white;
+
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+
+        &.decline-btn {
+          background-color: #f44336;
+          color: white;
+
+          &:hover {
+            background-color: #e53935;
+          }
+        }
+      }
+    }
+  }

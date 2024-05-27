@@ -12,9 +12,9 @@ export default function OrderManager() {
         loadOrders()
       }, [])
 
-  return <div>OrderManager
+  return (
     <section>
         <OrderManagerList orders={orders}/>
     </section>
-  </div>;
+  )
 }
