@@ -243,7 +243,7 @@ export function StayDetails({ setLargeMainFilter }) {
         </div>
 
         <div className="reservation-modal">
-          {/* <div><ReservationModal stay={stay}/></div> */}
+          <div><ReservationModal stay={stay}/></div>
         </div>
       </div>
     </section>

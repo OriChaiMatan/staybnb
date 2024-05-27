@@ -74,6 +74,12 @@
       "a2 a4"
       "a3 a5";
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+
+    .MuiDateRangeCalendar-root.css-e47596-MuiDateRangeCalendar-root div[style*="position: absolute"][style*="pointer-events: none"][style*="color: rgba(130, 130, 130, 0.62)"] {
+      opacity:0;
+    }
+
+  
   }
 
   .stay-ferrites {
