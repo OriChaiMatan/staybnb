@@ -1,36 +1,36 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
-import { stayService } from "../services/stay.service";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router"
+import { stayService } from "../services/stay.service"
 
-import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel";
-import { ReservationModal } from "../cmps/ReservationModal";
+import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel"
+import { ReservationModal } from "../cmps/ReservationModal"
 
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineNavigateNext } from "react-icons/md"
 
-import Heart from "../svg/HeartSvg";
-import Share from "../svg/ShareSvg";
-import Star from "../svg/StarSvg";
-import SelfCheackIn from "../svg/SelfCheckIn";
-import Cancel from "../svg/CancelSvg";
-import Workspace from "../svg/WorkspaceSvg";
-import { utilService } from "../services/util.service";
+import Heart from "../svg/HeartSvg"
+import Share from "../svg/ShareSvg"
+import Star from "../svg/StarSvg"
+import SelfCheackIn from "../svg/SelfCheckIn"
+import Cancel from "../svg/CancelSvg"
+import Workspace from "../svg/WorkspaceSvg"
+import { utilService } from "../services/util.service"
 
-import WifiSvg from "../svg/amenities/WifiSvg";
-import KitchenSvg from "../svg/amenities/KitchenSvg";
-import WasherSvg from "../svg/amenities/WasherSvg";
-import DryerSvg from "../svg/amenities/DryerSvg";
-import AirConditioningSvg from "../svg/amenities/AirConditioningSvg";
-import HeatingSvg from "../svg/amenities/HeatingSvg";
-import TVSvg from "../svg/amenities/TvSvg";
-import IronSvg from "../svg/amenities/IronSvg";
+import WifiSvg from "../svg/amenities/WifiSvg"
+import KitchenSvg from "../svg/amenities/KitchenSvg"
+import WasherSvg from "../svg/amenities/WasherSvg"
+import DryerSvg from "../svg/amenities/DryerSvg"
+import AirConditioningSvg from "../svg/amenities/AirConditioningSvg"
+import HeatingSvg from "../svg/amenities/HeatingSvg"
+import TVSvg from "../svg/amenities/TvSvg"
+import IronSvg from "../svg/amenities/IronSvg"
 
-import PoolSvg from "../svg/amenities/PoolSvg";
-import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg";
-import FreeParkingSvg from "../svg/amenities/FreeParkingSvg";
-import GymSvg from "../svg/amenities/GymSvg";
-import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg";
-import BBQGrillSvg from "../svg/amenities/BBQGrillSvg";
-import {DatePicker} from "../cmps/app-header/DatePicker";
+import PoolSvg from "../svg/amenities/PoolSvg"
+import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg"
+import FreeParkingSvg from "../svg/amenities/FreeParkingSvg"
+import GymSvg from "../svg/amenities/GymSvg"
+import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg"
+import BBQGrillSvg from "../svg/amenities/BBQGrillSvg"
+// import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
@@ -235,7 +235,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
 
 
-            <DatePicker onDatesChange={handleDatesChange} />
+            {/* <DatePicker onDatesChange={handleDatesChange} /> */}
           </div>
 
 

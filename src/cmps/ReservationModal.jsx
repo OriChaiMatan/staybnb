@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { GuestsModal } from "./app-header/GuestsModal.jsx"
-import {DatePicker} from "./app-header/DatePicker.jsx"
+// import {DatePicker} from "./app-header/DatePicker.jsx"
 
 export function ReservationModal({ stay }) {
     const [selectedDates, setSelectedDates] = useState([])
