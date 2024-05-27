@@ -160,6 +160,26 @@ export function ReservationModal({ stay }) {
             <p className="text-center">
                 You Won't be charged yet
             </p>
+            {(selectedGuests > 0 || (selectedDates[0] && selectedDates[1])) && <section>
+                <section className="price-info">
+                    <div className="price-per-night flex space-between">
+                        <p className="underline">$40 X 0 nights</p>
+                        <p>$0</p>
+                    </div>
+                    <div className="service-fee flex space-between">
+                        <p className="underline">Cleaning fee</p>
+                        <p>$10</p>
+                    </div>
+                    <div className="service-fee flex space-between">
+                        <p className="underline">Service fee</p>
+                        <p>$8.15</p>
+                    </div>
+                </section>
+                <div className="total flex space-between">
+                    <p>Total</p>
+                    <p>$18.15</p>
+                </div>
+            </section>}
         </section>
     )
 }

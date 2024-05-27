@@ -1,14 +1,41 @@
 .order-container{
     position: sticky;
-    top: 78px;
+    top: 178px;
     border: 1px solid rgba(0, 0, 0, .1882352941);
     border-radius: 13px;
     padding: 25px 20px 0;
     height: max-content;
-    width: 83%;
+    width: 70%;
     margin-left: auto;
     margin-top: 38px;
     box-shadow: #0000001f 0 6px 16px;
+
+    .price-info{
+            display: flex;
+            flex-direction: column;
+            gap: .3em;
+
+            .price-per-night, .service-fee{
+                display: flex;
+                justify-content: space-between;
+                height: 40px;
+
+                .underline{
+                text-decoration: underline;
+                }
+            }
+
+        }
+
+        .total{
+            line-height: 1.125rem ;
+            color: rgb(106, 106, 106) ;
+            border-top: 1px solid rgb(221, 221, 221) ;
+            margin-top: 24px ;
+            padding-block: 24px ;
+            justify-content: space-between;
+            font-weight: 700;
+        }
 
     .order-form-header{
         display: flex;
@@ -51,7 +78,6 @@
 
         .date-picker{
             display: flex;
-            // justify-content: space-between; 
 
             .date-input{
                 display: flex;
@@ -105,6 +131,8 @@
                     font-size: 1em;
                     cursor: pointer;
                 }
+
+        
     }
 
     .btn-container{
