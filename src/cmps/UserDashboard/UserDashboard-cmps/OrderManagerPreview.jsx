@@ -1,5 +1,5 @@
 import { FaRegHourglassHalf } from "react-icons/fa6"; //hourglass
-import { TiDelete } from "react-icons/ti"; // delete
+import { BiSolidInfoCircle } from "react-icons/bi"; // delete
 import { FaCheckCircle } from "react-icons/fa"; // approve
 
 
@@ -12,7 +12,7 @@ export function OrderManagerPreview({ order }) {
             case 'approved':
                 return <FaCheckCircle />;
             case 'decline':
-                return <TiDelete />;
+                return <BiSolidInfoCircle />;
             case 'pending':
                 return <FaRegHourglassHalf />;
             default:

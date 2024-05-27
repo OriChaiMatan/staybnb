@@ -60,6 +60,132 @@
       "name": "Beachside Bungalow",
       "price": 75.0
     },
+    "status": "decline"
+  },
+  {
+    "_id": "o1228",
+    "hostId": "u105",
+    "buyer": {
+      "_id": "u104",
+      "fullname": "User 4"
+    },
+    "totalPrice": 180,
+    "startDate": "2025/07/10",
+    "endDate": "2025/07/12",
+    "guests": {
+      "adults": 2,
+      "kids": 2
+    },
+    "stay": {
+      "_id": "h105",
+      "name": "Mountain Retreat",
+      "price": 90.0
+    },
+    "status": "approved"
+  },
+  {
+    "_id": "o1229",
+    "hostId": "u106",
+    "buyer": {
+      "_id": "u105",
+      "fullname": "User 5"
+    },
+    "totalPrice": 400,
+    "startDate": "2025/08/15",
+    "endDate": "2025/08/20",
+    "guests": {
+      "adults": 5,
+      "kids": 1
+    },
+    "stay": {
+      "_id": "h106",
+      "name": "City Apartment",
+      "price": 80.0
+    },
     "status": "pending"
+  },
+  {
+    "_id": "o1230",
+    "hostId": "u107",
+    "buyer": {
+      "_id": "u106",
+      "fullname": "User 6"
+    },
+    "totalPrice": 500,
+    "startDate": "2025/09/01",
+    "endDate": "2025/09/06",
+    "guests": {
+      "adults": 6,
+      "kids": 0
+    },
+    "stay": {
+      "_id": "h107",
+      "name": "Country House",
+      "price": 100.0
+    },
+    "status": "approved"
+  },
+  {
+    "_id": "o1231",
+    "hostId": "u108",
+    "buyer": {
+      "_id": "u107",
+      "fullname": "User 7"
+    },
+    "totalPrice": 220,
+    "startDate": "2025/10/05",
+    "endDate": "2025/10/08",
+    "guests": {
+      "adults": 2,
+      "kids": 3
+    },
+    "stay": {
+      "_id": "h108",
+      "name": "Lakeside Cabin",
+      "price": 55.0
+    },
+    "status": "approved"
+  },
+  {
+    "_id": "o1232",
+    "hostId": "u109",
+    "buyer": {
+      "_id": "u108",
+      "fullname": "User 8"
+    },
+    "totalPrice": 360,
+    "startDate": "2025/11/10",
+    "endDate": "2025/11/15",
+    "guests": {
+      "adults": 3,
+      "kids": 3
+    },
+    "stay": {
+      "_id": "h109",
+      "name": "Forest Lodge",
+      "price": 60.0
+    },
+    "status": "pending"
+  },
+  {
+    "_id": "o1233",
+    "hostId": "u110",
+    "buyer": {
+      "_id": "u109",
+      "fullname": "User 9"
+    },
+    "totalPrice": 150,
+    "startDate": "2025/12/10",
+    "endDate": "2025/12/12",
+    "guests": {
+      "adults": 1,
+      "kids": 1
+    },
+    "stay": {
+      "_id": "h110",
+      "name": "Desert Villa",
+      "price": 75.0
+    },
+    "status": "decline"
   }
 ]
