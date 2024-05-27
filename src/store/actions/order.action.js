@@ -1,6 +1,6 @@
 import { orderService } from "../../services/order.service";
 import { ADD_ORDER, REMOVE_ORDER, SET_FILTER_BY, SET_IS_LOADING, SET_ORDERS, UNDO_CHANGES, UPDATE_ORDER } from "../reducers/order.reducer";
-import { SPEND_BALANCE } from "../reducers/user.reducer";
+// import { SPEND_BALANCE } from "../reducers/user.reducer";
 import { store } from "../store";
 
 export async function loadOrders() {
@@ -20,7 +20,7 @@ export async function removeOrderOptimitic(orderId) {
   try {
     store.dispatch({ type: REMOVE_ORDER, orderId })
     await orderService.remove(orderId)
-    store.dispatch({ type: SPEND_BALANCE, amount: -10 })
+    // store.dispatch({ type: SPEND_BALANCE, amount: -10 })
   } catch (err) {
     console.log('Had issues removing ORDERs', err)
     store.dispatch({ type: UNDO_CHANGES })
