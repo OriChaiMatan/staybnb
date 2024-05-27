@@ -30,7 +30,7 @@ import FreeParkingSvg from "../svg/amenities/FreeParkingSvg";
 import GymSvg from "../svg/amenities/GymSvg";
 import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg";
 import BBQGrillSvg from "../svg/amenities/BBQGrillSvg";
-import DatePicker from "../cmps/app-header/DatePicker";
+import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)

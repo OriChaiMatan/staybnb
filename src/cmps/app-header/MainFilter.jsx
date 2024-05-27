@@ -5,7 +5,7 @@ import searchIcon from "../../assets/img/search_glass.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { GuestsModal } from "./GuestsModal";
-import DatePicker from "./DatePicker";
+import {DatePicker} from "./DatePicker";
 import { useSearchParams } from "react-router-dom";
 
 export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
