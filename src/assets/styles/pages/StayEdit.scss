@@ -1,116 +1,144 @@
 .stay-edit-container {
     display: grid;
     grid-template-columns: minmax(30px, 150px) 1fr minmax(30px, 150px);
-
-
-    .stay-edit {
-        grid-column: 2;
-    }
 }
 
-.stay-title {
+.stay-edit {
+    grid-column: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
+}
 
-    .new-stay-name {
-        border: 0;
-        outline: 0;
-        font-family: inherit;
-        border: 1px solid rgb(157, 157, 157);
-        padding: 15px;
-        border-radius: 5px;
-        min-width: 100px;
-        width: 100%;
-    }
+.stay-title{
+    width: 100%;
+}
+
+.stay-title .new-stay-name {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 1.2em;
 }
 
 .loc {
     display: flex;
-    width: 100%;
     gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
 
-    input {
-        border: 0;
-        outline: 0;
-        font-family: inherit;
-        border: 1px solid rgb(157, 157, 157);
-        padding: 15px;
-        border-radius: 5px;
-        min-width: 100px;
-        width: 100%;
-    }
+.loc input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 .stay-img-upload {
     display: grid;
-    grid-template: 1fr 1fr / 2fr 1fr 1fr;
-    border-radius: 20px;
-    gap: 8px;
-    margin-bottom: 15px;
-    height: 250px;
+    grid-template-areas: "big small1 top-right" "big small2 bottom-right";
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
     width: 100%;
-    margin-top: 15px;
-    text-align: left;
-    align-items: start;
+    
+}
 
-    .add-big-img {
-        grid-column: 1;
-        grid-row: 1 / -1;
-        border-bottom-left-radius: 15px;
-        border-top-left-radius: 15px;
-        height: 100%;
-        border: 1px solid rgb(157, 157, 157);
-        padding: 15px;
-    }
+.stay-img-upload div {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+}
 
-    .add-img {
-        border: 1px solid rgb(157, 157, 157);
-        height: 100%;
-        padding: 15px;
-    }
+.add-img{
+    
+    border: 1px solid #ddd;
+}
+.add-big-img {
+    grid-area: big;
+    
+    border: 1px solid #ddd;
+}
 
-    .add-top-right-img {
-        border: 1px solid rgb(157, 157, 157);
-        height: 100%;
-        padding: 15px;
-        border-top-right-radius: 15px;
-    }
+.add-top-right-img {
+    grid-area: top-right;
+    
+    border: 1px solid #ddd;
+}
 
-    .add-buttom-right-img {
-        border: 1px solid rgb(157, 157, 157);
-        height: 100%;
-        padding: 15px;
-        border-bottom-right-radius: 15px;
-    }
+.add-bottom-right-img {
+    grid-area: bottom-right;
+    
+    border: 1px solid #ddd;
 }
 
 .type {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
-
-    span {
-        display: grid;
-        width: 100%;
-        font-weight: 600;
-        font-size: .75em;
-    }
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.description{
-    display: grid;
+.type span {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.description {
+    margin-bottom: 20px;
     width: 100%;
+}
+
+.description textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
 }
 
 .amenities {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.amenities h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.amenities-list {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
 
-    .amenities-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+.amenities-list span {
+    display: flex;
+    align-items: center;
+}
 
-        span{
-            width: 100%;
-        }
-    }
+.save-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #ff385c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #e0004d;
 }
