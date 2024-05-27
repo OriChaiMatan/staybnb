@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const API_KEY = 'AIzaSyB24fmoFy0PfYJeqW1F7Ida3Ok3IlwDZUw';
 
-export function Map({ lat, lng }) {
+export function StayMap({ lat, lng }) {
   const mapContainerStyle = {
     width: '100%',
     height: '500px'

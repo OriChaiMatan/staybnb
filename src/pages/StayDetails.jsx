@@ -30,6 +30,7 @@ import FreeParkingSvg from "../svg/amenities/FreeParkingSvg"
 import GymSvg from "../svg/amenities/GymSvg"
 import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg"
 import BBQGrillSvg from "../svg/amenities/BBQGrillSvg"
+import { StayMap } from "../cmps/StayMap";
 // import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
@@ -252,7 +253,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
       <div className="map">
         <h3>Where you’ll be</h3>
-        <Map lat={stay.loc.lat} lng={stay.loc.lng} />
+        <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
         <h4>{stay.loc.city}, {stay.loc.country}</h4>
       </div>
     </section>
