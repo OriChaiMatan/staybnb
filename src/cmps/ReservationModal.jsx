@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { GuestsModal } from "./app-header/GuestsModal.jsx"
+import starIcon from "../assets/img/star.png"
+import { set } from "date-fns"
 // import {DatePicker} from "./app-header/DatePicker.jsx"
 
 export function ReservationModal({ stay }) {
@@ -10,6 +12,32 @@ export function ReservationModal({ stay }) {
     const [petsAmount, setPetsAmount] = useState(0)
     const [selectedGuests, setSelectedGuests] = useState(0)
     const [showAddGuests, setShowAddGuests] = useState(false)
+    const reservationRef = useRef(null)
+
+    useEffect(() => {
+    const handleEscapeKeyPress = (event) => {
+      if (event.key === "Escape") {
+        closeGuestModal()
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (
+        reservationRef.current &&
+        !reservationRef.current.contains(event.target)
+      ) {
+        closeGuestModal()
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKeyPress)
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress)
+      document.removeEventListener("mousedown", handleClickOutside)
+    };
+  }, []);
 
     function handleDatesChange(dates) {
         setSelectedDates(dates)
@@ -30,6 +58,14 @@ export function ReservationModal({ stay }) {
     //     }
     //     return []
     // }
+
+    function toggleGuestModal(){
+        setShowAddGuests(prev => !prev)
+    }
+
+    function closeGuestModal(){
+        setShowAddGuests(false)
+    }
 
     function handleAmountChange(type, operation) {
         switch (type) {
@@ -83,35 +119,67 @@ export function ReservationModal({ stay }) {
         //         <span>${stay.price*selectedDates.length}</span>
         //     </section>
         // </section>
-        <section className="order-container">
+        <section className="order-container" ref={reservationRef}>
             <div className="order-form-header">
                 <p><span className="cost">$40</span> night</p>
                 <p className="rate bold-font">
-                    <img src="" alt="" />
+                    <img src={starIcon} alt="star icon" className="star-icon"/>
                     5 •  
                     <span className="reviews"> 1 review</span>
                 </p>
             </div>
-            <div className="order-data">
+            <div className="order-form">
                 <div className="date-picker">
                     <div className="date-input">
                         <label>CHECK-IN</label>
-                        <input/>
+                        <input placeholder="Add date"/>
+                        
                     </div>
                     <div className="date-input">
                         <label>CHECK-OUT</label>
-                        <input/>
+                        <input placeholder="Add date"/>
                     </div>
                 </div>
-                <div className="guest-input">
+                <div className="guest-input" onClick={toggleGuestModal}>
                     <label>GUESTS</label>
-                    <input/>
+                    <input placeholder="Add guest" value={selectedGuests >= 1 ? `${selectedGuests} ${selectedGuests === 1 ? 'guest' : 'guests'}` : ''} />
                     <svg viewBox="0 0 320 512" width="100" title="angle-down"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
                 </div>
+                {showAddGuests &&
+                 <GuestsModal
+                 adultsAmount={adultsAmount}
+                 childrenAmount={childrenAmount}
+                 infantsAmount={infantsAmount}
+                 petsAmount={petsAmount}
+                 handleAmountChange={handleAmountChange}
+                 />}
             </div>  
             <button className="btn-container">
                 Reserve
             </button>
+            <p className="text-center">
+                You Won't be charged yet
+            </p>
+            {(selectedGuests > 0 || (selectedDates[0] && selectedDates[1])) && <section>
+                <section className="price-info">
+                    <div className="price-per-night flex space-between">
+                        <p className="underline">$40 X 0 nights</p>
+                        <p>$0</p>
+                    </div>
+                    <div className="service-fee flex space-between">
+                        <p className="underline">Cleaning fee</p>
+                        <p>$10</p>
+                    </div>
+                    <div className="service-fee flex space-between">
+                        <p className="underline">Service fee</p>
+                        <p>$8.15</p>
+                    </div>
+                </section>
+                <div className="total flex space-between">
+                    <p>Total</p>
+                    <p>$18.15</p>
+                </div>
+            </section>}
         </section>
     )
 }
