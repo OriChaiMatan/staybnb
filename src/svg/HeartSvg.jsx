@@ -9,4 +9,4 @@ export function HeartSvg() {
 }
 
 
-export default HeartSvg;
+export default HeartSvg

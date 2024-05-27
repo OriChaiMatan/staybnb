@@ -30,6 +30,8 @@ import FreeParkingSvg from "../svg/amenities/FreeParkingSvg"
 import GymSvg from "../svg/amenities/GymSvg"
 import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg"
 import BBQGrillSvg from "../svg/amenities/BBQGrillSvg"
+
+import { Map } from "../cmps/Map"
 // import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
@@ -214,7 +216,7 @@ export function StayDetails({ setLargeMainFilter }) {
             )}
           </div>
 
-          <div className="amenities">
+          <div className="amenities-details">
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
@@ -245,7 +247,16 @@ export function StayDetails({ setLargeMainFilter }) {
         <div className="reservation-modal">
           <div><ReservationModal stay={stay}/></div>
         </div>
+
+      </div>
+
+
+
+      <div className="map">
+        <h3>Where you’ll be</h3>
+        <Map lat={stay.loc.lat} lng={stay.loc.lng} />
+        <h4>{stay.loc.city}, {stay.loc.country}</h4>
       </div>
     </section>
-  );
+  )
 }
