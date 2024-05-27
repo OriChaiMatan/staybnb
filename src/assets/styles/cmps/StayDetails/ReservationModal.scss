@@ -12,9 +12,10 @@
 
     .order-form-header{
         display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-inline: 5px;
 
         .cost{
             color: #000;
@@ -22,18 +23,23 @@
             font-weight: 600;
         }
 
-        .rate{
+        .rate.bold-font{
             font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
 
             .reviews{
                 color: #00000070;
                 font-size: 14px;
                 text-decoration: underline;
+                margin-left: 5px;
             }
-        }
 
-        .bold-font{
-            font-weight: 600;
+            img{
+                width:15px;
+                margin-right: 5px;
+            }
         }
     }
 
@@ -45,7 +51,7 @@
 
         .date-picker{
             display: flex;
-            justify-content: space-between; 
+            // justify-content: space-between; 
 
             .date-input{
                 display: flex;
@@ -54,9 +60,17 @@
                 padding: 7px 12px;
                 color: gray;
                 font-size: .75rem;
+                flex: 1;
+                cursor: pointer;
+
+                &:last-of-type{
+                    border-left: 1px solid rgba(0, 0, 0, .3137254902);
+                }
             }
 
-            .guest-input{
+        }
+
+        .guest-input{
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -65,6 +79,7 @@
                 padding: 7px 12px;
                 color: gray;
                 font-size: .75rem;
+                cursor: pointer;
 
                 svg{
                     position: absolute;
@@ -75,11 +90,24 @@
                     transform: translate(-12px) translatey(-50%);
                 }
             }
-        }
+
+        label{
+                    font-weight: 600;
+                    font-size: .75em;
+                    cursor:pointer;
+                }
+
+                input{
+                    border: none;
+                    padding: 0;
+                    width: 50%;
+                    outline: none;
+                    font-size: 1em;
+                    cursor: pointer;
+                }
     }
 
     .btn-container{
-        margin: 40px 0 20px 0;
         text-align: center;
         font-weight: 600;
         cursor: pointer;
@@ -112,5 +140,90 @@
         --mouse-y: 2.083333333333333;
         }
         }
+
+    .text-center{
+        text-align: center;
+        font-size: .875rem;
+    }
 }
+
+.add-guests-modal {
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+        // top: 170px;
+        margin-top: 2px;
+        width: 90%;
+        // right: calc(50% - 100px);
+        height: 410px;
+        padding: 20px 38px;
+        border-radius: 8px;
+        z-index: 8;
+        background-color: #fff;
+        display: grid;
+        gap: 1px;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        font-size: 12px;
+        cursor: auto;
+
+        & > *:not(:nth-last-child(2)):not(:last-child) {
+          content: "";
+          border-bottom: 1px solid #ebebeb;
+          grid-row: span 1;
+        }
+
+        & .add-guests-modal-p {
+          font-size: 14px;
+        }
+
+        & .add-guests-modal-p.pet {
+          text-decoration: underline;
+          font-weight: 500;
+        }
+
+        & .add-guests-modal-btns {
+          display: flex;
+          justify-content: space-between;
+          padding: 24px 0;
+
+          .add-guest-btn {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            color: $clr4;
+            border: 1px solid;
+            border-color: #b0b0b0;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin: 5px;
+            cursor: pointer;
+          }
+
+          .add-guest-btn:hover {
+            border-color: black;
+          }
+
+          & .add-guest-num {
+            align-self: center;
+            height: 30px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+          }
+
+          .add-guest-btn.disabled {
+            cursor: auto;
+            border-color: #ebebeb;
+          }
+
+          .add-guest-btn:first-child {
+            padding-left: 12.5px;
+          }
+
+          .add-guest-btn:last-child {
+            padding: 3.5px 0 0 10.5px;
+          }
+        }
+      }
 
