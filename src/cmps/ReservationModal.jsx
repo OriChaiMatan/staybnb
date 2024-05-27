@@ -11,24 +11,24 @@ export function ReservationModal({ stay }) {
     const [selectedGuests, setSelectedGuests] = useState(0)
 
     function handleDatesChange(dates) {
-        setSelectedDates(dates);
+        setSelectedDates(dates)
     }
 
     
-    function extractDateDisplay() {
-        if (selectedDates.length === 2 && selectedDates.every(date => date?.$d instanceof Date)) {
-            const firstDate = dayjs(selectedDates[0].$d);
-            const firstMonth = firstDate.format('MMM');
-            const firstDay = firstDate.format('D');
+    // function extractDateDisplay() {
+    //     if (selectedDates.length === 2 && selectedDates.every(date => date?.$d instanceof Date)) {
+    //         const firstDate = dayjs(selectedDates[0].$d);
+    //         const firstMonth = firstDate.format('MMM');
+    //         const firstDay = firstDate.format('D');
 
-            const secondDate = dayjs(selectedDates[1].$d);
-            const secondMonth = secondDate.format('MMM');
-            const secondDay = secondDate.format('D');
+    //         const secondDate = dayjs(selectedDates[1].$d);
+    //         const secondMonth = secondDate.format('MMM');
+    //         const secondDay = secondDate.format('D');
 
-            return [firstMonth, firstDay, secondMonth, secondDay];
-        }
-        return [];
-    }
+    //         return [firstMonth, firstDay, secondMonth, secondDay];
+    //     }
+    //     return []
+    // }
 
     function handleAmountChange(type, operation) {
         switch (type) {

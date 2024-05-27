@@ -30,11 +30,13 @@ import FreeParkingSvg from "../svg/amenities/FreeParkingSvg";
 import GymSvg from "../svg/amenities/GymSvg";
 import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg";
 import BBQGrillSvg from "../svg/amenities/BBQGrillSvg";
+import DatePicker from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
-  const [stay, setStay] = useState(null);
-  const params = useParams();
-  const [showModal, setShowModal] = useState(false);
+  const [stay, setStay] = useState(null)
+  const params = useParams()
+  const [showModal, setShowModal] = useState(false)
+  const [selectedDates, setSelectedDates] = useState([])
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -51,11 +53,10 @@ export function StayDetails({ setLargeMainFilter }) {
     Gym: <GymSvg />,
     Smoking_allowed: <SmokingAllowedSvg />,
     BBQ_Grill: <BBQGrillSvg />,
-  };
-  console.log("stay", stay);
+  }
 
   useEffect(() => {
-    loadStay();
+    loadStay()
     function handleScroll() {
       const scrollTop =
         window.scrollY ||
@@ -64,31 +65,35 @@ export function StayDetails({ setLargeMainFilter }) {
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
       if (scrollTop > 30) {
-        setLargeMainFilter(true);
+        setLargeMainFilter(true)
       } else {
-        setLargeMainFilter(false);
+        setLargeMainFilter(false)
       }
     }
 
-    handleScroll();
-  }, [params.stayId]);
+    handleScroll()
+  }, [params.stayId])
 
   async function loadStay() {
     try {
-      const stayData = await stayService.getById(params.stayId);
-      const avgRating = utilService.calculateAvgRating(stayData.reviews);
-      setStay(stayData);
+      const stayData = await stayService.getById(params.stayId)
+      // const avgRating = utilService.calculateAvgRating(stayData.reviews)
+      setStay(stayData)
     } catch (err) {
-      console.log("Error in loadStay", err);
+      console.log("Error in loadStay", err)
     }
   }
 
+  function handleDatesChange(dates) {
+    setSelectedDates(dates)
+}
+
   function toggleModal() {
-    setShowModal(!showModal);
+    setShowModal(!showModal)
   }
 
   function closeModal() {
-    setShowModal(false);
+    setShowModal(false)
   }
 
   if (!stay) {
@@ -213,17 +218,28 @@ export function StayDetails({ setLargeMainFilter }) {
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
-                const amenityKey = amenity.replace(/\s+/g, "_");
+                const amenityKey = amenity.replace(/\s+/g, "_")
                 return (
                   <div key={index} className="offer">
-                    {console.log(amenity)}
                     {amenityIcons[amenityKey]}
                     {amenity}
                   </div>
-                );
+                )
               })}
             </div>
           </div>
+
+          <div className="dates">
+            <h1>Select check-in date</h1>
+            <h4>Add your travel dates for exact pricing</h4>
+
+
+
+            <DatePicker onDatesChange={handleDatesChange} />
+          </div>
+
+
+
         </div>
 
         <div className="reservation-modal">

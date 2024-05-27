@@ -95,7 +95,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
 
       return [firstMonth, firstDay, secondMonth, secondDay];
     }
-    return [];
+    return []
   }
 
   function handleAmountChange(type, operation) {

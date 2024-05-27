@@ -1,34 +1,28 @@
-import * as React from 'react';
-import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
-import { useState, useEffect } from 'react';
+import * as React from 'react'
+import { useState, useEffect } from 'react'
+import dayjs from 'dayjs'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar'
 
-export default function DatePicker({ onDatesChange }) {
-  const [value, setValue] = useState([]);
+export default function CustomDateRangePicker({ onDatesChange }) {
+  const [value, setValue] = useState([null, null]);
+  const today = dayjs()
 
   useEffect(() => {
-    onDatesChange(value);
-  }, [value, onDatesChange]);
-
-  // useEffect(() => {
-  //   const divElement = document.querySelector('.MuiDateRangeCalendar-root > div:first-child');
-  //   if (divElement) {
-  //     divElement.remove();
-  //   }
-  // }, []);
+    if (onDatesChange) {
+      onDatesChange(value)
+    }
+  }, [value, onDatesChange])
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DateRangeCalendar', 'DateRangeCalendar']}>
-        <DemoItem label="Controlled calendar">
-          <DateRangeCalendar
-            value={value}
-            onChange={(newValue) => setValue(newValue)}
-          />
-        </DemoItem>
-      </DemoContainer>
+      <DateRangeCalendar
+        value={value}
+        onChange={(newValue) => setValue(newValue)}
+        calendars={2}
+        minDate={today} // Set the minimum date to today
+      />
     </LocalizationProvider>
-  );
+  )
 }
