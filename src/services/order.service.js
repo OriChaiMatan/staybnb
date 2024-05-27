@@ -1,9 +1,11 @@
-
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
+import ordersData from "../data/orders.json";
 
 const STORAGE_KEY = 'order'
+
+_createOrders()
 
 export const orderService = {
     query,
@@ -80,7 +82,10 @@ function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", 
     }
 }
 
-
+function _createOrders() {
+    let data = ordersData;
+    data = utilService.saveToStorage(STORAGE_KEY, data);
+  }
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
 

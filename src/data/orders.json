@@ -19,5 +19,47 @@
       "price": 80.0
     },
     "status": "pending"
+  },
+  {
+    "_id": "o1226",
+    "hostId": "u103",
+    "buyer": {
+      "_id": "u102",
+      "fullname": "User 2"
+    },
+    "totalPrice": 240,
+    "startDate": "2025/11/01",
+    "endDate": "2025/11/05",
+    "guests": {
+      "adults": 3,
+      "kids": 2
+    },
+    "stay": {
+      "_id": "h103",
+      "name": "Cozy Cottage",
+      "price": 60.0
+    },
+    "status": "approved"
+  },
+  {
+    "_id": "o1227",
+    "hostId": "u104",
+    "buyer": {
+      "_id": "u103",
+      "fullname": "User 3"
+    },
+    "totalPrice": 300,
+    "startDate": "2025/12/20",
+    "endDate": "2025/12/25",
+    "guests": {
+      "adults": 4,
+      "kids": 0
+    },
+    "stay": {
+      "_id": "h104",
+      "name": "Beachside Bungalow",
+      "price": 75.0
+    },
+    "status": "pending"
   }
 ]
