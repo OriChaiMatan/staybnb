@@ -1,45 +1,49 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router"
-import { stayService } from "../services/stay.service"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import { stayService } from "../services/stay.service";
 
-import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel"
-import { ReservationModal } from "../cmps/ReservationModal"
+import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel";
+import { ReservationModal } from "../cmps/ReservationModal";
 
-import { MdOutlineNavigateNext } from "react-icons/md"
+import { MdOutlineNavigateNext } from "react-icons/md";
 
-import Heart from "../svg/HeartSvg"
-import Share from "../svg/ShareSvg"
-import Star from "../svg/StarSvg"
-import SelfCheackIn from "../svg/SelfCheckIn"
-import Cancel from "../svg/CancelSvg"
-import Workspace from "../svg/WorkspaceSvg"
-import { utilService } from "../services/util.service"
+import Heart from "../svg/HeartSvg";
+import Share from "../svg/ShareSvg";
+import Star from "../svg/StarSvg";
+import SelfCheackIn from "../svg/SelfCheckIn";
+import Cancel from "../svg/CancelSvg";
+import Workspace from "../svg/WorkspaceSvg";
+import { utilService } from "../services/util.service";
 
-import WifiSvg from "../svg/amenities/WifiSvg"
-import KitchenSvg from "../svg/amenities/KitchenSvg"
-import WasherSvg from "../svg/amenities/WasherSvg"
-import DryerSvg from "../svg/amenities/DryerSvg"
-import AirConditioningSvg from "../svg/amenities/AirConditioningSvg"
-import HeatingSvg from "../svg/amenities/HeatingSvg"
-import TVSvg from "../svg/amenities/TvSvg"
-import IronSvg from "../svg/amenities/IronSvg"
+import WifiSvg from "../svg/amenities/WifiSvg";
+import KitchenSvg from "../svg/amenities/KitchenSvg";
+import WasherSvg from "../svg/amenities/WasherSvg";
+import DryerSvg from "../svg/amenities/DryerSvg";
+import AirConditioningSvg from "../svg/amenities/AirConditioningSvg";
+import HeatingSvg from "../svg/amenities/HeatingSvg";
+import TVSvg from "../svg/amenities/TvSvg";
+import IronSvg from "../svg/amenities/IronSvg";
 
-import PoolSvg from "../svg/amenities/PoolSvg"
-import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg"
-import FreeParkingSvg from "../svg/amenities/FreeParkingSvg"
-import GymSvg from "../svg/amenities/GymSvg"
-import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg"
-import BBQGrillSvg from "../svg/amenities/BBQGrillSvg"
-import { StayMap } from "../cmps/StayMap"
-import StarReview from "../svg/StarReview"
-StarReview
+import PoolSvg from "../svg/amenities/PoolSvg";
+import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg";
+import FreeParkingSvg from "../svg/amenities/FreeParkingSvg";
+import GymSvg from "../svg/amenities/GymSvg";
+import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg";
+import BBQGrillSvg from "../svg/amenities/BBQGrillSvg";
+import { StayMap } from "../cmps/StayMap";
+import StarReview from "../svg/StarReview";
+import { CalendarPicker } from "../cmps/CalendarPicker";
+StarReview;
 // import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
-  const [stay, setStay] = useState(null)
-  const params = useParams()
-  const [showModal, setShowModal] = useState(false)
-  const [selectedDates, setSelectedDates] = useState([])
+  const [stay, setStay] = useState(null);
+  const params = useParams();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRange, setSelectedRange] = useState({
+    start: null,
+    end: null,
+  });
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -56,62 +60,66 @@ export function StayDetails({ setLargeMainFilter }) {
     Gym: <GymSvg />,
     Smoking_allowed: <SmokingAllowedSvg />,
     BBQ_Grill: <BBQGrillSvg />,
-  }
+  };
 
   useEffect(() => {
-    loadStay()
+    loadStay();
     function handleScroll() {
       const scrollTop =
         window.scrollY ||
         window.pageYOffset ||
         document.body.scrollTop +
-        ((document.documentElement && document.documentElement.scrollTop) ||
-          0);
+          ((document.documentElement && document.documentElement.scrollTop) ||
+            0);
       if (scrollTop > 30) {
-        setLargeMainFilter(true)
+        setLargeMainFilter(true);
       } else {
-        setLargeMainFilter(false)
+        setLargeMainFilter(false);
       }
     }
 
-    handleScroll()
-  }, [params.stayId])
+    handleScroll();
+  }, [params.stayId]);
 
   async function loadStay() {
     try {
-      const stayData = await stayService.getById(params.stayId)
+      const stayData = await stayService.getById(params.stayId);
       // const avgRating = utilService.calculateAvgRating(stayData.reviews)
-      setStay(stayData)
+      setStay(stayData);
     } catch (err) {
-      console.log("Error in loadStay", err)
+      console.log("Error in loadStay", err);
     }
   }
 
-  function handleDatesChange(dates) {
-    setSelectedDates(dates)
-  }
-
   function toggleModal() {
-    setShowModal(!showModal)
+    setShowModal(!showModal);
   }
 
   function closeModal() {
-    setShowModal(false)
+    setShowModal(false);
   }
 
   if (!stay) {
     return <div>Loading...</div>;
   }
 
-
   function generateStars(rating) {
     return Array.from({ length: 5 }, (_, index) => (
       <StarReview key={index} filled={index < rating} />
-    ))
+    ));
   }
 
+  function calculateDaysBetween(startDateStr, endDateStr) {
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
 
+    const diffInMilliseconds = endDate - startDate;
 
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    const diffInDays = diffInMilliseconds / millisecondsPerDay;
+
+    return Math.ceil(diffInDays);
+  }
 
   return (
     <section className="stay-details">
@@ -229,35 +237,65 @@ export function StayDetails({ setLargeMainFilter }) {
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
-                const amenityKey = amenity.replace(/\s+/g, "_")
+                const amenityKey = amenity.replace(/\s+/g, "_");
                 return (
                   <div key={index} className="offer">
                     {amenityIcons[amenityKey]}
                     {amenity}
                   </div>
-                )
+                );
               })}
             </div>
           </section>
 
           <section className="dates">
-            <h1>Select check-in date</h1>
-            <h4>Add your travel dates for exact pricing</h4>
+            {selectedRange.start && selectedRange.end ? (
+              <>
+                <h1>
+                  {selectedRange.start &&
+                    selectedRange.end &&
+                    calculateDaysBetween(
+                      selectedRange.start,
+                      selectedRange.end
+                    )}{" "}
+                  nights in {stay.loc.city}
+                </h1>
+                <h4>
+                  {selectedRange.start.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                  {" - "}
+                  {selectedRange.end.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                </h4>
+              </>
+            ) : (
+              <>
+                <h1>Select check-in date</h1>
+                <h4>Add your travel dates for exact pricing</h4>
+              </>
+            )}
 
-            {/* <DatePicker onDatesChange={handleDatesChange} /> */}
+            <CalendarPicker onRangeChange={setSelectedRange} />
           </section>
-
-
         </div>
 
         <section className="reservation-modal">
-          <ReservationModal stay={stay} />
+          <ReservationModal
+            stay={stay}
+            selectedRange={selectedRange}
+            onRangeChange={setSelectedRange}
+            calculateDaysBetween={calculateDaysBetween}
+          />
         </section>
-
       </section>
 
       <section className="reviews">
-
         <header className="header-reviews">
           <Star />
           {stay.reviews.length !== 0 && (
@@ -280,9 +318,8 @@ export function StayDetails({ setLargeMainFilter }) {
         </header>
 
         <section className="guest-reviews-container">
-          {stay.reviews.map(review => (
+          {stay.reviews.map((review) => (
             <article className="review" key={review.id}>
-
               <div className="mini-user">
                 <img
                   className="review-img"
@@ -293,43 +330,27 @@ export function StayDetails({ setLargeMainFilter }) {
                   <h3>{review.by.fullname}</h3>
                   <span>{review.by.address}</span>
                 </div>
-
               </div>
-
 
               <div className="review-info">
-                <div className="star-review">
-                  {generateStars(review.rate)}
-                </div>
+                <div className="star-review">{generateStars(review.rate)}</div>
                 <div>·</div>
-                <div className="date-review">
-                  {review.date}
-                </div>
+                <div className="date-review">{review.date}</div>
               </div>
 
-
-              <div className="review-txt" >
-                {review.txt}
-              </div>
-
-
+              <div className="review-txt">{review.txt}</div>
             </article>
-
           ))}
         </section>
-
-
-
-
-
-
       </section>
 
       <div className="map">
         <h3>Where you’ll be</h3>
-        <h4>{stay.loc.city}, {stay.loc.country}</h4>
+        <h4>
+          {stay.loc.city}, {stay.loc.country}
+        </h4>
         <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>
     </section>
-  )
+  );
 }

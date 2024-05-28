@@ -278,7 +278,6 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
 
       {(activeMainFilter === 1 || activeMainFilter === 2) && (
         <section className="add-dates-modal">
-          {/* <DatePicker onDatesChange={handleDatesChange} /> */}
           <CalendarPicker onRangeChange={handleRangeChange} />
         </section>
       )}

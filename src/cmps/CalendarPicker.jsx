@@ -20,7 +20,6 @@ export function CalendarPicker({ onRangeChange }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [range, setRange] = useState({ start: null, end: null });
   const [hoveredDate, setHoveredDate] = useState(null);
-
   useEffect(() => {
     onRangeChange(range);
   }, [range]);
