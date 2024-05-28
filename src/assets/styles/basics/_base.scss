@@ -17,7 +17,6 @@ html {
 body {
   font-size: rem(18px);
   margin: 0;
-  //max-width: 1024px; - tal
   margin: auto;
   height: 100%;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
@@ -34,16 +33,11 @@ h4,
 h5,
 h6 {
   font-family: "AirbnbCereal_W_Bk", sans-serif;
-  // margin: 0 0 0.6em; - tal
   line-height: 1;
 }
 
 img {
   width: 100%;
-}
-
-p {
-  // margin: 0 0 1em; - tal
 }
 
 a {

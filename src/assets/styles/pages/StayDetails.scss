@@ -236,16 +236,69 @@
 
     .header-reviews {
       display: flex;
-      gap: 5px;
-      align-items: center;
-      font-size: 23px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      flex-direction: column;
+
+      .reviews-rate {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+
+      .rating {
+        display: flex;
+        padding: 0 0 40px;
+        gap: 21px;
+
+        .overall-rating {
+          span {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 500;
+          }
+
+          .progress {
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+          }
+
+          .rating-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+
+          progress {
+            height: 10px;
+          }
+        }
+
+        .rating-detail {
+          display: flex;
+          
+          .rating-item {
+            font-size: 21px;
+            font-weight: 500;
+            padding: 0 24px 4px;
+
+            span {
+              font-size: 18px;
+              font-weight: 500;
+            }
+          }
+
+        }
+      }
     }
+
 
     .guest-reviews-container {
       border-top: 1px solid rgba(128, 128, 128, 0.3);
-      padding-top: 20px;
+      padding-top: 40px;
       display: grid;
       gap: 3.5em;
       grid-template-columns: repeat(2, 470px);
@@ -288,13 +341,13 @@
         gap: 5px;
         align-items: center;
 
-        .star-review {
+        .review-star {
           display: flex;
           gap: 1px;
           align-items: center;
         }
 
-        .date-review {
+        .review-date {
           font-weight: bold;
           font-size: 14px;
         }
