@@ -33,6 +33,12 @@ import BBQGrillSvg from "../svg/amenities/BBQGrillSvg";
 import { StayMap } from "../cmps/StayMap";
 import StarReview from "../svg/StarReview";
 import { CalendarPicker } from "../cmps/CalendarPicker";
+import CleanlinessSvg from "../svg/rating/CleanlinessSvg";
+import AccuracySvg from "../svg/rating/AccuracySvg";
+import CheckinSvg from "../svg/rating/CheckinSvg";
+import CommunicationSvg from "../svg/rating/CommunicationSvg";
+import LocationSvg from "../svg/rating/LocationSvg";
+import ValueSvg from "../svg/rating/ValueSvg";
 StarReview;
 // import {DatePicker} from "../cmps/app-header/DatePicker";
 
@@ -297,24 +303,87 @@ export function StayDetails({ setLargeMainFilter }) {
 
       <section className="reviews">
         <header className="header-reviews">
-          <Star />
-          {stay.reviews.length !== 0 && (
-            <>
-              {utilService.calculateAvgRating(stay.reviews) !== "0.00" &&
-                utilService.calculateAvgRating(stay.reviews) !== "0.0" && (
-                  <>
-                    <div className="average-rating">
-                      {utilService.calculateAvgRating(stay.reviews)}
-                    </div>
-                    <div>·</div>
-                  </>
-                )}
-              {stay.reviews.length} reviews
-            </>
-          )}
-          {stay.reviews.length === 0 && (
-            <span className="no-reviews">No reviews yet</span>
-          )}
+          <div className="reviews-rate">
+            <Star />
+            {stay.reviews.length !== 0 && (
+              <>
+                {utilService.calculateAvgRating(stay.reviews) !== "0.00" &&
+                  utilService.calculateAvgRating(stay.reviews) !== "0.0" && (
+                    <>
+                      <div className="average-rating">
+                        {utilService.calculateAvgRating(stay.reviews)}
+                      </div>
+                      <div>·</div>
+                    </>
+                  )}
+                {stay.reviews.length} reviews
+              </>
+            )}
+            {stay.reviews.length === 0 && (
+              <span className="no-reviews">No reviews yet</span>
+            )}
+          </div>
+
+          <section className="rating">
+            <div className="overall-rating">
+              <span>Overall rating</span>
+              <div className="progress">
+                <div className="rating-progress">
+                  5<progress max="5" value="4.6"></progress>
+                </div>
+                <div className="rating-progress">
+                  4<progress max="5" value="4.1"></progress>
+                </div>
+                <div className="rating-progress">
+                  3<progress max="5" value="0"></progress>
+                </div>
+                <div className="rating-progress">
+                  2<progress max="5" value="0"></progress>
+                </div>
+                <div className="rating-progress">
+                  1<progress max="5" value="0"></progress>
+                </div>
+              </div>
+            </div>
+
+            <div className="rating-detail">
+              <div className="rating-item">
+                <span>Cleanliness</span>
+                <div>4.9</div>
+                <CleanlinessSvg />
+              </div>
+
+              <div className="rating-item">
+                <span>Accuracy</span>
+                <div>4.8</div>
+                <AccuracySvg />
+              </div>
+
+              <div className="rating-item">
+                <span>Check-in</span>
+                <div>4.9</div>
+                <CheckinSvg />
+              </div>
+
+              <div className="rating-item">
+                <span>Communication</span>
+                <div>5.0</div>
+                <CommunicationSvg />
+              </div>
+
+              <div className="rating-item">
+                <span>Location</span>
+                <div>5.0</div>
+                <LocationSvg />
+              </div>
+
+              <div className="rating-item">
+                <span>Value</span>
+                <div>4.8</div>
+                <ValueSvg />
+              </div>
+            </div>
+          </section>
         </header>
 
         <section className="guest-reviews-container">

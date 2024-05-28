@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import {useSelector } from "react-redux"
 import { OrderManagerList } from "./UserDashboard-cmps/OrderManagerList"
 
-import { loadOrders } from "../../store/actions/order.action"
+import { loadOrders, saveOrder } from "../../store/actions/order.action"
 
 export default function OrderManager() {
     const orders = useSelector((storeState) => storeState.orderModule.orders)
@@ -12,9 +12,18 @@ export default function OrderManager() {
         loadOrders()
       }, [])
 
+      async function onSaveOrder(order) {
+        try {
+          const savedOrder = await saveOrder(order);
+          loadOrders();
+        } catch (err) {
+          console.log("Had issues adding stay", err);
+        }
+      }
+
   return (
     <section>
-        <OrderManagerList orders={orders}/>
+        <OrderManagerList orders={orders} onSaveOrder={onSaveOrder}/>
     </section>
   )
 }

@@ -1,6 +1,6 @@
 import { OrderManagerPreview } from "./OrderManagerPreview";
 
-export function OrderManagerList({ orders }) {
+export function OrderManagerList({ orders, onSaveOrder }) {
 
     if (!orders) return (<div>loading....</div>)
     return (
@@ -17,7 +17,7 @@ export function OrderManagerList({ orders }) {
             </section>
             {orders.map((order) => (
                 <li key={order._id} >
-                    <OrderManagerPreview order={order} />
+                    <OrderManagerPreview order={order} onSaveOrder={onSaveOrder} />
                 </li>
             ))}
         </ul>
