@@ -30,10 +30,10 @@ export function OrderManagerPreview({ order }) {
             <label className="total-price">{order.totalPrice}$</label>
             <label className="order-status">{order.status}</label>
             <label className="order-icon">{getStatusIcon(order.status)}</label>
-            <section className="actions">
+            <div className="actions">
                 <button className="approve-btn">Approve</button>
                 <button className="decline-btn">Decline</button>
-            </section>
+            </div>
         </div>
     )
 }
