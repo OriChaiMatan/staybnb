@@ -59,18 +59,18 @@ async function query(filterBy) {
         filterBy.country === "" ||
         filterBy.country === stay.loc.country;
 
-      const filterStartDate = filterBy.startDate
-        ? new Date(filterBy.startDate)
-        : null;
-      const filterEndDate = filterBy.endDate
-        ? new Date(filterBy.endDate)
-        : null;
-
       const matchStartDate =
-        !filterStartDate || new Date(stay.startDate) <= filterStartDate;
+        !filterBy.startDate || stay.startDate <= filterBy.startDate;
 
       const matchEndDate =
-        !filterEndDate || new Date(stay.endDate) >= filterEndDate;
+        !filterBy.endDate || stay.endDate >= filterBy.endDate;
+
+      console.log("stay.startDate", stay.startDate);
+      console.log("filterStartDate", filterBy.startDate);
+      console.log("stay.endDate", stay.endDate);
+      console.log("filterEndDate", filterBy.endDate);
+      console.log("matchStartDate", matchStartDate);
+      console.log("matchEndDate", matchEndDate);
 
       return (
         matchesCategoryTag &&

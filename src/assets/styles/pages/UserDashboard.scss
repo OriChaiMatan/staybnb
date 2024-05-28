@@ -1,23 +1,10 @@
 // Variables
-$primary-color: #000; // Black for the selected link
-$secondary-color: #666; // Gray for the unselected links
-$background-color: #F7F7F7;
-$font-family: 'Arial', sans-serif;
 
 // Mixins
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-// Global Styles
-body {
-  font-family: $font-family;
-  background-color: $background-color;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .dashboard {
@@ -28,7 +15,7 @@ body {
 
 .dashboard-title {
   font-size: 2rem;
-  color: $primary-color;
+  color: black;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -39,21 +26,21 @@ body {
   justify-content: space-between;
 
   a {
-    color: $secondary-color;
+    color: gray;
     text-decoration: none;
     margin: 0 15px;
     padding: 10px 20px;
     transition: color 0.3s, text-shadow 0.3s;
 
     &.active {
-      color: $primary-color;
+      color: black;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     }
 
     &:hover {
-      color: darken($secondary-color, 20%);
+      color: darken(gray, 20%);
       background-color: rgb(233, 233, 233);
-      
+
       border-radius: 8px;
     }
   }

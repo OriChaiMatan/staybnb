@@ -1,31 +1,34 @@
-import { useState, useRef, useEffect } from "react"
-import dayjs from "dayjs"
-import { MapImages } from "./MapImages"
-import searchIcon from "../../assets/img/search_glass.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { GuestsModal } from "./GuestsModal"
-// import {DatePicker} from "./DatePicker";
-import { useSearchParams } from "react-router-dom"
+import { useState, useRef, useEffect } from "react";
+import dayjs from "dayjs";
+import { MapImages } from "./MapImages";
+import searchIcon from "../../assets/img/search_glass.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { GuestsModal } from "./GuestsModal";
+import { useSearchParams } from "react-router-dom";
+import { CalendarPicker } from "../CalendarPicker";
 
 export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
-  const [activeMainFilter, setActiveMainFilter] = useState(-1)
-  const [selectedDates, setSelectedDates] = useState([])
-  const [adultsAmount, setAdultsAmount] = useState(0)
-  const [childrenAmount, setChildrenAmount] = useState(0)
-  const [infantsAmount, setInfantsAmount] = useState(0)
-  const [petsAmount, setPetsAmount] = useState(0)
+  const [activeMainFilter, setActiveMainFilter] = useState(-1);
+  const [selectedRange, setSelectedRange] = useState({
+    start: null,
+    end: null,
+  });
+  const [adultsAmount, setAdultsAmount] = useState(0);
+  const [childrenAmount, setChildrenAmount] = useState(0);
+  const [infantsAmount, setInfantsAmount] = useState(0);
+  const [petsAmount, setPetsAmount] = useState(0);
   const [selectedDestination, setSelectedDestination] =
-    useState("Search destination")
-  const [selectedGuests, setSelectedGuests] = useState(0)
-  const mainFilterRef = useRef(null)
-  const [searchParams, setSearchParams] = useSearchParams()
+    useState("Search destination");
+  const [selectedGuests, setSelectedGuests] = useState(0);
+  const mainFilterRef = useRef(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
         // setLargeMainFilter(false)
-        setActiveMainFilter(-1)
+        setActiveMainFilter(-1);
       }
     };
 
@@ -34,9 +37,9 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         mainFilterRef.current &&
         !mainFilterRef.current.contains(event.target)
       ) {
-        setLargeMainFilter(false)
-        setActiveMainFilter(-1)
-        setSelectedDates([])
+        setLargeMainFilter(false);
+        setActiveMainFilter(-1);
+        setSelectedRange({ start: null, end: null });
       }
     };
 
@@ -50,53 +53,35 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     //     }
     // }
 
-    document.addEventListener("keydown", handleEscapeKeyPress)
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleEscapeKeyPress);
+    document.addEventListener("mousedown", handleClickOutside);
     // document.addEventListener('scroll', handleScroll);
 
     // handleScroll();
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress)
-      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+      document.removeEventListener("mousedown", handleClickOutside);
       // document.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   function toggleMainFilterSize() {
     if (!largeMainFilter) {
-      setLargeMainFilter(true)
+      setLargeMainFilter(true);
     }
   }
 
-  function handleDatesChange(dates) {
-    setSelectedDates(dates)
+  function handleRangeChange(range) {
+    setSelectedRange(range);
   }
 
   function handleSelectDestination(dest) {
-    setSelectedDestination(dest)
-    setActiveMainFilter(1)
+    setSelectedDestination(dest);
+    setActiveMainFilter(1);
   }
 
-  useEffect(() => {}, [activeMainFilter, selectedDestination])
-
-  function extractDateDisplay() {
-    if (
-      selectedDates.length === 2 &&
-      selectedDates.every((date) => date?.$d instanceof Date)
-    ) {
-      const firstDate = dayjs(selectedDates[0].$d)
-      const firstMonth = firstDate.format("MMM")
-      const firstDay = firstDate.format("D")
-
-      const secondDate = dayjs(selectedDates[1].$d)
-      const secondMonth = secondDate.format("MMM")
-      const secondDay = secondDate.format("D")
-
-      return [firstMonth, firstDay, secondMonth, secondDay]
-    }
-    return []
-  }
+  useEffect(() => {}, [activeMainFilter, selectedDestination]);
 
   function handleAmountChange(type, operation) {
     switch (type) {
@@ -116,8 +101,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             : prevAmount > 0
             ? prevAmount - 1
             : 0
-        )
-        break
+        );
+        break;
       case "infants":
         setInfantsAmount((prevAmount) =>
           operation === "increment"
@@ -125,8 +110,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             : prevAmount > 0
             ? prevAmount - 1
             : 0
-        )
-        break
+        );
+        break;
       case "pets":
         setPetsAmount((prevAmount) =>
           operation === "increment"
@@ -135,9 +120,9 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             ? prevAmount - 1
             : 0
         );
-        break
+        break;
       default:
-        break
+        break;
     }
     setSelectedGuests((prev) => {
       if (operation === "increment") {
@@ -151,22 +136,42 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   function onSubmitFilter() {
     const newSearchParams = new URLSearchParams();
 
-    newSearchParams.append("startDate", selectedDates[0])
-    newSearchParams.append("endDate", selectedDates[1])
-    newSearchParams.append("country", selectedDestination)
-    newSearchParams.append("capacity", selectedGuests)
+    if (selectedRange.start && selectedRange.end) {
+      newSearchParams.append(
+        "startDate",
+        selectedRange.start.toLocaleDateString("en-CA", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+      );
+      newSearchParams.append(
+        "endDate",
+        selectedRange.end.toLocaleDateString("en-CA", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+      );
+    }
+    if (selectedDestination !== "Search destination") {
+      newSearchParams.append("country", selectedDestination);
+    }
+    if (selectedGuests > 0) {
+      newSearchParams.append("capacity", selectedGuests);
+    }
 
-    setSearchParams(newSearchParams)
+    setSearchParams(newSearchParams);
 
-    setLargeMainFilter(false)
-    setActiveMainFilter(-1)
-    setSelectedDates([])
-    setSelectedGuests(0)
-    setAdultsAmount(0)
-    setChildrenAmount(0)
-    setInfantsAmount(0)
-    setPetsAmount(0)
-    setSelectedDestination("Search destination")
+    setLargeMainFilter(false);
+    setActiveMainFilter(-1);
+    setSelectedRange({ start: null, end: null });
+    setSelectedGuests(0);
+    setAdultsAmount(0);
+    setChildrenAmount(0);
+    setInfantsAmount(0);
+    setPetsAmount(0);
+    setSelectedDestination("Search destination");
   }
 
   return (
@@ -184,7 +189,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             activeMainFilter === 0 ? "active-filter" : ""
           }`}
           onClick={() => {
-            setActiveMainFilter(0)
+            setActiveMainFilter(0);
           }}
         >
           <div>
@@ -212,7 +217,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         <button
           className="main-filter-btn"
           onClick={() => {
-            setActiveMainFilter(0)
+            setActiveMainFilter(0);
           }}
         >
           Anywhere
@@ -225,13 +230,16 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             activeMainFilter === 1 ? "active-filter" : ""
           }`}
           onClick={() => {
-            setActiveMainFilter(1)
+            setActiveMainFilter(1);
           }}
         >
           <div className="name">
             <span className="bold">Check in</span> <br></br>
-            {selectedDates[0] && selectedDates[1] && selectedDates[0]
-              ? `${extractDateDisplay()[0]} ${extractDateDisplay()[1]}`
+            {selectedRange.start && selectedRange.end
+              ? selectedRange.start.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "2-digit",
+                })
               : "Add dates"}
           </div>
         </label>
@@ -239,7 +247,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         <button
           className="main-filter-btn"
           onClick={() => {
-            setActiveMainFilter(1)
+            setActiveMainFilter(1);
           }}
         >
           Any week
@@ -252,13 +260,16 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             activeMainFilter === 2 ? "active-filter" : ""
           }`}
           onClick={() => {
-            setActiveMainFilter(2)
+            setActiveMainFilter(2);
           }}
         >
           <div className="name">
             <span className="bold">Check out</span> <br></br>
-            {selectedDates[1]
-              ? `${extractDateDisplay()[2]} ${extractDateDisplay()[3]}`
+            {selectedRange.end
+              ? selectedRange.end.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "2-digit",
+                })
               : "Add dates"}
           </div>
         </label>
@@ -268,6 +279,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
       {(activeMainFilter === 1 || activeMainFilter === 2) && (
         <section className="add-dates-modal">
           {/* <DatePicker onDatesChange={handleDatesChange} /> */}
+          <CalendarPicker onRangeChange={handleRangeChange} />
         </section>
       )}
       {largeMainFilter ? (
@@ -277,7 +289,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
               activeMainFilter === 3 ? "active-filter" : ""
             }`}
             onClick={() => {
-              setActiveMainFilter(3)
+              setActiveMainFilter(3);
             }}
           >
             <div className="name">
@@ -317,7 +329,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           <button
             className="main-filter-btn"
             onClick={() => {
-              setActiveMainFilter(3)
+              setActiveMainFilter(3);
             }}
           >
             Add guests
@@ -326,5 +338,5 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         </>
       )}
     </div>
-  )
+  );
 }

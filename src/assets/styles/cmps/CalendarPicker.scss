@@ -1,0 +1,167 @@
+.calendar-picker {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  table {
+    text-align: center;
+    width: 100%;
+    padding-block-start: 16px;
+    height: 400px;
+
+    .month-name {
+      width: 100%;
+      font-family: AirBnbCereal-Book;
+      font-size: 16px;
+      padding-block-end: 14px;
+    }
+
+    &.current-month {
+      padding-inline-end: 13px;
+
+      .prev-month-nav {
+        justify-content: start;
+
+        .prev-month-arrow {
+          height: 24px;
+          width: 24px;
+
+          &:hover {
+            border-radius: 50%;
+            background-color: #f3f3f3;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &.next-month {
+      padding-inline-start: 13px;
+
+      .next-month-nav {
+        justify-content: end;
+
+        .next-month-arrow {
+          height: 24px;
+          width: 24px;
+
+          &:hover {
+            border-radius: 50%;
+            background-color: #f3f3f3;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    tr {
+      display: flex;
+      justify-content: space-around;
+      height: 44px;
+
+      &.day-names {
+        font-size: 10px;
+        color: gray;
+      }
+    }
+
+    th {
+      width: 20px;
+    }
+
+    td {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 44px;
+      font-family: AirBnbCereal-Book;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:not(.passed, .blank-td) {
+        &:hover {
+          border: 1px solid rgb(34, 34, 34);
+          border-radius: 50%;
+          background-color: white;
+        }
+
+        &.selected {
+          color: white;
+          background-color: rgb(34, 34, 34);
+          border-radius: 50%;
+        }
+      }
+
+      &.blank-td {
+        cursor: default;
+      }
+
+      &.passed {
+        color: rgb(176, 176, 176);
+        text-decoration: line-through;
+        cursor: default;
+      }
+
+      &.hovered-date:not(.hover-selected-date) {
+        &.selected:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          width: 46px;
+          height: 42px;
+          background-color: rgb(247, 247, 247);
+          z-index: -1;
+        }
+
+        &:not(.selected):before {
+          content: "";
+          position: absolute;
+          width: 46px;
+          height: 42px;
+          background-color: rgb(247, 247, 247);
+          z-index: -1;
+        }
+      }
+
+      &.in-range {
+        &.selected:not(.selected-end):before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          width: 46px;
+          height: 42px;
+          background-color: rgb(247, 247, 247);
+          z-index: -1;
+        }
+
+        &.selected:not(.selected-start) {
+          &:first-child:before {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            right: 50%;
+            width: 46px;
+            height: 42px;
+            background-color: rgb(247, 247, 247);
+            z-index: -1;
+          }
+        }
+
+        &:not(.selected):before {
+          content: "";
+          position: absolute;
+          width: 46px;
+          height: 42px;
+          background-color: rgb(247, 247, 247);
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

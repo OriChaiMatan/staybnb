@@ -26,13 +26,7 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Kitchen",
-      "Smoking allowed",
-      "Pets allowed"
-    ],
+    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
     "labels": [
       "Amazing views",
       "Amazing pools",
@@ -91,10 +85,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Daniel Smith",
-      "Jessica Davis"
-    ],
+    "likedByUsers": ["Daniel Smith", "Jessica Davis"],
     "startDate": "2024-04-15",
     "endDate": "2024-06-22"
   },
@@ -125,19 +116,8 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Kitchen",
-      "Smoking allowed",
-      "Pets allowed"
-    ],
-    "labels": [
-      "Top of the world",
-      "Islands",
-      "Luxe",
-      "Tropical"
-    ],
+    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
+    "labels": ["Top of the world", "Islands", "Luxe", "Tropical"],
     "host": {
       "_id": "u102",
       "fullname": "Davit Pok",
@@ -165,10 +145,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Daniel Smith",
-      "Maria Camila"
-    ],
+    "likedByUsers": ["Daniel Smith", "Maria Camila"],
     "startDate": "2024-04-17",
     "endDate": "2024-06-23"
   },
@@ -207,11 +184,7 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": [
-      "Luxe",
-      "Beachfront",
-      "Mansions"
-    ],
+    "labels": ["Luxe", "Beachfront", "Mansions"],
     "host": {
       "_id": "u103",
       "fullname": "Sara Smith",
@@ -251,10 +224,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Alice Johnson",
-      "John Doe"
-    ],
+    "likedByUsers": ["Alice Johnson", "John Doe"],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -285,20 +255,8 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Heating",
-      "Free parking"
-    ],
-    "labels": [
-      "Earth homes",
-      "Desert",
-      "Treehouses",
-      "Luxe",
-      "Ski-in/out"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Heating", "Free parking"],
+    "labels": ["Earth homes", "Desert", "Treehouses", "Luxe", "Ski-in/out"],
     "host": {
       "_id": "u104",
       "fullname": "Michael Brown",
@@ -337,10 +295,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Emily White",
-      "Jason Miller"
-    ],
+    "likedByUsers": ["Emily White", "Jason Miller"],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -426,10 +381,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Jason Miller",
-      "Jessica Davis"
-    ],
+    "likedByUsers": ["Jason Miller", "Jessica Davis"],
     "startDate": "2024-06-22",
     "endDate": "2024-06-24"
   },
@@ -468,10 +420,7 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": [
-      "Luxe",
-      "Beachfront"
-    ],
+    "labels": ["Luxe", "Beachfront"],
     "host": {
       "_id": "u105",
       "fullname": "Anna Johnson",
@@ -511,10 +460,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Sophie Turner",
-      "Carlos Lopez"
-    ],
+    "likedByUsers": ["Sophie Turner", "Carlos Lopez"],
     "startDate": "2024-06-05",
     "endDate": "2024-06-12"
   },
@@ -554,13 +500,7 @@
       "Washer",
       "Pool"
     ],
-    "labels": [
-      "Islands",
-      "Tropical",
-      "Camping",
-      "Surfing",
-      "Bed & breakfasts"
-    ],
+    "labels": ["Islands", "Tropical", "Camping", "Surfing", "Bed & breakfasts"],
     "host": {
       "_id": "u104",
       "fullname": "Michael Brown",
@@ -599,11 +539,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Carlos Lopez",
-      "Laura Davis",
-      "David Clark"
-    ],
+    "likedByUsers": ["Carlos Lopez", "Laura Davis", "David Clark"],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -693,11 +629,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "David Clark",
-      "James Brown",
-      "Sophia Martinez"
-    ],
+    "likedByUsers": ["David Clark", "James Brown", "Sophia Martinez"],
     "startDate": "2024-06-01",
     "endDate": "2024-06-10"
   },
@@ -728,13 +660,7 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Kitchen",
-      "Air conditioning",
-      "Free parking"
-    ],
+    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
     "labels": [
       "Top of the world",
       "Luxe",
@@ -785,11 +711,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Oliver Green",
-      "Maria Hernandez",
-      "Maria Camila"
-    ],
+    "likedByUsers": ["Oliver Green", "Maria Hernandez", "Maria Camila"],
     "startDate": "2024-06-20",
     "endDate": "2024-06-27"
   },
@@ -820,20 +742,8 @@
     "beds": 3,
     "bedrooms": 3,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Kitchen",
-      "Air conditioning",
-      "Free parking"
-    ],
-    "labels": [
-      "Beach",
-      "Beachfront",
-      "Lake",
-      "Top of the world",
-      "Farms"
-    ],
+    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
+    "labels": ["Beach", "Beachfront", "Lake", "Top of the world", "Farms"],
     "host": {
       "_id": "u101",
       "fullname": "Sophia Garcia",
@@ -872,11 +782,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Maria Hernandez",
-      "Liam Brown",
-      "Emma Watson"
-    ],
+    "likedByUsers": ["Maria Hernandez", "Liam Brown", "Emma Watson"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-15"
   },
@@ -907,12 +813,7 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Kitchen",
-      "Free parking"
-    ],
+    "amenities": ["TV", "Wifi", "Kitchen", "Free parking"],
     "labels": [
       "Bed & breakfasts",
       "Camping",
@@ -959,10 +860,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Niklaus Weber",
-      "Isabella Schneider"
-    ],
+    "likedByUsers": ["Niklaus Weber", "Isabella Schneider"],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -993,19 +891,8 @@
     "beds": 2,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Washer"
-    ],
-    "labels": [
-      "Treehouses",
-      "Earth homes",
-      "Vineyards",
-      "Beach",
-      "Beachfront"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer"],
+    "labels": ["Treehouses", "Earth homes", "Vineyards", "Beach", "Beachfront"],
     "host": {
       "_id": "u103",
       "fullname": "Sara Smith",
@@ -1044,11 +931,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Niklaus Weber",
-      "Charlotte Martin",
-      "Antoine Leroy"
-    ],
+    "likedByUsers": ["Niklaus Weber", "Charlotte Martin", "Antoine Leroy"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1079,18 +962,8 @@
     "beds": 6,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Washer",
-      "Elevator"
-    ],
-    "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "labels": ["Beach", "Beachfront", "Amazing pools"],
     "host": {
       "_id": "u102",
       "fullname": "Davit Pok",
@@ -1129,10 +1002,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Antoine Leroy",
-      "Charlotte Martin"
-    ],
+    "likedByUsers": ["Antoine Leroy", "Charlotte Martin"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1220,10 +1090,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy"
-    ],
+    "likedByUsers": ["Charlotte Martin", "Antoine Leroy"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1254,19 +1121,8 @@
     "beds": 1,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Washer",
-      "Elevator"
-    ],
-    "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools",
-      "Luxe"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "labels": ["Beach", "Beachfront", "Amazing pools", "Luxe"],
     "host": {
       "_id": "u105",
       "fullname": "Anna Johnson",
@@ -1305,10 +1161,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy"
-    ],
+    "likedByUsers": ["Charlotte Martin", "Antoine Leroy"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1339,13 +1192,7 @@
     "beds": 4,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Washer",
-      "Elevator"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1363,8 +1210,8 @@
       "country": "Spain",
       "city": "Huelva",
       "address": "789 Chic Avenue",
-      "lat": 37.250000,
-      "lng": -6.950000
+      "lat": 37.25,
+      "lng": -6.95
     },
     "reviews": [
       {
@@ -1392,10 +1239,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Antoine Leroy",
-      "Charlotte Martin"
-    ],
+    "likedByUsers": ["Antoine Leroy", "Charlotte Martin"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1426,14 +1270,7 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": [
-      "TV",
-      "Wifi",
-      "Air conditioning",
-      "Washer",
-      "Dryer",
-      "Gym"
-    ],
+    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Dryer", "Gym"],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1482,11 +1319,7 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy",
-      "Oliver Green"
-    ],
+    "likedByUsers": ["Charlotte Martin", "Antoine Leroy", "Oliver Green"],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   }

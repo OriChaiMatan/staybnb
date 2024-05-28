@@ -14,6 +14,24 @@
       &.order-icon {
         align-self: center;
       }
+
+      &.order-icon {
+
+        .icon-approved {
+          color: green;
+          height: 40px;
+          width: 22px;
+        }
+        .icon-decline {
+          color: red;
+          height: 40px;
+          width: 26px;
+        }
+        .icon-pending {
+          color: orange;
+          height: 40px;
+        }
+      }
     }
 
     .actions {
