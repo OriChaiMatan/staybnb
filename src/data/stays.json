@@ -68,7 +68,7 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "https://res.cloudinary.com/dmsj97ag9/4420a6515cad331c5fbb637485b9ef23",
           "address": "Llangennech, United Kingdom"
         }
       },
