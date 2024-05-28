@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
-import { stayService } from "../services/stay.service";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router"
+import { stayService } from "../services/stay.service"
 
-import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel";
-import { ReservationModal } from "../cmps/ReservationModal";
+import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel"
+import { ReservationModal } from "../cmps/ReservationModal"
 
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineNavigateNext } from "react-icons/md"
 
-import Heart from "../svg/HeartSvg";
-import Share from "../svg/ShareSvg";
-import Star from "../svg/StarSvg";
-import SelfCheackIn from "../svg/SelfCheckIn";
-import Cancel from "../svg/CancelSvg";
-import Workspace from "../svg/WorkspaceSvg";
-import { utilService } from "../services/util.service";
+import Heart from "../svg/HeartSvg"
+import Share from "../svg/ShareSvg"
+import Star from "../svg/StarSvg"
+import SelfCheackIn from "../svg/SelfCheckIn"
+import Cancel from "../svg/CancelSvg"
+import Workspace from "../svg/WorkspaceSvg"
+import { utilService } from "../services/util.service"
 
-import WifiSvg from "../svg/amenities/WifiSvg";
-import KitchenSvg from "../svg/amenities/KitchenSvg";
-import WasherSvg from "../svg/amenities/WasherSvg";
-import DryerSvg from "../svg/amenities/DryerSvg";
-import AirConditioningSvg from "../svg/amenities/AirConditioningSvg";
-import HeatingSvg from "../svg/amenities/HeatingSvg";
-import TVSvg from "../svg/amenities/TvSvg";
-import IronSvg from "../svg/amenities/IronSvg";
+import WifiSvg from "../svg/amenities/WifiSvg"
+import KitchenSvg from "../svg/amenities/KitchenSvg"
+import WasherSvg from "../svg/amenities/WasherSvg"
+import DryerSvg from "../svg/amenities/DryerSvg"
+import AirConditioningSvg from "../svg/amenities/AirConditioningSvg"
+import HeatingSvg from "../svg/amenities/HeatingSvg"
+import TVSvg from "../svg/amenities/TvSvg"
+import IronSvg from "../svg/amenities/IronSvg"
 
 import PoolSvg from "../svg/amenities/PoolSvg"
 import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg"
@@ -30,7 +30,9 @@ import FreeParkingSvg from "../svg/amenities/FreeParkingSvg"
 import GymSvg from "../svg/amenities/GymSvg"
 import SmokingAllowedSvg from "../svg/amenities/SmokingAllowedSvg"
 import BBQGrillSvg from "../svg/amenities/BBQGrillSvg"
-import { StayMap } from "../cmps/StayMap";
+import { StayMap } from "../cmps/StayMap"
+import StarReview from "../svg/StarReview"
+StarReview
 // import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
@@ -101,9 +103,19 @@ export function StayDetails({ setLargeMainFilter }) {
     return <div>Loading...</div>;
   }
 
+
+  function generateStars(rating) {
+    return Array.from({ length: 5 }, (_, index) => (
+      <StarReview key={index} filled={index < rating} />
+    ))
+  }
+
+
+
+
   return (
     <section className="stay-details">
-      <div className="stay-info-header">
+      <header className="stay-info-header">
         <h1 className="title">{stay.name}</h1>
         <div className="action-button">
           <div className="share">
@@ -115,7 +127,7 @@ export function StayDetails({ setLargeMainFilter }) {
             <div>Save</div>
           </div>
         </div>
-      </div>
+      </header>
 
       <div className="stay-info-imgs">
         {stay.imgUrls.slice(0, 5).map((url, index) => (
@@ -128,7 +140,7 @@ export function StayDetails({ setLargeMainFilter }) {
         ))}
       </div>
 
-      <div className="details-container">
+      <section className="details-container">
         <div className="stay-ferrites">
           <div className="stay-info-content">
             <h1 className="location">
@@ -141,10 +153,8 @@ export function StayDetails({ setLargeMainFilter }) {
               {stay.bath === 1 ? "1 bath" : `${stay.bath} baths`}
             </div>
 
-            <div className="rating-container">
-              <div className="star-icon">
-                <Star />
-              </div>
+            <section className="rating-container">
+              <Star />
               {stay.reviews.length !== 0 && (
                 <>
                   {utilService.calculateAvgRating(stay.reviews) !== "0.00" &&
@@ -164,7 +174,7 @@ export function StayDetails({ setLargeMainFilter }) {
               {stay.reviews.length === 0 && (
                 <span className="no-reviews">No reviews yet</span>
               )}
-            </div>
+            </section>
           </div>
 
           <div className="hosted-by">
@@ -176,7 +186,7 @@ export function StayDetails({ setLargeMainFilter }) {
             <span>Hosted by {stay.host.fullname}</span>
           </div>
 
-          <div className="ferrites-main">
+          <section className="ferrites-main">
             <div className="line">
               <SelfCheackIn />
               <div className="text">
@@ -200,9 +210,9 @@ export function StayDetails({ setLargeMainFilter }) {
                 <h4>Free cancellation for 48 hours</h4>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="summery">
+          <article className="summery">
             <div className="text-summery">{stay.summary}</div>
             <a className="show-more" onClick={toggleModal}>
               Show more <MdOutlineNavigateNext />
@@ -213,9 +223,9 @@ export function StayDetails({ setLargeMainFilter }) {
                 onClose={closeModal}
               />
             )}
-          </div>
+          </article>
 
-          <div className="amenities-details">
+          <section className="amenities-details">
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
@@ -228,34 +238,97 @@ export function StayDetails({ setLargeMainFilter }) {
                 )
               })}
             </div>
-          </div>
+          </section>
 
-          <div className="dates">
+          <section className="dates">
             <h1>Select check-in date</h1>
             <h4>Add your travel dates for exact pricing</h4>
 
             {/* <DatePicker onDatesChange={handleDatesChange} /> */}
-          </div>
-
+          </section>
 
 
         </div>
 
-        <div className="reservation-modal">
+        <section className="reservation-modal">
           <ReservationModal stay={stay} />
-        </div>
+        </section>
 
-      </div>
+      </section>
 
-      <div className="reviews">
-        reviews
-      </div>
+      <section className="reviews">
 
+        <header className="header-reviews">
+          <Star />
+          {stay.reviews.length !== 0 && (
+            <>
+              {utilService.calculateAvgRating(stay.reviews) !== "0.00" &&
+                utilService.calculateAvgRating(stay.reviews) !== "0.0" && (
+                  <>
+                    <div className="average-rating">
+                      {utilService.calculateAvgRating(stay.reviews)}
+                    </div>
+                    <div>·</div>
+                  </>
+                )}
+              {stay.reviews.length} reviews
+            </>
+          )}
+          {stay.reviews.length === 0 && (
+            <span className="no-reviews">No reviews yet</span>
+          )}
+        </header>
+
+        <section className="guest-reviews-container">
+          {stay.reviews.map(review => (
+            <article className="review" key={review.id}>
+
+              <div className="mini-user">
+                <img
+                  className="review-img"
+                  src={review.by.imgUrl}
+                  alt={`img review by ${review.by.fullname}`}
+                />
+                <div className="mini-user-details">
+                  <h3>{review.by.fullname}</h3>
+                  <span>{review.by.address}</span>
+                </div>
+
+              </div>
+
+
+              <div className="review-info">
+                <div className="star-review">
+                  {generateStars(review.rate)}
+                </div>
+                <div>·</div>
+                <div className="date-review">
+                  {review.date}
+                </div>
+              </div>
+
+
+              <div className="review-txt" >
+                {review.txt}
+              </div>
+
+
+            </article>
+
+          ))}
+        </section>
+
+
+
+
+
+
+      </section>
 
       <div className="map">
         <h3>Where you’ll be</h3>
-        <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
         <h4>{stay.loc.city}, {stay.loc.country}</h4>
+        <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>
     </section>
   )

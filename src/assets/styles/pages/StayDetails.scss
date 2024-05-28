@@ -227,13 +227,84 @@
       font-size: 0.875rem;
       line-height: 1.25rem;
       font-weight: normal;
-      // font-family: "Montserrat", sans-serif;
     }
   }
 
   .reviews {
     border-top: 1px solid rgba(128, 128, 128, 0.3);
     padding: 48px 0;
+    font-family: system-ui;
+
+    .header-reviews {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      font-size: 23px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .guest-reviews-container {
+      border-top: 1px solid rgba(128, 128, 128, 0.3);
+      padding-top: 20px;
+      display: grid;
+      gap: 3.5em;
+      grid-template-columns: repeat(2, 470px);
+
+      .review {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .mini-user {
+          display: flex;
+          gap: 17px;
+
+          .review-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            object-fit: cover;
+          }
+
+          .mini-user-details {
+            gap: 2px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+          }
+
+          h3 {
+            margin: 0;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .review-info {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .star-review {
+          display: flex;
+          gap: 1px;
+          align-items: center;
+        }
+
+        .date-review {
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+
+      .review-txt {
+        font-size: 17px;
+      }
+    }
   }
 
   .map {
@@ -248,8 +319,13 @@
       margin-bottom: 5px;
       padding-bottom: 24px;
     }
-  }
 
+    h4 {
+      font-family: sans-serif;
+      font-weight: normal;
+      margin-top: 0;
+    }
+  }
   .reservation-modal {
     margin-bottom: 60px;
   }

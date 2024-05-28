@@ -52,17 +52,31 @@
         "id": "r101",
         "txt": "The loft is amazing! Loved the city views.",
         "rate": 5,
+        "date": "3 weeks ago",
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://example.com/daniel.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
           "address": "Kalisz, Poland"
+        }
+      },
+      {
+        "id": "r103",
+        "txt": "Very helpful hosts. Cooked traditional...",
+        "rate": 4,
+        "date": "February 2024",
+        "by": {
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       },
       {
         "id": "r102",
         "txt": "Perfect location for exploring the city. Modern and clean.",
-        "rate": 4,
+        "rate": 2,
+        "date": "February 2024",
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
@@ -122,6 +136,7 @@
         "id": "r103",
         "txt": "Very helpful hosts. Cooked traditional...",
         "rate": 4,
+        "date": "February 2024",
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
@@ -188,6 +203,7 @@
         "id": "r104",
         "txt": "Amazing place with breathtaking views!",
         "rate": 5,
+        "date": "1 week ago",
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
@@ -199,6 +215,7 @@
         "id": "r105",
         "txt": "Great host, very responsive and accommodating.",
         "rate": 4,
+        "date": "4 week ago",
         "by": {
           "_id": "u105",
           "fullname": "Anna Johnson",
@@ -257,6 +274,7 @@
         "id": "r106",
         "txt": "Absolutely charming cabin with stunning views!",
         "rate": 5,
+        "date": "April 2024",
         "by": {
           "_id": "u107",
           "fullname": "Emily White",
@@ -268,6 +286,7 @@
         "id": "r107",
         "txt": "Perfect getaway spot! Cozy and peaceful.",
         "rate": 4,
+        "date": "January 2024",
         "by": {
           "_id": "u108",
           "fullname": "Jason Miller",
@@ -341,6 +360,7 @@
         "id": "r108",
         "txt": "The loft is amazing! Loved the city views.",
         "rate": 5,
+        "date": "January 2024",
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
@@ -352,6 +372,7 @@
         "id": "r109",
         "txt": "Perfect location for exploring the city. Modern and clean.",
         "rate": 4,
+        "date": "November 2023",
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
@@ -418,6 +439,7 @@
         "id": "r110",
         "txt": "Lovely place right by the beach! So relaxing.",
         "rate": 5,
+        "date": "November 2023",
         "by": {
           "_id": "u113",
           "fullname": "Carlos Lopez",
@@ -429,6 +451,7 @@
         "id": "r111",
         "txt": "Great spot, very clean and well maintained.",
         "rate": 4,
+        "date": "April 2023",
         "by": {
           "_id": "u114",
           "fullname": "Sophie Turner",
@@ -495,6 +518,7 @@
         "id": "r112",
         "txt": "Amazing location, close to everything!",
         "rate": 5,
+        "date": "February 2024",
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
@@ -506,6 +530,7 @@
         "id": "r113",
         "txt": "Very modern and clean. Loved my stay.",
         "rate": 4,
+        "date": "November 2023",
         "by": {
           "_id": "u115",
           "fullname": "Laura Davis",
@@ -583,6 +608,7 @@
         "id": "r114",
         "txt": "Fantastic penthouse with great amenities!",
         "rate": 5,
+        "date": "November 2023",
         "by": {
           "_id": "u115",
           "fullname": "Laura Davis",
@@ -594,6 +620,7 @@
         "id": "r115",
         "txt": "Loved the views and the luxury feel.",
         "rate": 4,
+        "date": "January 2024",
         "by": {
           "_id": "u116",
           "fullname": "James Brown",
@@ -663,10 +690,11 @@
         "id": "r116",
         "txt": "Beautiful cottage with a rustic charm!",
         "rate": 5,
+        "date": "November 2023",
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
           "address": "Llangennech, United Kingdom"
         }
       },
@@ -674,6 +702,7 @@
         "id": "r117",
         "txt": "Perfect place for a quiet and relaxing stay.",
         "rate": 4,
+        "date": "September 2023",
         "by": {
           "_id": "u117",
           "fullname": "Oliver Green",
@@ -732,6 +761,7 @@
         "id": "r118",
         "txt": "Amazing lodge in a perfect forest setting!",
         "rate": 5,
+        "date": "November 2023",
         "by": {
           "_id": "u109",
           "fullname": "Emma Watson",
@@ -743,6 +773,7 @@
         "id": "r119",
         "txt": "Great place for a peaceful retreat.",
         "rate": 4,
+        "date": "September 2023",
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
@@ -808,6 +839,7 @@
         "id": "r120",
         "txt": "Absolutely stunning views! A perfect chalet for a mountain getaway.",
         "rate": 5,
+        "date": "September 2023",
         "by": {
           "_id": "u118",
           "fullname": "Isabella Schneider",
@@ -819,6 +851,7 @@
         "id": "r121",
         "txt": "Cozy and comfortable chalet with all the amenities you need.",
         "rate": 4,
+        "date": "March 2023",
         "by": {
           "_id": "u119",
           "fullname": "Niklaus Weber",
@@ -877,6 +910,7 @@
         "id": "r122",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "January 2024",
         "by": {
           "_id": "u115",
           "fullname": "Laura Davis",
@@ -888,6 +922,7 @@
         "id": "r123",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "March 2023",
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
@@ -946,6 +981,7 @@
         "id": "r124",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "January 2024",
         "by": {
           "_id": "u114",
           "fullname": "Sophie Turner",
@@ -957,6 +993,7 @@
         "id": "r125",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "March 2023",
         "by": {
           "_id": "u120",
           "fullname": "Charlotte Martin",
@@ -1013,19 +1050,7 @@
       "Mansions",
       "Lake",
       "Treehouses",
-      "Farms",
-      "Skiing",
-      "Earth homes",
-      "Amazing views",
-      "Desert",
-      "Lakefront",
-      "Islands",
-      "Tropical",
-      "Camping",
-      "Surfing",
-      "Bed & breakfasts",
-      "Luxe",
-      "Top of the world"
+      "Farms"
     ],
     "host": {
       "_id": "u101",
@@ -1044,6 +1069,7 @@
         "id": "r126",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "January 2024",
         "by": {
           "_id": "u117",
           "fullname": "Oliver Green",
@@ -1055,6 +1081,7 @@
         "id": "r127",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "March 2023",
         "by": {
           "_id": "u115",
           "fullname": "Laura Davis",
@@ -1113,6 +1140,7 @@
         "id": "r128",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "March 2023",
         "by": {
           "_id": "u113",
           "fullname": "Carlos Lopez",
@@ -1124,6 +1152,7 @@
         "id": "r129",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "February  2023",
         "by": {
           "_id": "u120",
           "fullname": "Charlotte Martin",
@@ -1189,6 +1218,7 @@
         "id": "r130",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "3 weeks ago",
         "by": {
           "_id": "u106",
           "fullname": "Jack Wilson",
@@ -1200,6 +1230,7 @@
         "id": "r131",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "February 2024",
         "by": {
           "_id": "u104",
           "fullname": "Michael Brown",
@@ -1267,6 +1298,7 @@
         "id": "r134",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
+        "date": "January 2024",
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
@@ -1278,6 +1310,7 @@
         "id": "r135",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
+        "date": "February 2024",
         "by": {
           "_id": "u117",
           "fullname": "Oliver Green",

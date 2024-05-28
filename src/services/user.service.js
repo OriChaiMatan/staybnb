@@ -101,13 +101,14 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-function getEmptyUser(fullname, imgUrl, username, password) {
+function getEmptyUser(fullname, imgUrl, username, password,address) {
     return {
         _id: utilService.makeId(),
         fullname,
         imgUrl,
         username,
-        password
+        password,
+        address
     }
 }
 
