@@ -10,15 +10,16 @@ export function OrderManagerPreview({ order }) {
     const getStatusIcon = (status) => {
         switch (status) {
             case 'approved':
-                return <FaCheckCircle />;
+                return <FaCheckCircle className="icon-approved" />;
             case 'decline':
-                return <BiSolidInfoCircle />;
+                return <BiSolidInfoCircle className="icon-decline" />;
             case 'pending':
-                return <FaRegHourglassHalf />;
+                return <FaRegHourglassHalf className="icon-pending" />;
             default:
                 return null;
         }
     }
+    
 
     return (
         <div className="order-preview">
@@ -26,7 +27,7 @@ export function OrderManagerPreview({ order }) {
             <label className="stay-name">{order.stay.name}</label>
             <label className="check-in">{order.startDate}</label>
             <label className="check-out">{order.endDate}</label>
-            <label className="total-price">{order.totalPrice}</label>
+            <label className="total-price">{order.totalPrice}$</label>
             <label className="order-status">{order.status}</label>
             <label className="order-icon">{getStatusIcon(order.status)}</label>
             <section className="actions">
