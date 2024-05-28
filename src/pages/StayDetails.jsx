@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router";
 import { stayService } from "../services/stay.service";
 
@@ -39,8 +39,31 @@ import CheckinSvg from "../svg/rating/CheckinSvg";
 import CommunicationSvg from "../svg/rating/CommunicationSvg";
 import LocationSvg from "../svg/rating/LocationSvg";
 import ValueSvg from "../svg/rating/ValueSvg";
-StarReview;
-// import {DatePicker} from "../cmps/app-header/DatePicker";
+
+const StickyHeader = ({ onNavigate, showButton, stay }) => {
+  return (
+    <div className="sticky-header">
+      <nav>
+        <ul>
+          <li onClick={() => onNavigate("photos")}>Photos</li>
+          <li onClick={() => onNavigate("amenities")}>Amenities</li>
+          <li onClick={() => onNavigate("reviews")}>Reviews</li>
+          <li onClick={() => onNavigate("location")}>Location</li>
+        </ul>
+        {showButton && (
+          <div className="sticky-summary">
+            <span>
+              <b>${stay.price}</b> night
+            </span>
+            <button onClick={() => onNavigate("reviews")}>
+              <span>Reserve</span>
+            </button>
+          </div>
+        )}
+      </nav>
+    </div>
+  );
+};
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null);
@@ -50,6 +73,14 @@ export function StayDetails({ setLargeMainFilter }) {
     start: null,
     end: null,
   });
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
+  const [showReviewsButton, setShowReviewsButton] = useState(false);
+
+  const photosRef = useRef(null);
+  const amenitiesRef = useRef(null);
+  const reviewsRef = useRef(null);
+  const locationRef = useRef(null);
+  const hostedByRef = useRef(null);
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -77,15 +108,63 @@ export function StayDetails({ setLargeMainFilter }) {
         document.body.scrollTop +
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
-      if (scrollTop > 30) {
-        setLargeMainFilter(true);
+      if (scrollTop > hostedByRef.current.offsetTop) {
+        setShowStickyHeader(true);
       } else {
-        setLargeMainFilter(false);
+        setShowStickyHeader(false);
       }
     }
 
-    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [params.stayId]);
+
+  useEffect(() => {
+    if (hostedByRef.current) {
+      const observer = new IntersectionObserver(onObserved);
+
+      observer.observe(hostedByRef.current);
+
+      return () => {
+        if (hostedByRef.current) {
+          observer.unobserve(hostedByRef.current);
+        }
+      };
+    }
+
+    function onObserved(entries) {
+      entries.forEach((entry) => {
+        const stickyHeader = document.querySelector(".sticky-header");
+        if (stickyHeader) {
+          stickyHeader.style.position = entry.isIntersecting
+            ? "static"
+            : "fixed";
+        }
+      });
+    }
+  }, [hostedByRef.current]);
+
+  useEffect(() => {
+    if (locationRef.current) {
+      const observer = new IntersectionObserver(onReviewsObserved, {
+        rootMargin: "0px 0px -20% 0px",
+      });
+
+      observer.observe(locationRef.current);
+
+      return () => {
+        if (locationRef.current) {
+          observer.unobserve(locationRef.current);
+        }
+      };
+    }
+
+    function onReviewsObserved(entries) {
+      entries.forEach((entry) => {
+        setShowReviewsButton(entry.isIntersecting);
+      });
+    }
+  }, [locationRef.current]);
 
   async function loadStay() {
     try {
@@ -103,6 +182,30 @@ export function StayDetails({ setLargeMainFilter }) {
 
   function closeModal() {
     setShowModal(false);
+  }
+
+  function handleNavigation(section) {
+    let ref;
+    switch (section) {
+      case "photos":
+        ref = photosRef;
+        break;
+      case "amenities":
+        ref = amenitiesRef;
+        break;
+      case "reviews":
+        ref = reviewsRef;
+        break;
+      case "location":
+        ref = locationRef;
+        break;
+      default:
+        return;
+    }
+    window.scrollTo({
+      top: ref.current.offsetTop - 50, // Adjust this value as needed
+      behavior: "smooth",
+    });
   }
 
   if (!stay) {
@@ -129,6 +232,13 @@ export function StayDetails({ setLargeMainFilter }) {
 
   return (
     <section className="stay-details">
+      {showStickyHeader && (
+        <StickyHeader
+          stay={stay}
+          onNavigate={handleNavigation}
+          showButton={showReviewsButton}
+        />
+      )}
       <header className="stay-info-header">
         <h1 className="title">{stay.name}</h1>
         <div className="action-button">
@@ -143,7 +253,7 @@ export function StayDetails({ setLargeMainFilter }) {
         </div>
       </header>
 
-      <div className="stay-info-imgs">
+      <div ref={photosRef} className="stay-info-imgs">
         {stay.imgUrls.slice(0, 5).map((url, index) => (
           <img
             key={index}
@@ -191,7 +301,7 @@ export function StayDetails({ setLargeMainFilter }) {
             </section>
           </div>
 
-          <div className="hosted-by">
+          <div ref={hostedByRef} className="hosted-by">
             <img
               className="hosted-img"
               src={stay.host.imgUrl}
@@ -239,7 +349,7 @@ export function StayDetails({ setLargeMainFilter }) {
             )}
           </article>
 
-          <section className="amenities-details">
+          <section ref={amenitiesRef} className="amenities-details">
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
@@ -301,7 +411,7 @@ export function StayDetails({ setLargeMainFilter }) {
         </section>
       </section>
 
-      <section className="reviews">
+      <section ref={reviewsRef} className="reviews">
         <header className="header-reviews">
           <div className="reviews-rate">
             <Star />
@@ -413,7 +523,7 @@ export function StayDetails({ setLargeMainFilter }) {
         </section>
       </section>
 
-      <div className="map">
+      <div ref={locationRef} className="map">
         <h3>Where you’ll be</h3>
         <h4>
           {stay.loc.city}, {stay.loc.country}

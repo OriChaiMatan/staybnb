@@ -50,6 +50,9 @@ export function ReservationModal({
 
   function toggleDatesModal() {
     setShowAddDates((prev) => !prev);
+    if (showAddGuests) {
+      setShowAddGuests(false);
+    }
   }
 
   function closeModals() {
