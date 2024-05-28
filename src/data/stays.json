@@ -26,7 +26,13 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Smoking allowed",
+      "Pets allowed"
+    ],
     "labels": [
       "Amazing views",
       "Amazing pools",
@@ -35,7 +41,7 @@
       "Top of the world"
     ],
     "host": {
-      "_id": "u109",
+      "_id": "u101",
       "fullname": "Sophia Garcia",
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
@@ -49,27 +55,32 @@
     },
     "reviews": [
       {
-        "id": "review5",
+        "id": "r101",
         "txt": "The loft is amazing! Loved the city views.",
         "rate": 5,
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://example.com/daniel.jpg"
+          "imgUrl": "https://example.com/daniel.jpg",
+          "address": "Kalisz, Poland"
         }
       },
       {
-        "id": "review6",
+        "id": "r102",
         "txt": "Perfect location for exploring the city. Modern and clean.",
         "rate": 4,
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
-          "imgUrl": "https://example.com/jessica.jpg"
+          "imgUrl": "https://example.com/jessica.jpg",
+          "address": "Langton Green, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user5", "user6"],
+    "likedByUsers": [
+      "Daniel Smith",
+      "Jessica Davis"
+    ],
     "startDate": "2024-04-15",
     "endDate": "2024-06-22"
   },
@@ -100,10 +111,21 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
-    "labels": ["Top of the world", "Islands", "Luxe", "Tropical"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Smoking allowed",
+      "Pets allowed"
+    ],
+    "labels": [
+      "Top of the world",
+      "Islands",
+      "Luxe",
+      "Tropical"
+    ],
     "host": {
-      "_id": "u101",
+      "_id": "u102",
       "fullname": "Davit Pok",
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw"
     },
@@ -112,22 +134,26 @@
       "countryCode": "PT",
       "city": "Porto",
       "address": "17 Kombo st",
-      "lat": -8.61308,
-      "lng": 41.1413
+      "lat": 41.150223,
+      "lng": -8.629932
     },
     "reviews": [
       {
-        "id": "madeId",
+        "id": "r103",
         "txt": "Very helpful hosts. Cooked traditional...",
         "rate": 4,
         "by": {
-          "_id": "u102",
-          "fullname": "user2",
-          "imgUrl": "/img/img2.jpg"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["mini-user"],
+    "likedByUsers": [
+      "Daniel Smith",
+      "Maria Camila"
+    ],
     "startDate": "2024-04-17",
     "endDate": "2024-06-23"
   },
@@ -166,7 +192,11 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": ["Luxe", "Beachfront", "Mansions"],
+    "labels": [
+      "Luxe",
+      "Beachfront",
+      "Mansions"
+    ],
     "host": {
       "_id": "u103",
       "fullname": "Sara Smith",
@@ -182,27 +212,32 @@
     },
     "reviews": [
       {
-        "id": "review1",
+        "id": "r104",
         "txt": "Amazing place with breathtaking views!",
         "rate": 5,
         "by": {
-          "_id": "u104",
-          "fullname": "John Doe",
-          "imgUrl": "https://example.com/john.jpg"
+          "_id": "u111",
+          "fullname": "Jessica Davis",
+          "imgUrl": "https://example.com/jessica.jpg",
+          "address": "Langton Green, United Kingdom"
         }
       },
       {
-        "id": "review2",
+        "id": "r105",
         "txt": "Great host, very responsive and accommodating.",
         "rate": 4,
         "by": {
           "_id": "u105",
-          "fullname": "Alice Johnson",
-          "imgUrl": "https://example.com/alice.jpg"
+          "fullname": "Anna Johnson",
+          "imgUrl": "https://example.com/anna.jpg",
+          "address": "Boniswil, Switzerland"
         }
       }
     ],
-    "likedByUsers": ["user1", "user2"],
+    "likedByUsers": [
+      "Alice Johnson",
+      "John Doe"
+    ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -233,10 +268,22 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Heating", "Free parking"],
-    "labels": ["Earth homes", "Desert", "Treehouses", "Luxe", "Ski-in/out"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Heating",
+      "Free parking"
+    ],
+    "labels": [
+      "Earth homes",
+      "Desert",
+      "Treehouses",
+      "Luxe",
+      "Ski-in/out"
+    ],
     "host": {
-      "_id": "u106",
+      "_id": "u104",
       "fullname": "Michael Brown",
       "imgUrl": "https://example.com/michael.jpg"
     },
@@ -249,27 +296,32 @@
     },
     "reviews": [
       {
-        "id": "review3",
+        "id": "r106",
         "txt": "Absolutely charming cabin with stunning views!",
         "rate": 5,
         "by": {
           "_id": "u107",
           "fullname": "Emily White",
-          "imgUrl": "https://example.com/emily.jpg"
+          "imgUrl": "https://example.com/emily.jpg",
+          "address": "Port Elizabeth, South Africa"
         }
       },
       {
-        "id": "review4",
+        "id": "r107",
         "txt": "Perfect getaway spot! Cozy and peaceful.",
         "rate": 4,
         "by": {
           "_id": "u108",
           "fullname": "Jason Miller",
-          "imgUrl": "https://example.com/jason.jpg"
+          "imgUrl": "https://example.com/jason.jpg",
+          "address": "Meaux, France"
         }
       }
     ],
-    "likedByUsers": ["user3", "user4"],
+    "likedByUsers": [
+      "Emily White",
+      "Jason Miller"
+    ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -318,7 +370,7 @@
       "Desert"
     ],
     "host": {
-      "_id": "u109",
+      "_id": "u101",
       "fullname": "Sophia Garcia",
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
@@ -331,27 +383,32 @@
     },
     "reviews": [
       {
-        "id": "review5",
+        "id": "r108",
         "txt": "The loft is amazing! Loved the city views.",
         "rate": 5,
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://example.com/daniel.jpg"
+          "imgUrl": "https://example.com/daniel.jpg",
+          "address": "Kalisz, Poland"
         }
       },
       {
-        "id": "review6",
+        "id": "r109",
         "txt": "Perfect location for exploring the city. Modern and clean.",
         "rate": 4,
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
-          "imgUrl": "https://example.com/jessica.jpg"
+          "imgUrl": "https://example.com/jessica.jpg",
+          "address": "Langton Green, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user5", "user6"],
+    "likedByUsers": [
+      "Jason Miller",
+      "Jessica Davis"
+    ],
     "startDate": "2024-06-22",
     "endDate": "2024-06-24"
   },
@@ -390,9 +447,12 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": ["Luxe", "Beachfront"],
+    "labels": [
+      "Luxe",
+      "Beachfront"
+    ],
     "host": {
-      "_id": "u112",
+      "_id": "u105",
       "fullname": "Anna Johnson",
       "imgUrl": "https://example.com/anna.jpg"
     },
@@ -406,27 +466,32 @@
     },
     "reviews": [
       {
-        "id": "review7",
+        "id": "r110",
         "txt": "Lovely place right by the beach! So relaxing.",
         "rate": 5,
         "by": {
           "_id": "u113",
           "fullname": "Carlos Lopez",
-          "imgUrl": "https://example.com/carlos.jpg"
+          "imgUrl": "https://example.com/carlos.jpg",
+          "address": "Barcelona, Spain"
         }
       },
       {
-        "id": "review8",
+        "id": "r111",
         "txt": "Great spot, very clean and well maintained.",
         "rate": 4,
         "by": {
           "_id": "u114",
           "fullname": "Sophie Turner",
-          "imgUrl": "https://example.com/sophie.jpg"
+          "imgUrl": "https://example.com/sophie.jpg",
+          "address": "Vienna, Austria"
         }
       }
     ],
-    "likedByUsers": ["user7", "user8"],
+    "likedByUsers": [
+      "Sophie Turner",
+      "Carlos Lopez"
+    ],
     "startDate": "2024-06-05",
     "endDate": "2024-06-12"
   },
@@ -466,11 +531,17 @@
       "Washer",
       "Pool"
     ],
-    "labels": ["Islands", "Tropical", "Camping", "Surfing", "Bed & breakfasts"],
+    "labels": [
+      "Islands",
+      "Tropical",
+      "Camping",
+      "Surfing",
+      "Bed & breakfasts"
+    ],
     "host": {
-      "_id": "u115",
-      "fullname": "Liam Johnson",
-      "imgUrl": "https://example.com/liam.jpg"
+      "_id": "u104",
+      "fullname": "Michael Brown",
+      "imgUrl": "https://example.com/michael.jpg"
     },
     "loc": {
       "country": "USA",
@@ -481,27 +552,33 @@
     },
     "reviews": [
       {
-        "id": "review9",
+        "id": "r112",
         "txt": "Amazing location, close to everything!",
         "rate": 5,
         "by": {
-          "_id": "u116",
-          "fullname": "David Clark",
-          "imgUrl": "https://example.com/david.jpg"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       },
       {
-        "id": "review10",
+        "id": "r113",
         "txt": "Very modern and clean. Loved my stay.",
         "rate": 4,
         "by": {
-          "_id": "u117",
+          "_id": "u115",
           "fullname": "Laura Davis",
-          "imgUrl": "https://example.com/laura.jpg"
+          "imgUrl": "https://example.com/laura.jpg",
+          "address": "United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user9", "user10"],
+    "likedByUsers": [
+      "Carlos Lopez",
+      "Laura Davis",
+      "David Clark"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -554,9 +631,9 @@
       ""
     ],
     "host": {
-      "_id": "u118",
-      "fullname": "Emily Clark",
-      "imgUrl": "https://example.com/emily.jpg"
+      "_id": "u105",
+      "fullname": "Anna Johnson",
+      "imgUrl": "https://example.com/anna.jpg"
     },
     "loc": {
       "country": "USA",
@@ -567,27 +644,33 @@
     },
     "reviews": [
       {
-        "id": "review11",
+        "id": "r114",
         "txt": "Fantastic penthouse with great amenities!",
         "rate": 5,
         "by": {
-          "_id": "u119",
-          "fullname": "Sophia Martinez",
-          "imgUrl": "https://example.com/sophia.jpg"
+          "_id": "u115",
+          "fullname": "Laura Davis",
+          "imgUrl": "https://example.com/laura.jpg",
+          "address": "United Kingdom"
         }
       },
       {
-        "id": "review12",
+        "id": "r115",
         "txt": "Loved the views and the luxury feel.",
         "rate": 4,
         "by": {
-          "_id": "u120",
+          "_id": "u116",
           "fullname": "James Brown",
-          "imgUrl": "https://example.com/james.jpg"
+          "imgUrl": "https://example.com/james.jpg",
+          "address": "London, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user11", "user12"],
+    "likedByUsers": [
+      "David Clark",
+      "James Brown",
+      "Sophia Martinez"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-10"
   },
@@ -618,7 +701,13 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Air conditioning",
+      "Free parking"
+    ],
     "labels": [
       "Top of the world",
       "Luxe",
@@ -631,7 +720,7 @@
       "Desert"
     ],
     "host": {
-      "_id": "u121",
+      "_id": "u106",
       "fullname": "Jack Wilson",
       "imgUrl": "https://example.com/jack.jpg"
     },
@@ -645,27 +734,33 @@
     },
     "reviews": [
       {
-        "id": "review13",
+        "id": "r116",
         "txt": "Beautiful cottage with a rustic charm!",
         "rate": 5,
         "by": {
-          "_id": "u122",
-          "fullname": "Maria Hernandez",
-          "imgUrl": "https://example.com/maria.jpg"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       },
       {
-        "id": "review14",
+        "id": "r117",
         "txt": "Perfect place for a quiet and relaxing stay.",
         "rate": 4,
         "by": {
-          "_id": "u123",
+          "_id": "u117",
           "fullname": "Oliver Green",
-          "imgUrl": "https://example.com/oliver.jpg"
+          "imgUrl": "https://example.com/oliver.jpg",
+          "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user13", "user14"],
+    "likedByUsers": [
+      "Oliver Green",
+      "Maria Hernandez",
+      "Maria Camila"
+    ],
     "startDate": "2024-06-20",
     "endDate": "2024-06-27"
   },
@@ -696,12 +791,24 @@
     "beds": 3,
     "bedrooms": 3,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
-    "labels": ["Beach", "Beachfront", "Lake", "Top of the world", "Farms"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Air conditioning",
+      "Free parking"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Lake",
+      "Top of the world",
+      "Farms"
+    ],
     "host": {
-      "_id": "u124",
-      "fullname": "William Harris",
-      "imgUrl": "https://example.com/william.jpg"
+      "_id": "u101",
+      "fullname": "Sophia Garcia",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
     "loc": {
       "country": "USA",
@@ -712,27 +819,33 @@
     },
     "reviews": [
       {
-        "id": "review15",
+        "id": "r118",
         "txt": "Amazing lodge in a perfect forest setting!",
         "rate": 5,
         "by": {
-          "_id": "u125",
+          "_id": "u109",
           "fullname": "Emma Watson",
-          "imgUrl": "https://example.com/emma.jpg"
+          "imgUrl": "https://example.com/emma.jpg",
+          "address": "Ankara, Turkey"
         }
       },
       {
-        "id": "review16",
+        "id": "r119",
         "txt": "Great place for a peaceful retreat.",
         "rate": 4,
         "by": {
-          "_id": "u126",
-          "fullname": "Liam Brown",
-          "imgUrl": "https://example.com/liam.jpg"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user15", "user16"],
+    "likedByUsers": [
+      "Maria Hernandez",
+      "Liam Brown",
+      "Emma Watson"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-15"
   },
@@ -763,7 +876,12 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Free parking"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Free parking"
+    ],
     "labels": [
       "Bed & breakfasts",
       "Camping",
@@ -773,9 +891,9 @@
       "Ski-in/out"
     ],
     "host": {
-      "_id": "u127",
-      "fullname": "Maximilian Müller",
-      "imgUrl": "https://example.com/maximilian.jpg"
+      "_id": "u106",
+      "fullname": "Jack Wilson",
+      "imgUrl": "https://example.com/jack.jpg"
     },
     "loc": {
       "country": "Switzerland",
@@ -786,27 +904,32 @@
     },
     "reviews": [
       {
-        "id": "review17",
+        "id": "r120",
         "txt": "Absolutely stunning views! A perfect chalet for a mountain getaway.",
         "rate": 5,
         "by": {
-          "_id": "u128",
+          "_id": "u118",
           "fullname": "Isabella Schneider",
-          "imgUrl": "https://example.com/isabella.jpg"
+          "imgUrl": "https://example.com/isabella.jpg",
+          "address": "Pruszków, Poland"
         }
       },
       {
-        "id": "review18",
+        "id": "r121",
         "txt": "Cozy and comfortable chalet with all the amenities you need.",
         "rate": 4,
         "by": {
-          "_id": "u129",
+          "_id": "u119",
           "fullname": "Niklaus Weber",
-          "imgUrl": "https://example.com/niklaus.jpg"
+          "imgUrl": "https://example.com/niklaus.jpg",
+          "address": "Balti, Moldova"
         }
       }
     ],
-    "likedByUsers": ["user17", "user18"],
+    "likedByUsers": [
+      "Niklaus Weber",
+      "Isabella Schneider"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -837,12 +960,23 @@
     "beds": 2,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer"],
-    "labels": ["Treehouses", "Earth homes", "Vineyards", "Beach", "Beachfront"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer"
+    ],
+    "labels": [
+      "Treehouses",
+      "Earth homes",
+      "Vineyards",
+      "Beach",
+      "Beachfront"
+    ],
     "host": {
-      "_id": "u130",
-      "fullname": "Sophie Dubois",
-      "imgUrl": "https://example.com/sophie.jpg"
+      "_id": "u103",
+      "fullname": "Sara Smith",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
     },
     "loc": {
       "country": "France",
@@ -853,27 +987,34 @@
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r122",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u115",
+          "fullname": "Laura Davis",
+          "imgUrl": "https://example.com/laura.jpg",
+          "address": "United Kingdom"
+
         }
       },
       {
-        "id": "review20",
+        "id": "r123",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "_id": "u110",
+          "fullname": "Daniel Smith",
+          "imgUrl": "https://example.com/daniel.jpg",
+          "address": "Kalisz, Poland"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Niklaus Weber",
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -904,12 +1045,22 @@
     "beds": 6,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
-    "labels": ["Beach", "Beachfront", "Amazing pools"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools"
+    ],
     "host": {
-      "_id": "u130",
-      "fullname": "Sophie Dubois",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      "_id": "u102",
+      "fullname": "Davit Pok",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw"
     },
     "loc": {
       "country": "Mexico",
@@ -920,27 +1071,32 @@
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r124",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u114",
+          "fullname": "Sophie Turner",
+          "imgUrl": "https://example.com/sophie.jpg",
+          "address": "Vienna, Austria"
         }
       },
       {
-        "id": "review20",
+        "id": "r125",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
+          "_id": "u120",
           "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "imgUrl": "https://example.com/charlotte.jpg",
+          "address": "Paris, France"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Antoine Leroy",
+      "Charlotte Martin"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -989,7 +1145,6 @@
       "Lake",
       "Treehouses",
       "Farms",
-
       "Skiing",
       "Earth homes",
       "Amazing views",
@@ -1004,40 +1159,45 @@
       "Top of the world"
     ],
     "host": {
-      "_id": "u130",
-      "fullname": "Wander Levin",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      "_id": "u101",
+      "fullname": "Sophia Garcia",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
     "loc": {
       "country": "USA",
       "city": "Georgia",
       "address": "789 Chic Avenue",
-      "lat": 48.8566,
-      "lng": 2.3522
+      "lat": 33.247875,
+      "lng": -83.441162
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r126",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u117",
+          "fullname": "Oliver Green",
+          "imgUrl": "https://example.com/oliver.jpg",
+          "address": "Leicester, United Kingdom"
         }
       },
       {
-        "id": "review20",
+        "id": "r127",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "_id": "u115",
+          "fullname": "Laura Davis",
+          "imgUrl": "https://example.com/laura.jpg",
+          "address": "United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1068,43 +1228,59 @@
     "beds": 1,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
-    "labels": ["Beach", "Beachfront", "Amazing pools", "Luxe"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools",
+      "Luxe"
+    ],
     "host": {
-      "_id": "u130",
-      "fullname": "Wander Levin",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      "_id": "u105",
+      "fullname": "Anna Johnson",
+      "imgUrl": "https://example.com/anna.jpg"
     },
     "loc": {
       "country": "USA",
       "city": "Texas",
       "address": "789 Chic Avenue",
-      "lat": 48.8566,
-      "lng": 2.3522
+      "lat": 32.779167,
+      "lng": -96.808891
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r128",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u113",
+          "fullname": "Carlos Lopez",
+          "imgUrl": "https://example.com/carlos.jpg",
+          "address": "Barcelona, Spain"
         }
       },
       {
-        "id": "review20",
+        "id": "r129",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
+          "_id": "u120",
           "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "imgUrl": "https://example.com/charlotte.jpg",
+          "address": "Paris, France"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1135,7 +1311,13 @@
     "beds": 4,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1145,40 +1327,45 @@
       "Bed & breakfasts"
     ],
     "host": {
-      "_id": "u130",
-      "fullname": "Ruben",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      "_id": "u103",
+      "fullname": "Sara Smith",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
     },
     "loc": {
       "country": "Spain",
       "city": "Huelva",
       "address": "789 Chic Avenue",
-      "lat": 41.8566,
-      "lng": 5.3522
+      "lat": 37.250000,
+      "lng": -6.950000
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r130",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u106",
+          "fullname": "Jack Wilson",
+          "imgUrl": "https://example.com/jack.jpg",
+          "address": "Cork, Ireland"
         }
       },
       {
-        "id": "review20",
+        "id": "r131",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "_id": "u104",
+          "fullname": "Michael Brown",
+          "imgUrl": "https://example.com/michael.jpg",
+          "address": "Almaty, Kazakhstan"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Antoine Leroy",
+      "Charlotte Martin"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1209,7 +1396,14 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Dryer", "Gym"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Dryer",
+      "Gym"
+    ],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1221,40 +1415,46 @@
       "Skiing"
     ],
     "host": {
-      "_id": "u130",
-      "fullname": "Marissa",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      "_id": "u106",
+      "fullname": "Jack Wilson",
+      "imgUrl": "https://example.com/jack.jpg"
     },
     "loc": {
       "country": "Australia",
       "city": "Crafers",
       "address": "789 Chic Avenue",
-      "lat": 11.8566,
-      "lng": 52.3522
+      "lat": -34.99717,
+      "lng": 138.70431
     },
     "reviews": [
       {
-        "id": "review19",
+        "id": "r134",
         "txt": "Absolutely loved the loft! Perfect location and beautifully designed.",
         "rate": 5,
         "by": {
-          "_id": "u131",
-          "fullname": "Antoine Leroy",
-          "imgUrl": "https://example.com/antoine.jpg"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "/img/img2.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       },
       {
-        "id": "review20",
+        "id": "r135",
         "txt": "Stylish loft with everything you need for a comfortable stay.",
         "rate": 4,
         "by": {
-          "_id": "u132",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg"
+          "_id": "u117",
+          "fullname": "Oliver Green",
+          "imgUrl": "https://example.com/oliver.jpg",
+          "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["user19", "user20"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy",
+      "Oliver Green"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   }

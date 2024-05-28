@@ -63,8 +63,8 @@ export function StayDetails({ setLargeMainFilter }) {
         window.scrollY ||
         window.pageYOffset ||
         document.body.scrollTop +
-          ((document.documentElement && document.documentElement.scrollTop) ||
-            0);
+        ((document.documentElement && document.documentElement.scrollTop) ||
+          0);
       if (scrollTop > 30) {
         setLargeMainFilter(true)
       } else {
@@ -87,7 +87,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
   function handleDatesChange(dates) {
     setSelectedDates(dates)
-}
+  }
 
   function toggleModal() {
     setShowModal(!showModal)
@@ -230,11 +230,9 @@ export function StayDetails({ setLargeMainFilter }) {
             </div>
           </div>
 
-            <div className="dates">
+          <div className="dates">
             <h1>Select check-in date</h1>
             <h4>Add your travel dates for exact pricing</h4>
-
-
 
             {/* <DatePicker onDatesChange={handleDatesChange} /> */}
           </div>
@@ -244,11 +242,14 @@ export function StayDetails({ setLargeMainFilter }) {
         </div>
 
         <div className="reservation-modal">
-          <ReservationModal stay={stay}/>
+          <ReservationModal stay={stay} />
         </div>
 
       </div>
 
+      <div className="reviews">
+        reviews
+      </div>
 
 
       <div className="map">
