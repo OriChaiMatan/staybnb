@@ -48,7 +48,10 @@
     max-width: 100%;
     gap: 7px;
     height: 465px;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+        0,
+        1fr
+      );
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
       "main-img main-img img-1 img-2 "
@@ -75,11 +78,10 @@
       "a3 a5";
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
 
-    .MuiDateRangeCalendar-root.css-e47596-MuiDateRangeCalendar-root div[style*="position: absolute"][style*="pointer-events: none"][style*="color: rgba(130, 130, 130, 0.62)"] {
+    .MuiDateRangeCalendar-root.css-e47596-MuiDateRangeCalendar-root
+      div[style*="position: absolute"][style*="pointer-events: none"][style*="color: rgba(130, 130, 130, 0.62)"] {
       opacity: 0;
     }
-
-
   }
 
   .stay-ferrites {
@@ -88,7 +90,7 @@
 
   .stay-info-content {
     padding: 32px 0;
-    border-bottom: 1px solid rgba(128, 128, 128, .3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     h1 {
       margin: 0;
@@ -122,7 +124,7 @@
     padding: 24px 0px;
     display: flex;
     gap: 20px;
-    border-bottom: 1px solid rgba(128, 128, 128, .3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     .hosted-img {
       width: 40px;
@@ -137,7 +139,7 @@
     display: flex;
     gap: 24px;
     flex-direction: column;
-    border-bottom: 1px solid rgba(128, 128, 128, .3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     .line {
       display: flex;
@@ -160,7 +162,7 @@
 
   .summery {
     padding: 32px 0 48px;
-    border-bottom: 1px solid rgba(128, 128, 128, .3);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     .text-summery {
       overflow: hidden;
@@ -169,7 +171,6 @@
       display: -webkit-box;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
-
     }
 
     .show-more {
@@ -228,20 +229,16 @@
       font-weight: normal;
       // font-family: "Montserrat", sans-serif;
     }
-
-
   }
 
   .reviews {
     border-top: 1px solid rgba(128, 128, 128, 0.3);
     padding: 48px 0;
-    
   }
 
   .map {
     border-top: 1px solid rgba(128, 128, 128, 0.3);
     padding: 48px 0;
-
 
     h3 {
       margin: 0;
@@ -251,7 +248,9 @@
       margin-bottom: 5px;
       padding-bottom: 24px;
     }
-
   }
 
+  .reservation-modal {
+    margin-bottom: 60px;
+  }
 }
