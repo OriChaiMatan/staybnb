@@ -1,11 +1,13 @@
-import { FaRegHourglassHalf } from "react-icons/fa6"; //hourglass
+import React from "react";
+import { useDispatch } from "react-redux";
+import { FaRegHourglassHalf } from "react-icons/fa6"; // hourglass
 import { BiSolidInfoCircle } from "react-icons/bi"; // delete
 import { FaCheckCircle } from "react-icons/fa"; // approve
 
 
 
-
-export function OrderManagerPreview({ order }) {
+export function OrderManagerPreview({ order, onSaveOrder }) {
+    const dispatch = useDispatch()
 
     const getStatusIcon = (status) => {
         switch (status) {
@@ -20,6 +22,11 @@ export function OrderManagerPreview({ order }) {
         }
     }
     
+    const handleStatusChange = (newStatus) => {
+        const updatedOrder = { ...order, status: newStatus }
+        onSaveOrder(updatedOrder)
+        console.log(updatedOrder)
+    }
 
     return (
         <div className="order-preview">
@@ -31,8 +38,8 @@ export function OrderManagerPreview({ order }) {
             <label className="order-status">{order.status}</label>
             <label className="order-icon">{getStatusIcon(order.status)}</label>
             <div className="actions">
-                <button className="approve-btn">Approve</button>
-                <button className="decline-btn">Decline</button>
+                <button className="approve-btn" onClick={() => handleStatusChange('approved')}>Approve</button>
+                <button className="decline-btn" onClick={() => handleStatusChange('decline')}>Decline</button>
             </div>
         </div>
     )

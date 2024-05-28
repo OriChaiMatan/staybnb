@@ -5,7 +5,7 @@ import ordersData from "../data/orders.json";
 
 const STORAGE_KEY = 'order'
 
-_createOrders()
+// _createOrders()
 
 export const orderService = {
     query,
