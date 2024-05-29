@@ -1,28 +1,28 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router";
-import { stayService } from "../services/stay.service";
+import { useState, useEffect, useRef } from "react"
+import { useParams } from "react-router"
+import { stayService } from "../services/stay.service"
 
-import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel";
-import { ReservationModal } from "../cmps/ReservationModal";
+import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel"
+import { ReservationModal } from "../cmps/ReservationModal"
 
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineNavigateNext } from "react-icons/md"
 
-import Heart from "../svg/HeartSvg";
-import Share from "../svg/ShareSvg";
-import Star from "../svg/StarSvg";
-import SelfCheackIn from "../svg/SelfCheckIn";
-import Cancel from "../svg/CancelSvg";
-import Workspace from "../svg/WorkspaceSvg";
-import { utilService } from "../services/util.service";
+import Heart from "../svg/HeartSvg"
+import Share from "../svg/ShareSvg"
+import Star from "../svg/StarSvg"
+import SelfCheackIn from "../svg/SelfCheckIn"
+import Cancel from "../svg/CancelSvg"
+import Workspace from "../svg/WorkspaceSvg"
+import { utilService } from "../services/util.service"
 
-import WifiSvg from "../svg/amenities/WifiSvg";
-import KitchenSvg from "../svg/amenities/KitchenSvg";
-import WasherSvg from "../svg/amenities/WasherSvg";
-import DryerSvg from "../svg/amenities/DryerSvg";
-import AirConditioningSvg from "../svg/amenities/AirConditioningSvg";
-import HeatingSvg from "../svg/amenities/HeatingSvg";
-import TVSvg from "../svg/amenities/TvSvg";
-import IronSvg from "../svg/amenities/IronSvg";
+import WifiSvg from "../svg/amenities/WifiSvg"
+import KitchenSvg from "../svg/amenities/KitchenSvg"
+import WasherSvg from "../svg/amenities/WasherSvg"
+import DryerSvg from "../svg/amenities/DryerSvg"
+import AirConditioningSvg from "../svg/amenities/AirConditioningSvg"
+import HeatingSvg from "../svg/amenities/HeatingSvg"
+import TVSvg from "../svg/amenities/TvSvg"
+import IronSvg from "../svg/amenities/IronSvg"
 
 import PoolSvg from "../svg/amenities/PoolSvg"
 import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg"
@@ -38,14 +38,49 @@ import CheckinSvg from "../svg/rating/CheckinSvg"
 import CommunicationSvg from "../svg/rating/CommunicationSvg"
 import LocationSvg from "../svg/rating/LocationSvg"
 import ValueSvg from "../svg/rating/ValueSvg"
-StarReview
-// import {DatePicker} from "../cmps/app-header/DatePicker";
+import { CalendarPicker } from "../cmps/CalendarPicker"
+
+const StickyHeader = ({ onNavigate, showButton, stay }) => {
+  return (
+    <div className="sticky-header">
+      <nav>
+        <ul>
+          <li onClick={() => onNavigate("photos")}>Photos</li>
+          <li onClick={() => onNavigate("amenities")}>Amenities</li>
+          <li onClick={() => onNavigate("reviews")}>Reviews</li>
+          <li onClick={() => onNavigate("location")}>Location</li>
+        </ul>
+        {showButton && (
+          <div className="sticky-summary">
+            <span>
+              <b>${stay.price}</b> night
+            </span>
+            <button onClick={() => onNavigate("reviews")}>
+              <span>Reserve</span>
+            </button>
+          </div>
+        )}
+      </nav>
+    </div>
+  )
+}
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
   const params = useParams()
   const [showModal, setShowModal] = useState(false)
-  const [selectedDates, setSelectedDates] = useState([])
+  const [selectedRange, setSelectedRange] = useState({
+    start: null,
+    end: null,
+  })
+  const [showStickyHeader, setShowStickyHeader] = useState(false)
+  const [showReviewsButton, setShowReviewsButton] = useState(false)
+
+  const photosRef = useRef(null)
+  const amenitiesRef = useRef(null)
+  const reviewsRef = useRef(null)
+  const locationRef = useRef(null)
+  const hostedByRef = useRef(null)
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -62,7 +97,7 @@ export function StayDetails({ setLargeMainFilter }) {
     Gym: <GymSvg />,
     Smoking_allowed: <SmokingAllowedSvg />,
     BBQ_Grill: <BBQGrillSvg />,
-  };
+  }
 
   useEffect(() => {
     loadStay();
@@ -71,8 +106,8 @@ export function StayDetails({ setLargeMainFilter }) {
         window.scrollY ||
         window.pageYOffset ||
         document.body.scrollTop +
-          ((document.documentElement && document.documentElement.scrollTop) ||
-            0);
+        ((document.documentElement && document.documentElement.scrollTop) ||
+          0);
       if (scrollTop > hostedByRef.current.offsetTop) {
         setShowStickyHeader(true);
       } else {
@@ -82,7 +117,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [params.stayId]);
+  }, [params.stayId])
 
   useEffect(() => {
     if (hostedByRef.current) {
@@ -94,7 +129,7 @@ export function StayDetails({ setLargeMainFilter }) {
         if (hostedByRef.current) {
           observer.unobserve(hostedByRef.current);
         }
-      };
+      }
     }
 
     function onObserved(entries) {
@@ -105,9 +140,9 @@ export function StayDetails({ setLargeMainFilter }) {
             ? "static"
             : "fixed";
         }
-      });
+      })
     }
-  }, [hostedByRef.current]);
+  }, [hostedByRef.current])
 
   useEffect(() => {
     if (locationRef.current) {
@@ -121,82 +156,77 @@ export function StayDetails({ setLargeMainFilter }) {
         if (locationRef.current) {
           observer.unobserve(locationRef.current);
         }
-      };
+      }
     }
 
     function onReviewsObserved(entries) {
       entries.forEach((entry) => {
         setShowReviewsButton(entry.isIntersecting);
-      });
+      })
     }
-  }, [locationRef.current]);
+  }, [locationRef.current])
 
   async function loadStay() {
     try {
       const stayData = await stayService.getById(params.stayId)
-      // const avgRating = utilService.calculateAvgRating(stayData.reviews)
       setStay(stayData)
     } catch (err) {
-      console.log("Error in loadStay", err);
+      console.log("Error in loadStay", err)
     }
   }
 
-  function handleDatesChange(dates) {
-    setSelectedDates(dates)
-  }
-
   function toggleModal() {
-    setShowModal(!showModal);
+    setShowModal(!showModal)
   }
 
   function closeModal() {
-    setShowModal(false);
+    setShowModal(false)
   }
 
   function handleNavigation(section) {
-    let ref;
+    let ref
     switch (section) {
       case "photos":
-        ref = photosRef;
+        ref = photosRef
         break;
       case "amenities":
-        ref = amenitiesRef;
+        ref = amenitiesRef
         break;
       case "reviews":
-        ref = reviewsRef;
+        ref = reviewsRef
         break;
       case "location":
-        ref = locationRef;
-        break;
+        ref = locationRef
+        break
       default:
-        return;
+        return
     }
     window.scrollTo({
       top: ref.current.offsetTop - 50, // Adjust this value as needed
       behavior: "smooth",
-    });
+    })
   }
 
   if (!stay) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   function generateStars(rating) {
     return Array.from({ length: 5 }, (_, index) => (
       <StarReview key={index} filled={index < rating} />
-    ));
+    ))
   }
 
   function calculateDaysBetween(startDateStr, endDateStr) {
-    const startDate = new Date(startDateStr);
-    const endDate = new Date(endDateStr);
+    const startDate = new Date(startDateStr)
+    const endDate = new Date(endDateStr)
 
-    const diffInMilliseconds = endDate - startDate;
+    const diffInMilliseconds = endDate - startDate
 
-    const millisecondsPerDay = 1000 * 60 * 60 * 24;
-    const diffInDays = diffInMilliseconds / millisecondsPerDay;
+    const millisecondsPerDay = 1000 * 60 * 60 * 24
+    const diffInDays = diffInMilliseconds / millisecondsPerDay
 
-    return Math.ceil(diffInDays);
+    return Math.ceil(diffInDays)
   }
 
   return (
@@ -322,26 +352,55 @@ export function StayDetails({ setLargeMainFilter }) {
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
-                const amenityKey = amenity.replace(/\s+/g, "_");
+                const amenityKey = amenity.replace(/\s+/g, "_")
                 return (
                   <div key={index} className="offer">
                     {amenityIcons[amenityKey]}
                     {amenity}
                   </div>
-                );
+                )
               })}
             </div>
           </section>
 
+
           <section className="dates">
-            <h1>Select check-in date</h1>
-            <h4>Add your travel dates for exact pricing</h4>
+            {selectedRange.start && selectedRange.end ? (
+              <>
+                <h1>
+                  {selectedRange.start &&
+                    selectedRange.end &&
+                    calculateDaysBetween(
+                      selectedRange.start,
+                      selectedRange.end
+                    )}{" "}
+                  nights in {stay.loc.city}
+                </h1>
+                <h4>
+                  {selectedRange.start.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                  {" - "}
+                  {selectedRange.end.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                </h4>
+              </>
+            ) : (
+              <>
+                <h1>Select check-in date</h1>
+                <h4>Add your travel dates for exact pricing</h4>
+              </>
+            )}
 
-            {/* <DatePicker onDatesChange={handleDatesChange} /> */}
+            <CalendarPicker onRangeChange={setSelectedRange} />
           </section>
-
-
         </div>
+
 
         <section className="reservation-modal">
           <ReservationModal
@@ -485,5 +544,5 @@ export function StayDetails({ setLargeMainFilter }) {
         <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>
     </section>
-  );
+  )
 }

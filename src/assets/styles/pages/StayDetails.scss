@@ -186,6 +186,7 @@
 
   .amenities-details {
     padding: 48px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
     h2 {
       padding: 0 0 24px;
@@ -206,6 +207,26 @@
         gap: 16px;
         white-space: nowrap;
       }
+    }
+  }
+
+  .dates {
+    padding: 48px 0;
+
+    h1 {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.625rem;
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      margin: 0;
+      color: rgb(106, 106, 106);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: normal;
     }
   }
 
@@ -323,13 +344,13 @@
         gap: 5px;
         align-items: center;
 
-        .review-star {
+        .star-review {
           display: flex;
           gap: 1px;
           align-items: center;
         }
 
-        .review-date {
+        .date-review {
           font-weight: bold;
           font-size: 14px;
         }
