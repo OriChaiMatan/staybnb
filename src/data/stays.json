@@ -26,7 +26,13 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Smoking allowed",
+      "Pets allowed"
+    ],
     "labels": [
       "Amazing views",
       "Amazing pools",
@@ -56,7 +62,7 @@
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
           "address": "Kalisz, Poland"
         }
       },
@@ -68,7 +74,7 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "https://res.cloudinary.com/dmsj97ag9/4420a6515cad331c5fbb637485b9ef23",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       },
@@ -80,12 +86,15 @@
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
-          "imgUrl": "https://example.com/jessica.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716979059/user2_fb3xqz.png",
           "address": "Langton Green, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Daniel Smith", "Jessica Davis"],
+    "likedByUsers": [
+      "Daniel Smith",
+      "Jessica Davis"
+    ],
     "startDate": "2024-04-15",
     "endDate": "2024-06-22"
   },
@@ -116,8 +125,19 @@
     "beds": 4,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed"],
-    "labels": ["Top of the world", "Islands", "Luxe", "Tropical"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Smoking allowed",
+      "Pets allowed"
+    ],
+    "labels": [
+      "Top of the world",
+      "Islands",
+      "Luxe",
+      "Tropical"
+    ],
     "host": {
       "_id": "u102",
       "fullname": "Davit Pok",
@@ -140,12 +160,15 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Daniel Smith", "Maria Camila"],
+    "likedByUsers": [
+      "Daniel Smith",
+      "Maria Camila"
+    ],
     "startDate": "2024-04-17",
     "endDate": "2024-06-23"
   },
@@ -184,7 +207,11 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": ["Luxe", "Beachfront", "Mansions"],
+    "labels": [
+      "Luxe",
+      "Beachfront",
+      "Mansions"
+    ],
     "host": {
       "_id": "u103",
       "fullname": "Sara Smith",
@@ -207,7 +234,7 @@
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
-          "imgUrl": "https://example.com/jessica.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716979059/user2_fb3xqz.png",
           "address": "Langton Green, United Kingdom"
         }
       },
@@ -219,12 +246,15 @@
         "by": {
           "_id": "u105",
           "fullname": "Anna Johnson",
-          "imgUrl": "https://example.com/anna.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg",
           "address": "Boniswil, Switzerland"
         }
       }
     ],
-    "likedByUsers": ["Alice Johnson", "John Doe"],
+    "likedByUsers": [
+      "Alice Johnson",
+      "John Doe"
+    ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -255,12 +285,24 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Heating", "Free parking"],
-    "labels": ["Earth homes", "Desert", "Treehouses", "Luxe", "Ski-in/out"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Heating",
+      "Free parking"
+    ],
+    "labels": [
+      "Earth homes",
+      "Desert",
+      "Treehouses",
+      "Luxe",
+      "Ski-in/out"
+    ],
     "host": {
       "_id": "u104",
       "fullname": "Michael Brown",
-      "imgUrl": "https://example.com/michael.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png"
     },
     "loc": {
       "country": "USA",
@@ -278,7 +320,7 @@
         "by": {
           "_id": "u107",
           "fullname": "Emily White",
-          "imgUrl": "https://example.com/emily.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
           "address": "Port Elizabeth, South Africa"
         }
       },
@@ -290,12 +332,15 @@
         "by": {
           "_id": "u108",
           "fullname": "Jason Miller",
-          "imgUrl": "https://example.com/jason.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
           "address": "Meaux, France"
         }
       }
     ],
-    "likedByUsers": ["Emily White", "Jason Miller"],
+    "likedByUsers": [
+      "Emily White",
+      "Jason Miller"
+    ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -364,7 +409,7 @@
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://example.com/daniel.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
           "address": "Kalisz, Poland"
         }
       },
@@ -376,12 +421,15 @@
         "by": {
           "_id": "u111",
           "fullname": "Jessica Davis",
-          "imgUrl": "https://example.com/jessica.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716979059/user2_fb3xqz.png",
           "address": "Langton Green, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Jason Miller", "Jessica Davis"],
+    "likedByUsers": [
+      "Jason Miller",
+      "Jessica Davis"
+    ],
     "startDate": "2024-06-22",
     "endDate": "2024-06-24"
   },
@@ -420,11 +468,14 @@
       "Air conditioning",
       "Free parking"
     ],
-    "labels": ["Luxe", "Beachfront"],
+    "labels": [
+      "Luxe",
+      "Beachfront"
+    ],
     "host": {
       "_id": "u105",
       "fullname": "Anna Johnson",
-      "imgUrl": "https://example.com/anna.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
       "country": "Portugal",
@@ -443,7 +494,7 @@
         "by": {
           "_id": "u113",
           "fullname": "Carlos Lopez",
-          "imgUrl": "https://example.com/carlos.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716983029/men5_y0aqtj.jpg",
           "address": "Barcelona, Spain"
         }
       },
@@ -453,14 +504,17 @@
         "rate": 4,
         "date": "April 2023",
         "by": {
-          "_id": "u114",
-          "fullname": "Sophie Turner",
-          "imgUrl": "https://example.com/sophie.jpg",
-          "address": "Vienna, Austria"
+          "_id": "u101",
+          "fullname": "Sophia Garcia",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
+          "address": "London, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Sophie Turner", "Carlos Lopez"],
+    "likedByUsers": [
+      "Sophie Turner",
+      "Carlos Lopez"
+    ],
     "startDate": "2024-06-05",
     "endDate": "2024-06-12"
   },
@@ -500,11 +554,17 @@
       "Washer",
       "Pool"
     ],
-    "labels": ["Islands", "Tropical", "Camping", "Surfing", "Bed & breakfasts"],
+    "labels": [
+      "Islands",
+      "Tropical",
+      "Camping",
+      "Surfing",
+      "Bed & breakfasts"
+    ],
     "host": {
       "_id": "u104",
       "fullname": "Michael Brown",
-      "imgUrl": "https://example.com/michael.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png"
     },
     "loc": {
       "country": "USA",
@@ -522,7 +582,7 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       },
@@ -532,14 +592,18 @@
         "rate": 4,
         "date": "November 2023",
         "by": {
-          "_id": "u115",
-          "fullname": "Laura Davis",
-          "imgUrl": "https://example.com/laura.jpg",
-          "address": "United Kingdom"
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+          "address": "Meaux, France"
         }
       }
     ],
-    "likedByUsers": ["Carlos Lopez", "Laura Davis", "David Clark"],
+    "likedByUsers": [
+      "Carlos Lopez",
+      "Laura Davis",
+      "David Clark"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -594,7 +658,7 @@
     "host": {
       "_id": "u105",
       "fullname": "Anna Johnson",
-      "imgUrl": "https://example.com/anna.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
       "country": "USA",
@@ -610,10 +674,10 @@
         "rate": 5,
         "date": "November 2023",
         "by": {
-          "_id": "u115",
-          "fullname": "Laura Davis",
-          "imgUrl": "https://example.com/laura.jpg",
-          "address": "United Kingdom"
+          "_id": "u107",
+          "fullname": "Emily White",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
+          "address": "Port Elizabeth, South Africa"
         }
       },
       {
@@ -622,14 +686,18 @@
         "rate": 4,
         "date": "January 2024",
         "by": {
-          "_id": "u116",
-          "fullname": "James Brown",
-          "imgUrl": "https://example.com/james.jpg",
+          "_id": "u101",
+          "fullname": "Sophia Garcia",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
           "address": "London, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["David Clark", "James Brown", "Sophia Martinez"],
+    "likedByUsers": [
+      "David Clark",
+      "James Brown",
+      "Sophia Martinez"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-10"
   },
@@ -660,7 +728,13 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Air conditioning",
+      "Free parking"
+    ],
     "labels": [
       "Top of the world",
       "Luxe",
@@ -675,7 +749,7 @@
     "host": {
       "_id": "u106",
       "fullname": "Jack Wilson",
-      "imgUrl": "https://example.com/jack.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
       "country": "Portugal",
@@ -694,7 +768,7 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       },
@@ -704,14 +778,18 @@
         "rate": 4,
         "date": "September 2023",
         "by": {
-          "_id": "u117",
-          "fullname": "Oliver Green",
-          "imgUrl": "https://example.com/oliver.jpg",
+          "_id": "u102",
+          "fullname": "Davit Pok",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
           "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Oliver Green", "Maria Hernandez", "Maria Camila"],
+    "likedByUsers": [
+      "Oliver Green",
+      "Maria Hernandez",
+      "Maria Camila"
+    ],
     "startDate": "2024-06-20",
     "endDate": "2024-06-27"
   },
@@ -742,8 +820,20 @@
     "beds": 3,
     "bedrooms": 3,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Air conditioning", "Free parking"],
-    "labels": ["Beach", "Beachfront", "Lake", "Top of the world", "Farms"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Air conditioning",
+      "Free parking"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Lake",
+      "Top of the world",
+      "Farms"
+    ],
     "host": {
       "_id": "u101",
       "fullname": "Sophia Garcia",
@@ -765,7 +855,7 @@
         "by": {
           "_id": "u109",
           "fullname": "Emma Watson",
-          "imgUrl": "https://example.com/emma.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982686/userwomen5_dvavqu.jpg",
           "address": "Ankara, Turkey"
         }
       },
@@ -777,12 +867,16 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Maria Hernandez", "Liam Brown", "Emma Watson"],
+    "likedByUsers": [
+      "Maria Hernandez",
+      "Liam Brown",
+      "Emma Watson"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-15"
   },
@@ -813,7 +907,12 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Kitchen", "Free parking"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Kitchen",
+      "Free parking"
+    ],
     "labels": [
       "Bed & breakfasts",
       "Camping",
@@ -825,7 +924,7 @@
     "host": {
       "_id": "u106",
       "fullname": "Jack Wilson",
-      "imgUrl": "https://example.com/jack.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
       "country": "Switzerland",
@@ -841,9 +940,9 @@
         "rate": 5,
         "date": "September 2023",
         "by": {
-          "_id": "u118",
-          "fullname": "Isabella Schneider",
-          "imgUrl": "https://example.com/isabella.jpg",
+          "_id": "u103",
+          "fullname": "Sara Smith",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1",
           "address": "Pruszków, Poland"
         }
       },
@@ -853,14 +952,17 @@
         "rate": 4,
         "date": "March 2023",
         "by": {
-          "_id": "u119",
-          "fullname": "Niklaus Weber",
-          "imgUrl": "https://example.com/niklaus.jpg",
-          "address": "Balti, Moldova"
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+          "address": "Meaux, France"
         }
       }
     ],
-    "likedByUsers": ["Niklaus Weber", "Isabella Schneider"],
+    "likedByUsers": [
+      "Niklaus Weber",
+      "Isabella Schneider"
+    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -891,8 +993,19 @@
     "beds": 2,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer"],
-    "labels": ["Treehouses", "Earth homes", "Vineyards", "Beach", "Beachfront"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer"
+    ],
+    "labels": [
+      "Treehouses",
+      "Earth homes",
+      "Vineyards",
+      "Beach",
+      "Beachfront"
+    ],
     "host": {
       "_id": "u103",
       "fullname": "Sara Smith",
@@ -912,10 +1025,10 @@
         "rate": 5,
         "date": "January 2024",
         "by": {
-          "_id": "u115",
-          "fullname": "Laura Davis",
-          "imgUrl": "https://example.com/laura.jpg",
-          "address": "United Kingdom"
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+          "address": "Meaux, France"
         }
       },
       {
@@ -926,12 +1039,16 @@
         "by": {
           "_id": "u110",
           "fullname": "Daniel Smith",
-          "imgUrl": "https://example.com/daniel.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
           "address": "Kalisz, Poland"
         }
       }
     ],
-    "likedByUsers": ["Niklaus Weber", "Charlotte Martin", "Antoine Leroy"],
+    "likedByUsers": [
+      "Niklaus Weber",
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -962,8 +1079,18 @@
     "beds": 6,
     "bedrooms": 4,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
-    "labels": ["Beach", "Beachfront", "Amazing pools"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools"
+    ],
     "host": {
       "_id": "u102",
       "fullname": "Davit Pok",
@@ -983,10 +1110,10 @@
         "rate": 5,
         "date": "January 2024",
         "by": {
-          "_id": "u114",
-          "fullname": "Sophie Turner",
-          "imgUrl": "https://example.com/sophie.jpg",
-          "address": "Vienna, Austria"
+          "_id": "u109",
+          "fullname": "Emma Watson",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982686/userwomen5_dvavqu.jpg",
+          "address": "Ankara, Turkey"
         }
       },
       {
@@ -995,14 +1122,17 @@
         "rate": 4,
         "date": "March 2023",
         "by": {
-          "_id": "u120",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg",
-          "address": "Paris, France"
+          "_id": "u107",
+          "fullname": "Emily White",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
+          "address": "Port Elizabeth, South Africa"
         }
       }
     ],
-    "likedByUsers": ["Antoine Leroy", "Charlotte Martin"],
+    "likedByUsers": [
+      "Antoine Leroy",
+      "Charlotte Martin"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1071,10 +1201,10 @@
         "rate": 5,
         "date": "January 2024",
         "by": {
-          "_id": "u117",
-          "fullname": "Oliver Green",
-          "imgUrl": "https://example.com/oliver.jpg",
-          "address": "Leicester, United Kingdom"
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+          "address": "Meaux, France"
         }
       },
       {
@@ -1083,14 +1213,17 @@
         "rate": 4,
         "date": "March 2023",
         "by": {
-          "_id": "u115",
-          "fullname": "Laura Davis",
-          "imgUrl": "https://example.com/laura.jpg",
-          "address": "United Kingdom"
+          "_id": "u102",
+          "fullname": "Davit Pok",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
+          "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Charlotte Martin", "Antoine Leroy"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1121,12 +1254,23 @@
     "beds": 1,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
-    "labels": ["Beach", "Beachfront", "Amazing pools", "Luxe"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
+    "labels": [
+      "Beach",
+      "Beachfront",
+      "Amazing pools",
+      "Luxe"
+    ],
     "host": {
       "_id": "u105",
       "fullname": "Anna Johnson",
-      "imgUrl": "https://example.com/anna.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
       "country": "USA",
@@ -1144,7 +1288,7 @@
         "by": {
           "_id": "u113",
           "fullname": "Carlos Lopez",
-          "imgUrl": "https://example.com/carlos.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716983029/men5_y0aqtj.jpg",
           "address": "Barcelona, Spain"
         }
       },
@@ -1154,14 +1298,17 @@
         "rate": 4,
         "date": "February  2023",
         "by": {
-          "_id": "u120",
-          "fullname": "Charlotte Martin",
-          "imgUrl": "https://example.com/charlotte.jpg",
-          "address": "Paris, France"
+          "_id": "u107",
+          "fullname": "Emily White",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
+          "address": "Port Elizabeth, South Africa"
         }
       }
     ],
-    "likedByUsers": ["Charlotte Martin", "Antoine Leroy"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1192,7 +1339,13 @@
     "beds": 4,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Elevator"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Elevator"
+    ],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1222,7 +1375,7 @@
         "by": {
           "_id": "u106",
           "fullname": "Jack Wilson",
-          "imgUrl": "https://example.com/jack.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg",
           "address": "Cork, Ireland"
         }
       },
@@ -1234,12 +1387,15 @@
         "by": {
           "_id": "u104",
           "fullname": "Michael Brown",
-          "imgUrl": "https://example.com/michael.jpg",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png",
           "address": "Almaty, Kazakhstan"
         }
       }
     ],
-    "likedByUsers": ["Antoine Leroy", "Charlotte Martin"],
+    "likedByUsers": [
+      "Antoine Leroy",
+      "Charlotte Martin"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1270,7 +1426,14 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["TV", "Wifi", "Air conditioning", "Washer", "Dryer", "Gym"],
+    "amenities": [
+      "TV",
+      "Wifi",
+      "Air conditioning",
+      "Washer",
+      "Dryer",
+      "Gym"
+    ],
     "labels": [
       "Beach",
       "Beachfront",
@@ -1284,7 +1447,7 @@
     "host": {
       "_id": "u106",
       "fullname": "Jack Wilson",
-      "imgUrl": "https://example.com/jack.jpg"
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
       "country": "Australia",
@@ -1302,7 +1465,7 @@
         "by": {
           "_id": "u112",
           "fullname": "Maria Camila",
-          "imgUrl": "/img/img2.jpg",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
           "address": "Llangennech, United Kingdom"
         }
       },
@@ -1312,14 +1475,18 @@
         "rate": 4,
         "date": "February 2024",
         "by": {
-          "_id": "u117",
-          "fullname": "Oliver Green",
-          "imgUrl": "https://example.com/oliver.jpg",
+          "_id": "u105",
+          "fullname": "Anna Johnson",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg",
           "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Charlotte Martin", "Antoine Leroy", "Oliver Green"],
+    "likedByUsers": [
+      "Charlotte Martin",
+      "Antoine Leroy",
+      "Oliver Green"
+    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   }
