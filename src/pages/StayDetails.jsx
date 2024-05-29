@@ -38,14 +38,11 @@ import CheckinSvg from "../svg/rating/CheckinSvg"
 import CommunicationSvg from "../svg/rating/CommunicationSvg"
 import LocationSvg from "../svg/rating/LocationSvg"
 import ValueSvg from "../svg/rating/ValueSvg"
-StarReview
-// import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
   const params = useParams()
   const [showModal, setShowModal] = useState(false)
-  const [selectedDates, setSelectedDates] = useState([])
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -86,16 +83,12 @@ export function StayDetails({ setLargeMainFilter }) {
   async function loadStay() {
     try {
       const stayData = await stayService.getById(params.stayId)
-      // const avgRating = utilService.calculateAvgRating(stayData.reviews)
       setStay(stayData)
     } catch (err) {
       console.log("Error in loadStay", err)
     }
   }
 
-  function handleDatesChange(dates) {
-    setSelectedDates(dates)
-  }
 
   function toggleModal() {
     setShowModal(!showModal)
@@ -245,15 +238,6 @@ export function StayDetails({ setLargeMainFilter }) {
               })}
             </div>
           </section>
-
-          <section className="dates">
-            <h1>Select check-in date</h1>
-            <h4>Add your travel dates for exact pricing</h4>
-
-            {/* <DatePicker onDatesChange={handleDatesChange} /> */}
-          </section>
-
-
         </div>
 
         <section className="reservation-modal">
@@ -313,38 +297,50 @@ export function StayDetails({ setLargeMainFilter }) {
             <div className="rating-detail">
 
               <div className="rating-item">
-                <span>Cleanliness</span>
-                <div>4.9</div>
+                <div className="rating-info">
+                  <span>Cleanliness</span>
+                  <div>4.9</div>
+                </div>
                 <CleanlinessSvg />
               </div>
 
               <div className="rating-item">
-                <span>Accuracy</span>
-                <div>4.8</div>
+                <div className="rating-info">
+                  <span>Accuracy</span>
+                  <div>4.8</div>
+                </div>
                 <AccuracySvg />
               </div>
 
               <div className="rating-item">
-                <span>Check-in</span>
-                <div>4.9</div>
+                <div className="rating-info">
+                  <span>Check-in</span>
+                  <div>4.9</div>
+                </div>
                 <CheckinSvg />
               </div>
 
               <div className="rating-item">
-                <span>Communication</span>
-                <div>5.0</div>
+                <div className="rating-info">
+                  <span>Communication</span>
+                  <div>5.0</div>
+                </div>
                 <CommunicationSvg />
               </div>
 
               <div className="rating-item">
-                <span>Location</span>
-                <div>5.0</div>
+                <div className="rating-info">
+                  <span>Location</span>
+                  <div>5.0</div>
+                </div>
                 <LocationSvg />
               </div>
 
               <div className="rating-item">
-                <span>Value</span>
-                <div>4.8</div>
+                <div className="rating-info">
+                  <span>Value</span>
+                  <div>4.8</div>
+                </div>
                 <ValueSvg />
               </div>
 
