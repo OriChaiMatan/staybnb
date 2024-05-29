@@ -5,7 +5,7 @@ import { OrderManagerList } from "./UserDashboard-cmps/OrderManagerList"
 
 import { loadOrders, saveOrder } from "../../store/actions/order.action"
 
-export default function OrderManager() {
+export function OrderManager() {
     const orders = useSelector((storeState) => storeState.orderModule.orders)
 
     useEffect(() => {

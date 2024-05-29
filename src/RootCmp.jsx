@@ -1,14 +1,14 @@
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useState } from "react";
 import { AppHeader } from "./cmps/AppHeader";
 import { AppFooter } from "./cmps/AppFooter";
 import { StayDetails } from "./pages/StayDetails";
 import { StayIndex } from "./pages/StayIndex";
 import { StayEdit } from "./pages/StayEdit";
-import { useState } from "react";
-import UserDashboard from "./pages/UserDashboard";
-import OrderManager from "./cmps/UserDashboard/OrderManager";
-import Listing from "./cmps/UserDashboard/Listing";
-import WishList from "./cmps/UserDashboard/WishList";
+import {UserDashboard} from "./pages/UserDashboard";
+import {OrderManager} from "./cmps/UserDashboard/OrderManager";
+import {UserProflie} from "./cmps/UserDashboard/UserProflie";
+import {WishList} from "./cmps/UserDashboard/WishList";
 
 export function RootCmp() {
   const [largeMainFilter, setLargeMainFilter] = useState(false);
@@ -41,7 +41,7 @@ export function RootCmp() {
           <Route path="/stay-edit/newStay" element={<StayEdit />} />
           <Route path="/dashboard" element={<UserDashboard />} >
             <Route path="/dashboard/order-manager" element={<OrderManager />} />
-            <Route path="/dashboard/listing" element={<Listing />} />
+            <Route path="/dashboard/listing" element={<UserProflie />} />
             <Route path="/dashboard/wishlist" element={<WishList />} />
           </Route >
         </Routes>

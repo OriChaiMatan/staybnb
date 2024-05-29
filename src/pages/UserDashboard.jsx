@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
-export default function UserDashboard() {
+export function UserDashboard() {
   return (
     <section className="dashboard">
       <h1 className="dashboard-title">Dashboard</h1>
