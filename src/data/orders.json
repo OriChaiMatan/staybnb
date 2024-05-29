@@ -14,8 +14,8 @@
       "kids": 1
     },
     "stay": {
-      "_id": "h102",
-      "name": "House Of Uncle My",
+      "_id": "s101",
+      "name": "Ribeira Charming Duplex",
       "price": 80.0
     },
     "status": "pending"
@@ -35,9 +35,9 @@
       "kids": 2
     },
     "stay": {
-      "_id": "h103",
-      "name": "Cozy Cottage",
-      "price": 60.0
+      "_id": "s103",
+      "name": "Ocean View Villa",
+      "price": 120.0
     },
     "status": "approved"
   },
@@ -56,9 +56,9 @@
       "kids": 0
     },
     "stay": {
-      "_id": "h104",
-      "name": "Beachside Bungalow",
-      "price": 75.0
+      "_id": "s104",
+      "name": "Cozy Mountain Cabin",
+      "price": 100.0
     },
     "status": "decline"
   },
@@ -77,9 +77,9 @@
       "kids": 2
     },
     "stay": {
-      "_id": "h105",
-      "name": "Mountain Retreat",
-      "price": 90.0
+      "_id": "s105",
+      "name": "City Center Loft",
+      "price": 150.0
     },
     "status": "approved"
   },
@@ -98,9 +98,9 @@
       "kids": 1
     },
     "stay": {
-      "_id": "h106",
-      "name": "City Apartment",
-      "price": 80.0
+      "_id": "s106",
+      "name": "Beachside Bungalow",
+      "price": 130.0
     },
     "status": "pending"
   },
@@ -119,9 +119,9 @@
       "kids": 0
     },
     "stay": {
-      "_id": "h107",
-      "name": "Country House",
-      "price": 100.0
+      "_id": "s107",
+      "name": "Modern Downtown Apartment",
+      "price":  200.0
     },
     "status": "approved"
   },
@@ -140,9 +140,9 @@
       "kids": 3
     },
     "stay": {
-      "_id": "h108",
-      "name": "Lakeside Cabin",
-      "price": 55.0
+      "_id": "s108",
+      "name": "Luxury Penthouse",
+      "price": 300.0
     },
     "status": "approved"
   },
@@ -161,9 +161,9 @@
       "kids": 3
     },
     "stay": {
-      "_id": "h109",
-      "name": "Forest Lodge",
-      "price": 60.0
+      "_id": "s109",
+      "name": "Charming Countryside Cottage",
+      "price": 90.0
     },
     "status": "pending"
   },
@@ -182,9 +182,9 @@
       "kids": 1
     },
     "stay": {
-      "_id": "h110",
-      "name": "Desert Villa",
-      "price": 75.0
+      "_id": "s110",
+      "name": "Secluded Forest Lodge",
+      "price": 160.0
     },
     "status": "decline"
   }

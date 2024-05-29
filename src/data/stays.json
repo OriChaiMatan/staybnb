@@ -1,6 +1,6 @@
 [
   {
-    "_id": "10006558",
+    "_id": "s101",
     "name": "Ribeira Charming Duplex",
     "type": "House",
     "imgUrls": [
@@ -90,7 +90,7 @@
     "endDate": "2024-06-22"
   },
   {
-    "_id": "10006558A",
+    "_id": "s102",
     "name": "Ribeira Charming Duplex",
     "type": "House",
     "imgUrls": [
@@ -150,7 +150,7 @@
     "endDate": "2024-06-23"
   },
   {
-    "_id": "10006559",
+    "_id": "s103",
     "name": "Ocean View Villa",
     "type": "House",
     "imgUrls": [
@@ -229,7 +229,7 @@
     "endDate": "2024-06-22"
   },
   {
-    "_id": "10006560",
+    "_id": "s104",
     "name": "Cozy Mountain Cabin",
     "type": "Guesthouse",
     "imgUrls": [
@@ -300,7 +300,7 @@
     "endDate": "2024-06-22"
   },
   {
-    "_id": "10006561",
+    "_id": "s105",
     "name": "City Center Loft",
     "type": "Hotel",
     "imgUrls": [
@@ -386,7 +386,7 @@
     "endDate": "2024-06-24"
   },
   {
-    "_id": "10006562",
+    "_id": "s106",
     "name": "Beachside Bungalow",
     "type": "House",
     "imgUrls": [
@@ -465,7 +465,7 @@
     "endDate": "2024-06-12"
   },
   {
-    "_id": "10006563",
+    "_id": "s107",
     "name": "Modern Downtown Apartment",
     "type": "Hotel",
     "imgUrls": [
@@ -544,7 +544,7 @@
     "endDate": "2024-06-07"
   },
   {
-    "_id": "10006564",
+    "_id": "s108",
     "name": "Luxury Penthouse",
     "type": "Hotel",
     "imgUrls": [
@@ -634,7 +634,7 @@
     "endDate": "2024-06-10"
   },
   {
-    "_id": "10006565",
+    "_id": "s109",
     "name": "Charming Countryside Cottage",
     "type": "Guesthouse",
     "imgUrls": [
@@ -716,7 +716,7 @@
     "endDate": "2024-06-27"
   },
   {
-    "_id": "10006566",
+    "_id": "s110",
     "name": "Secluded Forest Lodge",
     "type": "House",
     "imgUrls": [
@@ -787,7 +787,7 @@
     "endDate": "2024-06-15"
   },
   {
-    "_id": "10006568",
+    "_id": "s111",
     "name": "Mountain View Chalet",
     "type": "House",
     "imgUrls": [
@@ -865,7 +865,7 @@
     "endDate": "2024-06-07"
   },
   {
-    "_id": "10006569",
+    "_id": "s112",
     "name": "Urban Chic Loft",
     "type": "Hotel",
     "imgUrls": [
@@ -936,7 +936,7 @@
     "endDate": "2024-06-17"
   },
   {
-    "_id": "10006570",
+    "_id": "s113",
     "name": "Laguna Shores, Mexico",
     "type": "Hotel",
     "imgUrls": [
@@ -1007,7 +1007,7 @@
     "endDate": "2024-06-17"
   },
   {
-    "_id": "10006571",
+    "_id": "s114",
     "name": "Wander Lake Sinclair",
     "type": "House",
     "imgUrls": [
@@ -1095,7 +1095,7 @@
     "endDate": "2024-06-17"
   },
   {
-    "_id": "10006572",
+    "_id": "s115",
     "name": "Limone Sul Garda",
     "type": "Hotel",
     "imgUrls": [
@@ -1166,7 +1166,7 @@
     "endDate": "2024-06-17"
   },
   {
-    "_id": "10006573",
+    "_id": "s116",
     "name": "Casa Estrella Oro",
     "type": "Guesthouse",
     "imgUrls": [
@@ -1244,7 +1244,7 @@
     "endDate": "2024-06-17"
   },
   {
-    "_id": "10006574",
+    "_id": "s117",
     "name": "Derrymor - Private Castle in the Hills",
     "type": "House",
     "imgUrls": [
