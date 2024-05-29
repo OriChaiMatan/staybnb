@@ -1,0 +1,36 @@
+.user-profile {
+    display: grid;
+    justify-content: normal;
+    gap: 20px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    color: #3a3a3a;
+
+    .user-info-item {
+        display: grid;
+        justify-items: center;
+        font-size: 21px;
+        font-weight: 500;
+        padding: 0 38px 4px;
+        gap: 23px;
+        border-left: 1px solid rgba(128, 128, 128, 0.3);
+        border-right: 1px solid rgba(128, 128, 128, 0.3);
+
+        .info {
+            font-size: 21px;
+            font-weight: 500;
+
+            span{
+                font-size: 26px;
+            }
+        }
+
+        svg {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

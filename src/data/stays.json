@@ -41,9 +41,9 @@
       "Top of the world"
     ],
     "host": {
-      "_id": "u101",
-      "fullname": "Sophia Garcia",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
       "country": "USA",
@@ -1489,5 +1489,536 @@
     ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
+  },
+  {
+    "_id": "s118",
+    "name": "Mountain Haven Retreat",
+    "type": "Cabin",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 180.0,
+    "summary": "Escape to the tranquility of Mountain Haven Retreat, a secluded cabin nestled in the pine forests with stunning mountain views. Perfect for a peaceful getaway.",
+    "capacity": 6,
+    "beds": 3,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["Fireplace", "Hot tub", "Wifi", "TV"],
+    "labels": ["Mountain", "Secluded", "Romantic", "Nature"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Canada",
+      "city": "Banff",
+      "address": "123 Mountain Rd",
+      "lat": 51.1784,
+      "lng": -115.5708
+    },
+    "reviews": [
+      {
+        "id": "r140",
+        "txt": "Incredible cabin with breathtaking views. Loved every moment of our stay!",
+        "rate": 5,
+        "date": "May 2024",
+        "by": {
+          "_id": "u120",
+          "fullname": "Emily Turner",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981376/userwomen1_xywfgs.jpg",
+          "address": "Vancouver, Canada"
+        }
+      }
+    ],
+    "likedByUsers": ["John Doe", "Jane Smith"],
+    "startDate": "2024-07-01",
+    "endDate": "2024-07-07"
+  },
+  {
+    "_id": "s119",
+    "name": "Urban Chic Apartment",
+    "type": "Apartment",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 220.0,
+    "summary": "Experience the best of city living in this modern and stylish apartment located in the heart of downtown.",
+    "capacity": 2,
+    "beds": 1,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": ["Wifi", "TV", "Air conditioning", "Kitchen"],
+    "labels": ["City", "Modern", "Convenient"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "New York",
+      "address": "456 Broadway St",
+      "lat": 40.7128,
+      "lng": -74.0060
+    },
+    "reviews": [
+      {
+        "id": "r141",
+        "txt": "Amazing apartment with all the amenities you could need. Perfect location.",
+        "rate": 4,
+        "date": "April 2024",
+        "by": {
+          "_id": "u121",
+          "fullname": "Michael Chen",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men3_vhwfpr.jpg",
+          "address": "Los Angeles, USA"
+        }
+      }
+    ],
+    "likedByUsers": ["Anna Lee", "Maria Garcia"],
+    "startDate": "2024-07-10",
+    "endDate": "2024-07-15"
+  },
+  {
+    "_id": "s120",
+    "name": "Seaside Paradise Villa",
+    "type": "Villa",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 350.0,
+    "summary": "Enjoy luxurious beachfront living at Seaside Paradise Villa, featuring stunning ocean views, private pool, and modern amenities.",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 3,
+    "bath": 2,
+    "amenities": ["Pool", "Wifi", "TV", "Kitchen", "BBQ"],
+    "labels": ["Beachfront", "Luxury", "Family-friendly"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Mexico",
+      "city": "Cancun",
+      "address": "789 Ocean Blvd",
+      "lat": 21.1619,
+      "lng": -86.8515
+    },
+    "reviews": [
+      {
+        "id": "r142",
+        "txt": "A true paradise! The villa is beautiful and right on the beach.",
+        "rate": 5,
+        "date": "March 2024",
+        "by": {
+          "_id": "u122",
+          "fullname": "Sophie Martin",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981478/userwomen2_fvjfdy.jpg",
+          "address": "Paris, France"
+        }
+      }
+    ],
+    "likedByUsers": ["Chris Evans", "Rachel Adams"],
+    "startDate": "2024-07-15",
+    "endDate": "2024-07-22"
+  },
+  {
+    "_id": "s121",
+    "name": "Rustic Country Cottage",
+    "type": "Cottage",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 150.0,
+    "summary": "Charming rustic cottage in the countryside, perfect for a relaxing getaway surrounded by nature.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["Fireplace", "Wifi", "TV", "Kitchen"],
+    "labels": ["Countryside", "Cozy", "Romantic"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Ireland",
+      "city": "Galway",
+      "address": "123 Country Ln",
+      "lat": 53.2744,
+      "lng": -9.0490
+    },
+    "reviews": [
+      {
+        "id": "r143",
+        "txt": "Absolutely loved this cottage! It was cozy and the perfect countryside retreat.",
+        "rate": 5,
+        "date": "April 2024",
+        "by": {
+          "_id": "u123",
+          "fullname": "Liam O'Connor",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981598/men5_sgxghy.jpg",
+          "address": "Dublin, Ireland"
+        }
+      }
+    ],
+    "likedByUsers": ["Emma Watson", "Tom Hardy"],
+    "startDate": "2024-08-01",
+    "endDate": "2024-08-07"
+  },
+  {
+    "_id": "s122",
+    "name": "Historic Downtown Loft",
+    "type": "Loft",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 200.0,
+    "summary": "Stay in the heart of the city in this beautifully restored historic loft with modern amenities.",
+    "capacity": 3,
+    "beds": 2,
+    "bedrooms": 1,
+    "bath": 1,
+    "amenities": ["Wifi", "TV", "Kitchen", "Air conditioning"],
+    "labels": ["City", "Historic", "Stylish"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Boston",
+      "address": "456 Beacon St",
+      "lat": 42.3601,
+      "lng": -71.0589
+    },
+    "reviews": [
+      {
+        "id": "r144",
+        "txt": "Perfect location and beautifully designed loft. We had a wonderful stay.",
+        "rate": 4,
+        "date": "May 2024",
+        "by": {
+          "_id": "u124",
+          "fullname": "James Anderson",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981698/men6_hjltbk.jpg",
+          "address": "San Francisco, USA"
+        }
+      }
+    ],
+    "likedByUsers": ["Jennifer Aniston", "Brad Pitt"],
+    "startDate": "2024-08-10",
+    "endDate": "2024-08-15"
+  },
+  {
+    "_id": "s123",
+    "name": "Lakeview Modern Condo",
+    "type": "Condo",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 190.0,
+    "summary": "Modern condo with stunning lake views and all the amenities you need for a comfortable stay.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": ["Pool", "Wifi", "TV", "Gym"],
+    "labels": ["Lakeview", "Modern", "Convenient"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Canada",
+      "city": "Toronto",
+      "address": "789 Lakeshore Blvd",
+      "lat": 43.6511,
+      "lng": -79.3470
+    },
+    "reviews": [
+      {
+        "id": "r145",
+        "txt": "Beautiful condo with a great view of the lake. Very modern and clean.",
+        "rate": 4,
+        "date": "June 2024",
+        "by": {
+          "_id": "u125",
+          "fullname": "Olivia Brown",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981890/userwomen3_dfsrwe.jpg",
+          "address": "Montreal, Canada"
+        }
+      }
+    ],
+    "likedByUsers": ["George Clooney", "Sandra Bullock"],
+    "startDate": "2024-08-20",
+    "endDate": "2024-08-25"
+  },
+  {
+    "_id": "s124",
+    "name": "Desert Oasis Bungalow",
+    "type": "Bungalow",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 175.0,
+    "summary": "Escape to this charming desert oasis bungalow, perfect for a relaxing retreat surrounded by stunning desert landscapes.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
+    "bath": 1,
+    "amenities": ["Pool", "Wifi", "TV", "Air conditioning"],
+    "labels": ["Desert", "Secluded", "Relaxing"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "USA",
+      "city": "Palm Springs",
+      "address": "123 Desert Rd",
+      "lat": 33.8303,
+      "lng": -116.5453
+    },
+    "reviews": [
+      {
+        "id": "r146",
+        "txt": "Wonderful bungalow in a beautiful desert setting. We had a great time.",
+        "rate": 5,
+        "date": "March 2024",
+        "by": {
+          "_id": "u126",
+          "fullname": "David Johnson",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981798/men7_jklzxc.jpg",
+          "address": "Phoenix, USA"
+        }
+      }
+    ],
+    "likedByUsers": ["Mila Kunis", "Ashton Kutcher"],
+    "startDate": "2024-08-30",
+    "endDate": "2024-09-05"
+  },
+  {
+    "_id": "s125",
+    "name": "Tropical Island Villa",
+    "type": "Villa",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 400.0,
+    "summary": "Luxury villa on a tropical island with private beach access and all modern comforts.",
+    "capacity": 10,
+    "beds": 5,
+    "bedrooms": 4,
+    "bath": 3,
+    "amenities": ["Pool", "Wifi", "TV", "Air conditioning", "BBQ", "Private beach"],
+    "labels": ["Island", "Luxury", "Beachfront", "Family-friendly"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Bahamas",
+      "city": "Nassau",
+      "address": "123 Island Dr",
+      "lat": 25.0343,
+      "lng": -77.3963
+    },
+    "reviews": [
+      {
+        "id": "r147",
+        "txt": "A dream come true! The villa is even more beautiful than the pictures.",
+        "rate": 5,
+        "date": "April 2024",
+        "by": {
+          "_id": "u127",
+          "fullname": "Emma White",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981870/userwomen4_sjdghw.jpg",
+          "address": "Miami, USA"
+        }
+      }
+    ],
+    "likedByUsers": ["Johnny Depp", "Amber Heard"],
+    "startDate": "2024-09-10",
+    "endDate": "2024-09-17"
+  },
+  {
+    "_id": "s126",
+    "name": "Cozy Ski Chalet",
+    "type": "Chalet",
+    "imgUrls": [
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+      },
+      {
+        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+      }
+    ],
+    "price": 250.0,
+    "summary": "Charming ski chalet located right on the slopes. Perfect for winter sports enthusiasts and cozy winter retreats.",
+    "capacity": 6,
+    "beds": 3,
+    "bedrooms": 2,
+    "bath": 2,
+    "amenities": ["Fireplace", "Wifi", "TV", "Ski-in/out"],
+    "labels": ["Ski", "Cozy", "Family-friendly", "Mountain"],
+    "host": {
+      "_id": "u110",
+      "fullname": "Daniel Smith",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+    },
+    "loc": {
+      "country": "Switzerland",
+      "city": "Zermatt",
+      "address": "789 Alpine St",
+      "lat": 46.0207,
+      "lng": 7.7491
+    },
+    "reviews": [
+      {
+        "id": "r148",
+        "txt": "Fantastic location for skiing and the chalet is very cozy and well-equipped.",
+        "rate": 5,
+        "date": "February 2024",
+        "by": {
+          "_id": "u128",
+          "fullname": "Liam Scott",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981768/men8_lkajsdf.jpg",
+          "address": "London, UK"
+        }
+      }
+    ],
+    "likedByUsers": ["Chris Hemsworth", "Elsa Pataky"],
+    "startDate": "2024-09-20",
+    "endDate": "2024-09-25"
   }
 ]
