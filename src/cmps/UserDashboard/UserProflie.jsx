@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
+import { StayList } from "../StayList";
 import { UserInfo } from "./UserProflie-cmps/UserInfo";
 import { loadStays } from "../../store/actions/stay.action"
 
@@ -24,52 +25,56 @@ export function UserProflie() {
     address: "Kalisz, Poland"
   }
 
-  // const stays = useSelector((storeState) => storeState.stayModule.stays)
+  const stays = useSelector((storeState) => storeState.stayModule.stays)
 
-  // useEffect(()=> {
-  //   loadStays()
-  // },[])
+  useEffect(() => {
+    loadStays()
+  }, [])
 
   // const filterUserStays = (stays, userId) => {
   //   return stays.filter(stay => stay.host._id === userId)
   // }
 
   // const userStays = filterUserStays(stays, demoLogInUser.id)
-  // const userStays = stays.filter(stay => stay.host._id === demoLogInUser._id)
+  // const userStays = stays.filter(stay => stay.host._id === demoLogInUser._id);
+
 
   // console.log(userStays)
 
-  // if (!stays) return (<div>loading....</div>)
+  if (!stays) return (<div>loading....</div>)
   return (
-    <section className="user-profile">
-      <div>My Profile</div>
-      < UserInfo user={demoLogInUser} />
-      <section className="user-rate">
-        <div className="user-info">
-          <div className="user-info-item">
-            <section className="info">
-              <span>Stays</span>
-              <div>(demo)</div>
-            </section>
-            <LuHotel />
+    <div className="profile-stay-list">
+      <section className="user-profile">
+        < UserInfo user={demoLogInUser} />
+        <section className="user-rate">
+          <div className="user-info">
+            <div className="user-info-item">
+              <section className="info">
+                <span>Stays</span>
+                <div>(demo)</div>
+              </section>
+              <LuHotel />
+            </div>
+            <div className="user-info-item">
+              <section className="info">
+                <span>Stars</span>
+                <div>(demo)</div>
+              </section>
+              <IoStar />
+            </div>
+            <div className="user-info-item">
+              <section className="info">
+                <span>Reviews</span>
+                <div>(demo)</div>
+              </section>
+              <BiMessageDetail />
+            </div>
           </div>
-          <div className="user-info-item">
-            <section className="info">
-              <span>Stars</span>
-              <div>(demo)</div>
-            </section>
-            <IoStar />
-          </div>
-          <div className="user-info-item">
-            <section className="info">
-              <span>Reviews</span>
-              <div>(demo)</div>
-            </section>
-            <BiMessageDetail />
-          </div>
-        </div>
+        </section>
       </section>
-      <Outlet />
-    </section>
+      <div className="user-stay-list">
+        <StayList stays={stays} />
+      </div>
+    </div>
   )
 }
