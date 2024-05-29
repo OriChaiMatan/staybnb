@@ -31,18 +31,18 @@ export function ReservationModal({
         reservationRef.current &&
         !reservationRef.current.contains(event.target)
       ) {
-        closeModals();
+        closeModals()
       }
-    };
+    }
 
-    document.addEventListener("keydown", handleEscapeKeyPress);
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKeyPress)
+    document.addEventListener("mousedown", handleClickOutside)
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress);
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKeyPress)
+      document.removeEventListener("mousedown", handleClickOutside)
     };
-  }, []);
+  }, [])
 
   function toggleGuestModal() {
     setShowAddGuests((prev) => !prev);

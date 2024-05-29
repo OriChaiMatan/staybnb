@@ -23,7 +23,7 @@ export function orderReducer(state = initialState, cmd = {}) {
             return {
                 ...state,
                 lastOrders: [...state.orders],
-                orders: state.orders.filter(order => order.id !== cmd.orderId),
+                orders: state.orders.filter(order => order._id !== cmd.orderId),
             }
         case ADD_ORDER:
             return {
@@ -33,7 +33,7 @@ export function orderReducer(state = initialState, cmd = {}) {
         case UPDATE_ORDER:
             return {
                 ...state,
-                orders: state.orders.map(order => order.id === cmd.order.id ? cmd.order : order)
+                orders: state.orders.map(order => order._id === cmd.order._id ? cmd.order : order)
             }
         case SET_FILTER_BY:
             return {

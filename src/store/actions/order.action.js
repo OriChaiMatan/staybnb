@@ -39,9 +39,9 @@ export async function removeOrder(orderId) {
 }
 export async function saveOrder(order) {
   try {
-    const type = order.id ? UPDATE_ORDER : ADD_ORDER
+    const type = order._id ? UPDATE_ORDER : ADD_ORDER
     const savedOrder = await orderService.save(order)
-    store.dispatch({ type, order: savedOrder })
+    store.dispatch({ type: type, order: savedOrder })
   } catch (err) {
     console.log('Had issues saving ORDERs', err)
     throw err

@@ -14,10 +14,10 @@ export default function OrderManager() {
 
       async function onSaveOrder(order) {
         try {
-          const savedOrder = await saveOrder(order);
-          loadOrders();
+          const savedOrder = await saveOrder(order)
+          // loadOrders();
         } catch (err) {
-          console.log("Had issues adding stay", err);
+          console.log("Had issues adding stay", err)
         }
       }
 
