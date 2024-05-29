@@ -227,7 +227,6 @@
         margin-bottom: 20px;
       }
 
-
       .rating {
         display: flex;
         padding: 0 0 40px;
@@ -260,7 +259,7 @@
 
         .rating-detail {
           display: flex;
-          
+
           .rating-item {
             font-size: 21px;
             font-weight: 500;
@@ -275,11 +274,9 @@
               font-weight: 500;
             }
           }
-
         }
       }
     }
-
 
     .guest-reviews-container {
       border-top: 1px solid rgba(128, 128, 128, 0.3);
@@ -365,5 +362,77 @@
   }
   .reservation-modal {
     margin-bottom: 60px;
+  }
+
+  .sticky-header {
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    width: 70%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+    nav {
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+
+      .sticky-summary {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      button {
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        padding: 14px 54px;
+        border-radius: 8px;
+        color: $clr5;
+        background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+          calc((100 - var(--mouse-y, 0)) * 1%);
+        --mouse-x: 94.71153846153845;
+        --mouse-y: 2.083333333333333;
+        background-size: 200% 200%;
+        background-image: radial-gradient(
+          circle at center,
+          #ff385c 0%,
+          #e61e4d 27.5%,
+          #e31c5f 40%,
+          #d70466 57.5%,
+          #bd1e59 75%,
+          #bd1e59 100%
+        );
+        font-size: 16px;
+        transition: background-position 0.8s;
+
+        &:hover {
+          background-position: calc((100 - var(--mouse-x, 0)) * 1%)
+            calc((100 - var(--mouse-y, 0)) * 1%);
+          --mouse-x: 54.71153846153845;
+          --mouse-y: 2.083333333333333;
+        }
+      }
+
+      ul {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+
+        li {
+          cursor: pointer;
+
+          &:hover {
+            border-bottom: 3px solid black;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router"
-import { stayService } from "../services/stay.service"
+import { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router";
+import { stayService } from "../services/stay.service";
 
-import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel"
-import { ReservationModal } from "../cmps/ReservationModal"
+import { AboutThisPlaceModel } from "../cmps/AboutThisPlaceModel";
+import { ReservationModal } from "../cmps/ReservationModal";
 
-import { MdOutlineNavigateNext } from "react-icons/md"
+import { MdOutlineNavigateNext } from "react-icons/md";
 
-import Heart from "../svg/HeartSvg"
-import Share from "../svg/ShareSvg"
-import Star from "../svg/StarSvg"
-import SelfCheackIn from "../svg/SelfCheckIn"
-import Cancel from "../svg/CancelSvg"
-import Workspace from "../svg/WorkspaceSvg"
-import { utilService } from "../services/util.service"
+import Heart from "../svg/HeartSvg";
+import Share from "../svg/ShareSvg";
+import Star from "../svg/StarSvg";
+import SelfCheackIn from "../svg/SelfCheckIn";
+import Cancel from "../svg/CancelSvg";
+import Workspace from "../svg/WorkspaceSvg";
+import { utilService } from "../services/util.service";
 
-import WifiSvg from "../svg/amenities/WifiSvg"
-import KitchenSvg from "../svg/amenities/KitchenSvg"
-import WasherSvg from "../svg/amenities/WasherSvg"
-import DryerSvg from "../svg/amenities/DryerSvg"
-import AirConditioningSvg from "../svg/amenities/AirConditioningSvg"
-import HeatingSvg from "../svg/amenities/HeatingSvg"
-import TVSvg from "../svg/amenities/TvSvg"
-import IronSvg from "../svg/amenities/IronSvg"
+import WifiSvg from "../svg/amenities/WifiSvg";
+import KitchenSvg from "../svg/amenities/KitchenSvg";
+import WasherSvg from "../svg/amenities/WasherSvg";
+import DryerSvg from "../svg/amenities/DryerSvg";
+import AirConditioningSvg from "../svg/amenities/AirConditioningSvg";
+import HeatingSvg from "../svg/amenities/HeatingSvg";
+import TVSvg from "../svg/amenities/TvSvg";
+import IronSvg from "../svg/amenities/IronSvg";
 
 import PoolSvg from "../svg/amenities/PoolSvg"
 import PetsAllowedSvg from "../svg/amenities/PetsAllowedSvg"
@@ -38,11 +38,14 @@ import CheckinSvg from "../svg/rating/CheckinSvg"
 import CommunicationSvg from "../svg/rating/CommunicationSvg"
 import LocationSvg from "../svg/rating/LocationSvg"
 import ValueSvg from "../svg/rating/ValueSvg"
+StarReview
+// import {DatePicker} from "../cmps/app-header/DatePicker";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
   const params = useParams()
   const [showModal, setShowModal] = useState(false)
+  const [selectedDates, setSelectedDates] = useState([])
 
   const amenityIcons = {
     Wifi: <WifiSvg />,
@@ -59,61 +62,152 @@ export function StayDetails({ setLargeMainFilter }) {
     Gym: <GymSvg />,
     Smoking_allowed: <SmokingAllowedSvg />,
     BBQ_Grill: <BBQGrillSvg />,
-  }
+  };
 
   useEffect(() => {
-    loadStay()
+    loadStay();
     function handleScroll() {
       const scrollTop =
         window.scrollY ||
         window.pageYOffset ||
         document.body.scrollTop +
-        ((document.documentElement && document.documentElement.scrollTop) ||
-          0);
-      if (scrollTop > 30) {
-        setLargeMainFilter(true)
+          ((document.documentElement && document.documentElement.scrollTop) ||
+            0);
+      if (scrollTop > hostedByRef.current.offsetTop) {
+        setShowStickyHeader(true);
       } else {
-        setLargeMainFilter(false)
+        setShowStickyHeader(false);
       }
     }
 
-    handleScroll()
-  }, [params.stayId])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [params.stayId]);
+
+  useEffect(() => {
+    if (hostedByRef.current) {
+      const observer = new IntersectionObserver(onObserved);
+
+      observer.observe(hostedByRef.current);
+
+      return () => {
+        if (hostedByRef.current) {
+          observer.unobserve(hostedByRef.current);
+        }
+      };
+    }
+
+    function onObserved(entries) {
+      entries.forEach((entry) => {
+        const stickyHeader = document.querySelector(".sticky-header");
+        if (stickyHeader) {
+          stickyHeader.style.position = entry.isIntersecting
+            ? "static"
+            : "fixed";
+        }
+      });
+    }
+  }, [hostedByRef.current]);
+
+  useEffect(() => {
+    if (locationRef.current) {
+      const observer = new IntersectionObserver(onReviewsObserved, {
+        rootMargin: "0px 0px -20% 0px",
+      });
+
+      observer.observe(locationRef.current);
+
+      return () => {
+        if (locationRef.current) {
+          observer.unobserve(locationRef.current);
+        }
+      };
+    }
+
+    function onReviewsObserved(entries) {
+      entries.forEach((entry) => {
+        setShowReviewsButton(entry.isIntersecting);
+      });
+    }
+  }, [locationRef.current]);
 
   async function loadStay() {
     try {
       const stayData = await stayService.getById(params.stayId)
+      // const avgRating = utilService.calculateAvgRating(stayData.reviews)
       setStay(stayData)
     } catch (err) {
-      console.log("Error in loadStay", err)
+      console.log("Error in loadStay", err);
     }
   }
 
+  function handleDatesChange(dates) {
+    setSelectedDates(dates)
+  }
 
   function toggleModal() {
-    setShowModal(!showModal)
+    setShowModal(!showModal);
   }
 
   function closeModal() {
-    setShowModal(false)
+    setShowModal(false);
+  }
+
+  function handleNavigation(section) {
+    let ref;
+    switch (section) {
+      case "photos":
+        ref = photosRef;
+        break;
+      case "amenities":
+        ref = amenitiesRef;
+        break;
+      case "reviews":
+        ref = reviewsRef;
+        break;
+      case "location":
+        ref = locationRef;
+        break;
+      default:
+        return;
+    }
+    window.scrollTo({
+      top: ref.current.offsetTop - 50, // Adjust this value as needed
+      behavior: "smooth",
+    });
   }
 
   if (!stay) {
     return <div>Loading...</div>;
   }
 
-
   function generateStars(rating) {
     return Array.from({ length: 5 }, (_, index) => (
       <StarReview key={index} filled={index < rating} />
-    ))
+    ));
   }
 
+  function calculateDaysBetween(startDateStr, endDateStr) {
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
 
+    const diffInMilliseconds = endDate - startDate;
 
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    const diffInDays = diffInMilliseconds / millisecondsPerDay;
+
+    return Math.ceil(diffInDays);
+  }
 
   return (
     <section className="stay-details">
+      {showStickyHeader && (
+        <StickyHeader
+          stay={stay}
+          onNavigate={handleNavigation}
+          showButton={showReviewsButton}
+        />
+      )}
       <header className="stay-info-header">
         <h1 className="title">{stay.name}</h1>
         <div className="action-button">
@@ -128,7 +222,7 @@ export function StayDetails({ setLargeMainFilter }) {
         </div>
       </header>
 
-      <div className="stay-info-imgs">
+      <div ref={photosRef} className="stay-info-imgs">
         {stay.imgUrls.slice(0, 5).map((url, index) => (
           <img
             key={index}
@@ -176,7 +270,7 @@ export function StayDetails({ setLargeMainFilter }) {
             </section>
           </div>
 
-          <div className="hosted-by">
+          <div ref={hostedByRef} className="hosted-by">
             <img
               className="hosted-img"
               src={stay.host.imgUrl}
@@ -224,30 +318,42 @@ export function StayDetails({ setLargeMainFilter }) {
             )}
           </article>
 
-          <section className="amenities-details">
+          <section ref={amenitiesRef} className="amenities-details">
             <h2>What this place offers</h2>
             <div className="offers-grid">
               {stay.amenities.map((amenity, index) => {
-                const amenityKey = amenity.replace(/\s+/g, "_")
+                const amenityKey = amenity.replace(/\s+/g, "_");
                 return (
                   <div key={index} className="offer">
                     {amenityIcons[amenityKey]}
                     {amenity}
                   </div>
-                )
+                );
               })}
             </div>
           </section>
+
+          <section className="dates">
+            <h1>Select check-in date</h1>
+            <h4>Add your travel dates for exact pricing</h4>
+
+            {/* <DatePicker onDatesChange={handleDatesChange} /> */}
+          </section>
+
+
         </div>
 
         <section className="reservation-modal">
-          <ReservationModal stay={stay} />
+          <ReservationModal
+            stay={stay}
+            selectedRange={selectedRange}
+            onRangeChange={setSelectedRange}
+            calculateDaysBetween={calculateDaysBetween}
+          />
         </section>
-
       </section>
 
-      <section className="reviews">
-
+      <section ref={reviewsRef} className="reviews">
         <header className="header-reviews">
           <div className="reviews-rate">
             <Star />
@@ -271,8 +377,6 @@ export function StayDetails({ setLargeMainFilter }) {
           </div>
 
           <section className="rating">
-
-
             <div className="overall-rating">
               <span>Overall rating</span>
               <div className="progress">
@@ -295,7 +399,6 @@ export function StayDetails({ setLargeMainFilter }) {
             </div>
 
             <div className="rating-detail">
-
               <div className="rating-item">
                 <div className="rating-info">
                   <span>Cleanliness</span>
@@ -343,18 +446,13 @@ export function StayDetails({ setLargeMainFilter }) {
                 </div>
                 <ValueSvg />
               </div>
-
             </div>
-
-
-
           </section>
         </header>
 
         <section className="guest-reviews-container">
-          {stay.reviews.map(review => (
+          {stay.reviews.map((review) => (
             <article className="review" key={review.id}>
-
               <div className="mini-user">
                 <img
                   className="review-img"
@@ -365,42 +463,27 @@ export function StayDetails({ setLargeMainFilter }) {
                   <h3>{review.by.fullname}</h3>
                   <span>{review.by.address}</span>
                 </div>
-
               </div>
-
 
               <div className="review-info">
-                <div className="review-star">
-                  {generateStars(review.rate)}
-                </div>
+                <div className="star-review">{generateStars(review.rate)}</div>
                 <div>·</div>
-                <div className="review-date">
-                  {review.date}
-                </div>
+                <div className="date-review">{review.date}</div>
               </div>
 
-              <div className="review-txt" >
-                {review.txt}
-              </div>
-
-
+              <div className="review-txt">{review.txt}</div>
             </article>
-
           ))}
         </section>
-
-
-
-
-
-
       </section>
 
-      <div className="map">
+      <div ref={locationRef} className="map">
         <h3>Where you’ll be</h3>
-        <h4>{stay.loc.city}, {stay.loc.country}</h4>
+        <h4>
+          {stay.loc.city}, {stay.loc.country}
+        </h4>
         <StayMap lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>
     </section>
-  )
+  );
 }

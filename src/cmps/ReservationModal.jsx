@@ -1,25 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { GuestsModal } from "./app-header/GuestsModal.jsx";
 import starIcon from "../assets/img/star.png";
-import { set } from "date-fns";
-// import {DatePicker} from "./app-header/DatePicker.jsx"
+import { CalendarPicker } from "./CalendarPicker";
+import { format } from "date-fns";
 
-export function ReservationModal({ stay }) {
-  const [selectedDates, setSelectedDates] = useState([]);
+export function ReservationModal({
+  stay,
+  selectedRange,
+  onRangeChange,
+  calculateDaysBetween,
+}) {
   const [adultsAmount, setAdultsAmount] = useState(0);
   const [childrenAmount, setChildrenAmount] = useState(0);
   const [infantsAmount, setInfantsAmount] = useState(0);
   const [petsAmount, setPetsAmount] = useState(0);
   const [selectedGuests, setSelectedGuests] = useState(0);
   const [showAddGuests, setShowAddGuests] = useState(false);
+  const [showAddDates, setShowAddDates] = useState(false);
   const reservationRef = useRef(null);
-
-  console.log("stay:", stay);
 
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
-        closeGuestModal();
+        closeModals();
       }
     };
 
@@ -28,7 +31,7 @@ export function ReservationModal({ stay }) {
         reservationRef.current &&
         !reservationRef.current.contains(event.target)
       ) {
-        closeGuestModal();
+        closeModals();
       }
     };
 
@@ -41,31 +44,20 @@ export function ReservationModal({ stay }) {
     };
   }, []);
 
-  function handleDatesChange(dates) {
-    setSelectedDates(dates);
-  }
-
-  // function extractDateDisplay() {
-  //     if (selectedDates.length === 2 && selectedDates.every(date => date?.$d instanceof Date)) {
-  //         const firstDate = dayjs(selectedDates[0].$d);
-  //         const firstMonth = firstDate.format('MMM');
-  //         const firstDay = firstDate.format('D');
-
-  //         const secondDate = dayjs(selectedDates[1].$d);
-  //         const secondMonth = secondDate.format('MMM');
-  //         const secondDay = secondDate.format('D');
-
-  //         return [firstMonth, firstDay, secondMonth, secondDay];
-  //     }
-  //     return []
-  // }
-
   function toggleGuestModal() {
     setShowAddGuests((prev) => !prev);
   }
 
-  function closeGuestModal() {
+  function toggleDatesModal() {
+    setShowAddDates((prev) => !prev);
+    if (showAddGuests) {
+      setShowAddGuests(false);
+    }
+  }
+
+  function closeModals() {
     setShowAddGuests(false);
+    setShowAddDates(false);
   }
 
   function handleAmountChange(type, operation) {
@@ -118,6 +110,19 @@ export function ReservationModal({ stay }) {
     });
   }
 
+  function averageReviewsScore() {
+    const reviews = stay.reviews;
+    const totalScore = reviews.reduce((acc, review) => acc + review.rate, 0);
+    return (totalScore / reviews.length).toFixed(2);
+  }
+
+  const totalNights =
+    selectedRange.start && selectedRange.end
+      ? calculateDaysBetween(selectedRange.start, selectedRange.end)
+      : 0;
+
+  const totalPrice = stay.price * totalNights;
+
   return (
     <section className="order-container" ref={reservationRef}>
       <div className="order-form-header">
@@ -125,21 +130,51 @@ export function ReservationModal({ stay }) {
           <span className="cost">${stay.price}</span> night
         </p>
         <p className="rate bold-font">
-          <img src={starIcon} alt="star icon" className="star-icon" />5 •
-          <span className="modal-review"> 1 review</span>
+          <img src={starIcon} alt="star icon" className="star-icon" />
+          {averageReviewsScore()} •
+          <span className="modal-review">
+            {" "}
+            {stay.reviews.length}{" "}
+            {stay.reviews?.length === 0 ? "review" : "reviews"}
+          </span>
         </p>
       </div>
       <div className="order-form">
         <div className="date-picker">
-          <div className="date-input">
+          <div className="date-input" onClick={toggleDatesModal}>
             <label>CHECK-IN</label>
-            <input placeholder="Add date" />
+            <input
+              placeholder="Add date"
+              value={
+                selectedRange.start && selectedRange.end
+                  ? selectedRange.start.toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "2-digit",
+                    })
+                  : ""
+              }
+            />
           </div>
-          <div className="date-input">
+          <div className="date-input" onClick={toggleDatesModal}>
             <label>CHECK-OUT</label>
-            <input placeholder="Add date" />
+            <input
+              placeholder="Add date"
+              value={
+                selectedRange.start && selectedRange.end
+                  ? selectedRange.end.toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "2-digit",
+                    })
+                  : ""
+              }
+            />
           </div>
         </div>
+        {showAddDates && (
+          <section className="reservation-dates-modal">
+            <CalendarPicker onRangeChange={onRangeChange} />
+          </section>
+        )}
         <div className="guest-input" onClick={toggleGuestModal}>
           <label>GUESTS</label>
           <input
@@ -151,9 +186,10 @@ export function ReservationModal({ stay }) {
                   }`
                 : ""
             }
+            readOnly
           />
           <svg viewBox="0 0 320 512" width="100" title="angle-down">
-            <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
+            <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4-9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
           </svg>
         </div>
         {showAddGuests && (
@@ -168,12 +204,14 @@ export function ReservationModal({ stay }) {
       </div>
       <button className="btn-container">Reserve</button>
       <p className="text-center">You Won't be charged yet</p>
-      {(selectedGuests > 0 || (selectedDates[0] && selectedDates[1])) && (
+      {(selectedGuests > 0 || (selectedRange.start && selectedRange.end)) && (
         <section>
           <section className="price-info">
             <div className="price-per-night flex space-between">
-              <p className="underline">${stay.price} X 0 nights</p>
-              <p>${stay.price * 5}</p>
+              <p className="underline">
+                ${stay.price} X {totalNights} nights
+              </p>
+              <p>${totalPrice}</p>
             </div>
             <div className="service-fee flex space-between">
               <p className="underline">Cleaning fee</p>
@@ -186,7 +224,7 @@ export function ReservationModal({ stay }) {
           </section>
           <div className="total flex space-between">
             <p>Total</p>
-            <p>${stay.price * 5 + 18.15}</p>
+            <p>${totalPrice + 10 + 8.15}</p>
           </div>
         </section>
       )}
