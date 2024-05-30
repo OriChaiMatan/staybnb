@@ -2,13 +2,16 @@ import React from 'react'
 
 export default function ConfirmationModal() {
     return (
-        <div className='about-place-modal'>
-            <div className='about-place-modal-content'>
-                <h1>Thank you for your reservation!</h1>
-                <h4>
-                    Your host will be in touch shortly to confirm the details of your stay.
-                </h4>
-                <button onClick={() => setShowConfirmationModal(false)}>Got it</button>
+        // about-place-modal
+        <div className="">
+            <div className="modal-content">
+                <button className="close-btn"></button>
+                <div className="txt">
+                    <div className="txt-content">
+                        <div className="title">About this space</div>
+                        <p className="summary"></p>
+                    </div>
+                </div>
             </div>
         </div>
     )
