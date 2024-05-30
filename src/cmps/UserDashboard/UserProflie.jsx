@@ -36,7 +36,8 @@ export function UserProflie() {
   // }
 
   // const userStays = filterUserStays(stays, demoLogInUser.id)
-  // const userStays = stays.filter(stay => stay.host._id === demoLogInUser._id);
+
+
 
 
   // console.log(userStays)
@@ -73,7 +74,7 @@ export function UserProflie() {
         </section>
       </section>
       <div className="user-stay-list">
-        <StayList stays={stays} />
+        <StayList stays={stays.filter(stay => stay.host._id === demoLogInUser.id)} />
       </div>
     </div>
   )
