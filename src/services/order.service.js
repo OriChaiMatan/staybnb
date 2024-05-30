@@ -67,7 +67,7 @@ async function addOrderMsg(orderId, txt) {
     return msg
 }
 
-function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", endDate = "", guests = {}, stay = {}, msgs = [], status = "") {
+function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", endDate = "", guests = {}, stay = {}, status = "pending") {
     return {
         _id: utilService.makeId(),
         hostId,
@@ -77,7 +77,6 @@ function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", 
         endDate,
         guests,
         stay,
-        msgs,
         status
     }
 }
@@ -85,7 +84,7 @@ function getEmptyOrder(hostId = "", buyer = {}, totalPrice = 0, startDate = "", 
 function _createOrders() {
     let data = ordersData;
     data = utilService.saveToStorage(STORAGE_KEY, data);
-  }
+}
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
 

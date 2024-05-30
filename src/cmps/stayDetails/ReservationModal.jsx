@@ -4,6 +4,7 @@ import starIcon from "../../assets/img/star.png";
 import { CalendarPicker } from "../CalendarPicker.jsx";
 import { format } from "date-fns";
 import ConfirmationModal from "./ConfirmationModal.jsx";
+import { orderService } from "../../services/order.service.js";
 
 export function ReservationModal({
   stay,
@@ -21,6 +22,8 @@ export function ReservationModal({
   const [showAddGuests, setShowAddGuests] = useState(false);
   const [showAddDates, setShowAddDates] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [currentOrder, setCurrentOrder] = useState(orderService.getEmptyOrder());
+  console.log('currentOrder:', currentOrder)
   const reservationRef = useRef(null);
 
   useEffect(() => {
