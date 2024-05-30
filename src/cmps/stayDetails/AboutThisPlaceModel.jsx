@@ -1,5 +1,5 @@
 
-import CloseSvg from "../svg/CloseSvg"
+import CloseSvg from "../../svg/CloseSvg"
 
 
 export function AboutThisPlaceModel({ summary, onClose }) {

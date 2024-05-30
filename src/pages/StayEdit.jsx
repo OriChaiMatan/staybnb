@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import { useOutletContext } from "react-router-dom"
 import { stayService } from "../services/stay.service"
-import { uploadService } from "../services/upload.service"
 import { ImgUploader } from "../cmps/ImgUploader"
 import { saveStay } from "../store/actions/stay.action"
-import Star from "../svg/StarSvg"
 
-export function StayEdit(props) {
+
+export function StayEdit() {
     const context = useOutletContext()
     const [stay, setStay] = useState(stayService.getEmptyStay())
 

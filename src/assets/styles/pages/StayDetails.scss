@@ -100,7 +100,7 @@
       margin-bottom: 5px;
     }
 
-    .rating-container {
+    .ratnig-summary {
       display: flex;
       gap: 5px;
       align-items: center;
@@ -134,7 +134,7 @@
     }
   }
 
-  .ferrites-main {
+  .stay-features {
     padding: 32px 0;
     display: flex;
     gap: 24px;
@@ -230,12 +230,12 @@
     }
   }
 
-  .reviews {
+  .rating-container {
     border-top: 1px solid rgba(128, 128, 128, 0.3);
     padding: 48px 0;
     font-family: system-ui;
 
-    .header-reviews {
+    .rating-reviews {
       display: flex;
       flex-direction: column;
 
@@ -293,6 +293,7 @@
             span {
               font-size: 18px;
               font-weight: 500;
+              white-space: nowrap;
             }
           }
         }

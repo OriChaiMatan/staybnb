@@ -102,5 +102,12 @@
     "username": "carlos",
     "passworg": "carlos123",
     "address": "Barcelona, Spain"
+  },
+  {
+    "_id": "u114",
+    "fullname": "Master Admin",
+    "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717044984/admin_qsymkr.jpg",
+    "username": "admin",
+    "passworg": "admin123"
   }
 ]

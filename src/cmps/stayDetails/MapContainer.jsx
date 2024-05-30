@@ -1,9 +1,9 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React from 'react'
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 
-const API_KEY = 'AIzaSyB24fmoFy0PfYJeqW1F7Ida3Ok3IlwDZUw';
+const API_KEY = 'AIzaSyB24fmoFy0PfYJeqW1F7Ida3Ok3IlwDZUw'
 
-export function StayMap({ lat, lng }) {
+export function MapContainer({ lat, lng }) {
   const mapContainerStyle = {
     width: '100%',
     height: '500px'
@@ -26,5 +26,3 @@ export function StayMap({ lat, lng }) {
     </LoadScript>
   )
 }
-
-

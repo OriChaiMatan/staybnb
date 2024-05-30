@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { GuestsModal } from "./app-header/GuestsModal.jsx";
-import starIcon from "../assets/img/star.png";
-import { CalendarPicker } from "./CalendarPicker";
+import { GuestsModal } from "../app-header/GuestsModal.jsx";
+import starIcon from "../../assets/img/star.png";
+import { CalendarPicker } from "../CalendarPicker.jsx";
 import { format } from "date-fns";
 
 export function ReservationModal({
