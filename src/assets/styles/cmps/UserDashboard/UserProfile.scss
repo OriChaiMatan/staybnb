@@ -1,13 +1,21 @@
 .user-profile {
     display: flex;
-    justify-content: normal;
-    gap: 20px;
+    justify-content: space-between;
+
+    .user-rate {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        flex: 1;
+        padding: 0 20px;
+    }
 }
 
 .user-info {
     display: flex;
     justify-content: space-between;
     color: #3a3a3a;
+    width: 100%;
 
     .user-info-item {
         display: grid;
@@ -16,14 +24,20 @@
         font-weight: 500;
         padding: 0 38px 4px;
         gap: 23px;
+        flex: 1;
         border-left: 1px solid rgba(128, 128, 128, 0.3);
         border-right: 1px solid rgba(128, 128, 128, 0.3);
+
+        &:first-child,
+        &:last-child {
+            border: none
+        }
 
         .info {
             font-size: 21px;
             font-weight: 500;
 
-            span{
+            span {
                 font-size: 26px;
             }
         }
@@ -33,4 +47,13 @@
             width: 40px;
         }
     }
+}
+
+.user-stay-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 20px;
 }

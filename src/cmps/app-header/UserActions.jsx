@@ -83,7 +83,7 @@ export function UserActions() {
               Log in
             </a>
             <div className="hr"></div>
-            <Link to={"/dashboard"} className="user-action">
+            <Link to={"/dashboard/order-manager"} className="user-action">
               Dashboard
             </Link>
             <Link to={"/stay-edit/newStay"} className="user-action">

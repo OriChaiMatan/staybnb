@@ -7,6 +7,7 @@
     "info";
   border-radius: 5%;
   cursor: pointer;
+  justify-content: center;
 
   .stay-photo-gallery {
     grid-area: photo;
@@ -96,7 +97,7 @@
 
 .slick-dots li button:before {
   opacity: 0.75;
-  color:$clr5;
+  color: $clr5;
 }
 
 .slick-dots li {

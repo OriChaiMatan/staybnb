@@ -81,7 +81,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
     setActiveMainFilter(1);
   }
 
-  useEffect(() => {}, [activeMainFilter, selectedDestination]);
+  useEffect(() => { }, [activeMainFilter, selectedDestination]);
 
   function handleAmountChange(type, operation) {
     switch (type) {
@@ -90,8 +90,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "children":
@@ -99,8 +99,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "infants":
@@ -108,8 +108,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "pets":
@@ -117,8 +117,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       default:
@@ -177,17 +177,15 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   return (
     <div
       ref={mainFilterRef}
-      className={`main-filter-header ${
-        largeMainFilter ? "large-main-filter" : ""
-      }`}
+      className={`main-filter-header ${largeMainFilter ? "large-main-filter" : ""
+        }`}
       onClick={toggleMainFilterSize}
       style={{ backgroundColor: activeMainFilter >= 0 ? "#ebebeb" : "#fff" }}
     >
       {largeMainFilter ? (
         <label
-          className={`main-filter-btn large ${
-            activeMainFilter === 0 ? "active-filter" : ""
-          }`}
+          className={`main-filter-btn large ${activeMainFilter === 0 ? "active-filter" : ""
+            }`}
           onClick={() => {
             setActiveMainFilter(0);
           }}
@@ -226,9 +224,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
       <div className="border-line"></div>
       {largeMainFilter ? (
         <label
-          className={`main-filter-btn large ${
-            activeMainFilter === 1 ? "active-filter" : ""
-          }`}
+          className={`main-filter-btn large ${activeMainFilter === 1 ? "active-filter" : ""
+            }`}
           onClick={() => {
             setActiveMainFilter(1);
           }}
@@ -237,9 +234,9 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             <span className="bold">Check in</span> <br></br>
             {selectedRange.start && selectedRange.end
               ? selectedRange.start.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "2-digit",
-                })
+                month: "short",
+                day: "2-digit",
+              })
               : "Add dates"}
           </div>
         </label>
@@ -256,9 +253,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
       <div className="border-line"></div>
       {largeMainFilter && (
         <label
-          className={`main-filter-btn large ${
-            activeMainFilter === 2 ? "active-filter" : ""
-          }`}
+          className={`main-filter-btn large ${activeMainFilter === 2 ? "active-filter" : ""
+            }`}
           onClick={() => {
             setActiveMainFilter(2);
           }}
@@ -267,9 +263,9 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             <span className="bold">Check out</span> <br></br>
             {selectedRange.end
               ? selectedRange.end.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "2-digit",
-                })
+                month: "short",
+                day: "2-digit",
+              })
               : "Add dates"}
           </div>
         </label>
@@ -278,15 +274,16 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
 
       {(activeMainFilter === 1 || activeMainFilter === 2) && (
         <section className="add-dates-modal">
-          <CalendarPicker onRangeChange={handleRangeChange} />
+          <CalendarPicker range={selectedRange}
+            setRange={setSelectedRange}
+          />
         </section>
       )}
       {largeMainFilter ? (
         <div className="main-filter-btn large">
           <label
-            className={`filter-content ${
-              activeMainFilter === 3 ? "active-filter" : ""
-            }`}
+            className={`filter-content ${activeMainFilter === 3 ? "active-filter" : ""
+              }`}
             onClick={() => {
               setActiveMainFilter(3);
             }}
@@ -294,9 +291,8 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
             <div className="name">
               <span className="bold">Who</span> <br className="bold"></br>
               {selectedGuests
-                ? `${selectedGuests} ${
-                    selectedGuests === 1 ? "guest" : "guests"
-                  }`
+                ? `${selectedGuests} ${selectedGuests === 1 ? "guest" : "guests"
+                }`
                 : "Add guests"}
             </div>
           </label>
