@@ -19,7 +19,7 @@
 
     .user-info-item {
         display: grid;
-        justify-items: center;
+        // justify-items: center;
         font-size: 21px;
         font-weight: 500;
         padding: 0 38px 4px;
@@ -39,10 +39,6 @@
 
             span {
                 font-size: 26px;
-            }
-
-            div{
-                position: fixed;
             }
         }
 

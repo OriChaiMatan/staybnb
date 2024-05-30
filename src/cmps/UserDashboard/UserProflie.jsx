@@ -70,6 +70,9 @@ export function UserProflie() {
         </section>
       </section>
       <div className="user-stay-list">
+        <section className="user-list-title">
+          <h1>My Stay List</h1>
+        </section>
         <StayList stays={stays.filter(stay => stay.host._id === demoLogInUser.id)} />
       </div>
     </div>
