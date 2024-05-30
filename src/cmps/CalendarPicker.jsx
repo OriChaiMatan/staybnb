@@ -16,12 +16,17 @@ import {
 import RightArrowIcon from "../assets/img/arrow-right-black.svg";
 import leftArrowIcon from "../assets/img/arrow-left-black.svg";
 
-export function CalendarPicker({ onRangeChange }) {
+export function CalendarPicker({
+  range,
+  setRange,
+  hoveredDate,
+  setHoveredDate,
+}) {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [range, setRange] = useState({ start: null, end: null });
-  const [hoveredDate, setHoveredDate] = useState(null);
+  // const [range, setRange] = useState({ start: null, end: null });
+  // const [hoveredDate, setHoveredDate] = useState(null);
   useEffect(() => {
-    onRangeChange(range);
+    setRange(range);
   }, [range]);
 
   const nextMonthDate = addMonths(currentDate, 1);
@@ -110,7 +115,6 @@ export function CalendarPicker({ onRangeChange }) {
     const today = startOfDay(new Date());
 
     for (let i = 0; i < 7; i++) {
-      // loop for first week
       if (i < firstDay) {
         days.push(
           <td key={`${monthDate.getMonth()}-${i}`} className="blank-td"></td>

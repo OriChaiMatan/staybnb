@@ -1,36 +1,35 @@
-import { useState, useEffect, useRef } from "react"
-import { useParams } from "react-router"
-import { stayService } from "../services/stay.service"
-import { ReservationModal } from "../cmps/stayDetails/ReservationModal"
-import { MapContainer } from "../cmps/stayDetails/MapContainer"
-import { CalendarPicker } from "../cmps/CalendarPicker"
-import { StickyHeader } from "../cmps/stayDetails/StickyHeader"
-import { StayHeader } from "../cmps/stayDetails/StayHeader"
-import { StayAmenities } from "../cmps/stayDetails/StayAmenities"
-import { StaySummary } from "../cmps/stayDetails/StaySummary"
-import { StayInfo } from "../cmps/stayDetails/StayInfo"
-import { StayReviews } from "../cmps/stayDetails/StayReviews"
-import { StayFeatures } from "../cmps/stayDetails/StayFeatures"
-import { StayRating } from "../cmps/stayDetails/StayRating"
-import { StayImgs } from "../cmps/stayDetails/StayImgs"
-
+import { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router";
+import { stayService } from "../services/stay.service";
+import { ReservationModal } from "../cmps/stayDetails/ReservationModal";
+import { MapContainer } from "../cmps/stayDetails/MapContainer";
+import { CalendarPicker } from "../cmps/CalendarPicker";
+import { StickyHeader } from "../cmps/stayDetails/StickyHeader";
+import { StayHeader } from "../cmps/stayDetails/StayHeader";
+import { StayAmenities } from "../cmps/stayDetails/StayAmenities";
+import { StaySummary } from "../cmps/stayDetails/StaySummary";
+import { StayInfo } from "../cmps/stayDetails/StayInfo";
+import { StayReviews } from "../cmps/stayDetails/StayReviews";
+import { StayFeatures } from "../cmps/stayDetails/StayFeatures";
+import { StayRating } from "../cmps/stayDetails/StayRating";
+import { StayImgs } from "../cmps/stayDetails/StayImgs";
 
 export function StayDetails({ setLargeMainFilter }) {
-  const [stay, setStay] = useState(null)
-  const params = useParams()
+  const [stay, setStay] = useState(null);
+  const params = useParams();
   const [selectedRange, setSelectedRange] = useState({
     start: null,
     end: null,
-  })
-  const [showStickyHeader, setShowStickyHeader] = useState(false)
-  const [showReviewsButton, setShowReviewsButton] = useState(false)
+  });
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
+  const [showReviewsButton, setShowReviewsButton] = useState(false);
+  const [hoveredDate, setHoveredDate] = useState(null);
 
-  const photosRef = useRef(null)
-  const amenitiesRef = useRef(null)
-  const reviewsRef = useRef(null)
-  const locationRef = useRef(null)
-  const hostedByRef = useRef(null)
-
+  const photosRef = useRef(null);
+  const amenitiesRef = useRef(null);
+  const reviewsRef = useRef(null);
+  const locationRef = useRef(null);
+  const hostedByRef = useRef(null);
 
   useEffect(() => {
     loadStay();
@@ -39,8 +38,8 @@ export function StayDetails({ setLargeMainFilter }) {
         window.scrollY ||
         window.pageYOffset ||
         document.body.scrollTop +
-        ((document.documentElement && document.documentElement.scrollTop) ||
-          0);
+          ((document.documentElement && document.documentElement.scrollTop) ||
+            0);
       if (scrollTop > hostedByRef.current.offsetTop) {
         setShowStickyHeader(true);
       } else {
@@ -50,7 +49,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [params.stayId])
+  }, [params.stayId]);
 
   useEffect(() => {
     if (hostedByRef.current) {
@@ -62,7 +61,7 @@ export function StayDetails({ setLargeMainFilter }) {
         if (hostedByRef.current) {
           observer.unobserve(hostedByRef.current);
         }
-      }
+      };
     }
 
     function onObserved(entries) {
@@ -73,9 +72,9 @@ export function StayDetails({ setLargeMainFilter }) {
             ? "static"
             : "fixed";
         }
-      })
+      });
     }
-  }, [hostedByRef.current])
+  }, [hostedByRef.current]);
 
   useEffect(() => {
     if (locationRef.current) {
@@ -89,58 +88,56 @@ export function StayDetails({ setLargeMainFilter }) {
         if (locationRef.current) {
           observer.unobserve(locationRef.current);
         }
-      }
+      };
     }
 
     function onReviewsObserved(entries) {
       entries.forEach((entry) => {
         setShowReviewsButton(entry.isIntersecting);
-      })
+      });
     }
-  }, [locationRef.current])
+  }, [locationRef.current]);
 
   async function loadStay() {
     try {
-      const stayData = await stayService.getById(params.stayId)
-      setStay(stayData)
+      const stayData = await stayService.getById(params.stayId);
+      setStay(stayData);
     } catch (err) {
-      console.log("Error in loadStay", err)
+      console.log("Error in loadStay", err);
     }
   }
-
 
   function handleNavigation(section) {
     const refs = {
       photos: photosRef,
       amenities: amenitiesRef,
       reviews: reviewsRef,
-      location: locationRef
-    }
-  
-    const ref = refs[section]
-    if (!ref) return
-  
+      location: locationRef,
+    };
+
+    const ref = refs[section];
+    if (!ref) return;
+
     window.scrollTo({
-      top: ref.current.offsetTop - 50, 
-      behavior: "smooth"
-    })
+      top: ref.current.offsetTop - 50,
+      behavior: "smooth",
+    });
   }
-  
 
   if (!stay) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   function calculateDaysBetween(startDateStr, endDateStr) {
-    const startDate = new Date(startDateStr)
-    const endDate = new Date(endDateStr)
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
 
-    const diffInMilliseconds = endDate - startDate
+    const diffInMilliseconds = endDate - startDate;
 
-    const millisecondsPerDay = 1000 * 60 * 60 * 24
-    const diffInDays = diffInMilliseconds / millisecondsPerDay
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    const diffInDays = diffInMilliseconds / millisecondsPerDay;
 
-    return Math.ceil(diffInDays)
+    return Math.ceil(diffInDays);
   }
 
   return (
@@ -156,12 +153,11 @@ export function StayDetails({ setLargeMainFilter }) {
       <StayHeader name={stay.name} />
 
       <div ref={photosRef}>
-        <StayImgs imgUrls={stay.imgUrls}/>
+        <StayImgs imgUrls={stay.imgUrls} />
       </div>
 
       <section className="details-container">
         <div className="stay-ferrites">
-
           <StayInfo stay={stay} />
 
           <div ref={hostedByRef} className="hosted-by">
@@ -212,23 +208,29 @@ export function StayDetails({ setLargeMainFilter }) {
               </>
             )}
 
-            <CalendarPicker onRangeChange={setSelectedRange} />
+            <CalendarPicker
+              range={selectedRange}
+              setRange={setSelectedRange}
+              hoveredDate={hoveredDate}
+              setHoveredDate={setHoveredDate}
+            />
           </section>
         </div>
-
 
         <section className="reservation-modal">
           <ReservationModal
             stay={stay}
             selectedRange={selectedRange}
-            onRangeChange={setSelectedRange}
+            setRange={setSelectedRange}
             calculateDaysBetween={calculateDaysBetween}
+            hoveredDate={hoveredDate}
+            setHoveredDate={setHoveredDate}
           />
         </section>
       </section>
 
       <section ref={reviewsRef} className="rating-container">
-        <StayRating reviews={stay.reviews } />
+        <StayRating reviews={stay.reviews} />
         <StayReviews reviews={stay.reviews} />
       </section>
 
@@ -240,5 +242,5 @@ export function StayDetails({ setLargeMainFilter }) {
         <MapContainer lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>
     </section>
-  )
+  );
 }

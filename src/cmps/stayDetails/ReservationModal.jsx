@@ -7,8 +7,10 @@ import { format } from "date-fns";
 export function ReservationModal({
   stay,
   selectedRange,
-  onRangeChange,
+  setRange,
   calculateDaysBetween,
+  hoveredDate,
+  setHoveredDate,
 }) {
   const [adultsAmount, setAdultsAmount] = useState(0);
   const [childrenAmount, setChildrenAmount] = useState(0);
@@ -31,18 +33,18 @@ export function ReservationModal({
         reservationRef.current &&
         !reservationRef.current.contains(event.target)
       ) {
-        closeModals()
+        closeModals();
       }
-    }
+    };
 
-    document.addEventListener("keydown", handleEscapeKeyPress)
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleEscapeKeyPress);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress)
-      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [])
+  }, []);
 
   function toggleGuestModal() {
     setShowAddGuests((prev) => !prev);
@@ -172,7 +174,12 @@ export function ReservationModal({
         </div>
         {showAddDates && (
           <section className="reservation-dates-modal">
-            <CalendarPicker onRangeChange={onRangeChange} />
+            <CalendarPicker
+              range={selectedRange}
+              setRange={setRange}
+              hoveredDate={hoveredDate}
+              setHoveredDate={setHoveredDate}
+            />
           </section>
         )}
         <div className="guest-input" onClick={toggleGuestModal}>
