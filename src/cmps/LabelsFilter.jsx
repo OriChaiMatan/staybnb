@@ -1,25 +1,4 @@
-/* eslint-disable no-undef */
-import beach from "../assets/img/label_icons_img/beach.png"
-import beachfront from "../assets/img/label_icons_img/beachfront.png"
-import vineyards from "../assets/img/label_icons_img/vineyards.png"
-import mansions from "../assets/img/label_icons_img/mansions.png"
-import lake from "../assets/img/label_icons_img/lake.png"
-import treehouses from "../assets/img/label_icons_img/treehouses.png"
-import farms from "../assets/img/label_icons_img/farms.png"
-import skiing from "../assets/img/label_icons_img/skiing.png"
-import amazing_pools from "../assets/img/label_icons_img/amazing_pools.png"
-import earth_homes from "../assets/img/label_icons_img/earth_homes.png"
-import amazing_views from "../assets/img/label_icons_img/amazing_views.png"
-import desert from "../assets/img/label_icons_img/desert.png"
-import lakefront from "../assets/img/label_icons_img/lakefront.png"
-import islands from "../assets/img/label_icons_img/islands.png"
-import tropical from "../assets/img/label_icons_img/tropical.png"
-import camping from "../assets/img/label_icons_img/camping.png"
-import surfing from "../assets/img/label_icons_img/surfing.png"
-import bed_breakfasts from "../assets/img/label_icons_img/bed_breakfasts.png"
-import luxe from "../assets/img/label_icons_img/luxe.png"
-import top_of_the_world from "../assets/img/label_icons_img/top_of_the_world.png"
-import ski_in_out from "../assets/img/label_icons_img/ski-in-out.png"
+
 import { ArrowNext } from "../svg/ArrowNext"
 import ArrowBack from "../svg/ArrowBack"
 import FilterIcon from "../svg/FilterIcon"
@@ -27,40 +6,59 @@ import React, { useEffect, useRef, useState } from "react"
 import { LabelsFilterItem } from "./LabelsFilterItem"
 import { AdvancedFilter } from "./AdvancedFilter/AdvancedFilter"
 
-
-
 export function LabelsFilter({ filterBy, onSetFilter }) {
 
 
   const labels = [
-    { imgSrc: beach, altText: "beach-img", nameLabel: "Beach" },
-    { imgSrc: beachfront, altText: "beachfront-img", nameLabel: "Beachfront" },
-    { imgSrc: vineyards, altText: "vineyards-img", nameLabel: "Vineyards" },
-    { imgSrc: mansions, altText: "mansions-img", nameLabel: "Mansions" },
-    { imgSrc: lake, altText: "lake-img", nameLabel: "Lake" },
-    { imgSrc: treehouses, altText: "treehouses-img", nameLabel: "Treehouses" },
-    { imgSrc: farms, altText: "farms-img", nameLabel: "Farms" },
-    { imgSrc: skiing, altText: "skiing-img", nameLabel: "Skiing" },
-    { imgSrc: amazing_pools, altText: "amazing-pools-img", nameLabel: "Amazing pools" },
-    { imgSrc: earth_homes, altText: "earth-homes-img", nameLabel: "Earth homes" },
-    { imgSrc: amazing_views, altText: "amazing-views-img", nameLabel: "Amazing views" },
-    { imgSrc: desert, altText: "desert-img", nameLabel: "Desert" },
-    { imgSrc: lakefront, altText: "lakefront-img", nameLabel: "Lakefront" },
-    { imgSrc: islands, altText: "islands-img", nameLabel: "Islands" },
-    { imgSrc: tropical, altText: "tropical-img", nameLabel: "Tropical" },
-    { imgSrc: camping, altText: "camping-img", nameLabel: "Camping" },
-    { imgSrc: surfing, altText: "surfing-img", nameLabel: "Surfing" },
-    { imgSrc: bed_breakfasts, altText: "bed-breakfasts-img", nameLabel: "Bed & breakfasts" },
-    { imgSrc: luxe, altText: "luxe-img", nameLabel: "Luxe" },
-    { imgSrc: top_of_the_world, altText: "top-of-the-world-img", nameLabel: "Top of the world" },
-    { imgSrc: ski_in_out, altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063824/beach_ugn0q3.png", 
+    altText: "beach-img", nameLabel: "Beach" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063844/beachfront_uz0otv.png",
+     altText: "beachfront-img", nameLabel: "Beachfront" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064201/vineyards_hvypws.png",
+     altText: "vineyards-img", nameLabel: "Vineyards" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064069/mansions_wjeeml.png",
+     altText: "mansions-img", nameLabel: "Mansions" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063997/lake_adozli.png",
+     altText: "lake-img", nameLabel: "Lake" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064168/treehouses_u9cnaf.png",
+     altText: "treehouses-img", nameLabel: "Treehouses" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063953/farms_kwoc0s.png",
+     altText: "farms-img", nameLabel: "Farms" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064091/skiing_ccby2m.png",
+     altText: "skiing-img", nameLabel: "Skiing" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063507/amazing_pools_dpylvq.png",
+     altText: "amazing-pools-img", nameLabel: "Amazing pools" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063931/earth_homes_ln2zty.png",
+     altText: "earth-homes-img", nameLabel: "Earth homes" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063768/amazing_views_vhyqc9.png",
+     altText: "amazing-views-img", nameLabel: "Amazing views" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063911/desert_asovai.png",
+     altText: "desert-img", nameLabel: "Desert" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064015/lakefront_ze7yei.png",
+     altText: "lakefront-img", nameLabel: "Lakefront" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063979/islands_qcbnis.png",
+     altText: "islands-img", nameLabel: "Islands" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064186/tropical_x6amqu.png",
+     altText: "tropical-img", nameLabel: "Tropical" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063890/camping_jeueuk.png",
+     altText: "camping-img", nameLabel: "Camping" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064130/surfing_wrxzh4.png",
+     altText: "surfing-img", nameLabel: "Surfing" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717063869/bed_breakfasts_emhbwj.png",
+     altText: "bed-breakfasts-img", nameLabel: "Bed & breakfasts" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064051/luxe_mhbmqv.png",
+     altText: "luxe-img", nameLabel: "Luxe" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064149/top_of_the_world_rmvs0n.png",
+     altText: "top-of-the-world-img", nameLabel: "Top of the world" },
+    { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064109/ski-in-out_ggsokt.png",
+     altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
   const ITEM_WIDTH = labels.length * 100 / 2
   const [focusedItem, setFocusedItem] = useState(null)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showBackButton, setShowBackButton] = useState(false)
   const [reachedEnd, setReachedEnd] = useState(false)
-  const [showFilterModal, setShowFilterModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false)
   const [filterByToEdit, setFilterByToEdit] = useState(filterBy)
 
   const containerRef = useRef()

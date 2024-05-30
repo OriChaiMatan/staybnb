@@ -1,11 +1,10 @@
-import { storageService } from "./async-storage.service.js";
-import { utilService } from "./util.service.js";
-import { userService } from "./user.service.js";
-import staysData from "../data/stays.json";
+import { storageService } from "./async-storage.service.js"
+import { utilService } from "./util.service.js"
+import { userService } from "./user.service.js"
+import staysData from "../data/stays.json"
+const STORAGE_KEY = "stay"
 
-const STORAGE_KEY = "stay";
-
-_createStays();
+_createStays()
 
 export const stayService = {
   query,
@@ -30,29 +29,29 @@ async function query(filterBy) {
         filterBy.category_tag === "" ||
         stay.labels.some(
           (label) => label.toLowerCase() === filterBy.category_tag.toLowerCase()
-        );
+        )
 
       const matchesAmenities =
         filterBy.amenities.length === 0 ||
-        filterBy.amenities.every((amenity) => stay.amenities.includes(amenity));
+        filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
 
       const matchesPropertyType =
         filterBy.property_types.length === 0 ||
-        filterBy.property_types.includes(stay.type);
+        filterBy.property_types.includes(stay.type)
 
       const withinPriceRange =
         (!filterBy.price_min || stay.price >= filterBy.price_min) &&
-        (!filterBy.price_max || stay.price <= filterBy.price_max);
+        (!filterBy.price_max || stay.price <= filterBy.price_max)
 
-      const matchesBeds = !filterBy.beds || filterBy.beds <= stay.beds;
+      const matchesBeds = !filterBy.beds || filterBy.beds <= stay.beds
 
       const matchesbedrooms =
-        !filterBy.bedrooms || filterBy.bedrooms <= stay.bedrooms;
+        !filterBy.bedrooms || filterBy.bedrooms <= stay.bedrooms
 
-      const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath;
+      const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath
 
       const matchCapacities =
-        !filterBy.capacity || filterBy.capacity <= stay.capacity;
+        !filterBy.capacity || filterBy.capacity <= stay.capacity
 
       const matchCountry =
         filterBy.country === "Search destination" ||
@@ -60,17 +59,10 @@ async function query(filterBy) {
         filterBy.country === stay.loc.country;
 
       const matchStartDate =
-        !filterBy.startDate || stay.startDate <= filterBy.startDate;
+        !filterBy.startDate || stay.startDate <= filterBy.startDate
 
       const matchEndDate =
-        !filterBy.endDate || stay.endDate >= filterBy.endDate;
-
-      console.log("stay.startDate", stay.startDate);
-      console.log("filterStartDate", filterBy.startDate);
-      console.log("stay.endDate", stay.endDate);
-      console.log("filterEndDate", filterBy.endDate);
-      console.log("matchStartDate", matchStartDate);
-      console.log("matchEndDate", matchEndDate);
+        !filterBy.endDate || stay.endDate >= filterBy.endDate
 
       return (
         matchesCategoryTag &&
@@ -84,64 +76,64 @@ async function query(filterBy) {
         matchCountry &&
         matchEndDate &&
         matchStartDate
-      );
-    });
+      )
+    })
   }
-  return stays;
+  return stays
 }
 
 function getById(stayId) {
-  return storageService.get(STORAGE_KEY, stayId);
+  return storageService.get(STORAGE_KEY, stayId)
 }
 
 async function remove(stayId) {
   // throw new Error('Nope')
-  await storageService.remove(STORAGE_KEY, stayId);
+  await storageService.remove(STORAGE_KEY, stayId)
 }
 
 async function save(stay) {
-  var savedStay;
+  var savedStay
   if (stay && stay._id) {
-    savedStay = await storageService.put(STORAGE_KEY, stay);
+    savedStay = await storageService.put(STORAGE_KEY, stay)
   } else {
     // Later, owner is set by the backend
     // stay.owner = userService.getLoggedinUser()
     // create id here.
-    stay._id = utilService.makeId();
-    savedStay = await storageService.post(STORAGE_KEY, stay);
+    stay._id = utilService.makeId()
+    savedStay = await storageService.post(STORAGE_KEY, stay)
   }
-  return savedStay;
+  return savedStay
 }
 
 async function addStayMsg(stayId, txt) {
   // Later, this is all done by the backend
-  const stay = await getById(stayId);
-  if (!stay.msgs) stay.msgs = [];
+  const stay = await getById(stayId)
+  if (!stay.msgs) stay.msgs = []
 
   const msg = {
     id: utilService.makeId(),
     by: userService.getLoggedinUser(),
     txt,
-  };
-  stay.msgs.push(msg);
-  await storageService.put(STORAGE_KEY, stay);
+  }
+  stay.msgs.push(msg)
+  await storageService.put(STORAGE_KEY, stay)
 
-  return msg;
+  return msg
 }
 
 function minPricesStays() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY);
-  return Math.min(...stays.map((stay) => stay.price));
+  let stays = utilService.loadFromStorage(STORAGE_KEY)
+  return Math.min(...stays.map((stay) => stay.price))
 }
 
 function maxPricesStays() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY);
-  return Math.max(...stays.map((stay) => stay.price));
+  let stays = utilService.loadFromStorage(STORAGE_KEY)
+  return Math.max(...stays.map((stay) => stay.price))
 }
 
 function getAllPrices() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY);
-  return stays.map((stay) => stay.price);
+  let stays = utilService.loadFromStorage(STORAGE_KEY)
+  return stays.map((stay) => stay.price)
 }
 
 function getEmptyStay(
@@ -162,7 +154,7 @@ function getEmptyStay(
   reviews = [],
   likedByUsers = []
 ) {
-  const { startDate, endDate } = utilService.getRandomDateRange();
+  const { startDate, endDate } = utilService.getRandomDateRange()
 
   return {
     name,
@@ -186,7 +178,7 @@ function getEmptyStay(
     likedByUsers,
     startDate,
     endDate,
-  };
+  }
 }
 
 function getDefaultFilter() {
@@ -203,11 +195,11 @@ function getDefaultFilter() {
     capacity: "",
     startDate: "",
     endDate: "",
-  };
+  }
 }
 
 function getFilterFromParams(searchParams) {
-  const defaultFilter = getDefaultFilter();
+  const defaultFilter = getDefaultFilter()
   const filterBy = {};
   for (const field in defaultFilter) {
     if (Array.isArray(defaultFilter[field])) {
@@ -216,10 +208,10 @@ function getFilterFromParams(searchParams) {
       filterBy[field] = searchParams.get(field) || defaultFilter[field];
     }
   }
-  return filterBy;
+  return filterBy
 }
 
 function _createStays() {
-  let data = staysData;
-  data = utilService.saveToStorage(STORAGE_KEY, data);
+  let data = staysData
+  data = utilService.saveToStorage(STORAGE_KEY, data)
 }

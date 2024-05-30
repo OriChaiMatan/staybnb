@@ -12,14 +12,6 @@ import StarSmall from "../svg/StarSmallSvg"
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
 
-    // const handleStayClick = () => {
-    //     const newTab = window.open(`/stay/${stay._id}`, '_blank');
-    //     if (newTab) {
-    //         newTab.addEventListener('load', () => {
-    //             newTab.document.title = stay.name; // Set the title of the new tab
-    //         });
-    //     }
-    // }
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -55,6 +47,7 @@ export function StayPreview({ stay }) {
                 </div>
 
                 <div className="stay-preview-information">
+
                     <div className="common-info">
                         <span className="name-info">{stay.loc.city}, {stay.loc.country}</span>
                         {utilService.calculateAvgRating(stay.reviews) !== '0.00' && utilService.calculateAvgRating(stay.reviews) !== '0.0' && (

@@ -8,26 +8,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadStays, setFilterBy } from "../store/actions/stay.action";
 
 export function StayIndex() {
-  const stays = useSelector((storeState) => storeState.stayModule.stays);
-  const filterBy = useSelector((storeState) => storeState.stayModule.filterBy);
-  const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const stays = useSelector((storeState) => storeState.stayModule.stays)
+  const filterBy = useSelector((storeState) => storeState.stayModule.filterBy)
+  const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  console.log("filterBy", filterBy);
   useEffect(() => {
-    setFilterBy(stayService.getFilterFromParams(searchParams));
-  }, [searchParams]);
+    setFilterBy(stayService.getFilterFromParams(searchParams))
+  }, [searchParams])
 
   useEffect(() => {
     const sanitizedFilterBy = Object.fromEntries(
       Object.entries(filterBy).filter(
         ([key, value]) => value !== undefined && value !== ""
       )
-    );
+    )
 
-    setSearchParams(sanitizedFilterBy);
-    loadStays();
-  }, [filterBy]);
+    setSearchParams(sanitizedFilterBy)
+    loadStays()
+  }, [filterBy])
 
   function onSetFilter(fieldsToUpdate) {
     setFilterBy(fieldsToUpdate);
@@ -35,10 +34,10 @@ export function StayIndex() {
 
   async function onAddStay(stay) {
     try {
-      const savedStay = await stayService.save(stay);
-      loadStays();
+      const savedStay = await stayService.save(stay)
+      loadStays()
     } catch (err) {
-      console.log("Had issues adding stay", err);
+      console.log("Had issues adding stay", err)
     }
   }
 
@@ -52,5 +51,5 @@ export function StayIndex() {
       </div>
       <Outlet context={{ title: "hi", onAddStay }} />
     </>
-  );
+  )
 }
