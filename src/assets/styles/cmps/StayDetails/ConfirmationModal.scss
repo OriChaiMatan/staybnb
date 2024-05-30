@@ -1,0 +1,10 @@
+.layout {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    padding: 40px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

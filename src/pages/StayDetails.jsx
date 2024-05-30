@@ -33,6 +33,7 @@ export function StayDetails({ setLargeMainFilter }) {
 
   useEffect(() => {
     loadStay();
+
     function handleScroll() {
       const scrollTop =
         window.scrollY ||
@@ -40,10 +41,21 @@ export function StayDetails({ setLargeMainFilter }) {
         document.body.scrollTop +
         ((document.documentElement && document.documentElement.scrollTop) ||
           0);
-      if (scrollTop > hostedByRef.current.offsetTop) {
-        setShowStickyHeader(true);
-      } else {
-        setShowStickyHeader(false);
+
+      if (hostedByRef.current) {
+        if (scrollTop > hostedByRef.current.offsetTop) {
+          setShowStickyHeader(true);
+        } else {
+          setShowStickyHeader(false);
+        }
+      }
+
+      if (locationRef.current) {
+        if (scrollTop > reviewsRef.current.offsetTop - 200) {
+          setShowReviewsButton(true);
+        } else {
+          setShowReviewsButton(false);
+        }
       }
     }
 
@@ -51,52 +63,53 @@ export function StayDetails({ setLargeMainFilter }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [params.stayId]);
 
-  useEffect(() => {
-    if (hostedByRef.current) {
-      const observer = new IntersectionObserver(onObserved);
+  // useEffect(() => {
+  //   if (hostedByRef.current) {
+  //     const observer = new IntersectionObserver(onObserved);
 
-      observer.observe(hostedByRef.current);
+  //     observer.observe(hostedByRef.current);
 
-      return () => {
-        if (hostedByRef.current) {
-          observer.unobserve(hostedByRef.current);
-        }
-      };
-    }
+  //     return () => {
+  //       if (hostedByRef.current) {
+  //         observer.unobserve(hostedByRef.current);
+  //       }
+  //     };
+  //   }
 
-    function onObserved(entries) {
-      entries.forEach((entry) => {
-        const stickyHeader = document.querySelector(".sticky-header");
-        if (stickyHeader) {
-          stickyHeader.style.position = entry.isIntersecting
-            ? "static"
-            : "fixed";
-        }
-      });
-    }
-  }, [hostedByRef.current]);
+  //   function onObserved(entries) {
+  //     entries.forEach((entry) => {
+  //       const stickyHeader = document.querySelector(".sticky-header");
+  //       if (stickyHeader) {
+  //         stickyHeader.style.position = entry.isIntersecting
+  //           ? "static"
+  //           : "fixed";
+  //       }
+  //     });
+  //   }
+  // }, [hostedByRef.current]);
 
-  useEffect(() => {
-    if (locationRef.current) {
-      const observer = new IntersectionObserver(onReviewsObserved, {
-        rootMargin: "0px 0px -20% 0px",
-      });
+  // useEffect(() => {
+  //   if (locationRef.current) {
+  //     const observer = new IntersectionObserver(onReviewsObserved, {
+  //       rootMargin: "0px 0px -20% 0px",
+  //     });
 
-      observer.observe(locationRef.current);
+  //     observer.observe(locationRef.current);
 
-      return () => {
-        if (locationRef.current) {
-          observer.unobserve(locationRef.current);
-        }
-      };
-    }
+  //     return () => {
+  //       if (locationRef.current) {
+  //         observer.unobserve(locationRef.current);
+  //       }
+  //     };
+  //   }
 
-    function onReviewsObserved(entries) {
-      entries.forEach((entry) => {
-        setShowReviewsButton(entry.isIntersecting);
-      });
-    }
-  }, [locationRef.current]);
+  //   function onReviewsObserved(entries) {
+  //     entries.forEach((entry) => {
+  //       console.log('entry :>> ', entry);
+  //       setShowReviewsButton(entry.isIntersecting);
+  //     });
+  //   }
+  // }, [locationRef.current]);
 
   async function loadStay() {
     try {

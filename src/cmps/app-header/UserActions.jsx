@@ -71,9 +71,8 @@ export function UserActions() {
         />
         <div
           ref={userActionsModalRef}
-          className={`user-actions-modal ${
-            showUserActionModal ? "" : "hidden"
-          }`}
+          className={`user-actions-modal ${showUserActionModal ? "" : "hidden"
+            }`}
         >
           <div>
             <a href="#" className="user-action" onClick={handleLoginClick}>
@@ -83,7 +82,7 @@ export function UserActions() {
               Log in
             </a>
             <div className="hr"></div>
-            <Link to={"/dashboard/order-manager"} className="user-action">
+            <Link to={"/dashboard/listing"} className="user-action">
               Dashboard
             </Link>
             <Link to={"/stay-edit/newStay"} className="user-action">

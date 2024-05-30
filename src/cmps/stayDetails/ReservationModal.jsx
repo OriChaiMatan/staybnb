@@ -3,6 +3,7 @@ import { GuestsModal } from "../app-header/GuestsModal.jsx";
 import starIcon from "../../assets/img/star.png";
 import { CalendarPicker } from "../CalendarPicker.jsx";
 import { format } from "date-fns";
+import ConfirmationModal from "./ConfirmationModal.jsx";
 
 export function ReservationModal({
   stay,
@@ -19,6 +20,7 @@ export function ReservationModal({
   const [selectedGuests, setSelectedGuests] = useState(0);
   const [showAddGuests, setShowAddGuests] = useState(false);
   const [showAddDates, setShowAddDates] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const reservationRef = useRef(null);
 
   useEffect(() => {
@@ -69,8 +71,8 @@ export function ReservationModal({
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "children":
@@ -78,8 +80,8 @@ export function ReservationModal({
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "infants":
@@ -87,8 +89,8 @@ export function ReservationModal({
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       case "pets":
@@ -96,8 +98,8 @@ export function ReservationModal({
           operation === "increment"
             ? prevAmount + 1
             : prevAmount > 0
-            ? prevAmount - 1
-            : 0
+              ? prevAmount - 1
+              : 0
         );
         break;
       default:
@@ -116,6 +118,14 @@ export function ReservationModal({
     const reviews = stay.reviews;
     const totalScore = reviews.reduce((acc, review) => acc + review.rate, 0);
     return (totalScore / reviews.length).toFixed(2);
+  }
+
+  function onReserve() {
+    if (!selectedRange.start || !selectedRange.end || selectedGuests < 1) alert("Please fill in all the fields");
+    else {
+
+      setShowConfirmationModal(true);
+    }
   }
 
   const totalNights =
@@ -150,9 +160,9 @@ export function ReservationModal({
               value={
                 selectedRange.start && selectedRange.end
                   ? selectedRange.start.toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "2-digit",
-                    })
+                    month: "short",
+                    day: "2-digit",
+                  })
                   : ""
               }
             />
@@ -164,9 +174,9 @@ export function ReservationModal({
               value={
                 selectedRange.start && selectedRange.end
                   ? selectedRange.end.toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "2-digit",
-                    })
+                    month: "short",
+                    day: "2-digit",
+                  })
                   : ""
               }
             />
@@ -188,9 +198,8 @@ export function ReservationModal({
             placeholder="Add guest"
             value={
               selectedGuests >= 1
-                ? `${selectedGuests} ${
-                    selectedGuests === 1 ? "guest" : "guests"
-                  }`
+                ? `${selectedGuests} ${selectedGuests === 1 ? "guest" : "guests"
+                }`
                 : ""
             }
             readOnly
@@ -209,7 +218,8 @@ export function ReservationModal({
           />
         )}
       </div>
-      <button className="btn-container">Reserve</button>
+      <button className="btn-container" onClick={onReserve}>Reserve</button>
+      {showConfirmationModal && <ConfirmationModal />}
       <p className="text-center">You Won't be charged yet</p>
       {(selectedGuests > 0 || (selectedRange.start && selectedRange.end)) && (
         <section>
