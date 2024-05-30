@@ -31,11 +31,7 @@ export function UserProflie() {
     loadStays()
   }, [])
 
-  // const filterUserStays = (stays, userId) => {
-  //   return stays.filter(stay => stay.host._id === userId)
-  // }
-
-  // const userStays = filterUserStays(stays, demoLogInUser.id)
+  // const userStays = stays.filter(stay => stay.host._id === demoLogInUser.id)
 
 
 
@@ -52,21 +48,21 @@ export function UserProflie() {
             <div className="user-info-item">
               <section className="info">
                 <span>Stays</span>
-                <div>(demo)</div>
+                <div>{(stays.filter(stay => stay.host._id === demoLogInUser.id)).length}</div>
               </section>
               <LuHotel />
             </div>
             <div className="user-info-item">
               <section className="info">
                 <span>Stars</span>
-                <div>(demo)</div>
+                <div>4.88</div>
               </section>
               <IoStar />
             </div>
             <div className="user-info-item">
               <section className="info">
                 <span>Reviews</span>
-                <div>(demo)</div>
+                <div>102</div>
               </section>
               <BiMessageDetail />
             </div>
