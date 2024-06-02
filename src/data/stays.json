@@ -5,19 +5,19 @@
     "type": "House",
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305748/stay1.1_fnvddr.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305798/stay1.2_oo5grq.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305820/stay1.3_qzlv90.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305836/stay1.4_kpx3yy.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305850/stay1.5_zigkud.webp"
       }
     ],
     "price": 80.0,
@@ -91,10 +91,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Daniel Smith",
-      "Jessica Davis"
-    ],
     "startDate": "2024-04-15",
     "endDate": "2024-06-22"
   },
@@ -104,19 +100,19 @@
     "type": "House",
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306057/stay2.1_wzil4g.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306106/stay2.2_zis1wl.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306134/stay2.3_vep8nm.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306157/stay2.4_rleywn.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306180/stay2.5_l71ntb.webp"
       }
     ],
     "price": 80.0,
@@ -164,10 +160,6 @@
           "address": "Llangennech, United Kingdom"
         }
       }
-    ],
-    "likedByUsers": [
-      "Daniel Smith",
-      "Maria Camila"
     ],
     "startDate": "2024-04-17",
     "endDate": "2024-06-23"
@@ -251,10 +243,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Alice Johnson",
-      "John Doe"
-    ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
   },
@@ -336,10 +324,6 @@
           "address": "Meaux, France"
         }
       }
-    ],
-    "likedByUsers": [
-      "Emily White",
-      "Jason Miller"
     ],
     "startDate": "2024-06-18",
     "endDate": "2024-06-22"
@@ -426,10 +410,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Jason Miller",
-      "Jessica Davis"
-    ],
     "startDate": "2024-06-22",
     "endDate": "2024-06-24"
   },
@@ -510,10 +490,6 @@
           "address": "London, United Kingdom"
         }
       }
-    ],
-    "likedByUsers": [
-      "Sophie Turner",
-      "Carlos Lopez"
     ],
     "startDate": "2024-06-05",
     "endDate": "2024-06-12"
@@ -598,11 +574,6 @@
           "address": "Meaux, France"
         }
       }
-    ],
-    "likedByUsers": [
-      "Carlos Lopez",
-      "Laura Davis",
-      "David Clark"
     ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
@@ -693,11 +664,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "David Clark",
-      "James Brown",
-      "Sophia Martinez"
-    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-10"
   },
@@ -785,11 +751,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Oliver Green",
-      "Maria Hernandez",
-      "Maria Camila"
-    ],
     "startDate": "2024-06-20",
     "endDate": "2024-06-27"
   },
@@ -871,11 +832,6 @@
           "address": "Llangennech, United Kingdom"
         }
       }
-    ],
-    "likedByUsers": [
-      "Maria Hernandez",
-      "Liam Brown",
-      "Emma Watson"
     ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-15"
@@ -959,10 +915,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Niklaus Weber",
-      "Isabella Schneider"
-    ],
     "startDate": "2024-06-01",
     "endDate": "2024-06-07"
   },
@@ -1044,11 +996,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Niklaus Weber",
-      "Charlotte Martin",
-      "Antoine Leroy"
-    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1128,10 +1075,6 @@
           "address": "Port Elizabeth, South Africa"
         }
       }
-    ],
-    "likedByUsers": [
-      "Antoine Leroy",
-      "Charlotte Martin"
     ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
@@ -1220,10 +1163,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy"
-    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1304,10 +1243,6 @@
           "address": "Port Elizabeth, South Africa"
         }
       }
-    ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy"
     ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
@@ -1391,10 +1326,6 @@
           "address": "Almaty, Kazakhstan"
         }
       }
-    ],
-    "likedByUsers": [
-      "Antoine Leroy",
-      "Charlotte Martin"
     ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
@@ -1482,11 +1413,6 @@
         }
       }
     ],
-    "likedByUsers": [
-      "Charlotte Martin",
-      "Antoine Leroy",
-      "Oliver Green"
-    ],
     "startDate": "2024-06-10",
     "endDate": "2024-06-17"
   },
@@ -1538,14 +1464,13 @@
         "rate": 5,
         "date": "May 2024",
         "by": {
-          "_id": "u120",
-          "fullname": "Emily Turner",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981376/userwomen1_xywfgs.jpg",
-          "address": "Vancouver, Canada"
+          "_id": "u113",
+          "fullname": "Carlos Lopez",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716983029/men5_y0aqtj.jpg",
+          "address": "Barcelona, Spain"
         }
       }
     ],
-    "likedByUsers": ["John Doe", "Jane Smith"],
     "startDate": "2024-07-01",
     "endDate": "2024-07-07"
   },
@@ -1597,14 +1522,13 @@
         "rate": 4,
         "date": "April 2024",
         "by": {
-          "_id": "u121",
-          "fullname": "Michael Chen",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men3_vhwfpr.jpg",
-          "address": "Los Angeles, USA"
+          "_id": "u112",
+          "fullname": "Maria Camila",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
+          "address": "Llangennech, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Anna Lee", "Maria Garcia"],
     "startDate": "2024-07-10",
     "endDate": "2024-07-15"
   },
@@ -1656,14 +1580,13 @@
         "rate": 5,
         "date": "March 2024",
         "by": {
-          "_id": "u122",
-          "fullname": "Sophie Martin",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981478/userwomen2_fvjfdy.jpg",
-          "address": "Paris, France"
+          "_id": "u111",
+          "fullname": "Jessica Davis",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716979059/user2_fb3xqz.png",
+          "address": "Langton Green, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Chris Evans", "Rachel Adams"],
     "startDate": "2024-07-15",
     "endDate": "2024-07-22"
   },
@@ -1715,14 +1638,13 @@
         "rate": 5,
         "date": "April 2024",
         "by": {
-          "_id": "u123",
-          "fullname": "Liam O'Connor",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981598/men5_sgxghy.jpg",
-          "address": "Dublin, Ireland"
+          "_id": "u109",
+          "fullname": "Emma Watson",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982686/userwomen5_dvavqu.jpg",
+          "address": "Ankara, Turkey"
         }
       }
     ],
-    "likedByUsers": ["Emma Watson", "Tom Hardy"],
     "startDate": "2024-08-01",
     "endDate": "2024-08-07"
   },
@@ -1774,14 +1696,13 @@
         "rate": 4,
         "date": "May 2024",
         "by": {
-          "_id": "u124",
-          "fullname": "James Anderson",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981698/men6_hjltbk.jpg",
-          "address": "San Francisco, USA"
+          "_id": "u108",
+          "fullname": "Jason Miller",
+          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+          "address": "Meaux, France"
         }
       }
     ],
-    "likedByUsers": ["Jennifer Aniston", "Brad Pitt"],
     "startDate": "2024-08-10",
     "endDate": "2024-08-15"
   },
@@ -1833,14 +1754,13 @@
         "rate": 4,
         "date": "June 2024",
         "by": {
-          "_id": "u125",
-          "fullname": "Olivia Brown",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981890/userwomen3_dfsrwe.jpg",
-          "address": "Montreal, Canada"
+          "_id": "u107",
+          "fullname": "Emily White",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
+          "address": "Port Elizabeth, South Africa"
         }
       }
     ],
-    "likedByUsers": ["George Clooney", "Sandra Bullock"],
     "startDate": "2024-08-20",
     "endDate": "2024-08-25"
   },
@@ -1892,14 +1812,13 @@
         "rate": 5,
         "date": "March 2024",
         "by": {
-          "_id": "u126",
-          "fullname": "David Johnson",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981798/men7_jklzxc.jpg",
-          "address": "Phoenix, USA"
+          "_id": "u106",
+          "fullname": "Jack Wilson",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg",
+          "address": "Cork, Ireland"
         }
       }
     ],
-    "likedByUsers": ["Mila Kunis", "Ashton Kutcher"],
     "startDate": "2024-08-30",
     "endDate": "2024-09-05"
   },
@@ -1951,14 +1870,13 @@
         "rate": 5,
         "date": "April 2024",
         "by": {
-          "_id": "u127",
-          "fullname": "Emma White",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981870/userwomen4_sjdghw.jpg",
-          "address": "Miami, USA"
+          "_id": "u105",
+          "fullname": "Anna Johnson",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg",
+          "address": "Leicester, United Kingdom"
         }
       }
     ],
-    "likedByUsers": ["Johnny Depp", "Amber Heard"],
     "startDate": "2024-09-10",
     "endDate": "2024-09-17"
   },
@@ -2010,14 +1928,13 @@
         "rate": 5,
         "date": "February 2024",
         "by": {
-          "_id": "u128",
-          "fullname": "Liam Scott",
-          "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716981768/men8_lkajsdf.jpg",
-          "address": "London, UK"
+          "_id": "u104",
+          "fullname": "Michael Brown",
+          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png",
+          "address": "Almaty, Kazakhstan"
         }
       }
     ],
-    "likedByUsers": ["Chris Hemsworth", "Elsa Pataky"],
     "startDate": "2024-09-20",
     "endDate": "2024-09-25"
   }
