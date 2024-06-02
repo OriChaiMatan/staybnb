@@ -7,10 +7,21 @@ import 'slick-carousel/slick/slick-theme.css'
 import { utilService } from "../services/util.service"
 
 import StarSmall from "../svg/StarSmallSvg"
+import HurtWishlistSvg from "../svg/HurtWishlistSvg"
 
 
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
+
+    const demoLogInUser = {
+        id: "u110",
+        fullname: "Daniel Smith",
+        imgUrl: "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        username: "Daniel",
+        passworg: "daniel123",
+        address: "Kalisz, Poland"
+    }
+    const isLikedByUser = stay.likedByUsers&&stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
 
     const handleMouseEnter = () => {
@@ -37,6 +48,7 @@ export function StayPreview({ stay }) {
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
+                    <HurtWishlistSvg className={`wish-list-icon ${(isLikedByUser) ? 'liked' : ''}`} />
                     <Slider arrows={isHovered} {...settings} >
                         {stay.imgUrls.map((imgUrl, index) => (
                             <div className="imgs" key={index}>

@@ -168,6 +168,24 @@
     "_id": "s103",
     "name": "Ocean View Villa",
     "type": "House",
+    "likedByUsers": [
+      {
+        "id": "u110",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      },
+      {
+        "id": "u111111",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_1_tfy50l"
@@ -1443,8 +1461,18 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["Fireplace", "Hot tub", "Wifi", "TV"],
-    "labels": ["Mountain", "Secluded", "Romantic", "Nature"],
+    "amenities": [
+      "Fireplace",
+      "Hot tub",
+      "Wifi",
+      "TV"
+    ],
+    "labels": [
+      "Mountain",
+      "Secluded",
+      "Romantic",
+      "Nature"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1501,8 +1529,17 @@
     "beds": 1,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["Wifi", "TV", "Air conditioning", "Kitchen"],
-    "labels": ["City", "Modern", "Convenient"],
+    "amenities": [
+      "Wifi",
+      "TV",
+      "Air conditioning",
+      "Kitchen"
+    ],
+    "labels": [
+      "City",
+      "Modern",
+      "Convenient"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1559,8 +1596,18 @@
     "beds": 4,
     "bedrooms": 3,
     "bath": 2,
-    "amenities": ["Pool", "Wifi", "TV", "Kitchen", "BBQ"],
-    "labels": ["Beachfront", "Luxury", "Family-friendly"],
+    "amenities": [
+      "Pool",
+      "Wifi",
+      "TV",
+      "Kitchen",
+      "BBQ"
+    ],
+    "labels": [
+      "Beachfront",
+      "Luxury",
+      "Family-friendly"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1617,8 +1664,17 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["Fireplace", "Wifi", "TV", "Kitchen"],
-    "labels": ["Countryside", "Cozy", "Romantic"],
+    "amenities": [
+      "Fireplace",
+      "Wifi",
+      "TV",
+      "Kitchen"
+    ],
+    "labels": [
+      "Countryside",
+      "Cozy",
+      "Romantic"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1675,8 +1731,17 @@
     "beds": 2,
     "bedrooms": 1,
     "bath": 1,
-    "amenities": ["Wifi", "TV", "Kitchen", "Air conditioning"],
-    "labels": ["City", "Historic", "Stylish"],
+    "amenities": [
+      "Wifi",
+      "TV",
+      "Kitchen",
+      "Air conditioning"
+    ],
+    "labels": [
+      "City",
+      "Historic",
+      "Stylish"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1733,8 +1798,17 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["Pool", "Wifi", "TV", "Gym"],
-    "labels": ["Lakeview", "Modern", "Convenient"],
+    "amenities": [
+      "Pool",
+      "Wifi",
+      "TV",
+      "Gym"
+    ],
+    "labels": [
+      "Lakeview",
+      "Modern",
+      "Convenient"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1791,8 +1865,17 @@
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
-    "amenities": ["Pool", "Wifi", "TV", "Air conditioning"],
-    "labels": ["Desert", "Secluded", "Relaxing"],
+    "amenities": [
+      "Pool",
+      "Wifi",
+      "TV",
+      "Air conditioning"
+    ],
+    "labels": [
+      "Desert",
+      "Secluded",
+      "Relaxing"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1849,8 +1932,20 @@
     "beds": 5,
     "bedrooms": 4,
     "bath": 3,
-    "amenities": ["Pool", "Wifi", "TV", "Air conditioning", "BBQ", "Private beach"],
-    "labels": ["Island", "Luxury", "Beachfront", "Family-friendly"],
+    "amenities": [
+      "Pool",
+      "Wifi",
+      "TV",
+      "Air conditioning",
+      "BBQ",
+      "Private beach"
+    ],
+    "labels": [
+      "Island",
+      "Luxury",
+      "Beachfront",
+      "Family-friendly"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
@@ -1907,8 +2002,18 @@
     "beds": 3,
     "bedrooms": 2,
     "bath": 2,
-    "amenities": ["Fireplace", "Wifi", "TV", "Ski-in/out"],
-    "labels": ["Ski", "Cozy", "Family-friendly", "Mountain"],
+    "amenities": [
+      "Fireplace",
+      "Wifi",
+      "TV",
+      "Ski-in/out"
+    ],
+    "labels": [
+      "Ski",
+      "Cozy",
+      "Family-friendly",
+      "Mountain"
+    ],
     "host": {
       "_id": "u110",
       "fullname": "Daniel Smith",
