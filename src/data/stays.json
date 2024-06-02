@@ -353,7 +353,24 @@
     "_id": "s105",
     "name": "City Center Loft",
     "type": "Hotel",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "id": "u110",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      },
+      {
+        "id": "u111111",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -521,7 +538,24 @@
     "_id": "s107",
     "name": "Modern Downtown Apartment",
     "type": "Hotel",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "id": "u110",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      },
+      {
+        "id": "u111111",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -696,7 +730,24 @@
     "_id": "s109",
     "name": "Charming Countryside Cottage",
     "type": "Guesthouse",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "id": "u110",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      },
+      {
+        "id": "u111111",
+        "fullname": "Daniel Smith",
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+        "username": "Daniel",
+        "passworg": "daniel123",
+        "address": "Kalisz, Poland"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
