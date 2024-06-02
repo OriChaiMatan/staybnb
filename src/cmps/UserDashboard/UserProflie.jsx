@@ -1,15 +1,15 @@
-import React from "react";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import React from "react"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { Outlet } from "react-router-dom"
 
-import { StayList } from "../StayList";
-import { UserInfo } from "./UserProflie-cmps/UserInfo";
+import { StayList } from "../StayList"
+import { UserInfo } from "./UserProflie-cmps/UserInfo"
 import { loadStays } from "../../store/actions/stay.action"
 
-import { LuHotel } from "react-icons/lu";
-import { IoStar } from "react-icons/io5";
-import { BiMessageDetail } from "react-icons/bi";
+import { LuHotel } from "react-icons/lu"
+import { IoStar } from "react-icons/io5"
+import { BiMessageDetail } from "react-icons/bi"
 
 
 
