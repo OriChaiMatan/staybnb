@@ -22,7 +22,8 @@ export function OrderManager() {
       }
 
   return (
-    <section>
+    <section className="user-list-title">
+      <h1>My Order Manager</h1>
         <OrderManagerList orders={orders} onSaveOrder={onSaveOrder}/>
     </section>
   )
