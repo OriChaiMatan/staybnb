@@ -3,6 +3,7 @@
     "_id": "s101",
     "name": "Ribeira Charming Duplex",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305748/stay1.1_fnvddr.webp"
@@ -98,6 +99,7 @@
     "_id": "s102",
     "name": "Ribeira Charming Duplex",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717306057/stay2.1_wzil4g.webp"
@@ -268,6 +270,7 @@
     "_id": "s104",
     "name": "Cozy Mountain Cabin",
     "type": "Guesthouse",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
@@ -350,6 +353,7 @@
     "_id": "s105",
     "name": "City Center Loft",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -435,6 +439,7 @@
     "_id": "s106",
     "name": "Beachside Bungalow",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
@@ -516,6 +521,7 @@
     "_id": "s107",
     "name": "Modern Downtown Apartment",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -600,6 +606,7 @@
     "_id": "s108",
     "name": "Luxury Penthouse",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
@@ -689,6 +696,7 @@
     "_id": "s109",
     "name": "Charming Countryside Cottage",
     "type": "Guesthouse",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
@@ -776,6 +784,7 @@
     "_id": "s110",
     "name": "Secluded Forest Lodge",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
@@ -858,6 +867,7 @@
     "_id": "s111",
     "name": "Mountain View Chalet",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
@@ -940,6 +950,7 @@
     "_id": "s112",
     "name": "Urban Chic Loft",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1021,6 +1032,7 @@
     "_id": "s113",
     "name": "Laguna Shores, Mexico",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1101,6 +1113,7 @@
     "_id": "s114",
     "name": "Wander Lake Sinclair",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
@@ -1188,6 +1201,7 @@
     "_id": "s115",
     "name": "Limone Sul Garda",
     "type": "Hotel",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1269,6 +1283,7 @@
     "_id": "s116",
     "name": "Casa Estrella Oro",
     "type": "Guesthouse",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
@@ -1352,6 +1367,7 @@
     "_id": "s117",
     "name": "Derrymor - Private Castle in the Hills",
     "type": "House",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1438,6 +1454,7 @@
     "_id": "s118",
     "name": "Mountain Haven Retreat",
     "type": "Cabin",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1506,6 +1523,7 @@
     "_id": "s119",
     "name": "Urban Chic Apartment",
     "type": "Apartment",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1573,6 +1591,7 @@
     "_id": "s120",
     "name": "Seaside Paradise Villa",
     "type": "Villa",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1641,6 +1660,7 @@
     "_id": "s121",
     "name": "Rustic Country Cottage",
     "type": "Cottage",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1708,6 +1728,7 @@
     "_id": "s122",
     "name": "Historic Downtown Loft",
     "type": "Loft",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1775,6 +1796,7 @@
     "_id": "s123",
     "name": "Lakeview Modern Condo",
     "type": "Condo",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1842,6 +1864,7 @@
     "_id": "s124",
     "name": "Desert Oasis Bungalow",
     "type": "Bungalow",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1909,6 +1932,7 @@
     "_id": "s125",
     "name": "Tropical Island Villa",
     "type": "Villa",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1979,6 +2003,7 @@
     "_id": "s126",
     "name": "Cozy Ski Chalet",
     "type": "Chalet",
+    "likedByUsers": [],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"

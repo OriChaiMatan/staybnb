@@ -21,7 +21,7 @@ export function StayPreview({ stay }) {
         passworg: "daniel123",
         address: "Kalisz, Poland"
     }
-    const isLikedByUser = stay.likedByUsers&&stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
+    const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
 
     const handleMouseEnter = () => {
@@ -41,14 +41,14 @@ export function StayPreview({ stay }) {
         slidesToScroll: 1,
         initialSlide: 0
     }
-
+// console.log((stay.likedByUsers.map(likedByUser => likedByUser.id === demoLogInUser.id)))
     return (
         <div className="stay-preview">
             <Link to={`/stay/${stay._id}`} target="_blank" >
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
-                    <HurtWishlistSvg className={`wish-list-icon ${(isLikedByUser) ? 'liked' : ''}`} />
+                        <div className={`wish-list-icon ${(isLikedByUser) ? 'liked' : ''}`}><HurtWishlistSvg /></div>
                     <Slider arrows={isHovered} {...settings} >
                         {stay.imgUrls.map((imgUrl, index) => (
                             <div className="imgs" key={index}>
