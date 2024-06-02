@@ -9,6 +9,7 @@ import { UserDashboard } from "./pages/UserDashboard";
 import { OrderManager } from "./cmps/UserDashboard/OrderManager";
 import { UserProflie } from "./cmps/UserDashboard/UserProflie";
 import { WishList } from "./cmps/UserDashboard/WishList";
+import { UserMsg } from "./cmps/UserMsg";
 
 export function RootCmp() {
   const [largeMainFilter, setLargeMainFilter] = useState(false);
@@ -47,6 +48,7 @@ export function RootCmp() {
         </Routes>
       </main>
       <AppFooter />
+      <UserMsg/>
     </div>
-  );
+  )
 }

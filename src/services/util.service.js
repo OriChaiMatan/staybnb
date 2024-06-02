@@ -13,6 +13,7 @@ export const utilService = {
   getRandomDateRange,
   calculateDistance,
   calculateAvgRating,
+  formatDate,
 }
 
 const TEL_AVIV_LAT = 32.109333
@@ -162,8 +163,8 @@ function getRandomDateRange() {
     startDate.getTime() + randomDaysDifference * 24 * 60 * 60 * 1000
   );
 
-  const formattedStartDate = _formatDate(startDate)
-  const formattedEndDate = _formatDate(endDate)
+  const formattedStartDate = formatDate(startDate)
+  const formattedEndDate = formatDate(endDate)
 
   return { startDate: formattedStartDate, endDate: formattedEndDate }
 }
@@ -195,9 +196,10 @@ function _deg2rad(deg) {
   return deg * (Math.PI / 180)
 }
 
-function _formatDate(date) {
+function formatDate(date) {
   const year = date.getFullYear()
   const month = String(date.getMonth() + 1).padStart(2, "0")
   const day = String(date.getDate()).padStart(2, "0")
   return `${year}-${month}-${day}`
 }
+

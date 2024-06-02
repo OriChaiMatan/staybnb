@@ -152,7 +152,6 @@ function getEmptyStay(
   lat,
   lng,
   reviews = [],
-  likedByUsers = []
 ) {
   const { startDate, endDate } = utilService.getRandomDateRange()
 
@@ -175,7 +174,6 @@ function getEmptyStay(
       lng,
     },
     reviews,
-    likedByUsers,
     startDate,
     endDate,
   }

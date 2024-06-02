@@ -1,10 +1,113 @@
-.layout {
+.confirmation-modal {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, .5);
     inset: 0;
     padding: 40px;
     z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+    .confirmation-modal-content {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+        padding: 30px 70px 30px 70px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        width: 770px;
+        height: 81%;
+        overflow: auto;
+    }
+
+    header {
+        margin: 0 0 18px 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0 0 18px 0;
+    }
+
+    .reservation-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .reservation-details {
+            padding-right: 110px;
+
+            .title {
+                margin: 3px 0 3px 0;
+                font-size: 17px;
+            }
+
+            .title-price {
+                font-size: 17px;
+                margin-bottom: 11px;
+
+            }
+
+            .guest {
+                border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+            }
+
+            .content {
+                font-size: 15px;
+                display: flex;
+                gap: 5px;
+            }
+
+            .price-line {
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .last-line {
+                border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+            }
+
+            .total-price {
+                margin-top: 12px;
+                margin-bottom: 27px;
+            }
+        }
+
+
+        .img-content {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #ffffff;
+        }
+
+    }
+
+    .btns-container {
+        justify-content: center;
+        display: flex;
+        gap: 50px;
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 8px;
+            width: 24%;
+            color: #ffffff;
+            font-size: 15px;
+            background-size: 200% 200%;
+            transition: background-position 0.8s;
+        }
+
+        .confirm-btn {
+            font-weight: 600;
+            background-image: radial-gradient(circle at center, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
+        }
+
+        .back-btn {
+            background-color: gray;
+        }
+    }
+
 }

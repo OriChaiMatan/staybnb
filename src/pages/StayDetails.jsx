@@ -44,17 +44,17 @@ export function StayDetails({ setLargeMainFilter }) {
 
       if (hostedByRef.current) {
         if (scrollTop > hostedByRef.current.offsetTop) {
-          setShowStickyHeader(true);
+          setShowStickyHeader(true)
         } else {
-          setShowStickyHeader(false);
+          setShowStickyHeader(false)
         }
       }
 
       if (reviewsRef.current) {
         if (scrollTop > reviewsRef.current.offsetTop - 200) {
-          setShowReviewsButton(true);
+          setShowReviewsButton(true)
         } else {
-          setShowReviewsButton(false);
+          setShowReviewsButton(false)
         }
       }
     }

@@ -18,9 +18,9 @@ export function StaySummary({ summary }) {
   return (
     <article className="summery">
       <div className="text-summery">{summary}</div>
-      <a className="show-more" onClick={toggleModal}>
+      <div className="show-more" onClick={toggleModal}>
         Show more <MdOutlineNavigateNext />
-      </a>
+      </div>
       {showModal && <AboutThisPlaceModel summary={summary} onClose={closeModal} />}
     </article>
   )

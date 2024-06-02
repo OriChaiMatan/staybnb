@@ -4,11 +4,11 @@
     "hostId": "u102",
     "buyer": {
       "_id": "u101",
-      "fullname": "User 1"
+      "fullname": "Sophia Garcia"
     },
     "totalPrice": 160,
-    "startDate": "15/10/2025",
-    "endDate": "17/10/2025",
+    "startDate": "2025-10-15",
+    "endDate": "2025-10-17",
     "guests": {
       "adults": 2,
       "kids": 1
@@ -25,11 +25,11 @@
     "hostId": "u103",
     "buyer": {
       "_id": "u102",
-      "fullname": "User 2"
+      "fullname": "Davit Pok"
     },
     "totalPrice": 240,
-    "startDate": "01/05/2025",
-    "endDate": "05/11/2025",
+    "startDate": "2025/05/01",
+    "endDate": "2025/06/05",
     "guests": {
       "adults": 3,
       "kids": 2
@@ -46,11 +46,11 @@
     "hostId": "u104",
     "buyer": {
       "_id": "u103",
-      "fullname": "User 3"
+      "fullname": "Sara Smith"
     },
     "totalPrice": 300,
-    "startDate": "20/12/2025",
-    "endDate": "25/12/2025",
+    "startDate": "2025/12/20",
+    "endDate": "2025/12/25",
     "guests": {
       "adults": 4,
       "kids": 0
@@ -67,11 +67,11 @@
     "hostId": "u105",
     "buyer": {
       "_id": "u104",
-      "fullname": "User 4"
+      "fullname": "Michael Brown"
     },
     "totalPrice": 180,
-    "startDate": "10/07/2025",
-    "endDate": "12/07/2025",
+    "startDate": "2025/07/10",
+    "endDate": "2025/07/12",
     "guests": {
       "adults": 2,
       "kids": 2
@@ -88,11 +88,11 @@
     "hostId": "u106",
     "buyer": {
       "_id": "u105",
-      "fullname": "User 5"
+      "fullname": "Anna Johnson"
     },
     "totalPrice": 400,
-    "startDate": "15/08/2025",
-    "endDate": "20/08/2025",
+    "startDate": "2025/08/15",
+    "endDate": "2025/08/20",
     "guests": {
       "adults": 5,
       "kids": 1
@@ -109,11 +109,11 @@
     "hostId": "u107",
     "buyer": {
       "_id": "u106",
-      "fullname": "User 6"
+      "fullname": "Jack Wilson"
     },
     "totalPrice": 500,
-    "startDate": "01/09/2025",
-    "endDate": "06/09/2025",
+    "startDate": "2025/09/01",
+    "endDate": "2025/09/06",
     "guests": {
       "adults": 6,
       "kids": 0
@@ -130,11 +130,11 @@
     "hostId": "u108",
     "buyer": {
       "_id": "u107",
-      "fullname": "User 7"
+      "fullname": "Emily White"
     },
     "totalPrice": 220,
-    "startDate": "05/10/2025",
-    "endDate": "08/10/2025",
+    "startDate": "2025/10/05",
+    "endDate": "2025/10/08",
     "guests": {
       "adults": 2,
       "kids": 3
@@ -151,11 +151,11 @@
     "hostId": "u109",
     "buyer": {
       "_id": "u108",
-      "fullname": "User 8"
+      "fullname": "Jason Miller"
     },
     "totalPrice": 360,
-    "startDate": "11/10/2025",
-    "endDate": "22/10/2025",
+    "startDate": "2025/10/11",
+    "endDate": "2025/10/22",
     "guests": {
       "adults": 3,
       "kids": 3
@@ -172,11 +172,11 @@
     "hostId": "u110",
     "buyer": {
       "_id": "u109",
-      "fullname": "User 9"
+      "fullname": "Emma Watson"
     },
     "totalPrice": 150,
-    "startDate": "12/10/2025",
-    "endDate": "12/12/2025",
+    "startDate": "2025/10/12",
+    "endDate": "2025/10/14",
     "guests": {
       "adults": 1,
       "kids": 1

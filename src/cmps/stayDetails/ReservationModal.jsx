@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { GuestsModal } from "../app-header/GuestsModal.jsx";
 import starIcon from "../../assets/img/star.png";
 import { CalendarPicker } from "../CalendarPicker.jsx";
-import { format } from "date-fns";
 import ConfirmationModal from "./ConfirmationModal.jsx";
 import { orderService } from "../../services/order.service.js";
+import { showErrorMsg } from "../../services/event-bus.service.js";
+import { utilService } from "../../services/util.service.js";
 
 export function ReservationModal({
   stay,
@@ -14,129 +15,112 @@ export function ReservationModal({
   hoveredDate,
   setHoveredDate,
 }) {
-  const [adultsAmount, setAdultsAmount] = useState(0);
-  const [childrenAmount, setChildrenAmount] = useState(0);
-  const [infantsAmount, setInfantsAmount] = useState(0);
-  const [petsAmount, setPetsAmount] = useState(0);
-  const [selectedGuests, setSelectedGuests] = useState(0);
-  const [showAddGuests, setShowAddGuests] = useState(false);
-  const [showAddDates, setShowAddDates] = useState(false);
-  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-  const [currentOrder, setCurrentOrder] = useState(orderService.getEmptyOrder());
-  console.log('currentOrder:', currentOrder)
-  const reservationRef = useRef(null);
+  const [adultsAmount, setAdultsAmount] = useState(0)
+  const [childrenAmount, setChildrenAmount] = useState(0)
+  const [infantsAmount, setInfantsAmount] = useState(0)
+  const [petsAmount, setPetsAmount] = useState(0)
+  const [selectedGuests, setSelectedGuests] = useState(0)
+  const [showAddGuests, setShowAddGuests] = useState(false)
+  const [showAddDates, setShowAddDates] = useState(false)
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false)
+  const reservationRef = useRef(null)
+
+  const startDate = selectedRange.start ? utilService.formatDate(selectedRange.start) : null
+  const endDate = selectedRange.end ? utilService.formatDate(selectedRange.end) : null
 
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
-        closeModals();
+        closeModals()
       }
-    };
+    }
 
     const handleClickOutside = (event) => {
       if (
         reservationRef.current &&
         !reservationRef.current.contains(event.target)
       ) {
-        closeModals();
+        closeModals()
       }
-    };
+    }
 
-    document.addEventListener("keydown", handleEscapeKeyPress);
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKeyPress)
+    document.addEventListener("mousedown", handleClickOutside)
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress);
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKeyPress)
+      document.removeEventListener("mousedown", handleClickOutside)
     };
-  }, []);
+  }, [])
+
+  function closeConfirmationModal() {
+    setShowConfirmationModal(false)
+  }
 
   function toggleGuestModal() {
-    setShowAddGuests((prev) => !prev);
+    setShowAddGuests((prev) => !prev)
   }
 
   function toggleDatesModal() {
-    setShowAddDates((prev) => !prev);
+    setShowAddDates((prev) => !prev)
     if (showAddGuests) {
-      setShowAddGuests(false);
+      setShowAddGuests(false)
     }
   }
 
   function closeModals() {
-    setShowAddGuests(false);
-    setShowAddDates(false);
+    setShowAddGuests(false)
+    setShowAddDates(false)
   }
 
   function handleAmountChange(type, operation) {
-    switch (type) {
-      case "adults":
-        setAdultsAmount((prevAmount) =>
-          operation === "increment"
-            ? prevAmount + 1
-            : prevAmount > 0
-              ? prevAmount - 1
-              : 0
-        );
-        break;
-      case "children":
-        setChildrenAmount((prevAmount) =>
-          operation === "increment"
-            ? prevAmount + 1
-            : prevAmount > 0
-              ? prevAmount - 1
-              : 0
-        );
-        break;
-      case "infants":
-        setInfantsAmount((prevAmount) =>
-          operation === "increment"
-            ? prevAmount + 1
-            : prevAmount > 0
-              ? prevAmount - 1
-              : 0
-        );
-        break;
-      case "pets":
-        setPetsAmount((prevAmount) =>
-          operation === "increment"
-            ? prevAmount + 1
-            : prevAmount > 0
-              ? prevAmount - 1
-              : 0
-        );
-        break;
-      default:
-        break;
+    const stateSetters = {
+      adults: setAdultsAmount,
+      children: setChildrenAmount,
+      infants: setInfantsAmount,
+      pets: setPetsAmount,
     }
-    setSelectedGuests((prev) => {
-      if (operation === "increment") {
-        return prev + 1;
-      } else {
-        return prev > 0 ? prev - 1 : 0;
-      }
-    });
+
+    const updateAmount = (setter) => {
+      setter((prevAmount) =>
+        operation === "increment"
+          ? prevAmount + 1
+          : prevAmount > 0
+            ? prevAmount - 1
+            : 0
+      )
+    }
+
+    if (stateSetters[type]) {
+      updateAmount(stateSetters[type]);
+    }
+
+    setSelectedGuests((prev) =>
+      operation === "increment" ? prev + 1 : prev > 0 ? prev - 1 : 0
+    )
   }
 
+
+
   function averageReviewsScore() {
-    const reviews = stay.reviews;
-    const totalScore = reviews.reduce((acc, review) => acc + review.rate, 0);
-    return (totalScore / reviews.length).toFixed(2);
+    const reviews = stay.reviews
+    const totalScore = reviews.reduce((acc, review) => acc + review.rate, 0)
+    return (totalScore / reviews.length).toFixed(2)
   }
 
   function onReserve() {
-    if (!selectedRange.start || !selectedRange.end || selectedGuests < 1) alert("Please fill in all the fields");
+    if (!selectedRange.start || !selectedRange.end || selectedGuests < 1) {
+      showErrorMsg('Please fill in all the fields')
+    }
     else {
-
-      setShowConfirmationModal(true);
+      setShowConfirmationModal(true)
     }
   }
 
   const totalNights =
-    selectedRange.start && selectedRange.end
-      ? calculateDaysBetween(selectedRange.start, selectedRange.end)
-      : 0;
+    selectedRange.start && selectedRange.end ? calculateDaysBetween(selectedRange.start, selectedRange.end) : 0
 
-  const totalPrice = stay.price * totalNights;
+  const totalPrice = stay.price * totalNights
 
   return (
     <section className="order-container" ref={reservationRef}>
@@ -222,7 +206,19 @@ export function ReservationModal({
         )}
       </div>
       <button className="btn-container" onClick={onReserve}>Reserve</button>
-      {showConfirmationModal && <ConfirmationModal />}
+      {showConfirmationModal &&
+        <ConfirmationModal
+          onClose={closeConfirmationModal}
+          startDate={startDate}
+          endDate={endDate}
+          adultsAmount={adultsAmount}
+          childrenAmount={childrenAmount}
+          infantsAmount={infantsAmount}
+          petsAmount={petsAmount}
+          stay={stay}
+          totalNights={totalNights}
+          totalPrice={totalPrice}
+        />}
       <p className="text-center">You Won't be charged yet</p>
       {(selectedGuests > 0 || (selectedRange.start && selectedRange.end)) && (
         <section>
@@ -249,5 +245,5 @@ export function ReservationModal({
         </section>
       )}
     </section>
-  );
+  )
 }
