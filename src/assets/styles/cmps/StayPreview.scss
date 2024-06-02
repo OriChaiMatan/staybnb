@@ -8,32 +8,10 @@
   border-radius: 5%;
   cursor: pointer;
   justify-content: center;
+  position: relative;
 
   .stay-photo-gallery {
     grid-area: photo;
-    position: relative;
-    .wish-list-icon {
-  svg path {
-    position: absolute;
-    top: 3%;
-    left: 85%;
-    right: 15px;
-    fill: rgba(0, 0, 0, 0.5);
-    height: 24px;
-    width: 24px;
-    stroke: rgb(255, 255, 255);
-    stroke-width: 2;
-    overflow: visible;
-  }
-}
-
-.wish-list-icon {
-  &.liked {
-    svg path {
-      fill: #fd3d60;
-    }
-  }
-}
 
     .imgs {
       margin-bottom: 5px;
@@ -137,3 +115,23 @@
   opacity: 0;
 }
 
+.wish-list-icon {
+    position: absolute;
+    top: 3%;
+    left: 85%;
+    right: 15px;
+    fill: rgba(0, 0, 0, 0.5);
+    height: 24px;
+    width: 24px;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 2;
+    overflow: visible;
+    z-index: 1;
+  
+
+  &.liked {
+    svg path {
+      fill: #fd3d60;
+    }
+  }
+}

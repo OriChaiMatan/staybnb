@@ -12,6 +12,7 @@ import HurtWishlistSvg from "../svg/HurtWishlistSvg"
 
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
+    const [isLike, setIsLike] = useState(false)
 
     const demoLogInUser = {
         id: "u110",
@@ -32,6 +33,11 @@ export function StayPreview({ stay }) {
         setIsHovered(false);
     }
 
+    const handleLike = () => {
+        setIsLike(!isLike)
+        console.log("User liked the stay:", !isLike)
+    }
+
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -41,14 +47,19 @@ export function StayPreview({ stay }) {
         slidesToScroll: 1,
         initialSlide: 0
     }
-// console.log((stay.likedByUsers.map(likedByUser => likedByUser.id === demoLogInUser.id)))
+
     return (
         <div className="stay-preview">
             <Link to={`/stay/${stay._id}`} target="_blank" >
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
-                        <div className={`wish-list-icon ${(isLikedByUser) ? 'liked' : ''}`}><HurtWishlistSvg /></div>
+                    <div className={`wish-list-icon ${isLikedByUser ? 'liked' : ''}`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleLike}>
+                        <HurtWishlistSvg />
+                    </div>
                     <Slider arrows={isHovered} {...settings} >
                         {stay.imgUrls.map((imgUrl, index) => (
                             <div className="imgs" key={index}>
