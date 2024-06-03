@@ -16,11 +16,7 @@ export function StayPreview({ stay }) {
 
     const demoLogInUser = {
         id: "u110",
-        fullname: "Daniel Smith",
-        imgUrl: "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        username: "Daniel",
-        passworg: "daniel123",
-        address: "Kalisz, Poland"
+        fullname: "Daniel Smith"
     }
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
@@ -33,9 +29,15 @@ export function StayPreview({ stay }) {
         setIsHovered(false);
     }
 
-    const handleLike = () => {
+    const handleLike = (event) => {
+        event.stopPropagation() 
+        event.preventDefault()  
+        if (isLikedByUser) {
+            stay.likedByUsers = stay.likedByUsers.filter(user => user.id !== demoLogInUser.id)
+        } else {
+            stay.likedByUsers.push(demoLogInUser)
+        }
         setIsLike(!isLike)
-        console.log("User liked the stay:", !isLike)
     }
 
     const settings = {
@@ -55,8 +57,6 @@ export function StayPreview({ stay }) {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
                     <div className={`wish-list-icon ${isLikedByUser ? 'liked' : ''}`}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
                         onClick={handleLike}>
                         <HurtWishlistSvg />
                     </div>
