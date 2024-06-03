@@ -146,7 +146,6 @@ function getEmptyStay(
   amenities = [],
   labels = [],
   country = "",
-  countryCode = "",
   city = "",
   address = "",
   lat,
@@ -167,7 +166,6 @@ function getEmptyStay(
     host: userService.getLoggedinUser(),
     loc: {
       country,
-      countryCode,
       city,
       address,
       lat,

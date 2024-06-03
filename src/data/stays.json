@@ -48,7 +48,6 @@
     },
     "loc": {
       "country": "USA",
-      "countryCode": "US",
       "city": "New York",
       "address": "789 Downtown Avenue",
       "lat": 40.7128,
@@ -143,7 +142,6 @@
     },
     "loc": {
       "country": "Portugal",
-      "countryCode": "PT",
       "city": "Porto",
       "address": "17 Kombo st",
       "lat": 41.150223,
@@ -231,7 +229,6 @@
     },
     "loc": {
       "country": "Portugal",
-      "countryCode": "PT",
       "city": "Albufeira",
       "address": "123 Ocean View Street",
       "lat": 37.088,
@@ -499,7 +496,6 @@
     },
     "loc": {
       "country": "Portugal",
-      "countryCode": "PT",
       "city": "Lagos",
       "address": "456 Beachside Avenue",
       "lat": 37.102,
@@ -796,7 +792,6 @@
     },
     "loc": {
       "country": "Portugal",
-      "countryCode": "PT",
       "city": "Sintra",
       "address": "123 Countryside Road",
       "lat": 38.8029,

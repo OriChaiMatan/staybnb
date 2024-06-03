@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { HiCheckCircle } from "react-icons/hi2"
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
+    const [isConfirmed, setIsConfirmed] = useState(false)
 
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')
@@ -9,14 +11,30 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
     const stayImg = stay.imgUrls[0].imgUrl
 
+    function handleConfirm() {
+        setIsConfirmed(true)
+    }
+
     return (
         <div className="confirmation-modal">
             <div className='confirmation-modal-content'>
-                <header>
-                    <h2>One last stop</h2>
-                    <p>Dear Guest,</p>
-                    <p>In order to complete your reservation, please confirm your trip details.</p>
-                </header>
+
+                {isConfirmed ? (
+                    <header>
+                        <div className='header-success'>
+                            <HiCheckCircle className='icon-success' />
+                            <h1 className='title-success'>Reserved successfully</h1>
+                        </div>
+
+                        <p className='txt-success'>You can follow the order status in My trips page</p>
+                    </header>
+                ) : (
+                    <header>
+                        <h2>One last stop</h2>
+                        <p>Dear Guest,</p>
+                        <p>In order to complete your reservation, please confirm your trip details.</p>
+                    </header>
+                )}
 
                 <div className='reservation-main'>
                     <div className="reservation-details">
@@ -59,17 +77,25 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
 
                     <div className='img-content'>
-                    <img src={stayImg}></img>
+                        <img src={stayImg} className='rounded-img'></img>
+                        <div className='loc'>{stay.name}</div>
+                        <div className='loc'>{stay.loc.city}, {stay.loc.country}</div>
                     </div>
                 </div>
 
 
-
-                <div className='btns-container'>
-                    <button className="btn back-btn" onClick={onClose}>Back</button>
-                    <button className="btn confirm-btn">Confirm</button>
-                </div>
+                {!isConfirmed ? (
+                    <div className='btns-container'>
+                        <button className="btn back-btn" onClick={onClose}>Back</button>
+                        <button className="btn confirm-btn" onClick={handleConfirm}>Confirm</button>
+                    </div>
+                ) : (
+                    <div className='btns-container'>
+                        <button className="btn back-btn" onClick={onClose}>Close</button>
+                    </div>
+                )}
             </div>
         </div>
     )
 }
+

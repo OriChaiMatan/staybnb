@@ -16,7 +16,7 @@
         background-color: #ffffff;
         width: 770px;
         height: 81%;
-        overflow: auto;
+        overflow: hidden;
     }
 
     header {
@@ -30,6 +30,34 @@
     h3 {
         margin: 0 0 18px 0;
     }
+
+    .header-success {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+        .icon-success {
+            fill: green;
+            font-size: 37px;
+        }
+
+        .title-success {
+            font-size: 26px;
+            margin-top: 20px;
+            padding-bottom: 22px;
+            margin-bottom: 0;
+        }
+
+
+    }
+
+
+    .txt-success {
+        margin: 0;
+        margin-top: 18px;
+    }
+
 
     .reservation-main {
         display: grid;
@@ -78,9 +106,24 @@
 
         .img-content {
             box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
-            padding: 20px;
+            padding: 15px;
+            margin: 10px 0 0 45px;
             border-radius: 12px;
             background-color: #ffffff;
+            height: 265px;
+            width: 270px;
+
+            .rounded-img {
+                border-radius: 6px;
+                width: 240px;
+                height: 185px;
+            }
+
+            .loc {
+                font-size: 13px;
+                font-weight: bold;
+                margin: 0;
+            }
         }
 
     }

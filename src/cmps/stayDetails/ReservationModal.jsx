@@ -25,9 +25,6 @@ export function ReservationModal({
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const reservationRef = useRef(null)
 
-  const startDate = selectedRange.start ? utilService.formatDate(selectedRange.start) : null
-  const endDate = selectedRange.end ? utilService.formatDate(selectedRange.end) : null
-
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
@@ -117,10 +114,10 @@ export function ReservationModal({
     }
   }
 
-  const totalNights =
-    selectedRange.start && selectedRange.end ? calculateDaysBetween(selectedRange.start, selectedRange.end) : 0
-
+  const totalNights = selectedRange.start && selectedRange.end ? calculateDaysBetween(selectedRange.start, selectedRange.end) : 0
   const totalPrice = stay.price * totalNights
+  const startDate = selectedRange.start ? utilService.formatDate(selectedRange.start) : null
+  const endDate = selectedRange.end ? utilService.formatDate(selectedRange.end) : null
 
   return (
     <section className="order-container" ref={reservationRef}>
