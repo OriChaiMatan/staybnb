@@ -57,7 +57,7 @@
     },
     "stay": {
       "_id": "s104",
-      "name": "Cozy Mountain Cabin",
+      "name": "Ligaria Mare Villa Earth with private seaview pool",
       "price": 100.0
     },
     "status": "decline"
@@ -78,7 +78,7 @@
     },
     "stay": {
       "_id": "s105",
-      "name": "City Center Loft",
+      "name": "Beautiful home in Ronneby with kitchen",
       "price": 150.0
     },
     "status": "approved"
@@ -99,7 +99,7 @@
     },
     "stay": {
       "_id": "s106",
-      "name": "Beachside Bungalow",
+      "name": "The Beachside Bungalow",
       "price": 130.0
     },
     "status": "pending"
@@ -120,7 +120,7 @@
     },
     "stay": {
       "_id": "s107",
-      "name": "Modern Downtown Apartment",
+      "name": "2-BR ski apartment in Predela LUX",
       "price":  200.0
     },
     "status": "approved"
@@ -141,7 +141,7 @@
     },
     "stay": {
       "_id": "s108",
-      "name": "Luxury Penthouse",
+      "name": "Villa Adventure -heated pool, media room",
       "price": 300.0
     },
     "status": "approved"
@@ -162,7 +162,7 @@
     },
     "stay": {
       "_id": "s109",
-      "name": "Charming Countryside Cottage",
+      "name": "Stunning hut in the nature(DayaGeusthouse)",
       "price": 90.0
     },
     "status": "pending"
@@ -183,7 +183,7 @@
     },
     "stay": {
       "_id": "s110",
-      "name": "Secluded Forest Lodge",
+      "name": "Azamra Amirim",
       "price": 160.0
     },
     "status": "decline"

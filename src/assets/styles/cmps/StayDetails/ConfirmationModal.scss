@@ -15,7 +15,7 @@
         border-radius: 12px;
         background-color: #ffffff;
         width: 770px;
-        height: 81%;
+        height: auto;
         overflow: hidden;
     }
 
@@ -48,10 +48,7 @@
             padding-bottom: 22px;
             margin-bottom: 0;
         }
-
-
     }
-
 
     .txt-success {
         margin: 0;
@@ -110,7 +107,7 @@
             margin: 10px 0 0 45px;
             border-radius: 12px;
             background-color: #ffffff;
-            height: 265px;
+            height: 280px;
             width: 270px;
 
             .rounded-img {

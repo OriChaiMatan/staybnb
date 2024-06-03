@@ -3,7 +3,12 @@
     "_id": "s101",
     "name": "Ribeira Charming Duplex",
     "type": "House",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u113",
+        "fullname": "Carlos Lopez"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305748/stay1.1_fnvddr.webp"
@@ -42,9 +47,9 @@
       "Top of the world"
     ],
     "host": {
-      "_id": "u110",
-      "fullname": "Daniel Smith",
-      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+      "_id": "u112",
+      "fullname": "Maria Camila",
+      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg"
     },
     "loc": {
       "country": "USA",
@@ -171,19 +176,11 @@
     "likedByUsers": [
       {
         "id": "u110",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "fullname": "Daniel Smith"
       },
       {
-        "id": "u111111",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "_id": "u111",
+        "fullname": "Jessica Davis"
       }
     ],
     "imgUrls": [
@@ -265,28 +262,28 @@
   },
   {
     "_id": "s104",
-    "name": "Cozy Mountain Cabin",
+    "name": "Ligaria Mare Villa Earth with private seaview pool",
     "type": "Guesthouse",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717400770/stay3.1_tev2bv.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_2_o9trto"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717400786/stay3.2_vzlqbs.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_3_kqiayn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717400808/stay3.3_xw70wg.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717400822/stay3.4_pdemks.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717400833/stay3.5_wd8azq.webp"
       }
     ],
     "price": 100.0,
-    "summary": "Escape to this cozy cabin nestled in the mountains, offering tranquility and breathtaking views.",
+    "summary": "Situated on the hills of Crete-Mades Ligaria, Villa Earth offers an unparalleled exclusive experience.\nEnjoy the Cretan Sun and clear blue waters in a high aesthetics’ villa.\nExceptional interiors and exteriors, stone and wood splendidly synthesized.\nLuxury private pool, deluxe decoration, and relaxing atmosphere.",
     "capacity": 4,
     "beds": 2,
     "bedrooms": 2,
@@ -296,7 +293,7 @@
       "Wifi",
       "Air conditioning",
       "Heating",
-      "Free parking"
+      "Pool"
     ],
     "labels": [
       "Earth homes",
@@ -311,11 +308,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png"
     },
     "loc": {
-      "country": "USA",
-      "city": "Aspen",
-      "address": "456 Mountain Lane",
-      "lat": 39.1911,
-      "lng": -106.8175
+      "country": "Greece",
+      "city": "Heraklion",
+      "address": "Entire villa",
+      "lat": 35.341846,
+      "lng": 25.148254
     },
     "reviews": [
       {
@@ -348,49 +345,41 @@
   },
   {
     "_id": "s105",
-    "name": "City Center Loft",
-    "type": "Hotel",
+    "name": "Beautiful home in Ronneby with kitchen",
+    "type": "Entire home",
     "likedByUsers": [
       {
         "id": "u110",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "fullname": "Daniel Smith"
       },
       {
-        "id": "u111111",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "_id": "u113",
+        "fullname": "Carlos Lopez"
       }
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717404730/stay5.1_dd514e.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717404754/stay5.2_fhfwee.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717404770/stay5.3_htsdnh.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717404785/stay5.4_irlfmt.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717404799/stay5.5_wwegdi.webp"
       }
     ],
     "price": 150.0,
-    "summary": "Stylish loft apartment located in the heart of the city, offering convenience and urban vibes.",
+    "summary": "Welcome to this unique accommodation in the Blekinge archipelago on its own island, Ströms Holme, outside Ronneby. The cozy cottage is a paradise for those who like to enjoy their vacations in seclusion and tranquility. In the compact house you will find everything so that you can really enjoy your vacation. The special feature of this beautiful vacation home is the wonderful location with terraces in all four directions, where you can watch the spectacle of the sea, the sunrise and the sunset. In the sea you can fish and swim. There is also a rich bird life and many seals that you can watch. You can either reach the house with your own boat or rent a boat from the house owner. You can park your car in the harbor of Ekenäs, on the mainland. In the harbor there is a nice restaurant and a playground. By boat you can go around the Blekinge archipelago and go ashore on the islands. On Harön, enjoy the evening sun until late. On Karön you can moor at the jetty and look at the beautiful houses from the turn of the century. You can also take a boat up the river Ronneby and moor at Ronneby Brunnspark for a coffee, restaurant or shopping. The center of Ronneby with its beautiful old wooden houses and many pretty alleys is worth a visit. A unique accommodation in a fantastic location for those who want to enjoy a vacation by the sea, because you can not be closer to the sea. Note: Own risk in case of boat damage. Life jackets can be rented/borrowed at Ronneby Outlet. Can be rented together with S20293 on the neighboring island. Can comfortably fit up to 5 people",
     "capacity": 2,
     "beds": 1,
     "bedrooms": 1,
-    "bath": 1,
+    "bath": 5,
     "amenities": [
       "TV",
       "Wifi",
@@ -414,11 +403,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
     "loc": {
-      "country": "USA",
-      "city": "New York",
-      "address": "789 Downtown Avenue",
-      "lat": 40.7128,
-      "lng": -74.006
+      "country": "Sweden",
+      "city": "Ronneby",
+      "address": "Entire home",
+      "lat": 56.20999,
+      "lng": 15.27602
     },
     "reviews": [
       {
@@ -451,28 +440,37 @@
   },
   {
     "_id": "s106",
-    "name": "Beachside Bungalow",
+    "name": "The Beachside Bungalow",
     "type": "House",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u109",
+        "fullname": "Emma Watson"
+      },
+      {
+        "_id": "u108",
+        "fullname": "Jason Miller"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717407801/stay6_di5m1v.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717407662/stay6.4_tybjhn.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717407679/stay6.3_axnizh.jpg"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717407703/stay6.2_cahnlz.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717407720/stay6.1_mvtsjg.webp"
       }
     ],
     "price": 130.0,
-    "summary": "Quaint bungalow steps away from the beach, perfect for a serene retreat...",
+    "summary": "This Beautiful 1940's Beachfront Bungalow is perfect for that beach side escape. Stunning views of Lacepede Bay from the sheltered verandah. Walking distance to the jetty, supermarket, cafes and pub. The beach is excellent for swimming, fishing and paddle boarding. Short drive to Robe and `The Granites` surf beach.",
     "capacity": 5,
     "beds": 2,
     "bedrooms": 2,
@@ -495,11 +493,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
-      "country": "Portugal",
-      "city": "Lagos",
+      "country": "Australia",
+      "city": "Kingston SE",
       "address": "456 Beachside Avenue",
-      "lat": 37.102,
-      "lng": -8.674
+      "lat": -36.8166634,
+      "lng": 139.8499966
     },
     "reviews": [
       {
@@ -532,48 +530,40 @@
   },
   {
     "_id": "s107",
-    "name": "Modern Downtown Apartment",
-    "type": "Hotel",
+    "name": "2-BR ski apartment in Predela LUX",
+    "type": "Apartment",
     "likedByUsers": [
       {
         "id": "u110",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "fullname": "Daniel Smith"
       },
       {
-        "id": "u111111",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "_id": "u107",
+        "fullname": "Emily White"
       }
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717408345/stay7.3_twir1m.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717408367/stay7.1_betbtr.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717408382/stay7.2_hqzldw.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717408395/stay7.4_tnglft.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717408409/stay7.5_upxxfu.webp"
       }
     ],
     "price": 200.0,
-    "summary": "Experience the city life in this sleek downtown apartment with all modern amenities...",
-    "capacity": 2,
-    "beds": 1,
-    "bedrooms": 1,
+    "summary": "Exclusive 5*, 2-bedroom apartment in the boutique ski in/ski out complex Predela LUX. Tastefully finished in the highest quality furniture and materials, it fits comfortably up to 4 adults and 2 children, and is conveniently located only few minutes to the main ski road and 5 - 7 minutes to the Gondola. The apartment has fully equipped kitchen, including dishwasher, flat screen TV with over 100 Cable channel. Guests have unlimited access to indoors pool and SPA.",
+    "capacity": 6,
+    "beds": 2,
+    "bedrooms": 3,
     "bath": 1,
     "amenities": [
       "TV",
@@ -586,9 +576,9 @@
     ],
     "labels": [
       "Islands",
-      "Tropical",
-      "Camping",
-      "Surfing",
+      "Skiing",
+      "Ski",
+      "Ski-in/out",
       "Bed & breakfasts"
     ],
     "host": {
@@ -597,11 +587,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png"
     },
     "loc": {
-      "country": "USA",
-      "city": "Los Angeles",
+      "country": "Bulgaria",
+      "city": "Bansko",
       "address": "123 Downtown Boulevard",
-      "lat": 34.0522,
-      "lng": -118.2437
+      "lat": 41.840424,
+      "lng": 23.485653
     },
     "reviews": [
       {
@@ -634,32 +624,41 @@
   },
   {
     "_id": "s108",
-    "name": "Luxury Penthouse",
-    "type": "Hotel",
-    "likedByUsers": [],
+    "name": "Villa Adventure -heated pool, media room",
+    "type": "Villa",
+    "likedByUsers": [
+      {
+        "_id": "u106",
+        "fullname": "Jack Wilson"
+      },
+      {
+        "_id": "u105",
+        "fullname": "Anna Johnson"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/1_1_idqrpa"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717409601/stay8.1_rb5xrc.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717409616/stay8.2_gqdtcy.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717409632/stay8.3_floou6.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717409646/stay8.4_zpmipk.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717409660/stay8.5_tkuqoa.webp"
       }
     ],
     "price": 300.0,
-    "summary": "Indulge in luxury in this exquisite penthouse offering stunning city views and top-notch amenities...",
-    "capacity": 4,
-    "beds": 2,
-    "bedrooms": 2,
-    "bath": 2,
+    "summary": "Escape to a haven of tranquility and adventure at our stunning 3-bedroom villa in Gata village, an idyllic retreat just 7 km from the vibrant town of Omiš. This exquisite villa offers the perfect blend of modern luxury and natural beauty, accommodating 6+2 guests in unparalleled comfort and style. Step inside to discover a Media room that will delight both kids and adults, featuring free WiFi, a PlayStation 5 and a table soccer for endless entertainment. The villa boasts a covered outdoor dining area with a barbecue, perfect for al fresco meals amidst the serene surroundings.",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 3,
+    "bath": 3.5,
     "amenities": [
       "TV",
       "Wifi",
@@ -667,8 +666,7 @@
       "Gym",
       "Iron",
       "Washer",
-      "Pool",
-      ""
+      "Pool"
     ],
     "labels": [
       "Bed & breakfasts",
@@ -678,8 +676,7 @@
       "Amazing pools",
       "Skiing",
       "Lake",
-      "Amazing views",
-      ""
+      "Amazing views"
     ],
     "host": {
       "_id": "u105",
@@ -687,11 +684,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "San Francisco",
+      "country": "Croatia",
+      "city": "Gata",
       "address": "789 Luxury Avenue",
-      "lat": 37.7749,
-      "lng": -122.4194
+      "lat": 43.4666648,
+      "lng": 16.6999972
     },
     "reviews": [
       {
@@ -724,48 +721,36 @@
   },
   {
     "_id": "s109",
-    "name": "Charming Countryside Cottage",
+    "name": "Stunning hut in the nature(DayaGeusthouse)",
     "type": "Guesthouse",
     "likedByUsers": [
       {
         "id": "u110",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
-      },
-      {
-        "id": "u111111",
-        "fullname": "Daniel Smith",
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-        "username": "Daniel",
-        "passworg": "daniel123",
-        "address": "Kalisz, Poland"
+        "fullname": "Daniel Smith"
       }
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410367/stay8.1_iiyavg.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410390/stay8.2_y88ywk.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410404/stay8.3_jfznrk.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410418/stay8.4_xck7tx.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410430/stay8.5_pfkgay.webp"
       }
     ],
     "price": 90.0,
-    "summary": "Escape to this charming cottage in the countryside, perfect for a peaceful retreat...",
-    "capacity": 4,
+    "summary": "A small traveler's cabin on the border of a nature reserve. measuring 10 square meters and another 10 square meters of balcony. For adventure lovers who like to sleep right in nature, without electricity, with an outdoor kitchen, compost toilets and a hot shower outside under the trees. The cabin is under our house and above it there is an area that is shared with our house and another 2 cabins - where there is a large pool for the summer, a hot tub and a sauna for cold days",
+    "capacity": 2,
     "beds": 2,
-    "bedrooms": 2,
+    "bedrooms": 1.5,
     "bath": 1,
     "amenities": [
       "TV",
@@ -780,8 +765,7 @@
       "Camping",
       "Tropical",
       "Islands",
-      "Skiing",
-      "Surfing",
+      "Nature",
       "Lakefront",
       "Desert"
     ],
@@ -791,11 +775,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
-      "country": "Portugal",
-      "city": "Sintra",
+      "country": "Israel",
+      "city": "Kedma",
       "address": "123 Countryside Road",
-      "lat": 38.8029,
-      "lng": -9.3817
+      "lat": 31.7007755302,
+      "lng": 34.7720219119
     },
     "reviews": [
       {
@@ -828,28 +812,37 @@
   },
   {
     "_id": "s110",
-    "name": "Secluded Forest Lodge",
+    "name": "Azamra Amirim",
     "type": "House",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u104",
+        "fullname": "Michael Brown"
+      },
+      {
+        "_id": "u103",
+        "fullname": "Sara Smith"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410862/stay10.1_hhtufo.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410883/stay10.2_kwl4wb.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410902/stay10.3_vgcppm.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410958/stay10.4_z6xiyk.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717410971/stay10.5_ycbet6.webp"
       }
     ],
     "price": 160.0,
-    "summary": "Experience nature at its best in this secluded forest lodge, ideal for outdoor enthusiasts...",
+    "summary": "Soft sounds of nature, green mountains and caressing wind. It's built as a large open space, with high wooden ceiling and wrapped in windows to the garden. The house is designed in an eclectic style and every detail in it carefully selected. you can cook in a well-equipped kitchen, and dine around a dining table to the sounds of music you like by a professional sound system.facing a mountain view garden, enjoy a wading pool and a magical seating, which are scattered under the shade of trees.",
     "capacity": 6,
     "beds": 3,
     "bedrooms": 3,
@@ -862,11 +855,13 @@
       "Free parking"
     ],
     "labels": [
-      "Beach",
-      "Beachfront",
+      "Amazing views",
+      "Amazing pools",
       "Lake",
       "Top of the world",
-      "Farms"
+      "Farms",
+      "Vineyards",
+      "Earth homes"
     ],
     "host": {
       "_id": "u101",
@@ -874,11 +869,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
     "loc": {
-      "country": "USA",
-      "city": "Boulder",
+      "country": "Israel",
+      "city": "Amirim",
       "address": "789 Forest Lane",
-      "lat": 40.015,
-      "lng": -105.2705
+      "lat": 32.9362745882,
+      "lng": 35.4510381958
     },
     "reviews": [
       {
@@ -911,28 +906,33 @@
   },
   {
     "_id": "s111",
-    "name": "Mountain View Chalet",
-    "type": "House",
-    "likedByUsers": [],
+    "name": "Love • Attico FronteMare FCO",
+    "type": "Condo",
+    "likedByUsers": [
+      {
+        "_id": "u102",
+        "fullname": "Davit Pok"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_1_ucfaeb"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411460/stay11.1_r5qml3.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411477/stay11._upyl1s.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411489/stay11.3_nqbhsp.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_4_e9elfy"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411501/stay11.4_p0orzf.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411515/stay11.5_vtjndt.webp"
       }
     ],
     "price": 250.0,
-    "summary": "Enjoy breathtaking views of the Matterhorn from this cozy mountain chalet.",
+    "summary": "Penthouse located on the seafront of Fiumicino, 6km from the airport. In the outdoor garden you can enjoy panoramic views of both the sea and the city.",
     "capacity": 6,
     "beds": 3,
     "bedrooms": 2,
@@ -946,10 +946,9 @@
     "labels": [
       "Bed & breakfasts",
       "Camping",
-      "Surfing",
+      "Amazing views",
       "Earth homes",
-      "Amazing pools",
-      "Ski-in/out"
+      "Amazing pools"
     ],
     "host": {
       "_id": "u106",
@@ -957,11 +956,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
-      "country": "Switzerland",
-      "city": "Zermatt",
+      "country": "Italy",
+      "city": "Fiumicino",
       "address": "123 Mountain View Road",
-      "lat": 46.0207,
-      "lng": 7.7491
+      "lat": 41.773540,
+      "lng": 12.239712
     },
     "reviews": [
       {
@@ -994,28 +993,28 @@
   },
   {
     "_id": "s112",
-    "name": "Urban Chic Loft",
-    "type": "Hotel",
+    "name": "Contemporary villa facing the sea",
+    "type": "Home",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411720/stay12.1_lttsmx.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411736/stay12.2_lt8iho.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411749/stay12.3_bmf3vf.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411762/stay12.4_uqxbcb.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717411774/stay12.5_k7qwvp.webp"
       }
     ],
     "price": 180.0,
-    "summary": "Experience Parisian elegance in this stylish loft located in the heart of the city.",
+    "summary": "Magnificent villa, warm , south-west facing, on the beach, enjoying an exceptional view.",
     "capacity": 4,
     "beds": 2,
     "bedrooms": 1,
@@ -1029,9 +1028,11 @@
     "labels": [
       "Treehouses",
       "Earth homes",
-      "Vineyards",
+      "Surfing",
+      "Bed & breakfasts",
       "Beach",
-      "Beachfront"
+      "Beachfront",
+      "Amazing views"
     ],
     "host": {
       "_id": "u103",
@@ -1040,10 +1041,10 @@
     },
     "loc": {
       "country": "France",
-      "city": "Paris",
+      "city": "Santec",
       "address": "789 Chic Avenue",
-      "lat": 48.8566,
-      "lng": 2.3522
+      "lat": 48.70000000,
+      "lng": -4.03333000
     },
     "reviews": [
       {
@@ -1076,32 +1077,32 @@
   },
   {
     "_id": "s113",
-    "name": "Laguna Shores, Mexico",
-    "type": "Hotel",
+    "name": "No.2 Suantra Cottages",
+    "type": "Cottage",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412413/stay13.1_wim6rl.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412427/stay13.2_dqv6k3.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412440/stay13.3_ji5xps.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412452/stay13.4_wgzej9.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412465/stay13.5_g4kujc.webp"
       }
     ],
     "price": 215.0,
-    "summary": "Welcome to Casa Kaliq, just 5 minutes walking distance from the beach.  Mediterranean-style newly constructed oasis with breathtaking views. This custom home offers 5 spacious bedrooms, each with its own full bathroom, ensuring ultimate comfort and privacy for you and your guests. Fully equipped kitchen and living area. Private pool, barbecue grill, fire pit, outdoor shower, and half bathroom. It is located inside Laguna Shores Resort where you can enjoy all the amenities it has to offer.",
-    "capacity": 6,
-    "beds": 6,
+    "summary": "My place is close to the beach, mounting climbing, And the popular Dingleway walking track . Ideal for couples, adventurers ,Walkers, Artists, Photographers, families (with kids). Or a Simple brake away for your busy life.. very peaceful and tranquil ..",
+    "capacity": 5,
+    "beds": 3,
     "bedrooms": 4,
-    "bath": 2,
+    "bath": 1,
     "amenities": [
       "TV",
       "Wifi",
@@ -1110,9 +1111,13 @@
       "Elevator"
     ],
     "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools"
+      "Amazing views",
+      "Surfing",
+      "Island",
+      "Farms",
+      "Nature",
+      "Top of the world",
+      "Vineyards"
     ],
     "host": {
       "_id": "u102",
@@ -1120,11 +1125,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw"
     },
     "loc": {
-      "country": "Mexico",
-      "city": "Guadelajara",
+      "country": "Ireland",
+      "city": "Dublin",
       "address": "789 Chic Avenue",
-      "lat": 48.8566,
-      "lng": 2.3522
+      "lat": 53.350140,
+      "lng": -6.266155
     },
     "reviews": [
       {
@@ -1157,32 +1162,37 @@
   },
   {
     "_id": "s114",
-    "name": "Wander Lake Sinclair",
-    "type": "House",
-    "likedByUsers": [],
+    "name": "Masseria Quadrelli: an oasis in the heart of Salento",
+    "type": "Villa ",
+    "likedByUsers": [
+      {
+        "_id": "u102",
+        "fullname": "Davit Pok"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412890/stay14.1_cu8bkd.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412904/stay14.2_ok277w.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412917/stay14.3_bxq1et.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412929/stay14.4_advfgz.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717412940/stay14.5_kriwiu.webp"
       }
     ],
     "price": 215.0,
-    "summary": "This home is a luxurious lakeside retreat accommodating up to 10 guests in 3 bedrooms and a bunk loft. With 270 feet of pristine lakefront, guests can enjoy panoramic views through grand 10' x 32' doors. Outdoors, you'll be greeted by an al fresco kitchen, elegant dining terrace, saltwater pool, and a ping pong table.",
-    "capacity": 4,
-    "beds": 2,
-    "bedrooms": 4,
-    "bath": 1,
+    "summary": "Welcome to Masseria Quadrelli: An Oasis of Elegance in the Heart of Salento Located in the heart of Salento, only 10 km from Otranto and a short distance from the renowned towns of Otranto and Santa Cesarea Terme, Masseria Quadrelli is an authentic jewel immersed in a centuries-old olive grove.",
+    "capacity": 16,
+    "beds": 20,
+    "bedrooms": 11,
+    "bath": 11.5,
     "amenities": [
       "TV",
       "Wifi",
@@ -1208,11 +1218,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv"
     },
     "loc": {
-      "country": "USA",
-      "city": "Georgia",
+      "country": "Italy",
+      "city": "Provincia di Lecce",
       "address": "789 Chic Avenue",
-      "lat": 33.247875,
-      "lng": -83.441162
+      "lat": 40.349159,
+      "lng": 18.172073
     },
     "reviews": [
       {
@@ -1245,28 +1255,28 @@
   },
   {
     "_id": "s115",
-    "name": "Limone Sul Garda",
-    "type": "Hotel",
+    "name": "Arabian Nights Ensuite Double Tent with Balcony",
+    "type": "Private room",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413340/stay15.1_sp664l.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413354/stay15.2_nk6l7i.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413369/stay15.3_u5tfid.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413380/stay15.4_jencxg.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413391/stay15.5_rce0nh.webp"
       }
     ],
-    "price": 400,
-    "summary": "Barfuss zum Strand! Noch nie warst du dem Gardasee näher als in unseren zwei liebevoll eingerichteten Apartments in Limone sul Garda.",
+    "price": 50,
+    "summary": "My name is Shaker and I would be happy to welcome you to our camp! My family has been in Wadi Rum for many generations and I am born and raised in the surrounding desert. As a guest in our camp you will have the opportunity to learn from our vast knowledge of the land and you will be exposed to the Bedouin culture and our daily lives. Every night we prepare food traditional to the region and cook in an underground oven (Zarb), shared together with other guests in the traditional nomad style.",
     "capacity": 2,
     "beds": 1,
     "bedrooms": 1,
@@ -1275,14 +1285,14 @@
       "TV",
       "Wifi",
       "Air conditioning",
-      "Washer",
-      "Elevator"
+      "Washer"
     ],
     "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools",
-      "Luxe"
+      "Camping",
+      "Amazing views",
+      "Luxe",
+      "Desert",
+      "Earth homes"
     ],
     "host": {
       "_id": "u105",
@@ -1290,11 +1300,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "Texas",
+      "country": "Jordan",
+      "city": "Wadi Rum",
       "address": "789 Chic Avenue",
-      "lat": 32.779167,
-      "lng": -96.808891
+      "lat": 29.5725643764,
+      "lng": 35.4186216588
     },
     "reviews": [
       {
@@ -1327,46 +1337,47 @@
   },
   {
     "_id": "s116",
-    "name": "Casa Estrella Oro",
-    "type": "Guesthouse",
+    "name": "Cottage Mauiwikendaya",
+    "type": "Cabin",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413837/stay16.1_zktypi.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413867/stay16.2_lrwmtp.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413879/stay16.3_ye4awh.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413898/stay16.4_nutukl.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717413912/stay16.5_oebrmq.webp"
       }
     ],
-    "price": 267.0,
-    "summary": "Casa Estrella Oro- Hacienda Donaire, Beas. Relax with the whole family at this peaceful place to stay. Detached villa with three bedrooms and a swimming pool in the countryside among the olive groves. All comforts and coziness are close by in the village of Beas. With 30 minutes drive to one of the most beautiful beaches in Spain.",
-    "capacity": 4,
-    "beds": 4,
-    "bedrooms": 2,
-    "bath": 1,
+    "price": 133.0,
+    "summary": "Aloha! If you feel the pursuit of pleasures, which are considered to be the purpose of man's life and existence, there is Maui Wikendaya Only 10km from Novi Sad on the idyllic part of the Danube River bank, there is a futuristic building Maui Wikendaya. Fairytale family cottage next to the water in which a lot of love and effort is invested will provide you with unforgettable moments of relaxation in nature. Maui Wikendaya will satisfy all hedonists who know how to enjoy life :)",
+    "capacity": 5,
+    "beds": 2,
+    "bedrooms": 5,
+    "bath": 2,
     "amenities": [
       "TV",
       "Wifi",
       "Air conditioning",
+      "Heating",
       "Washer",
-      "Elevator"
+      "BBQ Grill"
     ],
     "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools",
+      "Earth homes",
+      "Amazing views",
+      "Treehouses",
       "Luxe",
       "Vineyards",
-      "Bed & breakfasts"
+      "Top of the world"
     ],
     "host": {
       "_id": "u103",
@@ -1374,11 +1385,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1"
     },
     "loc": {
-      "country": "Spain",
-      "city": "Huelva",
+      "country": "Serbia",
+      "city": "Kovilj",
       "address": "789 Chic Avenue",
-      "lat": 37.25,
-      "lng": -6.95
+      "lat": 45.2333324,
+      "lng": 20.0166666
     },
     "reviews": [
       {
@@ -1411,49 +1422,53 @@
   },
   {
     "_id": "s117",
-    "name": "Derrymor - Private Castle in the Hills",
-    "type": "House",
-    "likedByUsers": [],
+    "name": "Cozy Scandinavian Cabin by Mountain River & Woods",
+    "type": "Cabin",
+    "likedByUsers": [
+      {
+        "_id": "u102",
+        "fullname": "Davit Pok"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717414239/stay17.1_kiqyl9.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717414253/stay17._wvpoat.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717414265/stay17.3_u3wwef.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717414277/stay17.4_jhzcno.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717414289/stay17.5_ytwqcl.webp"
       }
     ],
     "price": 267.0,
-    "summary": "Privately secluded in its own botanic park Derrymor rises above mature gardens defined by irreplaceable historical character, striking architectural features and a sense of grandeur from a bygone era, offering a fairytale escape in the centre of the dreamy Adelaide Hills.",
-    "capacity": 5,
-    "beds": 3,
-    "bedrooms": 2,
-    "bath": 2,
+    "summary": "Very warm and cozy 4 bedroom cabin on a mountain river in the middle of wild nature. The cabin it's situated in a natural reservation at the foot of the Fagaras mountains, being 1,5 hours away both from Sibiu International Airport and Brasov city and 30 minutes away from Fagaras city. This place is perfect for those who love nature and untamed places. The cabin has been completely remodeled in 2022 and comes with everything you need for a short stay. So, welcome to 'Cabana Sapte'!",
+    "capacity": 9,
+    "beds": 7,
+    "bedrooms": 4,
+    "bath": 3,
     "amenities": [
       "TV",
       "Wifi",
       "Air conditioning",
       "Washer",
-      "Dryer",
-      "Gym"
+      "Dryer"
     ],
     "labels": [
-      "Beach",
-      "Beachfront",
-      "Amazing pools",
+      "Amazing views",
       "Luxe",
       "Vineyards",
-      "Bed & breakfasts",
       "Ski-in/out",
-      "Skiing"
+      "Skiing",
+      "Earth homes",
+      "Lake",
+      "Lakeview"
     ],
     "host": {
       "_id": "u106",
@@ -1461,11 +1476,11 @@
       "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
-      "country": "Australia",
-      "city": "Crafers",
+      "country": "Romania",
+      "city": "Breaza",
       "address": "789 Chic Avenue",
-      "lat": -34.99717,
-      "lng": 138.70431
+      "lat": 45.18722220,
+      "lng": 	25.66222220
     },
     "reviews": [
       {
@@ -1498,43 +1513,52 @@
   },
   {
     "_id": "s118",
-    "name": "Mountain Haven Retreat",
-    "type": "Cabin",
-    "likedByUsers": [],
+    "name": "Luxury Beach front",
+    "type": "Rental unit",
+    "likedByUsers": [
+      {
+        "_id": "u101",
+        "fullname": "Sophia Garcia"
+      }
+    ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415565/stay18.1_dl5sjf.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415579/stay18.2_b2bi8i.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415591/stay18.3_i9qfwh.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415603/stay18.4_wr07hg.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415613/stay18.5_bjmayo.webp"
       }
     ],
     "price": 180.0,
-    "summary": "Escape to the tranquility of Mountain Haven Retreat, a secluded cabin nestled in the pine forests with stunning mountain views. Perfect for a peaceful getaway.",
-    "capacity": 6,
-    "beds": 3,
-    "bedrooms": 2,
-    "bath": 1,
+    "summary": "First line to the beach with stunning sea view of 180 degrees! waiting for you this 3 bedrooms dream house, with 24h doorman, parking, pool, spa, Royal Beach hotel service 24h. Just 1 min walking to the beach, 2 min walking to Carmel market, 10 min walking to Neve Zedek. Super luxury",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 3,
+    "bath": 3,
     "amenities": [
-      "Fireplace",
-      "Hot tub",
+      "TV",
+      "Air conditioning",
       "Wifi",
-      "TV"
+      "Gym",
+      "Free parking",
+      "Smoking allowed",
+      "Kitchen"
     ],
     "labels": [
-      "Mountain",
-      "Secluded",
-      "Romantic",
-      "Nature"
+      "Beach",
+      "Beachfront",
+      "Amazing views",
+      "Surfing",
+      "Luxe"
     ],
     "host": {
       "_id": "u110",
@@ -1542,11 +1566,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "Canada",
-      "city": "Banff",
+      "country": "Israel",
+      "city": "Tel Aviv-Yafo",
       "address": "123 Mountain Rd",
-      "lat": 51.1784,
-      "lng": -115.5708
+      "lat": 32.109333,
+      "lng": 34.855499
     },
     "reviews": [
       {
@@ -1567,42 +1591,46 @@
   },
   {
     "_id": "s119",
-    "name": "Urban Chic Apartment",
-    "type": "Apartment",
+    "name": "Bungalow with Private Pool",
+    "type": "Bungalow ",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415951/stay19.1_blsyo3.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415965/stay19.2_q27fva.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl":"http://res.cloudinary.com/dqti9icif/image/upload/v1717415977/stay19.3_kuxdx3.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415977/stay19.3_kuxdx3.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717416006/stay19.5_qxctwf.webp"
       }
     ],
     "price": 220.0,
-    "summary": "Experience the best of city living in this modern and stylish apartment located in the heart of downtown.",
-    "capacity": 2,
-    "beds": 1,
-    "bedrooms": 1,
+    "summary": "Inspired by the best hotels in the world, this beautiful 150m2 bungalow in the middle of nature has a private swimming pool, two bedrooms with air conditioning, 4K TV, WiFi, bed linen and imported yarn towels, kitchen, minibar 120 liters, brewery, coffee maker with capsules, home-office space, outdoor fireplace, barbecue and a bathroom overlooking the green. Pets are very welcome! The best beaches and waterfalls in the city are located just 15 minutes from the property.",
+    "capacity": 4,
+    "beds": 2,
+    "bedrooms": 2,
     "bath": 1,
     "amenities": [
       "Wifi",
       "TV",
       "Air conditioning",
-      "Kitchen"
+      "Pets allowed"
     ],
     "labels": [
-      "City",
-      "Modern",
-      "Convenient"
+      "Islands",
+      "Amazing pools",
+      "Earth homes",
+      "Amazing views",
+      "Tropical",
+      "Luxe",
+      "Top of the world"
     ],
     "host": {
       "_id": "u110",
@@ -1610,11 +1638,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "New York",
+      "country": "Brazil",
+      "city": "Saquarema",
       "address": "456 Broadway St",
-      "lat": 40.7128,
-      "lng": -74.0060
+      "lat": 	-22.932398,
+      "lng": 	-42.486675
     },
     "reviews": [
       {
@@ -1637,7 +1665,12 @@
     "_id": "s120",
     "name": "Seaside Paradise Villa",
     "type": "Villa",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u101",
+        "fullname": "Sophia Garcia"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1738,8 +1771,7 @@
     ],
     "labels": [
       "Countryside",
-      "Cozy",
-      "Romantic"
+      "Cozy"
     ],
     "host": {
       "_id": "u110",
@@ -1842,7 +1874,12 @@
     "_id": "s123",
     "name": "Lakeview Modern Condo",
     "type": "Condo",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u101",
+        "fullname": "Sophia Garcia"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1910,7 +1947,12 @@
     "_id": "s124",
     "name": "Desert Oasis Bungalow",
     "type": "Bungalow",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u114",
+        "fullname": "Master Admin"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -1978,7 +2020,12 @@
     "_id": "s125",
     "name": "Tropical Island Villa",
     "type": "Villa",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u114",
+        "fullname": "Master Admin"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
@@ -2017,9 +2064,9 @@
       "Family-friendly"
     ],
     "host": {
-      "_id": "u110",
-      "fullname": "Daniel Smith",
-      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
+      "_id": "u106",
+      "fullname": "Jack Wilson",
+      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
     },
     "loc": {
       "country": "Bahamas",
@@ -2049,7 +2096,12 @@
     "_id": "s126",
     "name": "Cozy Ski Chalet",
     "type": "Chalet",
-    "likedByUsers": [],
+    "likedByUsers": [
+      {
+        "_id": "u107",
+        "fullname": "Emily White"
+      }
+    ],
     "imgUrls": [
       {
         "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"

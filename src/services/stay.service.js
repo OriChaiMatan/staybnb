@@ -136,24 +136,10 @@ function getAllPrices() {
   return stays.map((stay) => stay.price)
 }
 
-function getEmptyStay(
-  name = "",
-  type = "",
-  imgUrls = [],
-  price = "",
-  summary = "",
-  capacity = "",
-  amenities = [],
-  labels = [],
-  country = "",
-  city = "",
-  address = "",
-  lat,
-  lng,
-  reviews = [],
+function getEmptyStay(name = "", type = "", imgUrls = [], price = "", summary = "", capacity = "", amenities = [], labels = [], country = "",
+  city = "", address = "", lat, lng, reviews = [], likedByUser = [],
 ) {
   const { startDate, endDate } = utilService.getRandomDateRange()
-
   return {
     name,
     type,
@@ -174,6 +160,7 @@ function getEmptyStay(
     reviews,
     startDate,
     endDate,
+    likedByUser
   }
 }
 
