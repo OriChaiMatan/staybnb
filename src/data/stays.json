@@ -1,8 +1,8 @@
 [
   {
     "_id": "s101",
-    "name": "Ribeira Charming Duplex",
-    "type": "House",
+    "name": "Unique Villa Olipa Island",
+    "type": "Home",
     "likedByUsers": [
       {
         "_id": "u113",
@@ -11,40 +11,43 @@
     ],
     "imgUrls": [
       {
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305748/stay1.1_fnvddr.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717479800/stay1.1_deskyd.webp"
       },
       {
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305798/stay1.2_oo5grq.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717479822/stay1.2_tjwi8s.webp"
       },
       {
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305820/stay1.3_qzlv90.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717479837/stay1.3_zqhjl9.webp"
       },
       {
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305836/stay1.4_kpx3yy.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717479854/stay1.4_kme72f.webp"
       },
       {
-        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717305850/stay1.5_zigkud.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717479867/stay1.5_xp4t8n.webp"
       }
     ],
     "price": 80.0,
-    "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube)...",
-    "capacity": 8,
-    "beds": 4,
-    "bedrooms": 1,
-    "bath": 2,
+    "summary": "Villa Olipa Island is certainly one of the most special villas you can rent on the Adriatic coast. Imagine for a moment that you are on a small island where this villa is the only property and enjoy total peace, privacy and stunning panoramic views.",
+    "capacity": 10,
+    "beds": 6,
+    "bedrooms": 3,
+    "bath": 3,
     "amenities": [
       "TV",
       "Wifi",
       "Kitchen",
       "Smoking allowed",
-      "Pets allowed"
+      "Pets allowed",
+      "Pool"
     ],
     "labels": [
       "Amazing views",
-      "Amazing pools",
-      "Skiing",
       "Mansions",
-      "Top of the world"
+      "Top of the world",
+      "Beach",
+      "Beachfront",
+      "Islands",
+      "Tropical"
     ],
     "host": {
       "_id": "u112",
@@ -52,16 +55,16 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "New York",
+      "country": "Croatia",
+      "city": "Olipa",
       "address": "789 Downtown Avenue",
-      "lat": 40.7128,
-      "lng": -74.006
+      "lat": 42.7625,
+      "lng": 17.7725
     },
     "reviews": [
       {
         "id": "r101",
-        "txt": "The loft is amazing! Loved the city views.",
+        "txt": "The villa is amazing! Loved the amazing views.",
         "rate": 5,
         "date": "3 weeks ago",
         "by": {
@@ -395,7 +398,7 @@
       "Luxe",
       "Treehouses",
       "Earth homes",
-      "Desert"
+      "Island"
     ],
     "host": {
       "_id": "u101",
@@ -485,7 +488,10 @@
     ],
     "labels": [
       "Luxe",
-      "Beachfront"
+      "Beachfront",
+      "Beach",
+      "Vineyards",
+      "Farms"
     ],
     "host": {
       "_id": "u105",
@@ -767,7 +773,8 @@
       "Islands",
       "Nature",
       "Lakefront",
-      "Desert"
+      "Desert",
+      "Vineyards"
     ],
     "host": {
       "_id": "u106",
@@ -1376,7 +1383,6 @@
       "Amazing views",
       "Treehouses",
       "Luxe",
-      "Vineyards",
       "Top of the world"
     ],
     "host": {
@@ -1463,7 +1469,6 @@
     "labels": [
       "Amazing views",
       "Luxe",
-      "Vineyards",
       "Ski-in/out",
       "Skiing",
       "Earth homes",
@@ -1480,7 +1485,7 @@
       "city": "Breaza",
       "address": "789 Chic Avenue",
       "lat": 45.18722220,
-      "lng": 	25.66222220
+      "lng": 25.66222220
     },
     "reviews": [
       {
@@ -1602,7 +1607,7 @@
         "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415965/stay19.2_q27fva.webp"
       },
       {
-        "imgUrl":"http://res.cloudinary.com/dqti9icif/image/upload/v1717415977/stay19.3_kuxdx3.webp"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415977/stay19.3_kuxdx3.webp"
       },
       {
         "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717415977/stay19.3_kuxdx3.webp"
@@ -1641,8 +1646,8 @@
       "country": "Brazil",
       "city": "Saquarema",
       "address": "456 Broadway St",
-      "lat": 	-22.932398,
-      "lng": 	-42.486675
+      "lat": -22.932398,
+      "lng": -42.486675
     },
     "reviews": [
       {
@@ -1663,8 +1668,8 @@
   },
   {
     "_id": "s120",
-    "name": "Seaside Paradise Villa",
-    "type": "Villa",
+    "name": "Black Treehouse im Pfrunger Ried",
+    "type": "Treehouse",
     "likedByUsers": [
       {
         "_id": "u101",
@@ -1673,38 +1678,40 @@
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717480698/stay20.1_ws1qma.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717480713/stay20.2_rpjvu1.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717480727/stay20.3_llawt5.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717480741/stay20.4_vgtbdj.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717480757/stay20.5_jwtrpd.webp"
       }
     ],
     "price": 350.0,
-    "summary": "Enjoy luxurious beachfront living at Seaside Paradise Villa, featuring stunning ocean views, private pool, and modern amenities.",
-    "capacity": 8,
-    "beds": 4,
-    "bedrooms": 3,
-    "bath": 2,
+    "summary": "Our treehouse is located on the outskirts of Riedhausen. Experience the Pfrunger Ried on many hiking and biking trails right in front of the treehouse staircase, you will also discover numerous excursions in the immediate vicinity. An ideal place to relax and feel good. A small shop can be found in the neighboring town. A recommended restaurant can be found in the village and also in the nearby villages. Only 30 minutes you can reach Überlingen on Lake Constance.",
+    "capacity": 2,
+    "beds": 0,
+    "bedrooms": 1,
+    "bath": 1,
     "amenities": [
       "Pool",
       "Wifi",
-      "TV",
-      "Kitchen",
-      "BBQ"
+      "Smoking allowed",
+      "Air conditioning"
     ],
     "labels": [
-      "Beachfront",
-      "Luxury",
-      "Family-friendly"
+      "Treehouses",
+      "Top of the world",
+      "Vineyards",
+      "Amazing views",
+      "Camping",
+      "Bed & breakfasts"
     ],
     "host": {
       "_id": "u110",
@@ -1712,11 +1719,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "Mexico",
-      "city": "Cancun",
+      "country": "Germany",
+      "city": "Riedhausen",
       "address": "789 Ocean Blvd",
-      "lat": 21.1619,
-      "lng": -86.8515
+      "lat": 47.9093,
+      "lng": 9.4285
     },
     "reviews": [
       {
@@ -1737,41 +1744,49 @@
   },
   {
     "_id": "s121",
-    "name": "Rustic Country Cottage",
-    "type": "Cottage",
+    "name": "Borgometato - Fico",
+    "type": "Home",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717481941/stay21.1_tuv8wj.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717481963/stay21.2_zgxl92.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717481975/stay21.3_ahy64g.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717481987/stay21.4_hhdpwq.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482001/stay21.5_u6df0a.webp"
       }
     ],
     "price": 150.0,
-    "summary": "Charming rustic cottage in the countryside, perfect for a relaxing getaway surrounded by nature.",
+    "summary": "There is a place a few steps away from the famous VERSILIA (Tuscany) called BORGOMETATO. Here various structures have been designed by the Architect Stefano Viviani, who has realized In each of them, a very refined style respectful to the place. Il Borgo di Metato is surrounded by olive trees, lots of green spaces and there are some donkeys for the joy of children. Il FICO is part of this place.",
     "capacity": 4,
     "beds": 2,
     "bedrooms": 2,
     "bath": 1,
     "amenities": [
-      "Fireplace",
+      "Pets allowed",
       "Wifi",
       "TV",
-      "Kitchen"
+      "Kitchen",
+      "Pool",
+      "Washer",
+      "Free parking"
     ],
     "labels": [
-      "Countryside",
-      "Cozy"
+      "Beachfront",
+      "Earth homes",
+      "Amazing views",
+      "Amazing pools",
+      "Camping",
+      "Top of the world",
+      "Bed & breakfasts"
     ],
     "host": {
       "_id": "u110",
@@ -1779,11 +1794,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "Ireland",
-      "city": "Galway",
+      "country": "Italy",
+      "city": "Metato",
       "address": "123 Country Ln",
-      "lat": 53.2744,
-      "lng": -9.0490
+      "lat": 43.9530515,
+      "lng": 10.3295138
     },
     "reviews": [
       {
@@ -1804,42 +1819,47 @@
   },
   {
     "_id": "s122",
-    "name": "Historic Downtown Loft",
-    "type": "Loft",
+    "name": "Sea Pearl Villas - Breeze",
+    "type": "Home",
     "likedByUsers": [],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482723/stay22.1_ela4yi.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482738/stay22.2_d83jv9.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482752/stay22.3_b2usu6.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482771/stay22.4_giedpv.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717482785/stay22.5_rvwwo5.webp"
       }
     ],
     "price": 200.0,
-    "summary": "Stay in the heart of the city in this beautifully restored historic loft with modern amenities.",
-    "capacity": 3,
-    "beds": 2,
-    "bedrooms": 1,
-    "bath": 1,
+    "summary": "Breeze welcomes up to 7 guests for a wonderful, peaceful, and comfortable holiday by the sea. It was designed to offer you plenty of space to spread out, both indoors in beautifully appointed and furnished interior areas, and outside in the garden with private pool with whirlpool, or even on the roof terrace where you can relax and rest your eyes on the endless blue of the Mediterranean Sea. A refundable breakage deposit of €900 is required per stay.",
+    "capacity": 8,
+    "beds": 4,
+    "bedrooms": 4,
+    "bath": 4.5,
     "amenities": [
       "Wifi",
-      "TV",
       "Kitchen",
-      "Air conditioning"
+      "Air conditioning",
+      "Pool",
+      "Free parking",
+      "Washer"
     ],
     "labels": [
-      "City",
-      "Historic",
-      "Stylish"
+      "Amazing pools",
+      "Earth homes",
+      "Islands",
+      "Beachfront",
+      "Beach",
+      "Desert"
     ],
     "host": {
       "_id": "u110",
@@ -1847,11 +1867,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "Boston",
+      "country": "Cyprus",
+      "city": "Ayia Napa",
       "address": "456 Beacon St",
-      "lat": 42.3601,
-      "lng": -71.0589
+      "lat": 34.992283,
+      "lng": 34.014011
     },
     "reviews": [
       {
@@ -1872,8 +1892,8 @@
   },
   {
     "_id": "s123",
-    "name": "Lakeview Modern Condo",
-    "type": "Condo",
+    "name": "Zostel Sissu | Bed in 6 Bed Mixed Dorm",
+    "type": "Room",
     "likedByUsers": [
       {
         "_id": "u101",
@@ -1882,37 +1902,40 @@
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717483458/stay23.1_qczfyu.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717483476/stay23.2_aiipeo.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717483488/stay23.3_mwhuo7.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717483500/stay23.4_chpmvh.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717483517/stay23.5_yrzp7j.webp"
       }
     ],
     "price": 190.0,
-    "summary": "Modern condo with stunning lake views and all the amenities you need for a comfortable stay.",
-    "capacity": 4,
-    "beds": 2,
-    "bedrooms": 2,
-    "bath": 2,
+    "summary": "Offering a spectacular view of Himalayan glaciers and the majestic Sissu waterfall, Our hostel in Sissu is your key to exploring Himachal’s enchanting Lahaul region. A sprawling space decorated with outdoor seating and a field to play volleyball welcome you into the premises. Dorm rooms with balconies make you comfortable for work and rest, while vibrant common rooms keep the fun meter alive with indoor games.",
+    "capacity": 1,
+    "beds": 1,
+    "bedrooms": 1,
+    "bath": 0,
     "amenities": [
       "Pool",
       "Wifi",
       "TV",
-      "Gym"
+      "Free parking"
     ],
     "labels": [
-      "Lakeview",
-      "Modern",
-      "Convenient"
+      "Amazing views",
+      "Ski-in/out",
+      "Skiing",
+      "Camping",
+      "Earth homes",
+      "Top of the world"
     ],
     "host": {
       "_id": "u110",
@@ -1920,11 +1943,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "Canada",
-      "city": "Toronto",
+      "country": "India",
+      "city": "Keylong",
       "address": "789 Lakeshore Blvd",
-      "lat": 43.6511,
-      "lng": -79.3470
+      "lat": 32.5717,
+      "lng": 77.02448
     },
     "reviews": [
       {
@@ -1945,8 +1968,8 @@
   },
   {
     "_id": "s124",
-    "name": "Desert Oasis Bungalow",
-    "type": "Bungalow",
+    "name": "Amazing Seaview Pool Villa Samui No.1",
+    "type": "Villa",
     "likedByUsers": [
       {
         "_id": "u114",
@@ -1955,23 +1978,23 @@
     ],
     "imgUrls": [
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717484262/stay24.1_t0jrek.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717484279/stay24.2_ypdfh4.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717484290/stay24.3_jpijq4.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717484302/stay24.4_zfoezu.webp"
       },
       {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
+        "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1717484314/stay24.5_mlxzs4.webp"
       }
     ],
     "price": 175.0,
-    "summary": "Escape to this charming desert oasis bungalow, perfect for a relaxing retreat surrounded by stunning desert landscapes.",
+    "summary": "Gemini Villa Location: Koh Samui's Best Sunset Area Center Point.Koh Samui main road.The first gentle slope opposite the entrance of Four Seasons Hotel, the most expensive hotel in Koh Samui.It's easier to get around… Any vehicle can easily go up, 2 mins walk.A few seconds by car, 5 minutes from the villa to bangpor beach and natong beach, 10 minutes to Nathon pier, the biggest transportation hub of Koh Samui, 10 minutes drive to 7-11.24 hour supermarket, 3 minutes to the big comprehensive supermarket Lotus supermarket 10 minutes by car, to the administrative center of Natong district.Bank. Drugstore. Seafood Market 10 minutes by car, eat and drink around the area for everything you need for your vacation, 30-40 minutes drive to the airport and 30-40 minutes drive to Chaweng District, the most bustling area of Koh Samui.",
     "capacity": 4,
     "beds": 2,
     "bedrooms": 2,
@@ -1980,12 +2003,18 @@
       "Pool",
       "Wifi",
       "TV",
-      "Air conditioning"
+      "Air conditioning",
+      "Heating",
+      "Washer",
+      "Dryer"
     ],
     "labels": [
       "Desert",
-      "Secluded",
-      "Relaxing"
+      "Luxe",
+      "Islands",
+      "Amazing pools",
+      "Amazing views",
+      "Top of the world"
     ],
     "host": {
       "_id": "u110",
@@ -1993,11 +2022,11 @@
       "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
     },
     "loc": {
-      "country": "USA",
-      "city": "Palm Springs",
+      "country": "Thailand",
+      "city": "Ko Samui",
       "address": "123 Desert Rd",
-      "lat": 33.8303,
-      "lng": -116.5453
+      "lat": 9.512017,
+      "lng": 100.013596
     },
     "reviews": [
       {
@@ -2015,155 +2044,5 @@
     ],
     "startDate": "2024-08-30",
     "endDate": "2024-09-05"
-  },
-  {
-    "_id": "s125",
-    "name": "Tropical Island Villa",
-    "type": "Villa",
-    "likedByUsers": [
-      {
-        "_id": "u114",
-        "fullname": "Master Admin"
-      }
-    ],
-    "imgUrls": [
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
-      }
-    ],
-    "price": 400.0,
-    "summary": "Luxury villa on a tropical island with private beach access and all modern comforts.",
-    "capacity": 10,
-    "beds": 5,
-    "bedrooms": 4,
-    "bath": 3,
-    "amenities": [
-      "Pool",
-      "Wifi",
-      "TV",
-      "Air conditioning",
-      "BBQ",
-      "Private beach"
-    ],
-    "labels": [
-      "Island",
-      "Luxury",
-      "Beachfront",
-      "Family-friendly"
-    ],
-    "host": {
-      "_id": "u106",
-      "fullname": "Jack Wilson",
-      "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg"
-    },
-    "loc": {
-      "country": "Bahamas",
-      "city": "Nassau",
-      "address": "123 Island Dr",
-      "lat": 25.0343,
-      "lng": -77.3963
-    },
-    "reviews": [
-      {
-        "id": "r147",
-        "txt": "A dream come true! The villa is even more beautiful than the pictures.",
-        "rate": 5,
-        "date": "April 2024",
-        "by": {
-          "_id": "u105",
-          "fullname": "Anna Johnson",
-          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg",
-          "address": "Leicester, United Kingdom"
-        }
-      }
-    ],
-    "startDate": "2024-09-10",
-    "endDate": "2024-09-17"
-  },
-  {
-    "_id": "s126",
-    "name": "Cozy Ski Chalet",
-    "type": "Chalet",
-    "likedByUsers": [
-      {
-        "_id": "u107",
-        "fullname": "Emily White"
-      }
-    ],
-    "imgUrls": [
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_1_u7pgyn"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/4_2_v7ch6x"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_3_o4ikp0"
-      },
-      {
-        "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/2_2_xepifd"
-      }
-    ],
-    "price": 250.0,
-    "summary": "Charming ski chalet located right on the slopes. Perfect for winter sports enthusiasts and cozy winter retreats.",
-    "capacity": 6,
-    "beds": 3,
-    "bedrooms": 2,
-    "bath": 2,
-    "amenities": [
-      "Fireplace",
-      "Wifi",
-      "TV",
-      "Ski-in/out"
-    ],
-    "labels": [
-      "Ski",
-      "Cozy",
-      "Family-friendly",
-      "Mountain"
-    ],
-    "host": {
-      "_id": "u110",
-      "fullname": "Daniel Smith",
-      "imgUrl": "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg"
-    },
-    "loc": {
-      "country": "Switzerland",
-      "city": "Zermatt",
-      "address": "789 Alpine St",
-      "lat": 46.0207,
-      "lng": 7.7491
-    },
-    "reviews": [
-      {
-        "id": "r148",
-        "txt": "Fantastic location for skiing and the chalet is very cozy and well-equipped.",
-        "rate": 5,
-        "date": "February 2024",
-        "by": {
-          "_id": "u104",
-          "fullname": "Michael Brown",
-          "imgUrl": "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png",
-          "address": "Almaty, Kazakhstan"
-        }
-      }
-    ],
-    "startDate": "2024-09-20",
-    "endDate": "2024-09-25"
   }
 ]
