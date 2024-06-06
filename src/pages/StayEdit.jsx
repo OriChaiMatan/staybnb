@@ -4,7 +4,6 @@ import { stayService } from "../services/stay.service"
 import { ImgUploader } from "../cmps/ImgUploader"
 import { saveStay } from "../store/actions/stay.action"
 
-
 export function StayEdit() {
     const context = useOutletContext()
     const [stay, setStay] = useState(stayService.getEmptyStay())
@@ -51,14 +50,17 @@ export function StayEdit() {
         }
     }
 
-    function handleImgUpload(imgData) {
+    function handleImgUpload(id, imgUrl) {
         setStay(prevStay => ({
             ...prevStay,
-            imgUrls: [...prevStay.imgUrls, imgData]
+            imgUrls: {
+                ...prevStay.imgUrls,
+                [id]: imgUrl
+            }
         }));
     }
 
-    function getCountryCode(countryName) {    
+    function getCountryCode(countryName) {
         const countries = countryJson.findAll()
         const country = countries.find(c => c.country === countryName)
         return country ? country.code : "Country not found"
@@ -76,11 +78,11 @@ export function StayEdit() {
                     <input type="text" name="loc.address" placeholder="Address" value={stay.loc.address} onChange={handleChange} />
                 </section>
                 <section className="stay-img-upload">
-                    <div className="add-big-img"><ImgUploader onUploaded={handleImgUpload} /></div>
-                    <div className="add-img"><ImgUploader onUploaded={handleImgUpload} /></div>
-                    <div className="add-top-right-img"><ImgUploader onUploaded={handleImgUpload} /></div>
-                    <div className="add-img"><ImgUploader onUploaded={handleImgUpload} /></div>
-                    <div className="add-bottom-right-img"><ImgUploader onUploaded={handleImgUpload} /></div>
+                    <div className="add-big-img"><ImgUploader id="big" onUploaded={handleImgUpload} /></div>
+                    <div className="add-img"><ImgUploader id="small1" onUploaded={handleImgUpload} /></div>
+                    <div className="add-top-right-img"><ImgUploader id="top-right" onUploaded={handleImgUpload} /></div>
+                    <div className="add-img"><ImgUploader id="small2" onUploaded={handleImgUpload} /></div>
+                    <div className="add-bottom-right-img"><ImgUploader id="bottom-right" onUploaded={handleImgUpload} /></div>
                 </section>
                 <div className="type">
                     <span>Capacity: <input type="number" name="capacity" value={stay.capacity} onChange={handleChange} /></span>
@@ -105,22 +107,21 @@ export function StayEdit() {
                 <div className="amenities">
                     <h1>Amenities</h1>
                     <section className="amenities-list">
-                        <span><input type="checkbox" name="amenities" value="Wifi" onChange={handleChange} /> Wifi</span>
-                        <span><input type="checkbox" name="amenities" value="Kitchen" onChange={handleChange} /> Kitchen</span>
-                        <span><input type="checkbox" name="amenities" value="Washer" onChange={handleChange} /> Washer</span>
-                        <span><input type="checkbox" name="amenities" value="Dryer" onChange={handleChange} /> Dryer</span>
-                        <span><input type="checkbox" name="amenities" value="Air conditioning" onChange={handleChange} /> Air conditioning</span>
-                        <span><input type="checkbox" name="amenities" value="Heating" onChange={handleChange} /> Heating</span>
-                        <span><input type="checkbox" name="amenities" value="TV" onChange={handleChange} /> TV</span>
-                        <span><input type="checkbox" name="amenities" value="Iron" onChange={handleChange} /> Iron</span>
-                        <span><input type="checkbox" name="amenities" value="Pool" onChange={handleChange} /> Pool</span>
-                        <span><input type="checkbox" name="amenities" value="Pets allowed" onChange={handleChange} /> Pets allowed</span>
-                        <span><input type="checkbox" name="amenities" value="Gym" onChange={handleChange} /> Gym</span>
-                        <span><input type="checkbox" name="amenities" value="Smoking allowed" onChange={handleChange} /> Smoking allowed</span>
-                        <span><input type="checkbox" name="amenities" value="BBQ Grill" onChange={handleChange} /> BBQ Grill</span>
+                        {["Wifi", "Kitchen", "Washer", "Dryer", "Air conditioning", "Heating", "TV", "Iron", "Pool", "Pets allowed", "Gym", "Smoking allowed", "BBQ Grill"].map((amenity) => (
+                            <label key={amenity}>
+                                <input
+                                    type="checkbox"
+                                    name="amenities"
+                                    value={amenity}
+                                    checked={stay.amenities.includes(amenity)}
+                                    onChange={handleChange}
+                                />
+                                {amenity}
+                            </label>
+                        ))}
                     </section>
                 </div>
-                <button className="save-btn">Save</button>
+                <button className="save-btn"><i className="fancy-stay">Create your STAY</i></button>
             </form>
         </div>
     )
