@@ -9,7 +9,6 @@ import { utilService } from "../services/util.service"
 import StarSmall from "../svg/StarSmallSvg"
 import HurtWishlistSvg from "../svg/HurtWishlistSvg"
 
-
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
     const [isLike, setIsLike] = useState(false)
@@ -20,7 +19,6 @@ export function StayPreview({ stay }) {
     }
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
-
     const handleMouseEnter = () => {
         setIsHovered(true);
     }
@@ -30,8 +28,8 @@ export function StayPreview({ stay }) {
     }
 
     const handleLike = (event) => {
-        event.stopPropagation() 
-        event.preventDefault()  
+        event.stopPropagation()
+        event.preventDefault()
         if (isLikedByUser) {
             stay.likedByUsers = stay.likedByUsers.filter(user => user.id !== demoLogInUser.id)
         } else {

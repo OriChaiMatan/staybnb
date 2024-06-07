@@ -67,6 +67,8 @@
   }
 }
 
+
+
 .slick-list {
   width: 280px;
 }
@@ -115,23 +117,36 @@
   opacity: 0;
 }
 
+.slick-slider button {
+  transition: transform 0.3s ease;
+  right: 7%;
+
+  &::before {
+    font-size: 28px;
+  }
+}
+
 .wish-list-icon {
-    position: absolute;
-    top: 3%;
-    left: 85%;
-    right: 15px;
-    fill: rgba(0, 0, 0, 0.5);
-    height: 24px;
-    width: 24px;
-    stroke: rgb(255, 255, 255);
-    stroke-width: 2;
-    overflow: visible;
-    z-index: 1;
-  
+  position: absolute;
+  top: 3%;
+  left: 85%;
+  right: 15px;
+  fill: rgba(0, 0, 0, 0.5);
+  height: 24px;
+  width: 24px;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 2;
+  overflow: visible;
+  z-index: 1;
+  transition: transform 0.3s ease;
 
   &.liked {
     svg path {
       fill: #fd3d60;
     }
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 }
