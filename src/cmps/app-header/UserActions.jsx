@@ -8,9 +8,14 @@ import { LoginForm } from "./LoginForm";
 export function UserActions() {
   const [showUserActionModal, setShowUserActionModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isLoggedin, setIsLoggedin] = useState(false);
   const userActionsModalRef = useRef(null);
 
   useEffect(() => {
+    const userString = sessionStorage.getItem("loggedinUser");
+    const loggedinUser = JSON.parse(userString);
+    setIsLoggedin(!!loggedinUser); // Set isLoggedin state based on loggedinUser existence
+
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
         setShowUserActionModal(false);
@@ -48,7 +53,19 @@ export function UserActions() {
 
   function handleCloseLoginModal() {
     setShowLoginModal(false);
+
+    // After closing the login modal, check if the user is logged in
+    const userString = sessionStorage.getItem("loggedinUser");
+    const loggedinUser = JSON.parse(userString);
+    setIsLoggedin(!!loggedinUser);
   }
+
+  function handleLogoutClick() {
+    sessionStorage.removeItem("loggedinUser");
+    setIsLoggedin(false);
+    setShowUserActionModal(false);
+  }
+
   const userString = sessionStorage.getItem("loggedinUser");
   const loggedinUser = JSON.parse(userString);
 
@@ -75,12 +92,20 @@ export function UserActions() {
             }`}
         >
           <div>
-            <a href="#" className="user-action" onClick={handleLoginClick}>
-              Sign up
-            </a>
-            <a href="#" className="user-action" onClick={handleLoginClick}>
-              Log in
-            </a>
+            {!isLoggedin ? (
+              <>
+                <a href="#" className="user-action" onClick={handleLoginClick}>
+                  Sign up
+                </a>
+                <a href="#" className="user-action" onClick={handleLoginClick}>
+                  Log in
+                </a>
+              </>
+            ) : (
+              <a href="#" className="user-action" onClick={handleLogoutClick}>
+                Log out
+              </a>
+            )}
             <div className="hr"></div>
             <Link to={"/dashboard/listing"} className="user-action">
               Dashboard
