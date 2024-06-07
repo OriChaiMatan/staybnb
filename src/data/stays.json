@@ -5,8 +5,8 @@
     "type": "Home",
     "likedByUsers": [
       {
-        "_id": "63bafeb80000000000000113",
-        "fullname": "Carlos Lopez"
+        "id": "u110",
+        "fullname": "Daniel Smith"
       }
     ],
     "imgUrls": [
@@ -352,7 +352,7 @@
     "type": "Entire home",
     "likedByUsers": [
       {
-        "id": "63bafeb80000000000000110",
+        "id": "u110",
         "fullname": "Daniel Smith"
       },
       {

@@ -1,11 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import { utilService } from "../services/util.service"
-import { saveStay } from "../store/actions/stay.action"
 
 import StarSmall from "../svg/StarSmallSvg"
 import HurtWishlistSvg from "../svg/HurtWishlistSvg"
@@ -15,10 +14,14 @@ export function StayPreview({ stay, onUpdateStay }) {
     const [isLike, setIsLike] = useState(false)
     const [updatedStay, setUpdatedStay] = useState(stay)
 
+    useEffect(() => {
+    }, [updatedStay])
+    
     const demoLogInUser = {
         id: "u110",
         fullname: "Daniel Smith"
     }
+
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
 
