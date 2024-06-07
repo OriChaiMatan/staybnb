@@ -21,6 +21,7 @@ export function CalendarPicker({
   setRange,
   hoveredDate,
   setHoveredDate,
+  setShowAddDates
 }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   // const [range, setRange] = useState({ start: null, end: null });
@@ -139,22 +140,18 @@ export function CalendarPicker({
         days.push(
           <td
             key={date}
-            className={`col cell ${
-              isSelectedStart ? "selected selected-start" : ""
-            } ${isSelectedEnd ? "selected selected-end" : ""} ${
-              isInRange ? "in-range" : ""
-            } ${isPassed ? "passed" : ""} ${
-              isWithinInterval(currentDateObj, {
+            className={`col cell ${isSelectedStart ? "selected selected-start" : ""
+              } ${isSelectedEnd ? "selected selected-end" : ""} ${isInRange ? "in-range" : ""
+              } ${isPassed ? "passed" : ""} ${isWithinInterval(currentDateObj, {
                 start: startOfDay(range.start),
                 end: endOfDay(hoveredDate),
               })
                 ? "hovered-date"
                 : ""
-            } ${
-              isSameDay(currentDateObj, hoveredDate)
+              } ${isSameDay(currentDateObj, hoveredDate)
                 ? "hover-selected-date"
                 : ""
-            }`}
+              }`}
             onClick={() => onDateClick(currentDateObj)}
             onMouseEnter={() => onDateHover(currentDateObj)}
             onMouseLeave={() => onDateHover(null)}
@@ -190,22 +187,18 @@ export function CalendarPicker({
           days.push(
             <td
               key={date}
-              className={`col cell ${
-                isSelectedStart ? "selected selected-start" : ""
-              } ${isSelectedEnd ? "selected selected-end" : ""} ${
-                isInRange ? "in-range" : ""
-              } ${isPassed ? "passed" : ""} ${
-                isWithinInterval(currentDateObj, {
+              className={`col cell ${isSelectedStart ? "selected selected-start" : ""
+                } ${isSelectedEnd ? "selected selected-end" : ""} ${isInRange ? "in-range" : ""
+                } ${isPassed ? "passed" : ""} ${isWithinInterval(currentDateObj, {
                   start: startOfDay(range.start),
                   end: endOfDay(hoveredDate),
                 })
                   ? "hovered-date"
                   : ""
-              } ${
-                isSameDay(currentDateObj, hoveredDate)
+                } ${isSameDay(currentDateObj, hoveredDate)
                   ? "hover-selected-date"
                   : ""
-              }`}
+                }`}
               onClick={() => onDateClick(currentDateObj)}
               onMouseEnter={() => onDateHover(currentDateObj)}
               onMouseLeave={() => onDateHover(null)}

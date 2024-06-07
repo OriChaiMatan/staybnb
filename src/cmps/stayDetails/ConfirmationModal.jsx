@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { HiCheckCircle } from "react-icons/hi2"
+import { orderService } from '../../services/order.service'
+import { showErrorMsg } from '../../services/event-bus.service';
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
+    const userString = sessionStorage.getItem("loggedinUser");
+    const loggedinUser = JSON.parse(userString);
 
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')
@@ -12,7 +16,13 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
     const stayImg = stay.imgUrls[0].imgUrl
 
     function handleConfirm() {
+        if (!loggedinUser) {
+            showErrorMsg('Please log in to complete the reservation.')
+            return
+        }
         setIsConfirmed(true)
+        const order = { buyer: { _id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" }
+        orderService.save(order)
     }
 
     return (

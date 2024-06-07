@@ -25,6 +25,7 @@ export function ReservationModal({
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const reservationRef = useRef(null)
 
+
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
@@ -166,7 +167,7 @@ export function ReservationModal({
             />
           </div>
         </div>
-        {showAddDates && (
+        {showAddDates && (!selectedRange.start || !selectedRange.end) && (
           <section className="reservation-dates-modal">
             <CalendarPicker
               range={selectedRange}

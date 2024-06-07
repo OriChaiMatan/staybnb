@@ -10,7 +10,6 @@ import { saveStay } from "../store/actions/stay.action"
 import StarSmall from "../svg/StarSmallSvg"
 import HurtWishlistSvg from "../svg/HurtWishlistSvg"
 
-
 export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false)
     const [isLike, setIsLike] = useState(false)
@@ -22,7 +21,6 @@ export function StayPreview({ stay, onUpdateStay }) {
     }
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
 
-// add useefect to the update. and add use state to the isLikedByUser
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -32,22 +30,9 @@ export function StayPreview({ stay, onUpdateStay }) {
         setIsHovered(false);
     }
 
-    // const handleLike = (event) => {
-    //     event.stopPropagation() 
-    //     event.preventDefault()  
-
-    //     if (isLikedByUser) {
-    //         stay.likedByUsers = stay.likedByUsers.filter(user => user.id !== demoLogInUser.id)
-    //     } else {
-    //         stay.likedByUsers.push(demoLogInUser)
-    //     }
-    //     setIsLike(!isLike)
-    // }
-
-    const handleLike = async (event) => {
-        event.stopPropagation()
-        event.preventDefault()
-
+    const handleLike = (event) => {
+        event.stopPropagation() 
+        event.preventDefault()  
         if (isLikedByUser) {
             setUpdatedStay(prevStay => ( {...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user.id !== demoLogInUser.id)}) )
         } else {

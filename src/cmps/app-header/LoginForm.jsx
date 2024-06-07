@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { userService } from '../../services/user.service';
+
 export function LoginForm({ onClose }) {
 
     const [email, setEmail] = useState("")
@@ -27,7 +28,7 @@ export function LoginForm({ onClose }) {
             document.removeEventListener('keydown', handleEscapeKeyPress);
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    }, [onClose]);
 
     async function handleSignup() {
         await userService.signup({ email, password })
@@ -66,11 +67,10 @@ export function LoginForm({ onClose }) {
                     <input type="password" placeholder='Enter your password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <span>We’ll call or text you to confirm your number. Standard message and data rates apply. <a className='privacy-policy'>Privacy Policy</a></span>
-                {errorMsg && <div><span>Incorrect email or password. Please try again.</span></div>}
-                <button className='login-continue-btn' style={errorMsg ? { marginTop: '20px' } : {}} onClick={handleLogin}>Continue</button>
-                <button className='login-continue-btn signup-btn' onClick={handleSignup}>Sign up</button>
+                {errorMsg && <div className="error-message">Incorrect email or password. Please try again.</div>}
+                <button type="button" className='login-continue-btn' onClick={handleLogin}>Continue</button>
+                <button type="button" className='login-continue-btn signup-btn' onClick={handleSignup}>Sign up</button>
             </form>
-        </div >
+        </div>
     );
 }
-
