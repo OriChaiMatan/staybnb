@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { utilService } from "../services/util.service"
 
 import StarSmall from "../svg/StarSmallSvg"
-import HurtWishlistSvg from "../svg/HurtWishlistSvg"
+import HeartWishlistSvg from "../svg/HeartWishlistSvg"
 
 export function StayPreview({ stay }) {
     const [isHovered, setIsHovered] = useState(false)
@@ -56,7 +56,7 @@ export function StayPreview({ stay }) {
                     onMouseLeave={handleMouseLeave}>
                     <div className={`wish-list-icon ${isLikedByUser ? 'liked' : ''}`}
                         onClick={handleLike}>
-                        <HurtWishlistSvg />
+                        <HeartWishlistSvg />
                     </div>
                     <Slider arrows={isHovered} {...settings} >
                         {stay.imgUrls.map((imgUrl, index) => (

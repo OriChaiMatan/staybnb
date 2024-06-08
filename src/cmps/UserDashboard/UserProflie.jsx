@@ -17,7 +17,7 @@ import { BiMessageDetail } from "react-icons/bi"
 export function UserProflie() {
 
   const demoLogInUser = {
-    id: "u110",
+    id: "63bafeb80000000000000110",
     fullname: "Daniel Smith",
     imgUrl: "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
     username: "Daniel",

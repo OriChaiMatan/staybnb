@@ -12,7 +12,7 @@ export function OrderManagerList({ orders, onSaveOrder }) {
                 <label className="check-out">Check out</label>
                 <label className="total-price">Total price</label>
                 <label className="order-status">Order status</label>
-                <label className="order-icon">Statuse</label>
+                <label className="order-icon">Status</label>
                 <label className="order-action">Actions</label>
             </section>
             {orders.map((order) => (

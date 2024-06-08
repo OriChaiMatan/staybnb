@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { userService } from '../../services/user.service';
+import { useDispatch } from 'react-redux';
+import { login, signup } from "../../store/actions/user.action";
+import { showErrorMsg } from '../../services/event-bus.service';
 
 export function LoginForm({ onClose }) {
 
@@ -7,6 +10,8 @@ export function LoginForm({ onClose }) {
     const [password, setPassword] = useState("")
     const [errorMsg, setErrorMsg] = useState(false)
     const loginModalRef = useRef(null)
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const handleEscapeKeyPress = (event) => {
@@ -31,14 +36,20 @@ export function LoginForm({ onClose }) {
     }, [onClose]);
 
     async function handleSignup() {
-        await userService.signup({ email, password })
-        onClose()
-        handleLogin({ email, password })
+        try {
+            await signup({ email, password });
+            onClose()
+            console.log("123123213")
+            handleLogin({ email, password })
+        } catch (err) {
+            console.log("Signup failed:", err);
+            setErrorMsg(true)
+        }
     }
 
     async function handleLogin() {
         try {
-            const user = await userService.login({ email, password });
+            const user = await login({ email, password });
             console.log(user);
             onClose();
         } catch (error) {

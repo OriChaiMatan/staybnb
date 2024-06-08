@@ -54,6 +54,7 @@ async function update({ _id, score }) {
 async function login(userCred) {
     const users = await storageService.query('user')
     const user = users.find(user => user.email === userCred.email && user.password === userCred.password)
+
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
         return saveLocalUser(user)
@@ -61,17 +62,28 @@ async function login(userCred) {
     throw new Error("Incorrect email or password");
 }
 async function signup(userCred) {
-    userCred.score = 10000
-    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    if (!userCred.fullname) userCred.fullname = userCred.email.split("@")[0]
-    const user = await storageService.post('user', userCred)
-    // const user = await httpService.post('auth/signup', userCred)
-    return saveLocalUser(user)
+    const users = await storageService.query('user');
+
+    const existingUser = users.find(user => user.email === userCred.email);
+    if (existingUser) {
+        throw new Error('User already exists');
+    }
+    userCred.score = 10000;
+    if (!userCred.imgUrl) {
+        userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png';
+    }
+    if (!userCred.fullname) {
+        userCred.fullname = userCred.email.split("@")[0];
+    }
+
+    const user = await storageService.post('user', userCred);
+    return saveLocalUser(user);
 }
 
 async function logout() {
+    console.log("logging out")
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    return await storageService.post('auth/logout')
+    // return await storageService.post('auth/logout')
     // return await httpService.post('auth/logout')
 }
 
@@ -101,7 +113,7 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-function getEmptyUser(fullname, imgUrl, username, password,address) {
+function getEmptyUser(fullname, imgUrl, username, password, address) {
     return {
         _id: utilService.makeId(),
         fullname,

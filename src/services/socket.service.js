@@ -21,7 +21,8 @@ const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
 
-const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
+// const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
+const baseUrl = ''
 export const socketService = createSocketService()
 
 window.socketService = socketService
@@ -50,6 +51,7 @@ function createSocketService() {
         },
         login(userId) {
             socket.emit(SOCKET_EMIT_LOGIN, userId)
+            console.log('emitting login', userId)
         },
         logout() {
             socket.emit(SOCKET_EMIT_LOGOUT)

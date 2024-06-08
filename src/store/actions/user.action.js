@@ -1,10 +1,10 @@
-import { userService } from "../services/user.service.js";
-import { socketService } from "../services/socket.service.js";
-import { store } from '../store/store.js'
+import { userService } from "../../services/user.service.js";
+import { socketService } from "../../services/socket.service.js";
+import { store } from '../store.js'
 
-import { LOADING_DONE, LOADING_START } from "./system.reducer.js";
-import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER } from "./user.reducer.js";
-import { showErrorMsg } from "../../services/event-bus.service.js";
+import { LOADING_DONE, LOADING_START } from "../reducers/system.reducer.js";
+import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER } from "../reducers/user.reducer.js";
+import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service.js";
 export async function loadUsers() {
     try {
         store.dispatch({ type: LOADING_START })
@@ -32,9 +32,10 @@ export async function login(credentials) {
             user
         })
         socketService.login(user._id)
+        showSuccessMsg('Welcome back ' + user.fullname + "!")
         return user
     } catch (err) {
-        console.log('Cannot login', err)
+        showErrorMsg('Cannot log in: ' + err.message)
         throw err
     }
 }
@@ -46,9 +47,10 @@ export async function signup(credentials) {
             user
         })
         socketService.login(user._id)
+        showSuccessMsg('Welcome ' + user.fullname + "!")
         return user
     } catch (err) {
-        console.log('Cannot signup', err)
+        showErrorMsg('Cannot signup')
         throw err
     }
 }

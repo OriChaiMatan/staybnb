@@ -1,20 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import worldIcon from "../../assets/img/world_icon.png";
 import hamburgerIcon from "../../assets/img/hamburger_menu.png";
 import userIcon from "../../assets/img/user_icon.png";
 import { LoginForm } from "./LoginForm";
+import { logout } from "../../store/actions/user.action";
+import { userService } from "../../services/user.service";
+import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service";
 
 export function UserActions() {
   const [showUserActionModal, setShowUserActionModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [isLoggedin, setIsLoggedin] = useState(false);
   const userActionsModalRef = useRef(null);
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const userString = sessionStorage.getItem("loggedinUser");
-    const loggedinUser = JSON.parse(userString);
-    setIsLoggedin(!!loggedinUser); // Set isLoggedin state based on loggedinUser existence
+    console.log('loggedInUser:', loggedInUser)
 
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
@@ -24,9 +27,9 @@ export function UserActions() {
 
     function handleClickOutside(event) {
       if (
-        userActionsModalRef.current && // Ensure modal ref exists
-        !userActionsModalRef.current.contains(event.target) && // Clicked outside modal
-        !event.target.classList.contains("user-actions-container") // Clicked target is not the user-actions-container
+        userActionsModalRef.current &&
+        !userActionsModalRef.current.contains(event.target) &&
+        !event.target.classList.contains("user-actions-container")
       ) {
         setShowUserActionModal(false);
       }
@@ -41,6 +44,10 @@ export function UserActions() {
     };
   }, []);
 
+  useEffect(() => {
+
+  }, [loggedInUser]);
+
   function toggleUserActionModal() {
     setShowUserActionModal(
       (prevShowUserActionModal) => !prevShowUserActionModal
@@ -53,21 +60,16 @@ export function UserActions() {
 
   function handleCloseLoginModal() {
     setShowLoginModal(false);
-
-    // After closing the login modal, check if the user is logged in
-    const userString = sessionStorage.getItem("loggedinUser");
-    const loggedinUser = JSON.parse(userString);
-    setIsLoggedin(!!loggedinUser);
   }
 
-  function handleLogoutClick() {
-    sessionStorage.removeItem("loggedinUser");
-    setIsLoggedin(false);
-    setShowUserActionModal(false);
+  async function handleLogoutClick() {
+    try {
+      await logout()
+      setShowUserActionModal(false);
+    } catch (err) {
+      showErrorMsg('Cannot logout')
+    }
   }
-
-  const userString = sessionStorage.getItem("loggedinUser");
-  const loggedinUser = JSON.parse(userString);
 
   return (
     <div className="user-actions-header">
@@ -83,7 +85,7 @@ export function UserActions() {
         />
         <img
           className="user-icon"
-          src={loggedinUser ? loggedinUser.imgUrl : userIcon}
+          src={loggedInUser ? loggedInUser.imgUrl : userIcon}
           alt="user-icon"
         />
         <div
@@ -92,7 +94,7 @@ export function UserActions() {
             }`}
         >
           <div>
-            {!isLoggedin ? (
+            {!loggedInUser ? (
               <>
                 <a href="#" className="user-action" onClick={handleLoginClick}>
                   Sign up
