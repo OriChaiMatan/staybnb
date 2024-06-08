@@ -2,6 +2,7 @@ import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 import ordersData from "../data/orders.json";
+import { httpService } from './http.service.js';
 
 const STORAGE_KEY = 'order'
 
@@ -42,13 +43,13 @@ async function remove(orderId) {
 async function save(order) {
     var savedOrder
     if (order._id) {
-        savedOrder = await storageService.put(STORAGE_KEY, order)
+        // savedOrder = await storageService.put(STORAGE_KEY, order)
+        savedOrder = await httpService.put('order/' + order._id, order)
     } else {
         // Later, owner is set by the backend
         // order.owner = userService.getLoggedinUser()
-        console.log('saving order ', order)
-        savedOrder = await storageService.post(STORAGE_KEY, order)
-        console.log("saved order", savedOrder)
+        // savedOrder = await storageService.post(STORAGE_KEY, order)
+        savedOrder = await httpService.post('order', order)
     }
     return savedOrder
 }
