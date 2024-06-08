@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -9,15 +9,21 @@ import { utilService } from "../services/util.service"
 import StarSmall from "../svg/StarSmallSvg"
 import HeartWishlistSvg from "../svg/HeartWishlistSvg"
 
-export function StayPreview({ stay }) {
+export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false)
     const [isLike, setIsLike] = useState(false)
+    const [updatedStay, setUpdatedStay] = useState(stay)
 
+    useEffect(() => {
+    }, [updatedStay])
+    
     const demoLogInUser = {
         id: "u110",
         fullname: "Daniel Smith"
     }
+
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
+
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -28,14 +34,19 @@ export function StayPreview({ stay }) {
     }
 
     const handleLike = (event) => {
-        event.stopPropagation()
-        event.preventDefault()
+        event.stopPropagation() 
+        event.preventDefault()  
         if (isLikedByUser) {
-            stay.likedByUsers = stay.likedByUsers.filter(user => user.id !== demoLogInUser.id)
+            setUpdatedStay(prevStay => ( {...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user.id !== demoLogInUser.id)}) )
         } else {
-            stay.likedByUsers.push(demoLogInUser)
+            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, demoLogInUser] }) )
         }
-        setIsLike(!isLike)
+        try {
+            onUpdateStay(updatedStay)
+            setIsLike(!isLike)
+        } catch (error) {
+            console.error('Failed to update stay:', error)
+        }
     }
 
     const settings = {

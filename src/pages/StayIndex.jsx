@@ -5,7 +5,7 @@ import { StayList } from "../cmps/StayList";
 import { LabelsFilter } from "../cmps/LabelsFilter";
 import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton";
 import { useDispatch, useSelector } from "react-redux";
-import { loadStays, setFilterBy } from "../store/actions/stay.action";
+import { loadStays, setFilterBy, saveStay } from "../store/actions/stay.action";
 
 export function StayIndex() {
   const stays = useSelector((storeState) => storeState.stayModule.stays)
@@ -35,11 +35,20 @@ export function StayIndex() {
   async function onAddStay(stay) {
     try {
       const savedStay = await stayService.save(stay)
-      loadStays()
+      // loadStays()
     } catch (err) {
       console.log("Had issues adding stay", err)
     }
   }
+
+  async function onUpdateStay(stay) {
+    try {
+        const updatedStay = await saveStay(stay)
+        // loadStays()
+    } catch (err) {
+        console.log('Error in onUpdateStay', err)
+    }
+}
 
   if (!stays) return <StayIndexSkeleton />;
 
@@ -47,7 +56,7 @@ export function StayIndex() {
     <>
       <LabelsFilter filterBy={filterBy} onSetFilter={onSetFilter} />
       <div className="stay-index">
-        <StayList stays={stays} />
+        <StayList stays={stays} onUpdateStay={onUpdateStay}/>
       </div>
       <Outlet context={{ title: "hi", onAddStay }} />
     </>
