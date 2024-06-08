@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { HiCheckCircle } from "react-icons/hi2"
 import { orderService } from '../../services/order.service'
 import { showErrorMsg } from '../../services/event-bus.service';
+import { useSelector } from 'react-redux';
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
-    const userString = sessionStorage.getItem("loggedinUser");
-    const loggedinUser = JSON.parse(userString);
+    const loggedinUser = useSelector((storeState) => storeState.userModule.user);
+
 
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')

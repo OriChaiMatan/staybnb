@@ -17,7 +17,6 @@ export function UserActions() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('loggedInUser:', loggedInUser)
 
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {

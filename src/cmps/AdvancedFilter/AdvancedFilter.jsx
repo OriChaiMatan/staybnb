@@ -194,25 +194,22 @@ export function AdvancedFilter({
                 </div>
                 <div className="advanced-filter-type">
                   <button
-                    className={`option ${
-                      selectedType === "Any" ? "active" : ""
-                    }`}
+                    className={`option ${selectedType === "Any" ? "active" : ""
+                      }`}
                     onClick={(e) => handleTypeClick("Any", e)}
                   >
                     Any type
                   </button>
                   <button
-                    className={`option ${
-                      selectedType === "room" ? "active" : ""
-                    }`}
+                    className={`option ${selectedType === "room" ? "active" : ""
+                      }`}
                     onClick={(e) => handleTypeClick("room", e)}
                   >
                     Room
                   </button>
                   <button
-                    className={`option ${
-                      selectedType === "home" ? "active" : ""
-                    }`}
+                    className={`option ${selectedType === "home" ? "active" : ""
+                      }`}
                     onClick={(e) => handleTypeClick("home", e)}
                   >
                     Entire home
@@ -246,9 +243,8 @@ export function AdvancedFilter({
                       {["Any", 1, 2, 3, 4, 5, 6, 7, "8+"].map((value) => (
                         <div className="chip-wrapper" key={value}>
                           <button
-                            className={`chip ${
-                              selectedBedroom === value ? "selected" : ""
-                            }`}
+                            className={`chip ${selectedBedroom === value ? "selected" : ""
+                              }`}
                             onClick={(e) =>
                               handleChipClick(e, value, "bedroom")
                             }
@@ -263,9 +259,8 @@ export function AdvancedFilter({
                       {["Any", 1, 2, 3, 4, 5, 6, 7, "8+"].map((value) => (
                         <div className="chip-wrapper" key={value}>
                           <button
-                            className={`chip ${
-                              selectedBed === value ? "selected" : ""
-                            }`}
+                            className={`chip ${selectedBed === value ? "selected" : ""
+                              }`}
                             onClick={(e) => handleChipClick(e, value, "bed")}
                           >
                             {value}
@@ -278,9 +273,8 @@ export function AdvancedFilter({
                       {["Any", 1, 2, 3, 4, 5, 6, 7, "8+"].map((value) => (
                         <div className="chip-wrapper" key={value}>
                           <button
-                            className={`chip ${
-                              selectedBathroom === value ? "selected" : ""
-                            }`}
+                            className={`chip ${selectedBathroom === value ? "selected" : ""
+                              }`}
                             onClick={(e) =>
                               handleChipClick(e, value, "bathroom")
                             }
@@ -303,9 +297,8 @@ export function AdvancedFilter({
                 </div>
                 <div className="advanced-filter__top-tier">
                   <div
-                    className={`card-select ${
-                      selectedTopTier && "card-select--selected"
-                    }`}
+                    className={`card-select ${selectedTopTier && "card-select--selected"
+                      }`}
                     onClick={() => setSelectedTopTier(!selectedTopTier)}
                   >
                     <span className="card-select__icon-wrapper">
@@ -339,9 +332,8 @@ export function AdvancedFilter({
                 </div>
                 <div className="advanced-filter__property-type">
                   <div
-                    className={`card-select ${
-                      selectedHouseProperty && "card-select--selected"
-                    }`}
+                    className={`card-select ${selectedHouseProperty && "card-select--selected"
+                      }`}
                     onClick={() =>
                       setSelectedHouseProperty(!selectedHouseProperty)
                     }
@@ -356,9 +348,8 @@ export function AdvancedFilter({
                     <span className="card-select__title">House</span>
                   </div>
                   <div
-                    className={`card-select ${
-                      selectedGuesthouseProperty && "card-select--selected"
-                    }`}
+                    className={`card-select ${selectedGuesthouseProperty && "card-select--selected"
+                      }`}
                     onClick={() =>
                       setSelectedGuesthouseProperty(!selectedGuesthouseProperty)
                     }
@@ -373,9 +364,8 @@ export function AdvancedFilter({
                     <span className="card-select__title">Guesthouse</span>
                   </div>
                   <div
-                    className={`card-select ${
-                      selectedHotelProperty && "card-select--selected"
-                    }`}
+                    className={`card-select ${selectedHotelProperty && "card-select--selected"
+                      }`}
                     onClick={() =>
                       setSelectedHotelProperty(!selectedHotelProperty)
                     }
@@ -423,9 +413,8 @@ export function AdvancedFilter({
                                 checked={isChecked}
                               />
                               <span
-                                className={`checkbox-custom ${
-                                  isChecked ? "checked" : ""
-                                }`}
+                                className={`checkbox-custom ${isChecked ? "checked" : ""
+                                  }`}
                               >
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -475,7 +464,7 @@ export function AdvancedFilter({
               type="submit"
               onClick={onSubmitFilter}
             >
-              Show 10 places
+              Show places
             </button>
           </div>
         </footer>
