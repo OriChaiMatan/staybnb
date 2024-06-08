@@ -2,6 +2,7 @@ import { storageService } from "./async-storage.service.js"
 import { utilService } from "./util.service.js"
 import { userService } from "./user.service.js"
 import staysData from "../data/stays.json"
+import { httpService } from "./http.service.js"
 const STORAGE_KEY = "stay"
 
 _createStays()
@@ -21,65 +22,68 @@ export const stayService = {
 };
 window.cs = stayService;
 
+const BASE_URL = 'stay/'
+
 async function query(filterBy) {
-  let stays = await storageService.query(STORAGE_KEY);
-  if (filterBy) {
-    stays = stays.filter((stay) => {
-      const matchesCategoryTag =
-        filterBy.category_tag === "" ||
-        stay.labels.some(
-          (label) => label.toLowerCase() === filterBy.category_tag.toLowerCase()
-        )
+  return httpService.get(BASE_URL, filterBy)
+  // let stays = await storageService.query(STORAGE_KEY);
+  // if (filterBy) {
+  //   stays = stays.filter((stay) => {
+  //     const matchesCategoryTag =
+  //       filterBy.category_tag === "" ||
+  //       stay.labels.some(
+  //         (label) => label.toLowerCase() === filterBy.category_tag.toLowerCase()
+  //       )
 
-      const matchesAmenities =
-        filterBy.amenities.length === 0 ||
-        filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
+  //     const matchesAmenities =
+  //       filterBy.amenities.length === 0 ||
+  //       filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
 
-      const matchesPropertyType =
-        filterBy.property_types.length === 0 ||
-        filterBy.property_types.includes(stay.type)
+  //     const matchesPropertyType =
+  //       filterBy.property_types.length === 0 ||
+  //       filterBy.property_types.includes(stay.type)
 
-      const withinPriceRange =
-        (!filterBy.price_min || stay.price >= filterBy.price_min) &&
-        (!filterBy.price_max || stay.price <= filterBy.price_max)
+  //     const withinPriceRange =
+  //       (!filterBy.price_min || stay.price >= filterBy.price_min) &&
+  //       (!filterBy.price_max || stay.price <= filterBy.price_max)
 
-      const matchesBeds = !filterBy.beds || filterBy.beds <= stay.beds
+  //     const matchesBeds = !filterBy.beds || filterBy.beds <= stay.beds
 
-      const matchesbedrooms =
-        !filterBy.bedrooms || filterBy.bedrooms <= stay.bedrooms
+  //     const matchesbedrooms =
+  //       !filterBy.bedrooms || filterBy.bedrooms <= stay.bedrooms
 
-      const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath
+  //     const matchesBathrooms = !filterBy.bath || filterBy.bath <= stay.bath
 
-      const matchCapacities =
-        !filterBy.capacity || filterBy.capacity <= stay.capacity
+  //     const matchCapacities =
+  //       !filterBy.capacity || filterBy.capacity <= stay.capacity
 
-      const matchCountry =
-        filterBy.country === "Search destination" ||
-        filterBy.country === "" ||
-        filterBy.country === stay.loc.country;
+  //     const matchCountry =
+  //       filterBy.country === "Search destination" ||
+  //       filterBy.country === "" ||
+  //       filterBy.country === stay.loc.country;
 
-      const matchStartDate =
-        !filterBy.startDate || stay.startDate <= filterBy.startDate
+  //     const matchStartDate =
+  //       !filterBy.startDate || stay.startDate <= filterBy.startDate
 
-      const matchEndDate =
-        !filterBy.endDate || stay.endDate >= filterBy.endDate
+  //     const matchEndDate =
+  //       !filterBy.endDate || stay.endDate >= filterBy.endDate
 
-      return (
-        matchesCategoryTag &&
-        matchesAmenities &&
-        matchesPropertyType &&
-        withinPriceRange &&
-        matchesBeds &&
-        matchesbedrooms &&
-        matchesBathrooms &&
-        matchCapacities &&
-        matchCountry &&
-        matchEndDate &&
-        matchStartDate
-      )
-    })
-  }
-  return stays
+  //     return (
+  //       matchesCategoryTag &&
+  //       matchesAmenities &&
+  //       matchesPropertyType &&
+  //       withinPriceRange &&
+  //       matchesBeds &&
+  //       matchesbedrooms &&
+  //       matchesBathrooms &&
+  //       matchCapacities &&
+  //       matchCountry &&
+  //       matchEndDate &&
+  //       matchStartDate
+  //     )
+  //   })
+  // }
+  // return stays
 }
 
 function getById(stayId) {
