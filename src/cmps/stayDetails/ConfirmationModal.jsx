@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { HiCheckCircle } from "react-icons/hi2"
-import { orderService } from '../../services/order.service'
 import { showErrorMsg } from '../../services/event-bus.service';
 import { useSelector } from 'react-redux';
+import { saveOrder } from '../../store/actions/order.action';
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
     const loggedinUser = useSelector((storeState) => storeState.userModule.user);
-
 
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')
@@ -23,7 +22,7 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
         }
         setIsConfirmed(true)
         const order = { buyer: { _id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" }
-        orderService.save(order)
+        saveOrder(order)
     }
 
     return (
