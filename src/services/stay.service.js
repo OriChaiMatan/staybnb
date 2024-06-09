@@ -1,11 +1,11 @@
-import { storageService } from "./async-storage.service.js"
-import { utilService } from "./util.service.js"
-import { userService } from "./user.service.js"
-import staysData from "../data/stays.json"
-import { httpService } from "./http.service.js"
-const STORAGE_KEY = "stay"
+import { storageService } from "./async-storage.service.js";
+import { utilService } from "./util.service.js";
+import { userService } from "./user.service.js";
+import staysData from "../data/stays.json";
+import { httpService } from "./http.service.js";
+const STORAGE_KEY = "stay";
 
-_createStays()
+_createStays();
 
 export const stayService = {
   query,
@@ -22,10 +22,10 @@ export const stayService = {
 };
 window.cs = stayService;
 
-const BASE_URL = 'stay/'
+const BASE_URL = "stay/";
 
 async function query(filterBy) {
-  return httpService.get(BASE_URL, filterBy)
+  return httpService.get(BASE_URL, filterBy);
   // let stays = await storageService.query(STORAGE_KEY);
   // if (filterBy) {
   //   stays = stays.filter((stay) => {
@@ -86,64 +86,83 @@ async function query(filterBy) {
   // return stays
 }
 
-function getById(stayId) {
-  return storageService.get(STORAGE_KEY, stayId)
+async function getById(stayId) {
+  const stay = await httpService.get(`${BASE_URL}${stayId}`)
+  return stay
+  // return storageService.get(STORAGE_KEY, stayId)
 }
 
 async function remove(stayId) {
   // throw new Error('Nope')
-  await storageService.remove(STORAGE_KEY, stayId)
+  // await storageService.remove(STORAGE_KEY, stayId);
+  return httpService.delete(`${BASE_URL}${stayId}`)
 }
 
 async function save(stay) {
-  var savedStay
+  var savedStay;
   if (stay && stay._id) {
-    savedStay = await storageService.put(STORAGE_KEY, stay)
+    // savedStay = await storageService.put(STORAGE_KEY, stay);
+    savedStay = await httpService.put(`${BASE_URL}${stay._id}`)
   } else {
     // Later, owner is set by the backend
     // stay.owner = userService.getLoggedinUser()
     // create id here.
-    stay._id = utilService.makeId()
-    savedStay = await storageService.post(STORAGE_KEY, stay)
+    // stay._id = utilService.makeId();
+    // savedStay = await storageService.post(STORAGE_KEY, stay);
+    savedStay = await httpService.post(`${BASE_URL}`, stay)
   }
-  return savedStay
+  return savedStay;
 }
 
 async function addStayMsg(stayId, txt) {
   // Later, this is all done by the backend
-  const stay = await getById(stayId)
-  if (!stay.msgs) stay.msgs = []
+  const stay = await getById(stayId);
+  if (!stay.msgs) stay.msgs = [];
 
   const msg = {
     id: utilService.makeId(),
     by: userService.getLoggedinUser(),
     txt,
-  }
-  stay.msgs.push(msg)
-  await storageService.put(STORAGE_KEY, stay)
+  };
+  stay.msgs.push(msg);
+  await storageService.put(STORAGE_KEY, stay);
 
-  return msg
+  return msg;
 }
 
 function minPricesStays() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY)
-  return Math.min(...stays.map((stay) => stay.price))
+  let stays = utilService.loadFromStorage(STORAGE_KEY);
+  return Math.min(...stays.map((stay) => stay.price));
 }
 
 function maxPricesStays() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY)
-  return Math.max(...stays.map((stay) => stay.price))
+  let stays = utilService.loadFromStorage(STORAGE_KEY);
+  return Math.max(...stays.map((stay) => stay.price));
 }
 
 function getAllPrices() {
-  let stays = utilService.loadFromStorage(STORAGE_KEY)
-  return stays.map((stay) => stay.price)
+  let stays = utilService.loadFromStorage(STORAGE_KEY);
+  return stays.map((stay) => stay.price);
 }
 
-function getEmptyStay(name = "", type = "", imgUrls = [], price = "", summary = "", capacity = "", amenities = [], labels = [], country = "",
-  city = "", address = "", lat, lng, reviews = [], likedByUser = [],
+function getEmptyStay(
+  name = "",
+  type = "",
+  imgUrls = [],
+  price = "",
+  summary = "",
+  capacity = "",
+  amenities = [],
+  labels = [],
+  country = "",
+  city = "",
+  address = "",
+  lat,
+  lng,
+  reviews = [],
+  likedByUsers = []
 ) {
-  const { startDate, endDate } = utilService.getRandomDateRange()
+  const { startDate, endDate } = utilService.getRandomDateRange();
   return {
     name,
     type,
@@ -164,8 +183,8 @@ function getEmptyStay(name = "", type = "", imgUrls = [], price = "", summary = 
     reviews,
     startDate,
     endDate,
-    likedByUser
-  }
+    likedByUsers,
+  };
 }
 
 function getDefaultFilter() {
@@ -182,11 +201,11 @@ function getDefaultFilter() {
     capacity: "",
     startDate: "",
     endDate: "",
-  }
+  };
 }
 
 function getFilterFromParams(searchParams) {
-  const defaultFilter = getDefaultFilter()
+  const defaultFilter = getDefaultFilter();
   const filterBy = {};
   for (const field in defaultFilter) {
     if (Array.isArray(defaultFilter[field])) {
@@ -195,10 +214,10 @@ function getFilterFromParams(searchParams) {
       filterBy[field] = searchParams.get(field) || defaultFilter[field];
     }
   }
-  return filterBy
+  return filterBy;
 }
 
 function _createStays() {
-  let data = staysData
-  data = utilService.saveToStorage(STORAGE_KEY, data)
+  let data = staysData;
+  data = utilService.saveToStorage(STORAGE_KEY, data);
 }

@@ -13,6 +13,7 @@ import { StayReviews } from "../cmps/stayDetails/StayReviews";
 import { StayFeatures } from "../cmps/stayDetails/StayFeatures";
 import { StayRating } from "../cmps/stayDetails/StayRating";
 import { StayImgs } from "../cmps/stayDetails/StayImgs";
+import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null);
@@ -89,9 +90,8 @@ export function StayDetails({ setLargeMainFilter }) {
     });
   }
 
-  if (!stay) {
-    return <div>Loading...</div>;
-  }
+  if (!stay) return <StayIndexSkeleton />;
+
 
   function calculateDaysBetween(startDateStr, endDateStr) {
     const startDate = new Date(startDateStr);

@@ -16,39 +16,27 @@ import { BiMessageDetail } from "react-icons/bi"
 
 export function UserProflie() {
 
-  const demoLogInUser = {
-    id: "63bafeb80000000000000110",
-    fullname: "Daniel Smith",
-    imgUrl: "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
-    username: "Daniel",
-    passworg: "daniel123",
-    address: "Kalisz, Poland"
-  }
-
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user);
   const stays = useSelector((storeState) => storeState.stayModule.stays)
 
   useEffect(() => {
     loadStays()
   }, [])
 
-  // const userStays = stays.filter(stay => stay.host._id === demoLogInUser.id)
-
-
-
-
-  // console.log(userStays)
+  console.log("loggedinuser", loggedInUser)
+  console.log("stays", stays)
 
   if (!stays) return (<div>loading....</div>)
   return (
     <div className="profile-stay-list">
       <section className="user-profile">
-        < UserInfo user={demoLogInUser} />
+        < UserInfo user={loggedInUser} />
         <section className="user-rate">
           <div className="user-info">
             <div className="user-info-item">
               <section className="info">
                 <span>Stays</span>
-                <div>{(stays.filter(stay => stay.host._id === demoLogInUser.id)).length}</div>
+                <div>{(stays.filter(stay => stay.host._id === loggedInUser.id)).length}</div>
               </section>
               <LuHotel />
             </div>
@@ -73,7 +61,7 @@ export function UserProflie() {
         <section className="user-list-title">
           <h1>My Stay List</h1>
         </section>
-        <StayList stays={stays.filter(stay => stay.host._id === demoLogInUser.id)} />
+        <StayList stays={stays.filter(stay => stay.host._id === loggedInUser.id)} />
       </div>
     </div>
   )

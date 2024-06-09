@@ -72,7 +72,7 @@ export function UserActions() {
 
   return (
     <div className="user-actions-header">
-      <Link to={"/stay-edit/newStay"}>Staybnb Your Home</Link>
+      {loggedInUser && <Link to={"/stay-edit/newStay"}>Staybnb Your Home</Link>}
       <div className="world-icon">
         <img src={worldIcon} alt="world-icon" />
       </div>
@@ -108,12 +108,12 @@ export function UserActions() {
               </a>
             )}
             <div className="hr"></div>
-            <Link to={"/dashboard/listing"} className="user-action">
+            {loggedInUser && <><Link to={"/dashboard/listing"} className="user-action">
               Dashboard
             </Link>
-            <Link to={"/stay-edit/newStay"} className="user-action">
-              Staybnb your home
-            </Link>
+              <Link to={"/stay-edit/newStay"} className="user-action">
+                Staybnb your home
+              </Link></>}
             <a href="#" className="user-action">
               Help Center
             </a>

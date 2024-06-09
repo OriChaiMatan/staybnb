@@ -50,7 +50,7 @@ export function stayReducer(state = initialState, cmd = {}) {
     case UNDO_CHANGES:
       return {
         ...state,
-        stays: [...state.laststays],
+        stays: [...state.lastStays],
       };
     default:
       return state;

@@ -3,6 +3,7 @@ import { utilService } from './util.service'
 import { httpService } from './http.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+const BASE_URL = "user/";
 
 export const userService = {
     login,
@@ -30,20 +31,20 @@ function getUsers() {
 
 async function getById(userId) {
     // const user = await storageService.get('user', userId)
-    const user = await httpService.get(`user/${userId}`)
+    const user = await httpService.get(`${BASE_URL}${userId}`)
     return user
 }
 
 function remove(userId) {
     // return storageService.remove('user', userId)
-    return httpService.delete(`user/${userId}`)
+    return httpService.delete(`${BASE_URL}${userId}`)
 }
 
 async function update({ _id }) {
     // const user = await storageService.get('user', _id)
     // await storageService.put('user', user)
 
-    const user = await httpService.put(`user/${_id}`, { _id })
+    const user = await httpService.put(`${BASE_URL}${_id}`, { _id })
     // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) saveLocalUser(user)
     return user

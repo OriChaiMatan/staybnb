@@ -5,6 +5,7 @@ import ordersData from "../data/orders.json";
 import { httpService } from './http.service.js';
 
 const STORAGE_KEY = 'order'
+const BASE_URL = "order/";
 
 _createOrders()
 
@@ -31,13 +32,16 @@ async function query(filterBy = { txt: '', price: 0 }) {
     return orders
 }
 
-function getById(orderId) {
-    return storageService.get(STORAGE_KEY, orderId)
+async function getById(orderId) {
+    // return storageService.get(STORAGE_KEY, orderId)
+    const order = await httpService.get(`${BASE_URL}${orderId}`)
+    return order
 }
 
 async function remove(orderId) {
     // throw new Error('Nope')
-    await storageService.remove(STORAGE_KEY, orderId)
+    // await storageService.remove(STORAGE_KEY, orderId)
+    return httpService.delete(`${BASE_URL}${orderId}`)
 }
 
 async function save(order) {
