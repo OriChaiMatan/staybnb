@@ -1,27 +1,18 @@
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
-import { utilService } from "../services/util.service"
-
-import StarSmall from "../svg/StarSmallSvg"
-import HeartWishlistSvg from "../svg/HeartWishlistSvg"
-import { useSelector } from "react-redux"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { utilService } from "../services/util.service";
+import StarSmall from "../svg/StarSmallSvg";
+import HeartWishlistSvg from "../svg/HeartWishlistSvg";
+import { useSelector } from "react-redux";
 
 export function StayPreview({ stay, onUpdateStay }) {
-    const [isHovered, setIsHovered] = useState(false)
-    const [isLike, setIsLike] = useState(false)
-    const [updatedStay, setUpdatedStay] = useState(stay)
+    const [isHovered, setIsHovered] = useState(false);
     const loggedInUser = useSelector((storeState) => storeState.userModule.user);
 
-
-    useEffect(() => {
-    }, [updatedStay])
-
-    const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser?._id)
-
+    const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser?._id);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -32,28 +23,18 @@ export function StayPreview({ stay, onUpdateStay }) {
     }
 
     const handleLike = (event) => {
-        event.stopPropagation()
-        event.preventDefault()
-        let stayToUpdate
-        if (isLikedByUser) {
-            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user._id !== loggedInUser._id) }))
-            stayToUpdate = {
-                ...updatedStay,
-                likedByUsers: updatedStay.likedByUsers.filter(user => user._id !== loggedInUser._id)
-            };
-        } else {
-            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, { id: loggedInUser._id, fullname: loggedInUser.fullname }] }))
-            stayToUpdate = {
-                ...updatedStay,
-                likedByUsers: [...updatedStay.likedByUsers, { _id: loggedInUser._id, fullname: loggedInUser.fullname }]
-            };
-        }
-        try {
-            onUpdateStay(stayToUpdate)
-            setIsLike(!isLike)
-        } catch (error) {
-            console.error('Failed to update stay:', error)
-        }
+        event.stopPropagation();
+        event.preventDefault();
+        const updatedLikedByUsers = isLikedByUser
+            ? stay.likedByUsers.filter(user => user._id !== loggedInUser._id)
+            : [...stay.likedByUsers, { _id: loggedInUser._id, fullname: loggedInUser.fullname }];
+
+        const updatedStay = {
+            ...stay,
+            likedByUsers: updatedLikedByUsers
+        };
+
+        onUpdateStay(updatedStay);
     }
 
     const settings = {
@@ -86,7 +67,6 @@ export function StayPreview({ stay, onUpdateStay }) {
                 </div>
 
                 <div className="stay-preview-information">
-
                     <div className="common-info">
                         <span className="name-info">{stay.loc.city}, {stay.loc.country}</span>
                         {(utilService.calculateAvgRating(stay.reviews) !== '0.00' && utilService.calculateAvgRating(stay.reviews) !== '0.0') ?
