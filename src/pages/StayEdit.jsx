@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react"
-import { useNavigate, useOutletContext } from "react-router-dom"
-import { stayService } from "../services/stay.service"
-import { ImgUploader } from "../cmps/ImgUploader"
-import { saveStay } from "../store/actions/stay.action"
-import { showErrorMsg } from "../services/event-bus.service"
+import { useEffect, useState } from "react";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import { stayService } from "../services/stay.service";
+import { ImgUploader } from "../cmps/ImgUploader";
+import { saveStay } from "../store/actions/stay.action";
+import { showErrorMsg } from "../services/event-bus.service";
 
 export function StayEdit() {
-    const context = useOutletContext()
-    const [stay, setStay] = useState(stayService.getEmptyStay())
-    const [errors, setErrors] = useState({})
+    const context = useOutletContext();
+    const [stay, setStay] = useState(stayService.getEmptyStay());
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
     function handleChange({ target }) {
@@ -43,61 +43,60 @@ export function StayEdit() {
                 }
             }));
         } else {
-            setStay((prevStay) => ({ ...prevStay, [fieldName]: value }));
+            setStay((prevStay) => ({ ...prevStay, [name]: value }));
         }
     }
 
     function validateFields() {
-        const newErrors = {}
-        if (!stay.name) newErrors.name = 'Name is required'
-        if (!stay.loc.country) newErrors.country = 'Country is required'
-        if (!stay.loc.city) newErrors.city = 'City is required'
-        if (!stay.loc.address) newErrors.address = 'Address is required'
-        if (!stay.capacity) newErrors.capacity = 'Capacity is required'
-        if (!stay.type) newErrors.type = 'Type is required'
-        if (!stay.price) newErrors.price = 'Price is required'
-        if (!stay.beds) newErrors.beds = 'Beds are required'
-        if (!stay.bedrooms) newErrors.bedrooms = 'Bedrooms are required'
-        if (!stay.bath) newErrors.bath = 'Baths are required'
-        if (!stay.labels.length) newErrors.labels = 'At least one label is required'
-        if (!stay.amenities.length) newErrors.amenities = 'At least one amenity is required'
-        if (!stay.summary) newErrors.summary = 'Description is required'
-        return newErrors
+        const newErrors = {};
+        if (!stay.name) newErrors.name = 'Name is required';
+        if (!stay.loc.country) newErrors.country = 'Country is required';
+        if (!stay.loc.city) newErrors.city = 'City is required';
+        if (!stay.loc.address) newErrors.address = 'Address is required';
+        if (!stay.capacity) newErrors.capacity = 'Capacity is required';
+        if (!stay.type) newErrors.type = 'Type is required';
+        if (!stay.price) newErrors.price = 'Price is required';
+        if (!stay.beds) newErrors.beds = 'Beds are required';
+        if (!stay.bedrooms) newErrors.bedrooms = 'Bedrooms are required';
+        if (!stay.bath) newErrors.bath = 'Baths are required';
+        if (!stay.labels.length) newErrors.labels = 'At least one label is required';
+        if (!stay.amenities.length) newErrors.amenities = 'At least one amenity is required';
+        if (!stay.summary) newErrors.summary = 'Description is required';
+        if (!stay.startDate) newErrors.startDate = 'Start date is required';
+        if (!stay.endDate) newErrors.endDate = 'End date is required';
+        return newErrors;
     }
 
     async function onSaveStay(ev) {
-        ev.preventDefault()
-        const newErrors = validateFields()
+        ev.preventDefault();
+        const newErrors = validateFields();
         if (Object.keys(newErrors).length) {
-            let missingInputsStr = 'Missing inputs: '
+            let missingInputsStr = 'Missing inputs: ';
             for (const [field, message] of Object.entries(newErrors)) {
-                missingInputsStr += `${field}, `
-                showErrorMsg(missingInputsStr)
+                missingInputsStr += `${field}, `;
             }
-            return
+            showErrorMsg(missingInputsStr);
+            return;
         }
         try {
-            await saveStay(stay)
-            navigate('/dashboard/listing')
+            await saveStay(stay);
+            navigate('/dashboard/listing');
         } catch (err) {
-            console.log('Had issues sending stay', err)
+            console.log('Had issues sending stay', err);
         }
     }
 
     function handleImgUpload(id, imgUrl) {
         setStay(prevStay => ({
             ...prevStay,
-            imgUrls: {
-                ...prevStay.imgUrls,
-                [id]: imgUrl
-            }
+            imgUrls: [...prevStay.imgUrls, { imgUrl }]
         }));
     }
 
     function getCountryCode(countryName) {
-        const countries = countryJson.findAll()
-        const country = countries.find(c => c.country === countryName)
-        return country ? country.code : "Country not found"
+        const countries = countryJson.findAll();
+        const country = countries.find(c => c.country === countryName);
+        return country ? country.code : "Country not found";
     }
 
     const stayLabels = [
@@ -143,6 +142,8 @@ export function StayEdit() {
                             ))}
                         </select>
                     </span>
+                    <span>Start Date: <input type="date" name="startDate" value={stay.startDate} onChange={handleChange} /></span>
+                    <span>End Date: <input type="date" name="endDate" value={stay.endDate} onChange={handleChange} /></span>
                 </div>
                 <section className="description">
                     <span>Description</span>

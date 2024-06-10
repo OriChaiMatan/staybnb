@@ -34,7 +34,7 @@ export function StayIndex() {
 
   async function onAddStay(stay) {
     try {
-      const savedStay = await stayService.save(stay)
+      const savedStay = await saveStay(stay)
       // loadStays()
     } catch (err) {
       console.log("Had issues adding stay", err)
@@ -43,12 +43,12 @@ export function StayIndex() {
 
   async function onUpdateStay(stay) {
     try {
-        const updatedStay = await saveStay(stay)
-        // loadStays()
+      const updatedStay = await saveStay(stay)
+      // loadStays()
     } catch (err) {
-        console.log('Error in onUpdateStay', err)
+      console.log('Error in onUpdateStay', err)
     }
-}
+  }
 
   if (!stays) return <StayIndexSkeleton />;
 
@@ -56,7 +56,7 @@ export function StayIndex() {
     <>
       <LabelsFilter filterBy={filterBy} onSetFilter={onSetFilter} />
       <div className="stay-index">
-        <StayList stays={stays} onUpdateStay={onUpdateStay}/>
+        <StayList stays={stays} onUpdateStay={onUpdateStay} />
       </div>
       <Outlet context={{ title: "hi", onAddStay }} />
     </>

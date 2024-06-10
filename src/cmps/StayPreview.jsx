@@ -16,7 +16,7 @@ export function StayPreview({ stay, onUpdateStay }) {
 
     useEffect(() => {
     }, [updatedStay])
-    
+
     const demoLogInUser = {
         id: "u110",
         fullname: "Daniel Smith"
@@ -34,12 +34,12 @@ export function StayPreview({ stay, onUpdateStay }) {
     }
 
     const handleLike = (event) => {
-        event.stopPropagation() 
-        event.preventDefault()  
+        event.stopPropagation()
+        event.preventDefault()
         if (isLikedByUser) {
-            setUpdatedStay(prevStay => ( {...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user.id !== demoLogInUser.id)}) )
+            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user.id !== demoLogInUser.id) }))
         } else {
-            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, demoLogInUser] }) )
+            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, demoLogInUser] }))
         }
         try {
             onUpdateStay(updatedStay)
@@ -82,11 +82,13 @@ export function StayPreview({ stay, onUpdateStay }) {
 
                     <div className="common-info">
                         <span className="name-info">{stay.loc.city}, {stay.loc.country}</span>
-                        {utilService.calculateAvgRating(stay.reviews) !== '0.00' && utilService.calculateAvgRating(stay.reviews) !== '0.0' && (
-                            <span className="avg-rating-info"><StarSmall /> {utilService.calculateAvgRating(stay.reviews)}</span>
-                        )}
+                        {(utilService.calculateAvgRating(stay.reviews) !== '0.00' && utilService.calculateAvgRating(stay.reviews) !== '0.0') ?
+                            <span className="avg-rating-info"><StarSmall /> {utilService.calculateAvgRating(stay.reviews)}</span> : <span className="avg-rating-info"><StarSmall /> 4.0</span>
+                        }
                     </div>
-                    <span className="loc-info"> {Math.ceil(utilService.calculateDistance(stay.loc.lat, stay.loc.lng)).toLocaleString()} kilometers away</span>
+                    {stay.loc.lat ? <span className="loc-info"> {Math.ceil(utilService.calculateDistance(stay.loc.lat, stay.loc.lng)).toLocaleString()} kilometers away</span> :
+                        <span className="loc-info"> 360 kilometers away</span>
+                    }
                     <span className="date-info">{utilService.formatDateRange(stay.startDate, stay.endDate)}</span>
                     <span className="price-info">${stay.price} <span>night</span></span>
                 </div>

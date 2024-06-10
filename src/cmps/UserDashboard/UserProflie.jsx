@@ -20,11 +20,8 @@ export function UserProflie() {
   const stays = useSelector((storeState) => storeState.stayModule.stays)
 
   useEffect(() => {
-    loadStays()
+    // loadStays()
   }, [])
-
-  console.log("loggedinuser", loggedInUser)
-  console.log("stays", stays)
 
   if (!stays) return (<div>loading....</div>)
   return (
