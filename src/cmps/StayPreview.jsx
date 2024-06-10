@@ -8,21 +8,19 @@ import { utilService } from "../services/util.service"
 
 import StarSmall from "../svg/StarSmallSvg"
 import HeartWishlistSvg from "../svg/HeartWishlistSvg"
+import { useSelector } from "react-redux"
 
 export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false)
     const [isLike, setIsLike] = useState(false)
     const [updatedStay, setUpdatedStay] = useState(stay)
+    const loggedInUser = useSelector((storeState) => storeState.userModule.user);
+
 
     useEffect(() => {
     }, [updatedStay])
 
-    const demoLogInUser = {
-        id: "u110",
-        fullname: "Daniel Smith"
-    }
-
-    const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser.id === demoLogInUser.id)
+    const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser?._id)
 
 
     const handleMouseEnter = () => {
@@ -36,13 +34,22 @@ export function StayPreview({ stay, onUpdateStay }) {
     const handleLike = (event) => {
         event.stopPropagation()
         event.preventDefault()
+        let stayToUpdate
         if (isLikedByUser) {
-            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user.id !== demoLogInUser.id) }))
+            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: prevStay.likedByUsers.filter(user => user._id !== loggedInUser._id) }))
+            stayToUpdate = {
+                ...updatedStay,
+                likedByUsers: updatedStay.likedByUsers.filter(user => user._id !== loggedInUser._id)
+            };
         } else {
-            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, demoLogInUser] }))
+            setUpdatedStay(prevStay => ({ ...prevStay, likedByUsers: [...prevStay.likedByUsers, { id: loggedInUser._id, fullname: loggedInUser.fullname }] }))
+            stayToUpdate = {
+                ...updatedStay,
+                likedByUsers: [...updatedStay.likedByUsers, { _id: loggedInUser._id, fullname: loggedInUser.fullname }]
+            };
         }
         try {
-            onUpdateStay(updatedStay)
+            onUpdateStay(stayToUpdate)
             setIsLike(!isLike)
         } catch (error) {
             console.error('Failed to update stay:', error)

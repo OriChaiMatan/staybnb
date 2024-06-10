@@ -101,6 +101,7 @@ export function ReservationModal({
 
 
   function averageReviewsScore() {
+    if (stay.reviews.length === 0) return 0
     const reviews = stay.reviews
     const totalScore = reviews.reduce((acc, review) => acc + review.rate, 0)
     return (totalScore / reviews.length).toFixed(2)

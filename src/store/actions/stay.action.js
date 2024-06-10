@@ -45,10 +45,11 @@ export async function removeStay(stayId) {
 }
 export async function saveStay(stay) {
   try {
+    const type = stay._id ? UPDATE_STAY : ADD_STAY;
+    console.log("TYPE ", type, " STAY ", stay)
     const savedStay = await stayService.save(stay);
     console.log("SAVEDSTAY", savedStay)
-    // const type = stay._id ? UPDATE_STAY : ADD_STAY;
-    store.dispatch({ type: ADD_STAY, stay: savedStay });
+    store.dispatch({ type, stay: savedStay });
   } catch (err) {
     console.log("Had issues saving stays", err);
     throw err;

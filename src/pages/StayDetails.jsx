@@ -199,13 +199,13 @@ export function StayDetails({ setLargeMainFilter }) {
         <StayReviews reviews={stay.reviews} />
       </section>
 
-      <div ref={locationRef} className="map">
+      {stay.loc.lat && <div ref={locationRef} className="map">
         <h3>Where you’ll be</h3>
         <h4>
           {stay.loc.city}, {stay.loc.country}
         </h4>
         <MapContainer lat={stay.loc.lat} lng={stay.loc.lng} />
-      </div>
+      </div>}
     </section>
   );
 }

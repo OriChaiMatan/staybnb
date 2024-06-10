@@ -34,8 +34,7 @@ export function StayIndex() {
 
   async function onAddStay(stay) {
     try {
-      const savedStay = await saveStay(stay)
-      // loadStays()
+      await saveStay(stay)
     } catch (err) {
       console.log("Had issues adding stay", err)
     }
@@ -43,8 +42,7 @@ export function StayIndex() {
 
   async function onUpdateStay(stay) {
     try {
-      const updatedStay = await saveStay(stay)
-      // loadStays()
+      await saveStay(stay)
     } catch (err) {
       console.log('Error in onUpdateStay', err)
     }
