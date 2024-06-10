@@ -4,6 +4,10 @@ import { MainFilter } from "./app-header/MainFilter";
 import { UserActions } from "./app-header/UserActions";
 import { stayService } from "../services/stay.service";
 
+
+//listen to socket of new order-and close it
+//listen to socket of order status
+
 export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
   const defaultFilter = stayService.getDefaultFilter();
 

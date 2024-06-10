@@ -60,6 +60,7 @@ async function login(userCred) {
     const user = await httpService.post('auth/login', userCred)
 
     if (user) {
+        // setup socket
         return saveLocalUser(user)
     }
     throw new Error("Incorrect email or password");
