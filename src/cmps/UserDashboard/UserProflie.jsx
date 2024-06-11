@@ -16,11 +16,12 @@ import { BiMessageDetail } from "react-icons/bi"
 
 export function UserProflie() {
 
-  const loggedInUser = useSelector((storeState) => storeState.userModule.user);
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user)
   const stays = useSelector((storeState) => storeState.stayModule.stays)
+  console.log(stays)
 
   useEffect(() => {
-    // loadStays()
+    loadStays()
   }, [])
 
   if (!stays) return (<div>loading....</div>)
@@ -33,7 +34,7 @@ export function UserProflie() {
             <div className="user-info-item">
               <section className="info">
                 <span>Stays</span>
-                <div>{(stays.filter(stay => stay.host._id === loggedInUser.id)).length}</div>
+                <div>{(stays.filter(stay => stay.host._id === loggedInUser._id)).length}</div>
               </section>
               <LuHotel />
             </div>
@@ -58,7 +59,7 @@ export function UserProflie() {
         <section className="user-list-title">
           <h1>My Stay List</h1>
         </section>
-        <StayList stays={stays.filter(stay => stay.host._id === loggedInUser.id)} />
+        <StayList stays={stays.filter(stay => stay.host._id === loggedInUser._id)} />
       </div>
     </div>
   )
