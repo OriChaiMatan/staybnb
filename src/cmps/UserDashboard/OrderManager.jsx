@@ -8,6 +8,7 @@ import { loadOrders, saveOrder } from "../../store/actions/order.action"
 export function OrderManager() {
   const orders = useSelector((storeState) => storeState.orderModule.orders)
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+  // const userOrders = orders.filter(order => order.hostId === loggedInUser._id)
 
   useEffect(() => {
     loadOrders()
@@ -16,18 +17,19 @@ export function OrderManager() {
   async function onSaveOrder(order) {
     try {
       const savedOrder = await saveOrder(order)
-      // loadOrders();
+      // loadOrders()
     } catch (err) {
       console.log("Had issues adding stay", err)
     }
   }
 
-  const userOrders = orders.filter(order => order.hostId === loggedInUser._id)
-
+  if (!orders) {
+    return <div>Loading...</div>;
+  }
   return (
     <section className="user-list-title">
       <h1>My Order Manager</h1>
-      <OrderManagerList orders={userOrders} onSaveOrder={onSaveOrder} />
+      <OrderManagerList orders={orders.filter(order => order.hostId === loggedInUser._id)} onSaveOrder={onSaveOrder} />
     </section>
   )
 }

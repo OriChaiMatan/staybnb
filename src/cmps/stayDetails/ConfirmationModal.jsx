@@ -3,6 +3,7 @@ import { HiCheckCircle } from "react-icons/hi2"
 import { showErrorMsg } from '../../services/event-bus.service';
 import { useSelector } from 'react-redux';
 import { saveOrder } from '../../store/actions/order.action';
+import { socketService, SOCKET_EVENT_NOTIFY_NEW_ORDER } from '../../services/socket.service';
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
@@ -15,15 +16,23 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
     const stayImg = stay.imgUrls[0].imgUrl
 
-    function handleConfirm() {
+    async function handleConfirm() {
         if (!loggedinUser) {
-            showErrorMsg('Please log in to complete the reservation.')
-            return
+            showErrorMsg('Please log in to complete the reservation.');
+            return;
         }
-        setIsConfirmed(true)
-        const order = { buyer: { _id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" }
-        saveOrder(order)
+        setIsConfirmed(true);
+        const order = { buyer: { _id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" };
+    
+        try {
+            const savedOrder = await saveOrder(order)
+            console.log('set up socket listener')
+            socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer._id })
+        } catch (err) {
+            showErrorMsg('Failed to save order');
+        }
     }
+    
 
     return (
         <div className="confirmation-modal">

@@ -7,7 +7,7 @@ export const SET_FILTER_BY = 'SET_FILTER_BY'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
 export const UNDO_CHANGES = 'UNDO_CHANGES'
 const initialState = {
-    orders: null,
+    orders: [],
     lastOrders: [],
     // filterBy: orderService.getDefaultFilter(),
     isLoading: true
