@@ -8,7 +8,7 @@ function Media(props) {
   const { loading = false } = props;
 
   return (
-    <Grid container wrap="nowrap" margin={10}>
+    <Grid container wrap="nowrap" margin={1} justifyContent={"center"}>
       {Array.from(new Array(5)).map((item, index) => (
         <Box key={index} sx={{ width: 280, marginRight: 5, my: 5 }}>
           <Skeleton

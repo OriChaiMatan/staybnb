@@ -6,6 +6,7 @@ import { LabelsFilter } from "../cmps/LabelsFilter";
 import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { loadStays, setFilterBy, saveStay } from "../store/actions/stay.action";
+import { LabelFilterSkeleton } from "../cmps/LabelFilterSkeleton";
 
 export function StayIndex() {
   const stays = useSelector((storeState) => storeState.stayModule.stays)
@@ -48,7 +49,10 @@ export function StayIndex() {
     }
   }
 
-  if (!stays) return <StayIndexSkeleton />;
+  if (!stays) return <>
+    <LabelFilterSkeleton />
+    <StayIndexSkeleton />
+  </>;
 
   return (
     <>
