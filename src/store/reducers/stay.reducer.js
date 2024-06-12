@@ -34,7 +34,7 @@ export function stayReducer(state = initialState, cmd = {}) {
       return {
         ...state,
         stays: state.stays.map((stay) =>
-          stay.id === cmd.stay.id ? cmd.stay : stay
+          stay._id === cmd.stay._id ? cmd.stay : stay
         ),
       };
     case SET_FILTER_BY:
