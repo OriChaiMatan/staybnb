@@ -17,7 +17,7 @@ export function OrderManager() {
   async function onSaveOrder(order) {
     try {
       const savedOrder = await saveOrder(order)
-      // loadOrders()
+      loadOrders()
     } catch (err) {
       console.log("Had issues save order", err)
     }
