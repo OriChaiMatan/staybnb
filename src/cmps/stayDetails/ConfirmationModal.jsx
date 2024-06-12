@@ -22,12 +22,12 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
             return;
         }
         setIsConfirmed(true);
-        const order = { buyer: { _id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" };
+        const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" };
     
         try {
             const savedOrder = await saveOrder(order)
             console.log('set up socket listener')
-            socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer._id })
+            socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer.id })
         } catch (err) {
             showErrorMsg('Failed to save order');
         }

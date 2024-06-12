@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { socketService, SOCKET_EVENT_NOTIFY_ORDER_STATUS } from "../../../services/socket.service";
 import { FaRegHourglassHalf } from "react-icons/fa6"; // hourglass
 import { BiSolidInfoCircle } from "react-icons/bi"; // delete
 import { FaCheckCircle } from "react-icons/fa"; // approve
@@ -25,7 +26,7 @@ export function OrderManagerPreview({ order, onSaveOrder }) {
     const handleStatusChange = (newStatus) => {
         const updatedOrder = { ...order, status: newStatus }
         onSaveOrder(updatedOrder)
-        console.log(updatedOrder)
+        socketService.emit(SOCKET_EVENT_NOTIFY_ORDER_STATUS, { hostId: order.hostId, buyer_id: order.buyer.id })
     }
 
     return (

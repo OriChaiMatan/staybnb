@@ -4,7 +4,7 @@ import logo from "../assets/img/airbnb-1.svg";
 import { MainFilter } from "./app-header/MainFilter";
 import { UserActions } from "./app-header/UserActions";
 import { stayService } from "../services/stay.service";
-import { socketService, SOCKET_EVENT_NEW_ORDER } from '../services/socket.service';
+import { socketService, SOCKET_EVENT_NEW_ORDER, SOCKET_EVENT_ORDER_STATUS} from '../services/socket.service';
 import { eventBusService, showSuccessMsg } from "../services/event-bus.service";
 
 
@@ -26,8 +26,16 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
 
   useEffect(() => {
     socketService.on(SOCKET_EVENT_NEW_ORDER, (buyer_id) => {
-      console.log('Received new order event:', buyer_id)
-      showSuccessMsg('new order from' + buyer_id)
+      showSuccessMsg('New order from' + buyer_id)
+    })
+    return () => {
+      socketService.off(SOCKET_EVENT_NEW_ORDER)
+    }
+  }, [])
+
+  useEffect(() => {
+    socketService.on(SOCKET_EVENT_ORDER_STATUS, (hostId) => {
+      showSuccessMsg(`Your order from ${hostId} has an update!`)
     })
     return () => {
       socketService.off(SOCKET_EVENT_NEW_ORDER)

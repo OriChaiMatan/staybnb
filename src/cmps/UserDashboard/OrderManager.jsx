@@ -19,7 +19,7 @@ export function OrderManager() {
       const savedOrder = await saveOrder(order)
       // loadOrders()
     } catch (err) {
-      console.log("Had issues adding stay", err)
+      console.log("Had issues save order", err)
     }
   }
 
