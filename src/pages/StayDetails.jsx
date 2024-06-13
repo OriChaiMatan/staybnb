@@ -73,12 +73,12 @@ export function StayDetails({ setLargeMainFilter }) {
     try {
       const stayData = await stayService.getById(params.stayId);
       setStay(stayData);
-
-      socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userId: loggedinUser._id, stayId: stay._id })
+      socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userName: loggedinUser.fullname, stayName: stayData.name, hostId: stayData.host._id });
     } catch (err) {
       console.log("Error in loadStay", err);
     }
   }
+  
 
   function handleNavigation(section) {
     const refs = {

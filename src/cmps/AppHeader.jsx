@@ -4,7 +4,7 @@ import logo from "../assets/img/airbnb-1.svg";
 import { MainFilter } from "./app-header/MainFilter";
 import { UserActions } from "./app-header/UserActions";
 import { stayService } from "../services/stay.service";
-import { socketService, SOCKET_EVENT_NEW_ORDER, SOCKET_EVENT_ORDER_STATUS} from '../services/socket.service';
+import { socketService, SOCKET_EVENT_NEW_ORDER, SOCKET_EVENT_ORDER_STATUS, SOCKET_EVENT_USER_WATCHING_STAY} from '../services/socket.service';
 import { eventBusService, showSuccessMsg } from "../services/event-bus.service";
 
 
@@ -38,7 +38,16 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
       showSuccessMsg(`There are some updates in your order number: ${hostId} `)
     })
     return () => {
-      socketService.off(SOCKET_EVENT_NEW_ORDER)
+      socketService.off(SOCKET_EVENT_ORDER_STATUS)
+    }
+  }, [])
+
+  useEffect(() => {
+    socketService.on(SOCKET_EVENT_USER_WATCHING_STAY, ({userName, stayName}) => {
+      showSuccessMsg(`User: ${userName} is watching your stay: ${stayName} ! `)
+    })
+    return () => {
+      socketService.off(SOCKET_EVENT_USER_WATCHING_STAY)
     }
   }, [])
 
