@@ -54,7 +54,7 @@
   }
 
   .main-filter-header:not(.large-main-filter) {
-    margin-left: 200px;
+    // margin-left: 200px;
   }
 
   .main-filter-header {
@@ -531,9 +531,11 @@
 @media (max-width: 500px) {
   .app-header {
     padding: 0;
+
     div.main-filter-header:not(.large-main-filter) {
       margin: 30px;
     }
+
     .app-header-logo-nav {
       display: none;
     }
