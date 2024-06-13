@@ -1,7 +1,6 @@
 .user-msg {
   position: fixed;
   bottom: 0;
-  height: 35px;
   margin-inline-start: 24px;
   margin-block-end: 24px;
   padding-inline-start: 18px;
@@ -12,15 +11,16 @@
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302),
     0 4px 8px 3px rgba(60, 64, 67, 0.149);
-  display: flex;
-  align-items: center;
+
 
   &.success {
-    background-color: #18df06;
+    background-color: #ededed;
+    color: #222222;
   }
 
   &.error {
-    background-color: red;
+    background-color: #ededed;
+    color: red;
   }
 
   .user-msg-close-button {
@@ -29,11 +29,21 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/close_white_20dp.png');
+    background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/close_black_20dp.png');
     background-repeat: no-repeat;
     background-color: none;
     background-size: 20px;
     background-position: 50%;
     transition: background-color 0.5s;
+  }
+
+  h1 {
+    font-size: medium;
+  }
+
+  .msg-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
