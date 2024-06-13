@@ -1,11 +1,11 @@
 import { utilService } from "../../services/util.service"
-import StarReviewSvg from "../../svg/StarReviewSvg"
 import CleanlinessSvg from "../../svg/rating/CleanlinessSvg"
 import AccuracySvg from "../../svg/rating/AccuracySvg"
 import CheckinSvg from "../../svg/rating/CheckinSvg"
 import CommunicationSvg from "../../svg/rating/CommunicationSvg"
 import LocationSvg from "../../svg/rating/LocationSvg"
 import ValueSvg from "../../svg/rating/ValueSvg"
+import StarSvg from "../../svg/StarSvg"
 
 export function StayRating({ reviews }) {
 
@@ -21,7 +21,7 @@ export function StayRating({ reviews }) {
   return (
     <div className="rating-reviews">
       <div className="reviews-rate">
-        <StarReviewSvg />
+      <StarSvg />
         {reviews.length !== 0 && (
           <>
             {utilService.calculateAvgRating(reviews) !== "0.00" &&

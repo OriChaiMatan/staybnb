@@ -122,8 +122,8 @@
     display: flex;
     gap: 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-    
-    span{
+
+    span {
       font-weight: 600;
     }
 
@@ -471,6 +471,10 @@
       display: none;
     }
 
+    .stay-info-content {
+      padding: 24px 0;
+    }
+
     .reservation-modal {
       display: none;
     }
@@ -485,6 +489,52 @@
       display: block;
     }
 
-  }
+    .stay-features {
+      padding: 24px 0;
+    }
 
+    .summery {
+      padding: 24px 0;
+    }
+
+    .amenities-details {
+      padding: 24px 0;
+
+      .offers-grid {
+        display: block;
+      }
+    }
+
+    .dates {
+      padding: 24px 0;
+      padding-bottom: 0;
+    }
+
+    .calendar-picker {
+      display: block;
+    }
+
+    .rating-container {
+      padding: 24px 0;
+
+      .guest-reviews-container {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .rating-reviews {
+        .rating {
+          display: none;
+        }
+
+        .reviews-rate {
+          font-size: 23px;
+        }
+      }
+    }
+
+    .map{
+      padding: 24px 0;
+    }
+  }
 }
