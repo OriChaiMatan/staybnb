@@ -83,3 +83,17 @@
     background-color: #f7f7f7;
   }
 }
+
+@media (max-width: 500px) {
+  .labels-filter{
+    padding: 0 0 0 18px;
+
+    .filter-btn{
+      display: none;
+    }
+
+    .next-categories-page{
+      display: none;      
+    }
+  }
+}

@@ -150,3 +150,10 @@
     transform: scale(1.2);
   }
 }
+
+
+@media (max-width: 1000px) {
+  .wish-list-icon {
+    display: none;
+  }
+}

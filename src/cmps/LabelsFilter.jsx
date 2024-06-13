@@ -53,7 +53,7 @@ export function LabelsFilter({ filterBy, onSetFilter }) {
     { imgSrc: "http://res.cloudinary.com/dqti9icif/image/upload/v1717064109/ski-in-out_ggsokt.png",
      altText: "ski-in-out-img", nameLabel: "Ski-in/out" }
   ]
-  const ITEM_WIDTH = labels.length * 100 / 2
+  const ITEM_WIDTH = labels.length * 100 / 7
   const [focusedItem, setFocusedItem] = useState(null)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showBackButton, setShowBackButton] = useState(false)

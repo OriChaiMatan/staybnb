@@ -40,3 +40,11 @@
 .details-layout-container .app-header {
   padding: 0 !important;
 }
+
+
+@media (max-width: 500px) {
+  .details-layout-container .app-header{
+    display: none;
+  }
+
+}

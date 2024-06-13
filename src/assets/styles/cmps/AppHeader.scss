@@ -23,7 +23,7 @@
     color: $clr4;
   }
 
-  .app-header.large-header + .main-filter-header {
+  .app-header.large-header+.main-filter-header {
     grid-row: 1;
   }
 
@@ -164,7 +164,7 @@
           column-gap: 5px;
           margin-block-start: 33px;
 
-          & > div {
+          &>div {
             height: 160px;
             display: flex;
             flex-direction: column;
@@ -173,12 +173,12 @@
             text-align: start;
           }
 
-          & > div:hover {
+          &>div:hover {
             background-color: #ebebeb;
             border-radius: 10px;
           }
 
-          & > div img {
+          &>div img {
             height: 120px;
             width: 90%;
             border: 1px solid rgba(128, 128, 128, 0.3);
@@ -188,7 +188,7 @@
             box-sizing: inherit;
           }
 
-          & > div .region-p {
+          &>div .region-p {
             font-size: 0.875rem;
             font-weight: 500;
             color: $clr3;
@@ -214,7 +214,7 @@
         font-size: 12px;
         cursor: auto;
 
-        & > *:not(:nth-last-child(2)):not(:last-child) {
+        &>*:not(:nth-last-child(2)):not(:last-child) {
           content: "";
           border-bottom: 1px solid #ebebeb;
           grid-row: span 1;
@@ -295,7 +295,7 @@
       color: rgb(64, 64, 64);
     }
 
-    .main-filter-btn.large:hover + .border-line {
+    .main-filter-btn.large:hover+.border-line {
       display: block;
     }
 
@@ -319,15 +319,13 @@
     }
 
     .large-search-btn {
-      background-image: radial-gradient(
-        circle at center,
-        #ff385c 0%,
-        #e61e4d 27.5%,
-        #e31c5f 40%,
-        #d70466 57.5%,
-        #bd1e59 75%,
-        #bd1e59 100%
-      );
+      background-image: radial-gradient(circle at center,
+          #ff385c 0%,
+          #e61e4d 27.5%,
+          #e31c5f 40%,
+          #d70466 57.5%,
+          #bd1e59 75%,
+          #bd1e59 100%);
       background-size: 200% 200%;
       color: $clr5;
       max-width: 200px;
@@ -339,8 +337,7 @@
       align-items: center;
       justify-content: space-between;
       font-size: 16px;
-      background-position: calc((100% - 20.125px))
-        calc((100% - 77.08333333333334px));
+      background-position: calc((100% - 20.125px)) calc((100% - 77.08333333333334px));
 
       & span {
         margin-right: 10px;
@@ -370,8 +367,8 @@
     grid-row: 2;
   }
 
-  .main-filter-header.large-main-filter + .user-actions-header a,
-  .main-filter-header.large-main-filter + .user-actions-header .world-icon {
+  .main-filter-header.large-main-filter+.user-actions-header a,
+  .main-filter-header.large-main-filter+.user-actions-header .world-icon {
     display: none;
   }
 
@@ -394,9 +391,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // position: fixed;
-    // top: 14px;
-    // right: 95px;
 
     a {
       color: #000;
@@ -411,14 +405,12 @@
 
     .user-icon {
       width: 30px;
-      /* Set size for user icon */
       cursor: pointer;
       margin-left: 10px;
     }
 
     .hamburger-menu-icon {
       width: 20px;
-      /* Set size for hamburger menu icon */
       height: 20px;
       cursor: pointer;
       margin-left: 3px;
@@ -529,7 +521,24 @@
       opacity: 0;
     }
 
-    .MuiDateRangeCalendar-root > div:first-child {
+    .MuiDateRangeCalendar-root>div:first-child {
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 500px) {
+  .app-header {
+    padding: 0;
+    div.main-filter-header:not(.large-main-filter) {
+      margin: 30px;
+    }
+    .app-header-logo-nav {
+      display: none;
+    }
+
+    .user-actions-header {
       display: none;
     }
   }
