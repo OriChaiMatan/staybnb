@@ -33,18 +33,31 @@
   }
 }
 
-.details-layout-container > * {
+.details-layout-container>* {
   grid-column: 2;
   // padding: 0 !important;
 }
+
 .details-layout-container .app-header {
   padding: 0 !important;
 }
 
 
-@media (max-width: 500px) {
-  .details-layout-container .app-header{
-    display: none;
-  }
+@media (max-width: 415px) {
+  .details-layout-container {
+    display: block;
 
+    .app-header {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .details-layout-container {
+    .main-content {
+      display: grid;
+      grid-template-columns: 24px 365px 24px;
+    }
+  }
 }
