@@ -2,11 +2,11 @@
 import io from 'socket.io-client'
 import { userService } from './user.service'
 
-
 export const SOCKET_EVENT_NEW_ORDER = 'new-order'
 export const SOCKET_EVENT_NOTIFY_NEW_ORDER = 'notify-new-order'
 export const SOCKET_EVENT_ORDER_STATUS = 'order-status'
 export const SOCKET_EVENT_NOTIFY_ORDER_STATUS = 'notify-order-status'
+export const SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY = 'notify-user-watching-stay'
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'

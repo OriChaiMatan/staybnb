@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { stayService } from "../services/stay.service";
 import { ReservationModal } from "../cmps/stayDetails/ReservationModal";
@@ -14,6 +15,7 @@ import { StayFeatures } from "../cmps/stayDetails/StayFeatures";
 import { StayRating } from "../cmps/stayDetails/StayRating";
 import { StayImgs } from "../cmps/stayDetails/StayImgs";
 import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton";
+import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null);
@@ -32,8 +34,10 @@ export function StayDetails({ setLargeMainFilter }) {
   const locationRef = useRef(null);
   const hostedByRef = useRef(null);
 
+  const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+
   useEffect(() => {
-    loadStay();
+    loadStay()
 
     function handleScroll() {
       const scrollTop =
@@ -62,12 +66,15 @@ export function StayDetails({ setLargeMainFilter }) {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [params.stayId]);
+  }, [params.stayId])
+
 
   async function loadStay() {
     try {
       const stayData = await stayService.getById(params.stayId);
       setStay(stayData);
+
+      socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userId: loggedinUser._id, stayId: stay._id })
     } catch (err) {
       console.log("Error in loadStay", err);
     }
