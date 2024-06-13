@@ -122,6 +122,10 @@
     display: flex;
     gap: 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    
+    span{
+      font-weight: 600;
+    }
 
     .hosted-img {
       width: 40px;
@@ -452,4 +456,35 @@
       }
     }
   }
+}
+
+@media (max-width: 500px) {
+  .stay-details {
+    margin-top: 0;
+    font-size: 15px;
+
+    .sticky-header {
+      display: none;
+    }
+
+    .stay-info-header {
+      display: none;
+    }
+
+    .reservation-modal {
+      display: none;
+    }
+
+    .stay-info-imgs {
+      display: block;
+      border-radius: 0;
+      height: 300px;
+    }
+
+    .details-container {
+      display: block;
+    }
+
+  }
+
 }
