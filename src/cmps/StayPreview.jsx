@@ -47,9 +47,20 @@ export function StayPreview({ stay, onUpdateStay }) {
         initialSlide: 0
     }
 
+    const handleLinkClick = (event) => {
+        event.preventDefault();
+        // Save sessionStorage to localStorage
+        Object.keys(sessionStorage).forEach(key => {
+            localStorage.setItem(key, sessionStorage.getItem(key));
+        });
+
+        // Open the new tab
+        window.open(`/stay/${stay._id}`, '_blank');
+    }
+
     return (
         <div className="stay-preview">
-            <Link to={`/stay/${stay._id}`} target="_blank" >
+            <Link to={`/stay/${stay._id}`} onClick={handleLinkClick} >
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
