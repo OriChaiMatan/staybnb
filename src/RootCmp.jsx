@@ -6,6 +6,7 @@ import { StayDetails } from "./pages/StayDetails";
 import { StayIndex } from "./pages/StayIndex";
 import { StayEdit } from "./pages/StayEdit";
 import { UserDashboard } from "./pages/UserDashboard";
+import { MyTrips } from "./pages/MyTrips";
 import { OrderManager } from "./cmps/UserDashboard/OrderManager";
 import { UserProflie } from "./cmps/UserDashboard/UserProflie";
 import { WishList } from "./cmps/UserDashboard/WishList";
@@ -45,6 +46,7 @@ export function RootCmp() {
             <Route path="/dashboard/listing" element={<UserProflie />} />
             <Route path="/dashboard/wishlist" element={<WishList />} />
           </Route>
+          <Route path="/my-trips" element={<MyTrips />}/>
         </Routes>
       </main>
       <AppFooter />

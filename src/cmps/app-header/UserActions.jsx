@@ -113,7 +113,11 @@ export function UserActions() {
             </Link>
               <Link to={"/stay-edit/newStay"} className="user-action">
                 Staybnb your home
-              </Link></>}
+              </Link>
+              <Link to={"/my-trips"} className="user-action">
+                My Trips
+              </Link>
+              </>}
             <a href="#" className="user-action">
               Help Center
             </a>

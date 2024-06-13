@@ -26,7 +26,7 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
 
   useEffect(() => {
     socketService.on(SOCKET_EVENT_NEW_ORDER, (buyer_id) => {
-      showSuccessMsg('New order from' + buyer_id)
+      showSuccessMsg('New order from ' + buyer_id)
     })
     return () => {
       socketService.off(SOCKET_EVENT_NEW_ORDER)
@@ -35,7 +35,7 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
 
   useEffect(() => {
     socketService.on(SOCKET_EVENT_ORDER_STATUS, (hostId) => {
-      showSuccessMsg(`Your order from ${hostId} has an update!`)
+      showSuccessMsg(`There are some updates in your order number: ${hostId} `)
     })
     return () => {
       socketService.off(SOCKET_EVENT_NEW_ORDER)

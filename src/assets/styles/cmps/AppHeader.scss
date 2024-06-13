@@ -53,9 +53,9 @@
     }
   }
 
-  .main-filter-header:not(.large-main-filter) {
-    // margin-left: 200px;
-  }
+  // .main-filter-header:not(.large-main-filter) {
+  //   margin-left: 200px;
+  // }
 
   .main-filter-header {
     display: grid;
@@ -389,7 +389,8 @@
 
   .user-actions-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    min-width: 310px;
     align-items: center;
 
     a {
