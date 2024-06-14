@@ -1,28 +1,29 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import worldIcon from "../../assets/img/world_icon.png";
-import hamburgerIcon from "../../assets/img/hamburger_menu.png";
-import userIcon from "../../assets/img/user_icon.png";
-import { LoginForm } from "./LoginForm";
-import { logout } from "../../store/actions/user.action";
-import { userService } from "../../services/user.service";
-import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service";
+import { useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import worldIcon from "../../assets/img/world_icon.png"
+import hamburgerIcon from "../../assets/img/hamburger_menu.png"
+import userIcon from "../../assets/img/user_icon.png"
+import { LoginForm } from "./LoginForm"
+import { logout } from "../../store/actions/user.action"
+import { showErrorMsg } from "../../services/event-bus.service"
+import { useWindowSize } from "../../customHooks/useWindowSize"
 
 export function UserActions() {
-  const [showUserActionModal, setShowUserActionModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const userActionsModalRef = useRef(null);
-  const loggedInUser = useSelector((storeState) => storeState.userModule.user);
-  const dispatch = useDispatch();
+  const [showUserActionModal, setShowUserActionModal] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false)
+  const userActionsModalRef = useRef(null)
+  const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+  const windowSize = useWindowSize()
+
 
   useEffect(() => {
 
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
-        setShowUserActionModal(false);
+        setShowUserActionModal(false)
       }
-    };
+    }
 
     function handleClickOutside(event) {
       if (
@@ -30,44 +31,83 @@ export function UserActions() {
         !userActionsModalRef.current.contains(event.target) &&
         !event.target.classList.contains("user-actions-container")
       ) {
-        setShowUserActionModal(false);
+        setShowUserActionModal(false)
       }
     }
 
-    document.addEventListener("keydown", handleEscapeKeyPress);
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKeyPress)
+    document.addEventListener("mousedown", handleClickOutside)
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKeyPress);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener("keydown", handleEscapeKeyPress)
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   useEffect(() => {
 
-  }, [loggedInUser]);
+  }, [loggedInUser])
 
   function toggleUserActionModal() {
     setShowUserActionModal(
       (prevShowUserActionModal) => !prevShowUserActionModal
-    );
+    )
   }
 
   function handleLoginClick() {
-    setShowLoginModal(true);
+    setShowLoginModal(true)
   }
 
   function handleCloseLoginModal() {
-    setShowLoginModal(false);
+    setShowLoginModal(false)
   }
 
   async function handleLogoutClick() {
     try {
       await logout()
-      setShowUserActionModal(false);
+      setShowUserActionModal(false)
     } catch (err) {
       showErrorMsg('Cannot logout')
     }
+  }
+
+
+  if (windowSize.width < 780) {
+    return (
+      <div className="mobile-user-actions-toolbar">
+        <Link to={"/"}>Explore</Link>
+        {loggedInUser &&
+          <>
+            <Link to={"/dashboard/wishlist"}>Wishlist</Link>
+            <Link to={"/my-trips"}>Trips</Link>
+          </>
+        }
+
+        <div>
+          {!loggedInUser ? (
+            <>
+              <a href="#" className="user-action" onClick={handleLoginClick}>
+                Log in
+              </a>
+            </>
+          ) : (
+
+            <a href="/" className="user-action" onClick={handleLogoutClick}>
+              Log out
+            </a>
+
+          )}
+
+          {showLoginModal && (
+            <div className="modal-overlay">
+              <div className="login-modal">
+                <LoginForm onClose={handleCloseLoginModal} />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -103,9 +143,11 @@ export function UserActions() {
                 </a>
               </>
             ) : (
-              <a href="#" className="user-action" onClick={handleLogoutClick}>
+
+              <a href="/" className="user-action" onClick={handleLogoutClick}>
                 Log out
               </a>
+
             )}
             <div className="hr"></div>
             {loggedInUser && <><Link to={"/dashboard/listing"} className="user-action">
@@ -117,7 +159,7 @@ export function UserActions() {
               <Link to={"/my-trips"} className="user-action">
                 My Trips
               </Link>
-              </>}
+            </>}
             <a href="#" className="user-action">
               Help Center
             </a>
@@ -132,5 +174,5 @@ export function UserActions() {
         </div>
       )}
     </div>
-  );
+  )
 }

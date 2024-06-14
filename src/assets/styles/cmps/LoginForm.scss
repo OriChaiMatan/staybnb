@@ -175,3 +175,10 @@
   background-color: #00000080;
   z-index: 102;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .login-modal{
+    width: 370px;
+  }
+}

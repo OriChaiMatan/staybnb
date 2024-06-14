@@ -526,6 +526,19 @@
       display: none;
     }
   }
+
+  .mobile-user-actions-toolbar{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 -1px 0;
+  }
 }
 
 

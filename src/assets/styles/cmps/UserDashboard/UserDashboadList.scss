@@ -1,10 +1,12 @@
 .order-list {
+
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 16px;
     text-align: left;
     color: #333;
+    white-space: nowrap;
   
     section {
       display: grid;
@@ -13,6 +15,7 @@
       background-color: #f7f7f7;
       border-bottom: 2px solid #ddd;
       font-weight: bold;
+      gap: 10px;
     }
   
     li {
@@ -21,6 +24,7 @@
       padding: 12px;
       border-bottom: 1px solid #ddd;
       justify-items: center;
+  
   
       &:nth-child(even) {
         background-color: #f9f9f9;
