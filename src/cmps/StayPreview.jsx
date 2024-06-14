@@ -7,6 +7,7 @@ import { utilService } from "../services/util.service";
 import StarSmall from "../svg/StarSmallSvg";
 import HeartWishlistSvg from "../svg/HeartWishlistSvg";
 import { useSelector } from "react-redux";
+import { showErrorMsg } from "../services/event-bus.service";
 
 export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -23,6 +24,9 @@ export function StayPreview({ stay, onUpdateStay }) {
     }
 
     const handleLike = (event) => {
+        if (!loggedInUser) {
+            showErrorMsg('Please log in to save a listing to your wishlist');
+        }
         event.stopPropagation();
         event.preventDefault();
         const updatedLikedByUsers = isLikedByUser
