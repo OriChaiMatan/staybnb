@@ -23,15 +23,15 @@ export function MyTripsPreview({ order }) {
     if (!order && !stay) return (<div>loading....</div>)
     return (
         <div className="my-trip-preview">
+            <section className="my-trip-img">
+                <img src={order.stay.imgUrl} className='rounded-img'></img>
+            </section>
             <section className="my-trip-details">
                 <h1 >{order.stay.name}</h1>
                 <label className="order-icon">Order status: {order.status} {getStatusIcon(order.status)}</label>
                 <label>Check In date: {order.startDate}</label>
                 <label >Check Out date: {order.endDate}</label>
                 <label >Price: {order.totalPrice}</label>
-            </section>
-            <section className="my-trip-img">
-                <img src={order.stay.imgUrl} className='rounded-img'></img>
             </section>
         </div>
     )

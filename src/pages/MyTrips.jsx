@@ -17,7 +17,7 @@ export function MyTrips() {
   }
   return (
     <section className="my-trips">
-      <h1>My Trips</h1>
+      <h1>Trips</h1>
       <MyTripsList orders={orders.filter(order => order.buyer.id === loggedInUser._id)} />
     </section>
   )
