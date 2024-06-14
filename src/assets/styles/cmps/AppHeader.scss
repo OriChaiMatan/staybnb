@@ -527,7 +527,7 @@
     }
   }
 
-  .mobile-user-actions-toolbar{
+  .mobile-user-actions-toolbar {
     display: flex;
     align-items: center;
     position: fixed;
@@ -542,11 +542,11 @@
     justify-content: center;
     gap: 50px;
 
-    .name-action{
+    .name-action {
       font-size: 10px;
     }
 
-    a{
+    a {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -564,6 +564,11 @@
     padding: 0;
     justify-content: center;
 
+    .main-filter-header .main-filter-btn.large:last-child {
+      width: 96px;
+      justify-content: center;
+    }
+
     div.main-filter-header:not(.large-main-filter) {
       margin: 30px;
     }
@@ -575,5 +580,43 @@
     .user-actions-header {
       display: none;
     }
+
+    .main-filter-header.large-main-filter {
+      width: 380px;
+    }
+
+    .main-filter-header.large-main-filter .main-filter-btn,
+    .main-filter-header.large-main-filter .main-filter-btn:first-child {
+      width: 96px;
+    }
+
+    .main-filter-btn.large .dest-input {
+      width: 125%;
+    }
+
+    .main-filter-header .main-filter-btn.large .add-dest-modal {
+      left: calc(50% - 203px);
+      width: 405px;
+
+    }
+
+    .add-dates-modal {
+      left: calc(50% - 203px);
+      width: 405px;
+
+      .calendar-picker table.current-month .prev-month-nav {
+        margin-left: 145px;
+      }
+    }
+
+    .calendar-picker table.next-month .next-month-nav {
+      margin-right: 145px;
+    }
+
+    .main-filter-header .large-search-btn {
+      width: 100px;
+      padding: 6px;
+    }
+
   }
 }

@@ -8,6 +8,7 @@ import { GuestsModal } from "./GuestsModal";
 import { useSearchParams } from "react-router-dom";
 import { CalendarPicker } from "../CalendarPicker";
 import { utilService } from "../../services/util.service";
+import { useWindowSize } from "../../customHooks/useWindowSize";
 
 export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   const [activeMainFilter, setActiveMainFilter] = useState(-1);
@@ -24,11 +25,11 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   const [selectedGuests, setSelectedGuests] = useState(0);
   const mainFilterRef = useRef(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const windowSize = useWindowSize()
 
   useEffect(() => {
     const handleEscapeKeyPress = (event) => {
       if (event.key === "Escape") {
-        // setLargeMainFilter(false)
         setActiveMainFilter(-1);
       }
     };
@@ -44,26 +45,12 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
       }
     };
 
-    // function handleScroll() {
-    //     const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
-    //     if (scrollTop > 30) {
-    //         setLargeMainFilter(false);
-    //         setActiveMainFilter(-1);
-    //     } else {
-    //         setLargeMainFilter(true);
-    //     }
-    // }
-
     document.addEventListener("keydown", handleEscapeKeyPress);
     document.addEventListener("mousedown", handleClickOutside);
-    // document.addEventListener('scroll', handleScroll);
-
-    // handleScroll();
 
     return () => {
       document.removeEventListener("keydown", handleEscapeKeyPress);
       document.removeEventListener("mousedown", handleClickOutside);
-      // document.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -260,13 +247,26 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           <div className="name">
             <span className="bold">Check out</span> <br></br>
             {selectedRange.end
-              ?utilService.formatMonthDay(selectedRange.end)
+              ? utilService.formatMonthDay(selectedRange.end)
               : "Add dates"}
           </div>
         </label>
+
       )}
       {largeMainFilter && <div className="border-line"></div>}
 
+      {largeMainFilter && windowSize.width < 780 && (
+        <label
+          className={`main-filter-btn large`}
+        >
+          <button className="large-search-btn" onClick={onSubmitFilter}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <span>Search</span>
+          </button>
+        </label>
+
+
+      )}
       {(activeMainFilter === 1 || activeMainFilter === 2) && (
         <section className="add-dates-modal">
           <CalendarPicker range={selectedRange}
@@ -275,45 +275,47 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
         </section>
       )}
       {largeMainFilter ? (
-        <div className="main-filter-btn large">
-          <label
-            className={`filter-content ${activeMainFilter === 3 ? "active-filter" : ""
-              }`}
-            onClick={() => {
-              setActiveMainFilter(3);
-            }}
-          >
-            <div className="name">
-              <span className="bold">Who</span> <br className="bold"></br>
-              {selectedGuests
-                ? `${selectedGuests} ${selectedGuests === 1 ? "guest" : "guests"
-                }`
-                : "Add guests"}
-            </div>
-          </label>
-          {activeMainFilter < 0 ? (
-            <img
-              className="large-circle-search-glass"
-              src={searchIcon}
-              alt="search-icon"
-            />
-          ) : (
-            <button className="large-search-btn" onClick={onSubmitFilter}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-              <span>Search</span>
-            </button>
-          )}
+        windowSize.width >= 780 && (
+          <div className="main-filter-btn large">
+            <label
+              className={`filter-content ${activeMainFilter === 3 ? "active-filter" : ""
+                }`}
+              onClick={() => {
+                setActiveMainFilter(3);
+              }}
+            >
+              <div className="name">
+                <span className="bold">Who</span> <br className="bold"></br>
+                {selectedGuests
+                  ? `${selectedGuests} ${selectedGuests === 1 ? "guest" : "guests"
+                  }`
+                  : "Add guests"}
+              </div>
+            </label>
+            {activeMainFilter < 0 ? (
+              <img
+                className="large-circle-search-glass"
+                src={searchIcon}
+                alt="search-icon"
+              />
+            ) : (
+              <button className="large-search-btn" onClick={onSubmitFilter}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <span>Search</span>
+              </button>
+            )}
 
-          {activeMainFilter === 3 && (
-            <GuestsModal
-              adultsAmount={adultsAmount}
-              childrenAmount={childrenAmount}
-              infantsAmount={infantsAmount}
-              petsAmount={petsAmount}
-              handleAmountChange={handleAmountChange}
-            />
-          )}
-        </div>
+            {activeMainFilter === 3 && (
+              <GuestsModal
+                adultsAmount={adultsAmount}
+                childrenAmount={childrenAmount}
+                infantsAmount={infantsAmount}
+                petsAmount={petsAmount}
+                handleAmountChange={handleAmountChange}
+              />
+            )}
+          </div>
+        )
       ) : (
         <>
           <button
