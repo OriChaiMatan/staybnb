@@ -529,9 +529,10 @@
 }
 
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 768px) {
   .app-header {
     padding: 0;
+    justify-content: center;
 
     div.main-filter-header:not(.large-main-filter) {
       margin: 30px;

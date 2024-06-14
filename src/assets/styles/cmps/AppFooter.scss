@@ -102,7 +102,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 768px) {
   .app-footer {
     font-size: 14px;
     height: 140px;
