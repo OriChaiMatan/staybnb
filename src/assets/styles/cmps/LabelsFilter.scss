@@ -84,7 +84,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 768px){
   .labels-filter{
     padding: 0 0 0 18px;
 

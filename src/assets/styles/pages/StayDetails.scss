@@ -384,6 +384,12 @@
     }
   }
 
+  .map-container {
+    width: 100%;
+    height: 500px;
+    border-radius: 0;
+  }
+
   .reservation-modal {
     margin-bottom: 60px;
   }
@@ -458,7 +464,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 768px) {
   .stay-details {
     margin-top: 0;
     font-size: 15px;
@@ -472,11 +478,15 @@
     }
 
     .stay-info-content {
-      padding: 24px 0;
+      padding: 24px 24px;
     }
 
     .reservation-modal {
       display: none;
+    }
+
+    .hosted-by {
+      padding: 24px 24px;
     }
 
     .stay-info-imgs {
@@ -490,15 +500,15 @@
     }
 
     .stay-features {
-      padding: 24px 0;
+      padding: 24px 24px;
     }
 
     .summery {
-      padding: 24px 0;
+      padding: 24px 24px;
     }
 
     .amenities-details {
-      padding: 24px 0;
+      padding: 24px 24px;
 
       .offers-grid {
         display: block;
@@ -506,7 +516,7 @@
     }
 
     .dates {
-      padding: 24px 0;
+      padding: 24px 24px;
       padding-bottom: 0;
     }
 
@@ -515,11 +525,23 @@
     }
 
     .rating-container {
-      padding: 24px 0;
+      padding: 24px 24px;
 
       .guest-reviews-container {
         border-top: none;
         padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .review {
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+          padding: 20px;
+          border-radius: 12px;
+          background-color: #ffffff;
+          height: 230px;
+          width: 317px;
+        }
       }
 
       .rating-reviews {
@@ -528,13 +550,18 @@
         }
 
         .reviews-rate {
-          font-size: 23px;
+          font-size: 26px;
         }
       }
     }
 
-    .map{
-      padding: 24px 0;
+    .map {
+      padding: 24px 24px;
+    }
+
+    .map-container {
+      height: 220px;
+      border-radius: 12px 12px 0 0;
     }
   }
 }

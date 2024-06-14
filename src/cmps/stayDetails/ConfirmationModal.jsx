@@ -9,12 +9,13 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
     const [isConfirmed, setIsConfirmed] = useState(false)
     const loggedinUser = useSelector((storeState) => storeState.userModule.user);
 
+
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')
         return `${day}/${month}/${year}`
     }
 
-    const stayImg = stay.imgUrls[0].imgUrl
+
 
     async function handleConfirm() {
         if (!loggedinUser) {
@@ -23,7 +24,7 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
         }
         setIsConfirmed(true);
         const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" };
-    
+
         try {
             const savedOrder = await saveOrder(order)
             console.log('set up socket listener')
@@ -32,7 +33,8 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
             showErrorMsg('Failed to save order');
         }
     }
-    
+    const stayImg = stay.imgUrls[0].imgUrl
+    const totalGuests = adultsAmount + childrenAmount + petsAmount + infantsAmount
 
     return (
         <div className="confirmation-modal">
@@ -66,7 +68,10 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
                             <span>{formatDate(endDate)}</span>
                         </div>
 
-                        <h4 className='title'>Guests:</h4>
+                        {totalGuests > 0 &&
+                            <h4 className='title'>Guests:</h4>
+                        }
+
                         <div className='content guest'>
                             {adultsAmount > 0 && `${adultsAmount} ${adultsAmount === 1 ? 'adult' : 'adults'}`}{' '}
                             {childrenAmount > 0 && `${childrenAmount} ${childrenAmount === 1 ? 'child' : 'children'}`}{' '}

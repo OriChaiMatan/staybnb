@@ -102,13 +102,14 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 768px) {
   .app-footer {
     font-size: 14px;
     height: 140px;
     display: grid;
     padding: 24px 0 24px 24px;
     gap: 20px;
+    overflow-x: hidden;
 
     .app-footer-left {
       display: block;
