@@ -1,0 +1,38 @@
+.mobile-reserve {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 75px;
+  white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 -1px 0;
+
+
+  .btn-reserve {
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    padding: 14px 54px;
+    border-radius: 8px;
+    color: #ffffff;
+    background-position: calc((100 - var(--mouse-x, 0))* 1%) calc((100 - var(--mouse-y, 0))* 1%);
+    --mouse-x: 94.71153846153845;
+    --mouse-y: 2.083333333333333;
+    background-size: 200% 200%;
+    background-image: radial-gradient(circle at center, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
+    font-size: 16px;
+    transition: background-position 0.8s;
+
+    &:hover {
+      background-position: calc((100 - var(--mouse-x, 0))* 1%) calc((100 - var(--mouse-y, 0))* 1%);
+      --mouse-x: 54.71153846153845;
+      --mouse-y: 2.083333333333333;
+    }
+  }
+
+
+}
