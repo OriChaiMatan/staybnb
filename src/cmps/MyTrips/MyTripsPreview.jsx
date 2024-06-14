@@ -31,7 +31,7 @@ export function MyTripsPreview({ order }) {
                 <label className="order-icon">Order status: {order.status} {getStatusIcon(order.status)}</label>
                 <label>Check In date: {order.startDate}</label>
                 <label >Check Out date: {order.endDate}</label>
-                <label >Price: {order.totalPrice}</label>
+                <label >Price: {order.totalPrice}$</label>
             </section>
         </div>
     )
