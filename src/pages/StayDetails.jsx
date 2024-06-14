@@ -16,6 +16,8 @@ import { StayRating } from "../cmps/stayDetails/StayRating"
 import { StayImgs } from "../cmps/stayDetails/StayImgs"
 import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton"
 import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service"
+import { MobileReserve } from "../cmps/stayDetails/MobileReserve"
+import { useWindowSize } from "../customHooks/useWindowSize"
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
@@ -33,6 +35,7 @@ export function StayDetails({ setLargeMainFilter }) {
   const reviewsRef = useRef(null)
   const locationRef = useRef(null)
   const hostedByRef = useRef(null)
+  const windowSize = useWindowSize()
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 
@@ -78,7 +81,7 @@ export function StayDetails({ setLargeMainFilter }) {
       console.log("Error in loadStay", err)
     }
   }
-  
+
 
   function handleNavigation(section) {
     const refs = {
@@ -214,9 +217,10 @@ export function StayDetails({ setLargeMainFilter }) {
         <MapContainer lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>}
 
-      
+      {windowSize.width < 780 &&
+        <MobileReserve stay={stay} selectedRange={selectedRange} />
+      }
 
-      
     </section>
   )
 }

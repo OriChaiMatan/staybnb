@@ -145,11 +145,7 @@ export function ReservationModal({
               placeholder="Add date"
               value={
                 selectedRange.start && selectedRange.end
-                  ? selectedRange.start.toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "2-digit",
-                  })
-                  : ""
+                  ? utilService.formatMonthDay(selectedRange.start) : ""
               }
             />
           </div>
@@ -159,11 +155,7 @@ export function ReservationModal({
               placeholder="Add date"
               value={
                 selectedRange.start && selectedRange.end
-                  ? selectedRange.end.toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "2-digit",
-                  })
-                  : ""
+                  ? utilService.formatMonthDay(selectedRange.end) : ""
               }
             />
           </div>

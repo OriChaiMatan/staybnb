@@ -7,6 +7,7 @@ import { utilService } from "../services/util.service";
 import StarSmall from "../svg/StarSmallSvg";
 import HeartWishlistSvg from "../svg/HeartWishlistSvg";
 import { useSelector } from "react-redux";
+import { showErrorMsg } from "../services/event-bus.service";
 
 export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -23,6 +24,9 @@ export function StayPreview({ stay, onUpdateStay }) {
     }
 
     const handleLike = (event) => {
+        if (!loggedInUser) {
+            showErrorMsg('Please log in to save a listing to your wishlist');
+        }
         event.stopPropagation();
         event.preventDefault();
         const updatedLikedByUsers = isLikedByUser
@@ -47,20 +51,10 @@ export function StayPreview({ stay, onUpdateStay }) {
         initialSlide: 0
     }
 
-    const handleLinkClick = (event) => {
-        event.preventDefault();
-        // Save sessionStorage to localStorage
-        Object.keys(sessionStorage).forEach(key => {
-            localStorage.setItem(key, sessionStorage.getItem(key));
-        });
-
-        // Open the new tab
-        window.open(`/stay/${stay._id}`, '_blank');
-    }
 
     return (
         <div className="stay-preview">
-            <Link to={`/stay/${stay._id}`} onClick={handleLinkClick} >
+            <Link to={`/stay/${stay._id}`} >
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>

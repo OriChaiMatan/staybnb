@@ -4,17 +4,21 @@ import { showErrorMsg } from '../../services/event-bus.service';
 import { useSelector } from 'react-redux';
 import { saveOrder } from '../../store/actions/order.action';
 import { socketService, SOCKET_EVENT_NOTIFY_NEW_ORDER } from '../../services/socket.service';
+import { useNavigate } from 'react-router-dom';
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
     const loggedinUser = useSelector((storeState) => storeState.userModule.user);
+    const navigate = useNavigate();
+
+
 
     function formatDate(dateString) {
         const [year, month, day] = dateString.split('-')
         return `${day}/${month}/${year}`
     }
 
-    const stayImg = stay.imgUrls[0].imgUrl
+
 
     async function handleConfirm() {
         if (!loggedinUser) {
@@ -32,7 +36,14 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
             showErrorMsg('Failed to save order');
         }
     }
-    
+
+    function onCloseReserveSuccess() {
+        onClose()
+        navigate('/my-trips');
+    }
+
+    const stayImg = stay.imgUrls[0].imgUrl
+    const totalGuests = adultsAmount + childrenAmount + petsAmount + infantsAmount
 
     return (
         <div className="confirmation-modal">
@@ -66,7 +77,10 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
                             <span>{formatDate(endDate)}</span>
                         </div>
 
-                        <h4 className='title'>Guests:</h4>
+                        {totalGuests > 0 &&
+                            <h4 className='title'>Guests:</h4>
+                        }
+
                         <div className='content guest'>
                             {adultsAmount > 0 && `${adultsAmount} ${adultsAmount === 1 ? 'adult' : 'adults'}`}{' '}
                             {childrenAmount > 0 && `${childrenAmount} ${childrenAmount === 1 ? 'child' : 'children'}`}{' '}
@@ -110,7 +124,7 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
                     </div>
                 ) : (
                     <div className='btns-container'>
-                        <button className="btn back-btn" onClick={onClose}>Close</button>
+                        <button className="btn back-btn" onClick={onCloseReserveSuccess}>Close</button>
                     </div>
                 )}
             </div>

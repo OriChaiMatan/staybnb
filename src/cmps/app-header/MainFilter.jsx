@@ -7,6 +7,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { GuestsModal } from "./GuestsModal";
 import { useSearchParams } from "react-router-dom";
 import { CalendarPicker } from "../CalendarPicker";
+import { utilService } from "../../services/util.service";
 
 export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   const [activeMainFilter, setActiveMainFilter] = useState(-1);
@@ -233,10 +234,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           <div className="name">
             <span className="bold">Check in</span> <br></br>
             {selectedRange.start && selectedRange.end
-              ? selectedRange.start.toLocaleDateString("en-US", {
-                month: "short",
-                day: "2-digit",
-              })
+              ? utilService.formatMonthDay(selectedRange.start)
               : "Add dates"}
           </div>
         </label>
@@ -262,10 +260,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           <div className="name">
             <span className="bold">Check out</span> <br></br>
             {selectedRange.end
-              ? selectedRange.end.toLocaleDateString("en-US", {
-                month: "short",
-                day: "2-digit",
-              })
+              ?utilService.formatMonthDay(selectedRange.end)
               : "Add dates"}
           </div>
         </label>

@@ -25,7 +25,7 @@ export function WishList() {
 
   if (!stays) return (<div>loading....</div>)
 
-  const userLikedStays = stays.filter(stay => stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser._id))
+  const userLikedStays = stays.filter(stay => stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser?._id))
 
   return <div className="user-stay-list">
     <section className="user-list-title">
