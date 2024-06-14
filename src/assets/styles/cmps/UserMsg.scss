@@ -1,49 +1,85 @@
 .user-msg {
   position: fixed;
-  bottom: 0;
-  margin-inline-start: 24px;
-  margin-block-end: 24px;
-  padding-inline-start: 18px;
-  padding-inline-end: 16px;
-  column-gap: 18px;
-  background-color: rgb(32, 33, 36);
+  top: 60px;
+  right: -300px;
+  margin-inline-end: 24px;
+  z-index: 20000;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  animation: slideIn 0.5s forwards, slideOut 0.5s 4.5s forwards;
+  border: none;
+  font-family: "AirbnbCereal_W_Bk", sans-serif;
+  max-width: 400px;
+  width: 10%;
+  font-weight: 600;
+}
+
+.user-msg.success {
+  background-color: #f3f3f3;
+  border: 1px solid #5a5a5a;
+  color: color;
+}
+
+.user-msg.error {
+  background-color: #f44336;
   color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302),
-    0 4px 8px 3px rgba(60, 64, 67, 0.149);
+}
 
-
-  &.success {
-    background-color: #ededed;
-    color: #222222;
+@keyframes slideIn {
+  from {
+    right: -300px;
+    opacity: 0;
   }
 
-  &.error {
-    background-color: #ededed;
-    color: red;
+  to {
+    right: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 20px;
+    opacity: 1;
   }
 
-  .user-msg-close-button {
-    all: unset;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/close_black_20dp.png');
-    background-repeat: no-repeat;
-    background-color: none;
-    background-size: 20px;
-    background-position: 50%;
-    transition: background-color 0.5s;
+  to {
+    right: -300px;
+    opacity: 0;
   }
+}
 
-  h1 {
-    font-size: medium;
-  }
+.user-msg-close-button {
+  all: unset;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/close_white_20dp.png');
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: center;
+  transition: background-color 0.3s;
+}
 
-  .msg-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.user-msg-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.msg-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+span {
+  font-size: 14px;
+  line-height: 1.4;
 }
