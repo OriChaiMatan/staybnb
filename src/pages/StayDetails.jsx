@@ -1,38 +1,38 @@
-import { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { stayService } from "../services/stay.service";
-import { ReservationModal } from "../cmps/stayDetails/ReservationModal";
-import { MapContainer } from "../cmps/stayDetails/MapContainer";
-import { CalendarPicker } from "../cmps/CalendarPicker";
-import { StickyHeader } from "../cmps/stayDetails/StickyHeader";
-import { StayHeader } from "../cmps/stayDetails/StayHeader";
-import { StayAmenities } from "../cmps/stayDetails/StayAmenities";
-import { StaySummary } from "../cmps/stayDetails/StaySummary";
-import { StayInfo } from "../cmps/stayDetails/StayInfo";
-import { StayReviews } from "../cmps/stayDetails/StayReviews";
-import { StayFeatures } from "../cmps/stayDetails/StayFeatures";
-import { StayRating } from "../cmps/stayDetails/StayRating";
-import { StayImgs } from "../cmps/stayDetails/StayImgs";
-import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton";
-import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service";
+import { useState, useEffect, useRef } from "react"
+import { useSelector } from "react-redux"
+import { useParams } from "react-router"
+import { stayService } from "../services/stay.service"
+import { ReservationModal } from "../cmps/stayDetails/ReservationModal"
+import { MapContainer } from "../cmps/stayDetails/MapContainer"
+import { CalendarPicker } from "../cmps/CalendarPicker"
+import { StickyHeader } from "../cmps/stayDetails/StickyHeader"
+import { StayHeader } from "../cmps/stayDetails/StayHeader"
+import { StayAmenities } from "../cmps/stayDetails/StayAmenities"
+import { StaySummary } from "../cmps/stayDetails/StaySummary"
+import { StayInfo } from "../cmps/stayDetails/StayInfo"
+import { StayReviews } from "../cmps/stayDetails/StayReviews"
+import { StayFeatures } from "../cmps/stayDetails/StayFeatures"
+import { StayRating } from "../cmps/stayDetails/StayRating"
+import { StayImgs } from "../cmps/stayDetails/StayImgs"
+import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton"
+import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service"
 
 export function StayDetails({ setLargeMainFilter }) {
-  const [stay, setStay] = useState(null);
-  const params = useParams();
+  const [stay, setStay] = useState(null)
+  const params = useParams()
   const [selectedRange, setSelectedRange] = useState({
     start: null,
     end: null,
   });
-  const [showStickyHeader, setShowStickyHeader] = useState(false);
-  const [showReviewsButton, setShowReviewsButton] = useState(false);
-  const [hoveredDate, setHoveredDate] = useState(null);
+  const [showStickyHeader, setShowStickyHeader] = useState(false)
+  const [showReviewsButton, setShowReviewsButton] = useState(false)
+  const [hoveredDate, setHoveredDate] = useState(null)
 
-  const photosRef = useRef(null);
-  const amenitiesRef = useRef(null);
-  const reviewsRef = useRef(null);
-  const locationRef = useRef(null);
-  const hostedByRef = useRef(null);
+  const photosRef = useRef(null)
+  const amenitiesRef = useRef(null)
+  const reviewsRef = useRef(null)
+  const locationRef = useRef(null)
+  const hostedByRef = useRef(null)
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 
@@ -64,18 +64,18 @@ export function StayDetails({ setLargeMainFilter }) {
       }
     }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [params.stayId])
 
 
   async function loadStay() {
     try {
-      const stayData = await stayService.getById(params.stayId);
-      setStay(stayData);
-      socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userName: loggedinUser.fullname, stayName: stayData.name, hostId: stayData.host._id });
+      const stayData = await stayService.getById(params.stayId)
+      setStay(stayData)
+      socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userName: loggedinUser.fullname, stayName: stayData.name, hostId: stayData.host._id })
     } catch (err) {
-      console.log("Error in loadStay", err);
+      console.log("Error in loadStay", err)
     }
   }
   
@@ -86,30 +86,30 @@ export function StayDetails({ setLargeMainFilter }) {
       amenities: amenitiesRef,
       reviews: reviewsRef,
       location: locationRef,
-    };
+    }
 
-    const ref = refs[section];
-    if (!ref) return;
+    const ref = refs[section]
+    if (!ref) return
 
     window.scrollTo({
       top: ref.current.offsetTop - 50,
       behavior: "smooth",
-    });
+    })
   }
 
-  if (!stay) return <StayIndexSkeleton />;
+  if (!stay) return <StayIndexSkeleton />
 
 
   function calculateDaysBetween(startDateStr, endDateStr) {
-    const startDate = new Date(startDateStr);
-    const endDate = new Date(endDateStr);
+    const startDate = new Date(startDateStr)
+    const endDate = new Date(endDateStr)
 
-    const diffInMilliseconds = endDate - startDate;
+    const diffInMilliseconds = endDate - startDate
 
-    const millisecondsPerDay = 1000 * 60 * 60 * 24;
-    const diffInDays = diffInMilliseconds / millisecondsPerDay;
+    const millisecondsPerDay = 1000 * 60 * 60 * 24
+    const diffInDays = diffInMilliseconds / millisecondsPerDay
 
-    return Math.ceil(diffInDays);
+    return Math.ceil(diffInDays)
   }
 
   return (
@@ -213,6 +213,10 @@ export function StayDetails({ setLargeMainFilter }) {
         </h4>
         <MapContainer lat={stay.loc.lat} lng={stay.loc.lng} />
       </div>}
+
+      
+
+      
     </section>
-  );
+  )
 }

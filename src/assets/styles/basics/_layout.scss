@@ -54,10 +54,16 @@
 }
 
 @media (max-width: 415px) {
+  .main-container{
+    overflow-x: hidden;
+  }
+  
   .details-layout-container {
     .main-content {
       display: grid;
-      grid-template-columns: 24px 365px 24px;
+      // grid-template-columns: 24px 327px 24px;
+      grid-template-columns: 0px 375px 0px;
+      overflow-x: hidden;
     }
   }
 }
