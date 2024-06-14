@@ -26,8 +26,8 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
             return;
         }
         setIsConfirmed(true);
-        const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price }, status: "pending" };
-
+        const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price, imgUrl: stayImg }, status: "pending" };
+    
         try {
             const savedOrder = await saveOrder(order)
             console.log('set up socket listener')

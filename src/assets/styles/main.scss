@@ -15,6 +15,7 @@
 @import "pages/StayIndex";
 @import "pages/StayEdit.scss";
 @import "pages/UserDashboard.scss";
+@import "pages/MyTrips.scss";
 
 // Components
 @import "cmps/AppHeader";
@@ -38,3 +39,5 @@
 @import "cmps/UserDashboard/UserInfo.scss";
 @import "cmps/UserDashboard/UserProfile.scss";
 @import "cmps/UserMsg.scss";
+@import "cmps/MyTrips/MyTripsList.scss";
+@import "cmps/MyTrips/MyTripsPreview.scss";
