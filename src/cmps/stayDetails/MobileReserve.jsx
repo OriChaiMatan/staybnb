@@ -40,24 +40,22 @@ export function MobileReserve({ stay, selectedRange }) {
 
   return (
     <div className="mobile-reserve">
-
-      <div>
-        <span>
+      <div className="details-nights">
+        <div className="per-night">
           <b>${stay.price}</b> night
-        </span>
+        </div>
 
-        {selectedRange.start && selectedRange.end &&
-          <>
-            <span>{selectedRange.start.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-            })}</span>
-            <span>{selectedRange.end.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-            })}</span>
-          </>
-        }
+        <div className="dates-night">
+          {selectedRange.start && selectedRange.end &&
+            <>
+              <b>{utilService.formatDateRange(startDate, endDate)}</b>
+            </>
+          }
+        </div>
+
+      </div>
+
+      
         <button className="btn-reserve" onClick={onReserve}>
           Reserve
         </button>
@@ -71,9 +69,6 @@ export function MobileReserve({ stay, selectedRange }) {
             totalNights={totalNights}
             totalPrice={totalPrice}
           />}
-      </div>
     </div>
-
-
   )
 }

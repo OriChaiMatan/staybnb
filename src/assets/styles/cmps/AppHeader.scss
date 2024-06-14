@@ -538,7 +538,24 @@
     height: 60px;
     white-space: nowrap;
     box-shadow: rgba(0, 0, 0, 0.08) 0 -1px 0;
+    color: #6A6A6A;
+    justify-content: center;
+    gap: 50px;
+
+    .name-action{
+      font-size: 10px;
+    }
+
+    a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
+
+
 }
 
 

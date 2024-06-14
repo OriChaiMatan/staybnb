@@ -9,14 +9,20 @@
   height: 75px;
   white-space: nowrap;
   box-shadow: rgba(0, 0, 0, 0.08) 0 -1px 0;
+  justify-content: space-between;
+  padding: 0 24px;
 
+  .dates-night{
+    font-size: 14px;
+    text-decoration: underline;
+  }
 
   .btn-reserve {
     text-align: center;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    padding: 14px 54px;
+    padding: 14px 40px;
     border-radius: 8px;
     color: #ffffff;
     background-position: calc((100 - var(--mouse-x, 0))* 1%) calc((100 - var(--mouse-y, 0))* 1%);
