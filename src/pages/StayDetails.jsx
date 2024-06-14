@@ -221,8 +221,6 @@ export function StayDetails({ setLargeMainFilter }) {
         <MobileReserve stay={stay} selectedRange={selectedRange} />
       }
 
-
-
     </section>
   )
 }

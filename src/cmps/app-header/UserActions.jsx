@@ -8,6 +8,10 @@ import { LoginForm } from "./LoginForm"
 import { logout } from "../../store/actions/user.action"
 import { showErrorMsg } from "../../services/event-bus.service"
 import { useWindowSize } from "../../customHooks/useWindowSize"
+import ExploreSvg from "../../svg/toolbar/ExploreSvg"
+import LogSvg from "../../svg/toolbar/LogSvg"
+import WishSvg from "../../svg/toolbar/WishSvg"
+import TripsSvg from "../../svg/toolbar/TripsSvg"
 
 export function UserActions() {
   const [showUserActionModal, setShowUserActionModal] = useState(false)
@@ -15,7 +19,6 @@ export function UserActions() {
   const userActionsModalRef = useRef(null)
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
   const windowSize = useWindowSize()
-
 
   useEffect(() => {
 
@@ -71,31 +74,41 @@ export function UserActions() {
     }
   }
 
-
   if (windowSize.width < 780) {
     return (
       <div className="mobile-user-actions-toolbar">
-        <Link to={"/"}>Explore</Link>
+        <Link to={"/"}>
+          <ExploreSvg />
+          <span className="name-action">Explore</span>
+        </Link>
         {loggedInUser &&
           <>
-            <Link to={"/dashboard/wishlist"}>Wishlist</Link>
-            <Link to={"/my-trips"}>Trips</Link>
+            <Link to={"/dashboard/wishlist"}>
+              <WishSvg />
+              <span className="name-action">Wishlist</span>
+            </Link>
+
+            <Link to={"/my-trips"}>
+              <TripsSvg />
+              <span className="name-action">Trips</span>
+            </Link>
           </>
         }
 
         <div>
+
           {!loggedInUser ? (
             <>
               <a href="#" className="user-action" onClick={handleLoginClick}>
-                Log in
+                <LogSvg />
+                <span className="name-action">Log in</span>
               </a>
             </>
           ) : (
-
             <a href="/" className="user-action" onClick={handleLogoutClick}>
-              Log out
+              <LogSvg />
+              <span className="name-action">Log out</span>
             </a>
-
           )}
 
           {showLoginModal && (
