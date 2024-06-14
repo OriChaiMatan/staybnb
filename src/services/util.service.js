@@ -14,6 +14,7 @@ export const utilService = {
   calculateDistance,
   calculateAvgRating,
   formatDate,
+  formatMonthDay,
 }
 
 const TEL_AVIV_LAT = 32.109333
@@ -29,6 +30,13 @@ function makeId(length = 6) {
   }
 
   return txt
+}
+
+function formatMonthDay(date) {
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+  })
 }
 
 function makeLorem(size = 100) {
@@ -202,4 +210,5 @@ function formatDate(date) {
   const day = String(date.getDate()).padStart(2, "0")
   return `${year}-${month}-${day}`
 }
+
 

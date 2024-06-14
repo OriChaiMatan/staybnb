@@ -48,14 +48,8 @@ export function MobileReserve({ stay, selectedRange }) {
 
         {selectedRange.start && selectedRange.end &&
           <>
-            <span>{selectedRange.start.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-            })}</span>
-            <span>{selectedRange.end.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-            })}</span>
+            <span>{utilService.formatMonthDay(selectedRange.start)}</span>
+            <span>{utilService.formatMonthDay(selectedRange.end)}</span>
           </>
         }
         <button className="btn-reserve" onClick={onReserve}>
