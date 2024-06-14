@@ -83,3 +83,33 @@ span {
   font-size: 14px;
   line-height: 1.4;
 }
+
+@media only screen and (max-width: 768px) {
+  .user-msg {
+    width: 40%;
+  }
+
+  @keyframes slideIn {
+    from {
+      right: -300px;
+      opacity: 0;
+    }
+
+    to {
+      right: 2px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      right: 2px;
+      opacity: 1;
+    }
+
+    to {
+      right: -300px;
+      opacity: 0;
+    }
+  }
+}
