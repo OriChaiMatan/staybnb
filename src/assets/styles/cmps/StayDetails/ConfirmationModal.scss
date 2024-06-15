@@ -151,3 +151,39 @@
     }
 
 }
+
+@media only screen and (max-width: 768px) {
+    .confirmation-modal {
+
+        .confirmation-modal-content {
+            padding: 30px;
+            overflow-y: auto;
+            height: 100%;
+
+            header p {
+                text-wrap: wrap;
+            }
+
+            .img-content {
+
+                img {
+                    width: 122%;
+                    margin: 0 -30px;
+                }
+
+                .loc {
+                    margin: 5px 0 0 0;
+                }
+            }
+
+            .btns-container {
+                margin-top: 20px;
+
+                .btn {
+                    width: 120px;
+                }
+            }
+        }
+
+    }
+}
