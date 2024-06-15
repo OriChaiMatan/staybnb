@@ -12,6 +12,7 @@ import ExploreSvg from "../../svg/toolbar/ExploreSvg"
 import LogSvg from "../../svg/toolbar/LogSvg"
 import WishSvg from "../../svg/toolbar/WishSvg"
 import TripsSvg from "../../svg/toolbar/TripsSvg"
+import { RxDashboard } from "react-icons/rx";
 
 export function UserActions() {
   const [showUserActionModal, setShowUserActionModal] = useState(false)
@@ -91,6 +92,11 @@ export function UserActions() {
             <Link to={"/my-trips"}>
               <TripsSvg />
               <span className="name-action">Trips</span>
+            </Link>
+
+            <Link to={"/dashboard/listing"}>
+              <RxDashboard style={{width: "24px", height: "24px"}}/>
+              <span className="name-action">Dashboard</span>
             </Link>
           </>
         }
