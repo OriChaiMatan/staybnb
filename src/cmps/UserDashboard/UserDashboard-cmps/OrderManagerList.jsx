@@ -1,8 +1,22 @@
 import { OrderManagerPreview } from "./OrderManagerPreview";
+import { useWindowSize } from "../../../customHooks/useWindowSize"; 
 
 export function OrderManagerList({ orders, onSaveOrder }) {
+    const windowSize = useWindowSize()
 
     if (!orders) return (<div>loading....</div>)
+    if (windowSize.width < 780) {
+        return (
+            <ul className="order-list">
+            {orders.map((order) => (
+                <li key={order._id} >
+                    <OrderManagerPreview order={order} onSaveOrder={onSaveOrder} />
+                </li>
+            ))}
+        </ul>
+        )
+    }
+    
     return (
         <ul className="order-list">
             <section>
