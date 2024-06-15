@@ -9,7 +9,7 @@ import { UserDashboard } from "./pages/UserDashboard";
 import { MyTrips } from "./pages/MyTrips";
 import { OrderManager } from "./cmps/UserDashboard/OrderManager";
 import { UserProflie } from "./cmps/UserDashboard/UserProflie";
-import { WishList } from "./cmps/UserDashboard/WishList";
+import { WishList } from "./pages/WishList";
 import { UserMsg } from "./cmps/UserMsg";
 
 export function RootCmp() {
@@ -44,9 +44,9 @@ export function RootCmp() {
           <Route path="/dashboard" element={<UserDashboard />} >
             <Route path="/dashboard/order-manager" element={<OrderManager />} />
             <Route path="/dashboard/listing" element={<UserProflie />} />
-            <Route path="/dashboard/wishlist" element={<WishList />} />
           </Route>
           <Route path="/my-trips" element={<MyTrips />}/>
+          <Route path="/wish-list" element={<WishList />} />
         </Routes>
       </main>
       <AppFooter />

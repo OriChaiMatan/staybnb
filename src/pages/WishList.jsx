@@ -2,9 +2,8 @@ import React from "react"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 
-import { StayList } from "../StayList"
-import { UserInfo } from "./UserProflie-cmps/UserInfo"
-import { loadStays, saveStay } from "../../store/actions/stay.action"
+import { StayList } from "../cmps/StayList"
+import { loadStays, saveStay } from "../store/actions/stay.action" 
 
 export function WishList() {
 

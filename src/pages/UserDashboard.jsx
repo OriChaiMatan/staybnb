@@ -10,7 +10,6 @@ export function UserDashboard() {
       <nav className="dashboard-navigation">
         <NavLink to="/dashboard/listing" className={({ isActive }) => (isActive ? 'active' : '')}>My Profile</NavLink>
         <NavLink to="/dashboard/order-manager" className={({ isActive }) => (isActive ? 'active' : '')}>Order Manager</NavLink>
-        <NavLink to="/dashboard/wishlist" className={({ isActive }) => (isActive ? 'active' : '')}>Wishlist</NavLink>
       </nav>
       <div className="dashboard-content">
         <Outlet />

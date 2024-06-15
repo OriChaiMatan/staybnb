@@ -172,6 +172,9 @@ export function UserActions() {
               <Link to={"/my-trips"} className="user-action">
                 My Trips
               </Link>
+              <Link to={"/wish-list"} className="user-action">
+                WishList
+              </Link>
             </>}
             <a href="#" className="user-action">
               Help Center
