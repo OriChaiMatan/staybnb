@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -12,6 +12,7 @@ import { showErrorMsg } from "../services/event-bus.service";
 export function StayPreview({ stay, onUpdateStay }) {
     const [isHovered, setIsHovered] = useState(false);
     const loggedInUser = useSelector((storeState) => storeState.userModule.user);
+    const location = useLocation();
 
     const isLikedByUser = stay.likedByUsers.some(likedByUser => likedByUser._id === loggedInUser?._id);
 
@@ -51,6 +52,7 @@ export function StayPreview({ stay, onUpdateStay }) {
         initialSlide: 0
     }
 
+    const wishListIconClassName = (location.pathname === '/wish-list' || location.pathname === '/dashboard/listing') ? 'wish-listt-icon' : 'wish-list-icon';
 
     return (
         <div className="stay-preview">
@@ -58,7 +60,7 @@ export function StayPreview({ stay, onUpdateStay }) {
                 <div className="stay-photo-gallery"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
-                    <div className={`wish-list-icon ${isLikedByUser ? 'liked' : ''}`}
+                    <div className={`${wishListIconClassName} ${isLikedByUser ? 'liked' : ''}`}
                         onClick={handleLike}>
                         <HeartWishlistSvg />
                     </div>

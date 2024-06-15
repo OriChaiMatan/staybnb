@@ -81,4 +81,25 @@
             border-top-right-radius: 20px;
         }
     }
+
+    .order-preview label.order-icon {
+
+        .icon-approved {
+            color: green;
+            height: 45px;
+            width: 45px;
+        }
+
+        .icon-decline {
+            color: red;
+            height: 45px;
+            width: 45px;
+        }
+
+        .icon-pending {
+            color: orange;
+            height: 45px;
+            width: 45px;
+        }
+    }
 }
