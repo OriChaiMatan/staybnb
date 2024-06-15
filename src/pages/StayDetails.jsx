@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
+import { useNavigate } from 'react-router-dom';
 import { stayService } from "../services/stay.service"
 import { ReservationModal } from "../cmps/stayDetails/ReservationModal"
 import { MapContainer } from "../cmps/stayDetails/MapContainer"
@@ -18,6 +19,7 @@ import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton"
 import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service"
 import { MobileReserve } from "../cmps/stayDetails/MobileReserve"
 import { useWindowSize } from "../customHooks/useWindowSize"
+import leftArrowIcon from "../assets/img/arrow-left-black.svg";
 
 export function StayDetails({ setLargeMainFilter }) {
   const [stay, setStay] = useState(null)
@@ -36,6 +38,7 @@ export function StayDetails({ setLargeMainFilter }) {
   const locationRef = useRef(null)
   const hostedByRef = useRef(null)
   const windowSize = useWindowSize()
+  const navigate = useNavigate();
 
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 
@@ -117,6 +120,9 @@ export function StayDetails({ setLargeMainFilter }) {
 
   return (
     <section className="stay-details">
+      {windowSize.width < 780 && (
+        <button className="go-back-btn" onClick={() => navigate(-1)}><img src={leftArrowIcon}></img></button>
+      )}
       {showStickyHeader && (
         <StickyHeader
           stay={stay}
