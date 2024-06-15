@@ -51,3 +51,20 @@
   min-width: 100%;
   margin-bottom: 40px;
 }
+
+@media only screen and (max-width: 768px) {
+
+  .dashboard {
+    padding: 0;
+    min-width: 0;
+  }
+
+  .dashboard-content {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+   
+  .dashboard-navigation{
+    text-align: center;
+    margin-bottom: 0;
+  }
+}

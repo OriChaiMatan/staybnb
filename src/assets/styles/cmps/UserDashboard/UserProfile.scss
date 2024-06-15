@@ -57,3 +57,17 @@
     padding: 0 20px;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .user-profile{
+        display: grid;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .user-info{
+        font-size: 70%;
+    }
+    
+  }
