@@ -462,6 +462,31 @@
       }
     }
   }
+
+  .go-back-btn {
+    border-radius: 50%;
+    color: #222222;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    background-clip: padding-box;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 0 1px transparent, 0 0 0 4px transparent, 0 2px 4px rgba(0, 0, 0, 0.5);
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 3%;
+    left: 5%;
+
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {

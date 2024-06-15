@@ -84,7 +84,7 @@ export function UserActions() {
         </Link>
         {loggedInUser &&
           <>
-            <Link to={"/dashboard/wishlist"}>
+            <Link to={"/wish-list"}>
               <WishSvg />
               <span className="name-action">Wishlist</span>
             </Link>
@@ -95,7 +95,7 @@ export function UserActions() {
             </Link>
 
             <Link to={"/dashboard/listing"}>
-              <RxDashboard style={{width: "24px", height: "24px"}}/>
+              <RxDashboard style={{ width: "24px", height: "24px" }} />
               <span className="name-action">Dashboard</span>
             </Link>
           </>
