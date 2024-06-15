@@ -17,6 +17,7 @@ import { RxDashboard } from "react-icons/rx";
 export function UserActions() {
   const [showUserActionModal, setShowUserActionModal] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
+  const [activeOption, setActiveOption] = useState(0)
   const userActionsModalRef = useRef(null)
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
   const windowSize = useWindowSize()
@@ -78,23 +79,23 @@ export function UserActions() {
   if (windowSize.width < 780) {
     return (
       <div className="mobile-user-actions-toolbar">
-        <Link to={"/"}>
+        <Link to={"/"} className={`${activeOption === 0 ? "active-option" : ""}`} onClick={() => setActiveOption(0)}>
           <ExploreSvg />
           <span className="name-action">Explore</span>
         </Link>
         {loggedInUser &&
           <>
-            <Link to={"/wish-list"}>
+            <Link to={"/wish-list"} className={`${activeOption === 1 ? "active-option" : ""}`} onClick={() => setActiveOption(1)}>
               <WishSvg />
               <span className="name-action">Wishlist</span>
             </Link>
 
-            <Link to={"/my-trips"}>
+            <Link to={"/my-trips"} className={`${activeOption === 2 ? "active-option" : ""}`} onClick={() => setActiveOption(2)}>
               <TripsSvg />
               <span className="name-action">Trips</span>
             </Link>
 
-            <Link to={"/dashboard/listing"}>
+            <Link to={"/dashboard/listing"} className={`${activeOption === 3 ? "active-option" : ""}`} onClick={() => setActiveOption(3)}>
               <RxDashboard style={{ width: "24px", height: "24px" }} />
               <span className="name-action">Dashboard</span>
             </Link>
