@@ -28,7 +28,6 @@ export function OrderManager() {
   }
   return (
     <section className="user-list-title">
-      <h1>My Order Manager</h1>
       <OrderManagerList orders={orders.filter(order => order.hostId === loggedInUser._id)} onSaveOrder={onSaveOrder} />
     </section>
   )
