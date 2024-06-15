@@ -4,8 +4,10 @@ import { userService } from './user.service'
 
 export const SOCKET_EVENT_NEW_ORDER = 'new-order'
 export const SOCKET_EVENT_NOTIFY_NEW_ORDER = 'notify-new-order'
+
 export const SOCKET_EVENT_ORDER_STATUS = 'order-status'
 export const SOCKET_EVENT_NOTIFY_ORDER_STATUS = 'notify-order-status'
+
 export const SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY = 'notify-user-watching-stay'
 export const SOCKET_EVENT_USER_WATCHING_STAY = 'user-watching'
 
