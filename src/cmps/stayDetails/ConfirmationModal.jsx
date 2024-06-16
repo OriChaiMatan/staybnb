@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { HiCheckCircle } from "react-icons/hi2"
-import { showErrorMsg } from '../../services/event-bus.service';
-import { useSelector } from 'react-redux';
-import { saveOrder } from '../../store/actions/order.action';
-import { socketService, SOCKET_EVENT_NOTIFY_NEW_ORDER } from '../../services/socket.service';
-import { useNavigate } from 'react-router-dom';
-import { useWindowSize } from "../../customHooks/useWindowSize";
+import { showErrorMsg } from '../../services/event-bus.service'
+import { useSelector } from 'react-redux'
+import { saveOrder } from '../../store/actions/order.action'
+import { socketService, SOCKET_EVENT_NOTIFY_NEW_ORDER } from '../../services/socket.service'
+import { useNavigate } from 'react-router-dom'
+import { useWindowSize } from "../../customHooks/useWindowSize"
 
 export default function ConfirmationModal({ onClose, startDate, endDate, adultsAmount, childrenAmount, infantsAmount, petsAmount, stay, totalNights, totalPrice }) {
     const [isConfirmed, setIsConfirmed] = useState(false)
-    const loggedinUser = useSelector((storeState) => storeState.userModule.user);
-    const navigate = useNavigate();
+    const loggedinUser = useSelector((storeState) => storeState.userModule.user)
+    const navigate = useNavigate()
     const windowSize = useWindowSize()
 
 
@@ -23,24 +23,24 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
     async function handleConfirm() {
         if (!loggedinUser) {
-            showErrorMsg('Please log in to complete the reservation.');
-            return;
+            showErrorMsg('Please log in to complete the reservation.')
+            return
         }
         setIsConfirmed(true);
         const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price, imgUrl: stayImg }, status: "pending" };
 
         try {
-            const savedOrder = await saveOrder(order)
+           await saveOrder(order)
             console.log('set up socket listener')
             socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer.fullname })
         } catch (err) {
-            showErrorMsg('Failed to save order');
+            showErrorMsg('Failed to save order')
         }
     }
 
     function onCloseReserveSuccess() {
         onClose()
-        navigate('/my-trips');
+        navigate('/my-trips')
     }
 
     const stayImg = stay.imgUrls[0].imgUrl
