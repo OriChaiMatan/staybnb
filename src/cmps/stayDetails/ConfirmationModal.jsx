@@ -113,7 +113,6 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
                     <div className='img-content'>
                         <img src={stayImg} className='rounded-img'></img>
-                        <div className='loc'>{stay.name}</div>
                         <div className='loc'>{stay.loc.city}, {stay.loc.country}</div>
                     </div>
                 </div>
@@ -197,7 +196,6 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
                     <div className='img-content'>
                         <img src={stayImg} className='rounded-img'></img>
-                        <div className='loc'>{stay.name}</div>
                         <div className='loc'>{stay.loc.city}, {stay.loc.country}</div>
                     </div>
                     {!isConfirmed ? (
