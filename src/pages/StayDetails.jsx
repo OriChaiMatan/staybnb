@@ -221,7 +221,7 @@ export function StayDetails({ setLargeMainFilter }) {
         <h4>
           {stay.loc.city}, {stay.loc.country}
         </h4>
-        <MapContainer lat={stay.loc.lat} lng={stay.loc.lng} />
+        <MapContainer lat={stay.loc.lng} lng={stay.loc.lat} />
       </div>}
 
       {windowSize.width < 780 &&

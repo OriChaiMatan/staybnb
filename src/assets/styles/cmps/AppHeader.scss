@@ -14,6 +14,10 @@
   color: $clr3;
   padding: 0 80px;
 
+  &.hidden-z-index {
+    z-index: 0 !important;
+  }
+
   &.large-header {
     grid-row: 1/3;
     height: 160px;
@@ -558,7 +562,6 @@
       }
     }
   }
-
 
 }
 

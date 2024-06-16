@@ -11,7 +11,7 @@ export function StayReviews({ reviews }) {
 
   return (
     <div className="guest-reviews-container">
-      {reviews.map((review) => (
+      {reviews.slice(0, 6).map((review) => (
         <article className="review" key={review.id}>
           <div className="mini-user">
             <img

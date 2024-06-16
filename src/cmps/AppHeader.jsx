@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import logo from "../assets/img/airbnb-1.svg";
 import { MainFilter } from "./app-header/MainFilter";
 import { UserActions } from "./app-header/UserActions";
 import { stayService } from "../services/stay.service";
-import { socketService, SOCKET_EVENT_NEW_ORDER, SOCKET_EVENT_ORDER_STATUS, SOCKET_EVENT_USER_WATCHING_STAY} from '../services/socket.service';
+import { socketService, SOCKET_EVENT_NEW_ORDER, SOCKET_EVENT_ORDER_STATUS, SOCKET_EVENT_USER_WATCHING_STAY } from '../services/socket.service';
 import { eventBusService, showSuccessMsg } from "../services/event-bus.service";
 
 
@@ -13,6 +13,9 @@ import { eventBusService, showSuccessMsg } from "../services/event-bus.service";
 
 
 export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
+  const location = useLocation();
+  const pathname = location.pathname.split("/")[1];
+  const detailsPathname = `/${pathname}/`
   const defaultFilter = stayService.getDefaultFilter();
 
   const defaultFilterParams = Object.entries(defaultFilter).reduce(
@@ -34,8 +37,9 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
   }, [])
 
   useEffect(() => {
-    socketService.on(SOCKET_EVENT_ORDER_STATUS, (hostId) => {
-      showSuccessMsg(`There are some updates in your order number: ${hostId} `)
+    socketService.on(SOCKET_EVENT_ORDER_STATUS, (order) => {
+      console.log("order", order)
+      showSuccessMsg(`Your order is ${order.status === "declined" ? order.status + 'd' : order.status} `)
     })
     return () => {
       socketService.off(SOCKET_EVENT_ORDER_STATUS)
@@ -43,7 +47,7 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
   }, [])
 
   useEffect(() => {
-    socketService.on(SOCKET_EVENT_USER_WATCHING_STAY, ({userName, stayName}) => {
+    socketService.on(SOCKET_EVENT_USER_WATCHING_STAY, ({ userName, stayName }) => {
       showSuccessMsg(`User: ${userName} is watching your stay: ${stayName} ! `)
     })
     return () => {
@@ -52,7 +56,7 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
   }, [])
 
   return (
-    <header className={`app-header ${largeMainFilter ? "large-header" : ""}`}>
+    <header className={`app-header ${largeMainFilter ? "large-header" : ""} ${detailsPathname === '/stay/' ? "hidden-z-index" : ""}`}>
       <div className="app-header-logo-nav">
         <NavLink to={`/?${defaultFilterParams.toString()}`}>
           <img className="app-logo" src={logo} alt="logo" />

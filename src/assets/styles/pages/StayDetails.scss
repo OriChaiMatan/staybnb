@@ -122,6 +122,7 @@
     display: flex;
     gap: 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    align-items: center;
 
     span {
       font-weight: 600;
@@ -360,6 +361,12 @@
 
       .review-txt {
         font-size: 17px;
+        overflow: hidden;
+        max-width: 50em;
+        line-height: 1.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
       }
     }
   }

@@ -28,7 +28,7 @@ export function OrderManagerPreview({ order, onSaveOrder }) {
     const handleStatusChange = (newStatus) => {
         const updatedOrder = { ...order, status: newStatus }
         onSaveOrder(updatedOrder)
-        socketService.emit(SOCKET_EVENT_NOTIFY_ORDER_STATUS, { hostId: order.hostId, buyer_id: order.buyer.id })
+        socketService.emit(SOCKET_EVENT_NOTIFY_ORDER_STATUS, { order: order, hostId: order.hostId, buyer_id: order.buyer.id })
     }
 
 

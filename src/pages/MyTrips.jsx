@@ -12,13 +12,13 @@ export function MyTrips() {
     loadOrders()
   }, [])
 
-  if (!orders ) {
+  if (!orders) {
     return <div>Loading...</div>;
   }
   return (
     <section className="my-trips">
       <h1>Trips</h1>
-      <MyTripsList orders={orders.filter(order => order.buyer.id === loggedInUser._id)} />
+      <MyTripsList orders={orders.filter(order => order.buyer.id === loggedInUser._id).reverse()} />
     </section>
   )
 }
