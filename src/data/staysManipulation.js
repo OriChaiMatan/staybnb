@@ -15,6 +15,28 @@ const allowedLabels = [
     "Bed & breakfast", "Luxe", "Top of the world", "Ski-in/out"
 ];
 
+const randomImageUrls = [
+    "https://res.cloudinary.com/dqti9icif/image/upload/2_roolfv",
+    "https://res.cloudinary.com/dqti9icif/image/upload/3_ezuwiw",
+    "https://res.cloudinary.com/dqti9icif/image/upload/4_sbhpr1",
+    "https://res.cloudinary.com/dqti9icif/image/upload/v1716981258/men1_vzlwfn.png",
+    "https://res.cloudinary.com/dqti9icif/image/upload/v1716980278/userwomen4_ylwdbb.jpg",
+    "https://res.cloudinary.com/dqti9icif/image/upload/v1716981396/men2_st6uwg.jpg",
+    "https://res.cloudinary.com/dqti9icif/image/upload/v1716981825/userwomen3_b3toj0.jpg",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1716981952/men3_kduvzb.jpg",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1716982686/userwomen5_dvavqu.jpg",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1716982768/men4_yio0gl.jpg",
+    "https://res.cloudinary.com/dqti9icif/image/upload/v1716979059/user2_fb3xqz.png",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1716982890/userwomen6_rudvvf.jpg",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1716983029/men5_y0aqtj.jpg",
+    "http://res.cloudinary.com/dqti9icif/image/upload/v1717044984/admin_qsymkr.jpg"
+]
+
+// Function to get a random image URL
+function getRandomImageUrl() {
+    return randomImageUrls[Math.floor(Math.random() * randomImageUrls.length)];
+}
+
 const allowedTypes = ["Home", "House", "Guesthouse"];
 
 // Function to get a random date between two dates
@@ -132,10 +154,10 @@ function transformJson(data) {
             by: {
                 _id: review['by']['_id'],
                 fullname: review['by']['fullname'],
-                imgUrl: review['by']['imgUrl'],
+                imgUrl: getRandomImageUrl(), 
                 address: review['by']['address'] || `${review['by']['city']}, ${review['by']['country']}`
             }
-        }));
+        }))
 
 
         // Random startDate and endDate
