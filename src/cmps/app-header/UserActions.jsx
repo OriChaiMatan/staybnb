@@ -177,10 +177,10 @@ export function UserActions() {
                 Staybnb your home
               </Link>
               <Link to={"/my-trips"} className="user-action">
-                My Trips
+                Trips
               </Link>
               <Link to={"/wish-list"} className="user-action">
-                WishList
+                Wishlists
               </Link>
             </>}
             <a href="#" className="user-action">

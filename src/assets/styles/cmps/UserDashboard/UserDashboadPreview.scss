@@ -13,6 +13,10 @@
     &.order-status,
     &.order-icon {
       align-self: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
     }
 
     &.order-icon {
@@ -91,6 +95,21 @@
     .order-icon {
       justify-content: center;
     }
+
+    label {
+
+      &.client-name,
+      &.stay-name,
+      &.check-in,
+      &.check-out,
+      &.total-price,
+      &.order-status,
+      &.order-icon {
+        max-width: none;
+      }
+
+    }
   }
+
 
 }

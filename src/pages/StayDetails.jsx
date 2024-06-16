@@ -15,7 +15,7 @@ import { StayReviews } from "../cmps/stayDetails/StayReviews"
 import { StayFeatures } from "../cmps/stayDetails/StayFeatures"
 import { StayRating } from "../cmps/stayDetails/StayRating"
 import { StayImgs } from "../cmps/stayDetails/StayImgs"
-import { StayIndexSkeleton } from "../cmps/StayIndexSkeleton"
+import { StayDetailsSkeleton } from "../cmps/StayDetailsSkeleton"
 import { socketService, SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY } from "../services/socket.service"
 import { MobileReserve } from "../cmps/stayDetails/MobileReserve"
 import { useWindowSize } from "../customHooks/useWindowSize"
@@ -43,7 +43,7 @@ export function StayDetails({ setLargeMainFilter }) {
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 
   useEffect(() => {
-    loadStay()
+    // loadStay()
 
     function handleScroll() {
       const scrollTop =
@@ -79,7 +79,7 @@ export function StayDetails({ setLargeMainFilter }) {
     try {
       const stayData = await stayService.getById(params.stayId)
       setStay(stayData)
-      if (loggedinUser._id === stayData.host._id) return 
+      if (loggedinUser._id === stayData.host._id) return
       socketService.emit(SOCKET_EVENT_NOTIFY_USER_WATCHING_STAY, { userName: loggedinUser?.fullname, stayName: stayData.name, hostId: stayData.host._id })
     } catch (err) {
       console.log("Error in loadStay", err)
@@ -104,7 +104,7 @@ export function StayDetails({ setLargeMainFilter }) {
     })
   }
 
-  if (!stay) return <StayIndexSkeleton />
+  if (!stay) return <StayDetailsSkeleton />
 
 
   function calculateDaysBetween(startDateStr, endDateStr) {

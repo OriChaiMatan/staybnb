@@ -16,6 +16,11 @@
     border-bottom: 2px solid #ddd;
     font-weight: bold;
     gap: 10px;
+    text-align: center;
+
+    .order-icon {
+      display: block;
+    }
   }
 
   li {

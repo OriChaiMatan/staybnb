@@ -10,6 +10,7 @@ import { loadStays } from "../../store/actions/stay.action"
 import { LuHotel } from "react-icons/lu"
 import { IoStar } from "react-icons/io5"
 import { BiMessageDetail } from "react-icons/bi"
+import { StayIndexSkeleton } from "../StayIndexSkeleton";
 
 
 
@@ -24,7 +25,7 @@ export function UserProflie() {
     loadStays()
   }, [])
 
-  if (!stays) return (<div>loading....</div>)
+  if (!stays) return <StayIndexSkeleton />
   return (
     <div className="profile-stay-list">
       <section className="user-profile">

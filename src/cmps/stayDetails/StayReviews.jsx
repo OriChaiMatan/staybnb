@@ -21,7 +21,7 @@ export function StayReviews({ reviews }) {
             />
             <div className="mini-user-details">
               <h3>{review.by.fullname}</h3>
-              <span>{review.by.address}</span>
+              {/* <span>{review.by.address}</span> */}
             </div>
           </div>
 
