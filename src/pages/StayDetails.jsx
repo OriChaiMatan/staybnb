@@ -43,7 +43,7 @@ export function StayDetails({ setLargeMainFilter }) {
   const loggedinUser = useSelector((storeState) => storeState.userModule.user)
 
   useEffect(() => {
-    // loadStay()
+    loadStay()
 
     function handleScroll() {
       const scrollTop =
