@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  animation: fadeIn 0.5s forwards, fadeOut 0.5s 39s forwards;
+  animation: fadeIn 1s forwards, fadeOut 1s 4s forwards;
   border: none;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
   width: auto;
@@ -21,30 +21,6 @@
   background-color: #ffffff;
   opacity: 0;
 }
-
-// @keyframes slideIn {
-//   from {
-//     left: -300px;
-//     opacity: 0;
-//   }
-
-//   to {
-//     left: 20px;
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes slideOut {
-//   from {
-//     left: 20px;
-//     opacity: 1;
-//   }
-
-//   to {
-//     left: -300px;
-//     opacity: 0;
-//   }
-// }
 
 @keyframes fadeIn {
   from {
@@ -65,20 +41,6 @@
     opacity: 0;
   }
 }
-
-// .user-msg-close-button {
-//   all: unset;
-//   cursor: pointer;
-//   height: 24px;
-//   width: 24px;
-//   border-radius: 50%;
-//   background-repeat: no-repeat;
-//   background-size: 12px;
-//   background-position: center;
-//   transition: background-color 0.3s;
-//   color: #333333;
-//   font-size: 14px;
-// }
 
 .user-msg-close-button {
   all: unset;
@@ -112,31 +74,4 @@
     left: 20px;
     bottom: 80px;
   }
-
-  // @keyframes slideIn {
-  //   from {
-  //     left: -300px;
-  //     opacity: 0;
-  //   }
-
-  //   to {
-  //     left: 2px;
-  //     opacity: 1;
-  //   }
-  // }
-
-  // @keyframes slideOut {
-  //   from {
-  //     left: 2px;
-  //     opacity: 1;
-  //   }
-
-  //   to {
-  //     left: -300px;
-  //     opacity: 0;
-  //   }
-  // }
-
-
-
 }
