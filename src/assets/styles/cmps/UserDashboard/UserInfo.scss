@@ -45,6 +45,26 @@
   border-top: 1px solid rgba(128, 128, 128, 0.3);
 }
 
+.empty-user-stays {
+  font-size: 1.25rem;
+  color: #717171;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-user-stays h1 {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
 @media only screen and (max-width: 768px) {
 
   .user-info-dashboard {

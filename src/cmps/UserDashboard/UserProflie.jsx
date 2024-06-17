@@ -16,7 +16,6 @@ import { StayIndexSkeleton } from "../StayIndexSkeleton";
 
 
 export function UserProflie() {
-
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
   const stays = useSelector((storeState) => storeState.stayModule.stays)
 
@@ -25,42 +24,60 @@ export function UserProflie() {
   }, [])
 
   if (!stays) return <StayIndexSkeleton />
+
+  const userStays = stays.filter(stay => stay.host._id === loggedInUser._id);
+
+  const totalReviews = userStays.reduce((acc, stay) => acc + stay.reviews.length, 0);
+
+  const averageRating = userStays.length > 0
+    ? (userStays.reduce((acc, stay) => {
+      const stayRating = stay.reviews.reduce((sum, review) => sum + review.rate, 0) / stay.reviews.length;
+      return acc + (isNaN(stayRating) ? 0 : stayRating);
+    }, 0) / userStays.length).toFixed(2)
+    : 'N/A';
+
   return (
     <div className="profile-stay-list">
       <section className="user-profile">
-        < UserInfo user={loggedInUser} />
+        <UserInfo user={loggedInUser} />
         <section className="user-rate">
           <div className="user-info">
             <div className="user-info-item">
               <section className="info">
                 <span>Stays</span>
-                <div>{(stays.filter(stay => stay.host._id === loggedInUser._id)).length}</div>
+                <div>{userStays.length}</div>
               </section>
               <LuHotel />
             </div>
             <div className="user-info-item">
               <section className="info">
                 <span>Stars</span>
-                <div>4.88</div>
+                <div>{averageRating}</div>
               </section>
               <IoStar />
             </div>
             <div className="user-info-item">
               <section className="info">
                 <span>Reviews</span>
-                <div>102</div>
+                <div>{totalReviews}</div>
               </section>
               <BiMessageDetail />
             </div>
           </div>
         </section>
       </section>
-      <div className="user-stay-list">
-        <section className="user-list-title">
-          <h1>My Stay List</h1>
+      {userStays.length > 0 ? (
+        <div className="user-stay-list">
+          <section className="user-list-title">
+            <h1>My Stay List</h1>
+          </section>
+          <StayList stays={userStays} />
+        </div>
+      ) : (
+        <section className="empty-user-stays">
+          <h1>You don't have any stays yet. If you would like to add one, go to Staybnb Your home.</h1>
         </section>
-        <StayList stays={stays.filter(stay => stay.host._id === loggedInUser._id)} />
-      </div>
+      )}
     </div>
   )
 }

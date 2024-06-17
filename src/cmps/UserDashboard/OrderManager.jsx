@@ -23,12 +23,19 @@ export function OrderManager() {
     }
   }
 
-  if (!orders) {
-    return <div>Loading...</div>;
-  }
+  const userOrders = orders.filter(order => order.hostId === loggedInUser._id);
+
   return (
-    <section className="user-list-title">
-      <OrderManagerList orders={orders.filter(order => order.hostId === loggedInUser._id)} onSaveOrder={onSaveOrder} />
-    </section>
-  )
+    <div>
+      {userOrders.length > 0 ? (
+        <section className="user-list-title">
+          <OrderManagerList orders={userOrders} onSaveOrder={onSaveOrder} />
+        </section>
+      ) : (
+        <section className="empty-user-stays">
+          <h1>You don't have any orders yet. If you would like to order, you are welcomed to explore the many stays in Staybnb.</h1>
+        </section>
+      )}
+    </div>
+  );
 }
