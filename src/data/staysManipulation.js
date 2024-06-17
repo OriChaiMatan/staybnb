@@ -133,7 +133,7 @@ function transformJson(data) {
         newItem['host'] = {
             _id: host['_id'],
             fullname: host['fullname'],
-            imgUrl: host['pictureUrl']
+            imgUrl: getRandomImageUrl(),
         };
 
         // Location details
