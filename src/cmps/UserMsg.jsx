@@ -24,7 +24,7 @@ export function UserMsg() {
     <div className={`user-msg ${msg.type}`}>
       <section className="msg-details">
         <span>{msg.txt}</span>
-        <button className="user-msg-close-button" onClick={onCloseMsg} />
+        <button className="user-msg-close-button" onClick={onCloseMsg}>x</button>
       </section>
     </div>
   )

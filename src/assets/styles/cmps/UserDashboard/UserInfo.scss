@@ -4,7 +4,7 @@
   grid-template-rows: auto auto;
   grid-template-areas:
     "img h1"
-    "img div";
+    "img h1";
   gap: 10px;
   align-items: center;
   color: black;
@@ -12,14 +12,16 @@
   img {
     grid-area: img;
     width: 100px; // Adjust size as needed
-    height: auto;
     border-radius: 50%; // Optional for rounded image
+    height: 100px;
+    object-fit: cover;
+    margin-left: 20px;
   }
 
   h1 {
     grid-area: h1;
     margin: 0;
-    align-self: end;
+    align-self: center;
   }
 
   .user-living-place {
@@ -35,7 +37,7 @@
   }
 }
 
-.user-list-title{
+.user-list-title {
   font-size: 1.5rem;
   color: #3a3a3a;
   text-align: center;
@@ -63,5 +65,5 @@
   }
 
 
-  
+
 }

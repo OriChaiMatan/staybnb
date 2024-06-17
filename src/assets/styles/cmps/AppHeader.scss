@@ -410,8 +410,11 @@
 
     .user-icon {
       width: 30px;
+      height: 30px;
+      object-fit: cover;
       cursor: pointer;
       margin-left: 10px;
+      border-radius: 50%;
     }
 
     .hamburger-menu-icon {

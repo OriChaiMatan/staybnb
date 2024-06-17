@@ -1,71 +1,91 @@
 .user-msg {
   position: fixed;
-  top: 60px;
-  right: -300px;
+  bottom: 60px;
+  left: 50px;
   margin-inline-end: 24px;
   z-index: 20000;
-  padding: 12px 16px;
-  background-color: #ffffff;
-  color: #333333;
+  padding: 16px;
+  color: #222222;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   gap: 18px;
-  animation: slideIn 0.5s forwards, slideOut 0.5s 4.5s forwards;
+  animation: fadeIn 0.5s forwards, fadeOut 0.5s 39s forwards;
   border: none;
   font-family: "AirbnbCereal_W_Bk", sans-serif;
-  max-width: 400px;
-  width: 10%;
-  font-weight: 600;
+  width: auto;
+  min-width: 240px;
+  max-width: 100%;
+  font-weight: 400;
+  background-color: #ffffff;
+  opacity: 0;
 }
 
-.user-msg.success {
-  background-color: #f3f3f3;
-  border: 1px solid #5a5a5a;
-  color: color;
-}
+// @keyframes slideIn {
+//   from {
+//     left: -300px;
+//     opacity: 0;
+//   }
 
-.user-msg.error {
-  background-color: #f44336;
-  color: white;
-}
+//   to {
+//     left: 20px;
+//     opacity: 1;
+//   }
+// }
 
-@keyframes slideIn {
+// @keyframes slideOut {
+//   from {
+//     left: 20px;
+//     opacity: 1;
+//   }
+
+//   to {
+//     left: -300px;
+//     opacity: 0;
+//   }
+// }
+
+@keyframes fadeIn {
   from {
-    right: -300px;
     opacity: 0;
   }
 
   to {
-    right: 20px;
     opacity: 1;
   }
 }
 
-@keyframes slideOut {
+@keyframes fadeOut {
   from {
-    right: 20px;
     opacity: 1;
   }
 
   to {
-    right: -300px;
     opacity: 0;
   }
 }
+
+// .user-msg-close-button {
+//   all: unset;
+//   cursor: pointer;
+//   height: 24px;
+//   width: 24px;
+//   border-radius: 50%;
+//   background-repeat: no-repeat;
+//   background-size: 12px;
+//   background-position: center;
+//   transition: background-color 0.3s;
+//   color: #333333;
+//   font-size: 14px;
+// }
 
 .user-msg-close-button {
   all: unset;
   cursor: pointer;
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  background-image: url('https://www.gstatic.com/images/icons/material/system_gm/1x/close_white_20dp.png');
-  background-repeat: no-repeat;
-  background-size: 12px;
-  background-position: center;
-  transition: background-color 0.3s;
+  color: #717171;
+  font-size: 16px;
+  margin-left: 16px;
 }
 
 .user-msg-close-button:hover {
@@ -79,37 +99,44 @@
   flex: 1;
 }
 
-span {
+.user-msg span {
   font-size: 14px;
   line-height: 1.4;
+  font-weight: 600;
+  color: #222222;
 }
 
 @media only screen and (max-width: 768px) {
   .user-msg {
-    width: 40%;
+    max-width: 40%;
+    left: 20px;
+    bottom: 80px;
   }
 
-  @keyframes slideIn {
-    from {
-      right: -300px;
-      opacity: 0;
-    }
+  // @keyframes slideIn {
+  //   from {
+  //     left: -300px;
+  //     opacity: 0;
+  //   }
 
-    to {
-      right: 2px;
-      opacity: 1;
-    }
-  }
+  //   to {
+  //     left: 2px;
+  //     opacity: 1;
+  //   }
+  // }
 
-  @keyframes slideOut {
-    from {
-      right: 2px;
-      opacity: 1;
-    }
+  // @keyframes slideOut {
+  //   from {
+  //     left: 2px;
+  //     opacity: 1;
+  //   }
 
-    to {
-      right: -300px;
-      opacity: 0;
-    }
-  }
+  //   to {
+  //     left: -300px;
+  //     opacity: 0;
+  //   }
+  // }
+
+
+
 }
