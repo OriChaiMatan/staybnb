@@ -75,7 +75,7 @@ export function UserProflie() {
         </div>
       ) : (
         <section className="empty-user-stays">
-          <h1>You don't have any stays yet. If you would like to add one, go to Staybnb Your home.</h1>
+          <h1>No properties listed yet. Take the first step towards becoming a Staybnb host today and go to Staybnb Your home!</h1>
         </section>
       )}
     </div>

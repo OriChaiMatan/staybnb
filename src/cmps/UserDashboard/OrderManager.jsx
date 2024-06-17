@@ -33,7 +33,7 @@ export function OrderManager() {
         </section>
       ) : (
         <section className="empty-user-stays">
-          <h1>You don't have any orders yet. If you would like to order, you are welcomed to explore the many stays in Staybnb.</h1>
+          <h1>Awaiting your first guests. Patience is key in the hosting world. They'll come knocking soon!</h1>
         </section>
       )}
     </div>
