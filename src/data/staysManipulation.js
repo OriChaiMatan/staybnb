@@ -120,6 +120,7 @@ function transformJson(data) {
         newItem['bath'] = item['bathrooms'] || 0;
         newItem['bedrooms'] = item['bedrooms'] || 0;
         newItem['beds'] = getRandomRating();
+        newItem['likedByUsers'] = item['likedByUsers']
 
         // Filter amenities
         newItem['amenities'] = item['amenities'].filter(amenity => allowedAmenities.includes(amenity));
@@ -154,7 +155,7 @@ function transformJson(data) {
             by: {
                 _id: review['by']['_id'],
                 fullname: review['by']['fullname'],
-                imgUrl: getRandomImageUrl(), 
+                imgUrl: getRandomImageUrl(),
                 address: review['by']['address'] || `${review['by']['city']}, ${review['by']['country']}`
             }
         }))
