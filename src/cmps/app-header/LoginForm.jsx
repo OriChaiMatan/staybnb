@@ -39,7 +39,6 @@ export function LoginForm({ onClose }) {
         try {
             await signup({ email, password });
             onClose()
-            console.log("123123213")
             handleLogin({ email, password })
         } catch (err) {
             console.log("Signup failed:", err);
@@ -50,7 +49,6 @@ export function LoginForm({ onClose }) {
     async function handleLogin() {
         try {
             const user = await login({ email, password });
-            console.log(user);
             onClose();
         } catch (error) {
             console.error("Login failed:", error);

@@ -31,7 +31,6 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
 
         try {
             const savedOrder = await saveOrder(order)
-            console.log('set up socket listener')
             socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer.fullname })
         } catch (err) {
             showErrorMsg('Failed to save order');

@@ -19,7 +19,6 @@ export function UserProflie() {
 
   const loggedInUser = useSelector((storeState) => storeState.userModule.user)
   const stays = useSelector((storeState) => storeState.stayModule.stays)
-  console.log(stays)
 
   useEffect(() => {
     loadStays()

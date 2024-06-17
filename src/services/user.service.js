@@ -86,7 +86,6 @@ async function signup(userCred) {
 }
 
 async function logout() {
-    console.log("logging out")
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     // return await storageService.post('auth/logout')
     return await httpService.post('auth/logout')

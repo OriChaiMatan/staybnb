@@ -14,7 +14,6 @@ export function StayIndex() {
   const dispatch = useDispatch()
   const [searchParams, setSearchParams] = useSearchParams()
 
-  console.log("filterby: ", filterBy)
 
   useEffect(() => {
     setFilterBy(stayService.getFilterFromParams(searchParams))
