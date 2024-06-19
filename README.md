@@ -41,5 +41,5 @@ Try it here: https://staybnb-backend.onrender.com/?price_min=50&price_max=3500
 ## Contributors
 - [Ori Chai Matan](https://github.com/OriChaiMatan)
 - [Tal Oreff](https://github.com/taloreff)
-- [Irit Holdarov](https://github.com/iritholdarov)
+- [Irit Holdarov](https://github.com/Irit-Holdarov)
    
