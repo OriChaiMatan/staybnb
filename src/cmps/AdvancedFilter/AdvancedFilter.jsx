@@ -138,7 +138,6 @@ export function AdvancedFilter({
     if (selectedHotelProperty) {
       selectedPropertyTypes.push("Hotel");
     }
-    console.log("selectedAmenitiesArray: ", selectedAmenitiesArray);
     setAdvancedFilterByToEdit((prevFilter) => ({
       ...prevFilter,
       price_min: priceBounds.min,

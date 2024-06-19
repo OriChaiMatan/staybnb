@@ -52,6 +52,34 @@
     }
 }
 
+.empty-user-trips {
+    font-size: 1.25rem;
+    color: #717171;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-user-trips h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #484848;
+}
+
+.empty-user-trips p {
+    max-width: 500px;
+    line-height: 1.6;
+}
+
 @media only screen and (max-width: 768px) {
 
     .my-trips {

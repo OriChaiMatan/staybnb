@@ -30,7 +30,7 @@ export default function ConfirmationModal({ onClose, startDate, endDate, adultsA
         const order = { buyer: { id: loggedinUser._id, fullname: loggedinUser.fullname }, hostId: stay.host._id, totalPrice, startDate, endDate, guests: { adults: adultsAmount, kids: childrenAmount }, stay: { _id: stay._id, name: stay.name, price: stay.price, imgUrl: stayImg }, status: "pending" };
 
         try {
-           await saveOrder(order)
+            const savedOrder = await saveOrder(order)
             console.log('set up socket listener')
             socketService.emit(SOCKET_EVENT_NOTIFY_NEW_ORDER, { hostId: order.hostId, buyer_id: order.buyer.fullname })
         } catch (err) {

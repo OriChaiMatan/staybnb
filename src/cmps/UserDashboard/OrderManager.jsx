@@ -23,12 +23,19 @@ export function OrderManager() {
     }
   }
 
-  if (!orders) {
-    return <div>Loading...</div>;
-  }
+  const userOrders = orders.filter(order => order.hostId === loggedInUser._id);
+
   return (
-    <section className="user-list-title">
-      <OrderManagerList orders={orders.filter(order => order.hostId === loggedInUser._id)} onSaveOrder={onSaveOrder} />
-    </section>
-  )
+    <div>
+      {userOrders.length > 0 ? (
+        <section className="user-list-title">
+          <OrderManagerList orders={userOrders} onSaveOrder={onSaveOrder} />
+        </section>
+      ) : (
+        <section className="empty-user-stays">
+          <h1>Awaiting your first guests. Patience is key in the hosting world. They'll come knocking soon!</h1>
+        </section>
+      )}
+    </div>
+  );
 }

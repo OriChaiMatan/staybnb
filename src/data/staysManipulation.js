@@ -110,14 +110,14 @@ function transformJson(data) {
         newItem['type'] = allowedTypes.includes(item['type']) ? item['type'] : allowedTypes[0]
 
         // Basic fields
-        newItem['name'] = item['name']
-        newItem['imgUrls'] = item['imgUrls'].map(url => ({ imgUrl: url }))
-        newItem['price'] = item['price']
-        newItem['summary'] = item['summary']
-        newItem['capacity'] = item['capacity']
-        newItem['bath'] = item['bathrooms'] || 0
-        newItem['bedrooms'] = item['bedrooms'] || 0
-        newItem['beds'] = getRandomRating()
+        newItem['name'] = item['name'];
+        newItem['imgUrls'] = item['imgUrls'].map(url => ({ imgUrl: url }));
+        newItem['price'] = item['price'];
+        newItem['summary'] = item['summary'];
+        newItem['capacity'] = item['capacity'];
+        newItem['bath'] = item['bathrooms'] || 0;
+        newItem['bedrooms'] = item['bedrooms'] || 0;
+        newItem['beds'] = getRandomRating();
 
         // Filter amenities
         newItem['amenities'] = item['amenities'].filter(amenity => allowedAmenities.includes(amenity))
@@ -131,7 +131,7 @@ function transformJson(data) {
             _id: host['_id'],
             fullname: host['fullname'],
             imgUrl: host['pictureUrl']
-        }
+        };
 
         // Location details
         const loc = item['loc']
@@ -152,7 +152,7 @@ function transformJson(data) {
             by: {
                 _id: review['by']['_id'],
                 fullname: review['by']['fullname'],
-                imgUrl: getRandomImageUrl(), 
+                imgUrl: getRandomImageUrl(),
                 address: review['by']['address'] || `${review['by']['city']}, ${review['by']['country']}`
             }
         }))

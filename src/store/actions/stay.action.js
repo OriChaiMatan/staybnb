@@ -15,7 +15,6 @@ export async function loadStays() {
   try {
     const { filterBy } = store.getState().stayModule;
     const stays = await stayService.query(filterBy);
-    console.log("stays from stay.action: ", stays)
     store.dispatch({ type: SET_STAYS, stays });
   } catch (err) {
     console.log("Had issues loading stays", err);
@@ -46,9 +45,7 @@ export async function removeStay(stayId) {
 export async function saveStay(stay) {
   try {
     const type = stay._id ? UPDATE_STAY : ADD_STAY;
-    console.log("TYPE ", type, " STAY ", stay)
     const savedStay = await stayService.save(stay);
-    console.log("SAVEDSTAY", savedStay)
     store.dispatch({ type, stay: savedStay });
   } catch (err) {
     console.log("Had issues saving stays", err);

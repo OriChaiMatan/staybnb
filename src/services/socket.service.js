@@ -33,7 +33,6 @@ function createSocketService() {
             if (user) this.login(user._id)
         },
         on(eventName, cb) {
-            console.log(eventName)
             socket.on(eventName, cb)
         },
         off(eventName, cb = null) {
@@ -46,7 +45,6 @@ function createSocketService() {
         },
         login(userId) {
             socket.emit(SOCKET_EMIT_LOGIN, userId)
-            console.log('emitting login', userId)
         },
         logout() {
             socket.emit(SOCKET_EMIT_LOGOUT)

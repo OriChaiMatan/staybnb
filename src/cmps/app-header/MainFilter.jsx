@@ -122,10 +122,10 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
   }
 
   function onSubmitFilter() {
-    const newSearchParams = new URLSearchParams();
+    const currentParams = new URLSearchParams(searchParams);
 
     if (selectedRange.start && selectedRange.end) {
-      newSearchParams.append(
+      currentParams.set(
         "startDate",
         selectedRange.start.toLocaleDateString("en-CA", {
           year: "numeric",
@@ -133,7 +133,7 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
           day: "2-digit",
         })
       );
-      newSearchParams.append(
+      currentParams.set(
         "endDate",
         selectedRange.end.toLocaleDateString("en-CA", {
           year: "numeric",
@@ -143,13 +143,13 @@ export function MainFilter({ largeMainFilter, setLargeMainFilter }) {
       );
     }
     if (selectedDestination !== "Search destination") {
-      newSearchParams.append("country", selectedDestination);
+      currentParams.set("country", selectedDestination);
     }
     if (selectedGuests > 0) {
-      newSearchParams.append("capacity", selectedGuests);
+      currentParams.set("capacity", selectedGuests);
     }
 
-    setSearchParams(newSearchParams);
+    setSearchParams(currentParams);
 
     setLargeMainFilter(false);
     setActiveMainFilter(-1);

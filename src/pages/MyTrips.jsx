@@ -15,10 +15,20 @@ export function MyTrips() {
   if (!orders) {
     return <div>Loading...</div>;
   }
+
+  const userOrders = orders.filter(order => order.buyer.id === loggedInUser._id).reverse();
+
   return (
     <section className="my-trips">
       <h1>Trips</h1>
-      <MyTripsList orders={orders.filter(order => order.buyer.id === loggedInUser._id).reverse()} />
+      {userOrders.length > 0 ? (
+        <MyTripsList orders={userOrders} />
+      ) : (
+        <section className="empty-user-trips">
+          <h2>You don't have any trips yet.</h2>
+          <p>Time to dust off your bags and start planning your next adventure!</p>
+        </section>
+      )}
     </section>
   )
 }

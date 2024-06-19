@@ -38,8 +38,7 @@ export function AppHeader({ largeMainFilter, setLargeMainFilter }) {
 
   useEffect(() => {
     socketService.on(SOCKET_EVENT_ORDER_STATUS, (order) => {
-      console.log("order", order)
-      showSuccessMsg(`Your order is ${order.status === "declined" ? order.status + 'd' : order.status} `)
+      showSuccessMsg(`Your order status in ${order.stay.name} has been updated`)
     })
     return () => {
       socketService.off(SOCKET_EVENT_ORDER_STATUS)
