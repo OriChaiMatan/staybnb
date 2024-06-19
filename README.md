@@ -3,7 +3,6 @@ Welcome to Staybnb, an Airbnb clone built with modern web technologies. This pro
 <img width="940" alt="Screenshot 2024-06-19 192535" src="https://github.com/OriChaiMatan/staybnb/assets/148446359/6f76ae9e-4cb5-4c68-b21b-b12ca838c5bc">
 <img width="940" alt="mobile" src="https://github.com/OriChaiMatan/staybnb/assets/148446359/a516c076-3b00-412b-87f3-77ffb9162cd7">
 ## Table of Contents
-- [Built with](#built-with)
 - [Demo](#demo)
 - [Technologies](#technologies)
 - [Features](#features)
@@ -11,11 +10,11 @@ Welcome to Staybnb, an Airbnb clone built with modern web technologies. This pro
   - [Frontend](#frontend)
   - [Backend](#backend)
 - [Contributors](#contributors)
-## Built with
-![image](https://github.com/OriChaiMatan/staybnb/assets/148446359/1a089c8a-1f45-4d41-8bf0-ea206098f4f5)
 ## Demo
 Try it here: https://staybnb-backend.onrender.com/?price_min=50&price_max=3500
 ## Technologies
+   ### Built with
+   ![image](https://github.com/OriChaiMatan/staybnb/assets/148446359/1a089c8a-1f45-4d41-8bf0-ea206098f4f5)
 - React
 - Redux
 - MongoDB
