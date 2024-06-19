@@ -14,3 +14,16 @@ Welcome to Staybnb, an Airbnb clone built with modern web technologies. This pro
 
 # Demo
 Try it here: https://staybnb-backend.onrender.com/?price_min=50&price_max=3500
+
+# Installation
+  # Front
+1. Clone the repository:
+   https://github.com/OriChaiMatan/staybnb.git
+
+2. Install dependencies:
+   npm install
+
+3. Start the application:
+   npm run dev
+   
+   
