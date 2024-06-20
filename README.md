@@ -14,7 +14,7 @@ Welcome to Staybnb, an Airbnb clone built with modern web technologies. This pro
 Try it here: [Staybnb here!](https://staybnb-backend.onrender.com/?price_min=50&price_max=3500)
 ## Technologies
    ### Built with
-       ![image](https://github.com/OriChaiMatan/staybnb/assets/148446359/1a089c8a-1f45-4d41-8bf0-ea206098f4f5)
+  ![image](https://github.com/OriChaiMatan/staybnb/assets/148446359/1a089c8a-1f45-4d41-8bf0-ea206098f4f5)
 - React
 - Redux
 - MongoDB
