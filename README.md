@@ -11,7 +11,7 @@ Welcome to Staybnb, an Airbnb clone built with modern web technologies. This pro
   - [Backend](#backend)
 - [Contributors](#contributors)
 ## Demo
-Try it here: [Staybnb here!](https://staybnb-ul5j.onrender.com)
+Try it here: [Staybnb here!](https://stays-bnb.onrender.com)
 ## Technologies
    ### Built with
   ![image](https://github.com/OriChaiMatan/staybnb/assets/148446359/1a089c8a-1f45-4d41-8bf0-ea206098f4f5)
